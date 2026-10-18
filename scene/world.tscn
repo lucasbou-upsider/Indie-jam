@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cicrbxdj73ek4"]
+
+[ext_resource type="PackedScene" uid="uid://byxo1qtpjx30p" path="res://scene/Base.tscn" id="1_pjass"]
+[ext_resource type="Script" uid="uid://dy7qnufb0wjm5" path="res://scene/world.gd" id="1_txmk2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x0iyh"]
+
+[node name="world" type="Node2D" unique_id=1481596678]
+position = Vector2(0, 3)
+script = ExtResource("1_txmk2")
+
+[node name="sol" type="StaticBody2D" parent="." unique_id=880192580]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sol" unique_id=1606727996]
+shape = SubResource("WorldBoundaryShape2D_x0iyh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
+position = Vector2(-4, -544)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Base" parent="." unique_id=1313463931 instance=ExtResource("1_pjass")]
+position = Vector2(2, -433)
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=476184838]
+
+[node name="Button_base" type="Button" parent="Interface" unique_id=139180536]
+offset_left = 1092.0
+offset_top = 598.0
+offset_right = 1137.0
+offset_bottom = 629.0
+text = "base"
+
+[node name="ProgressBar" type="ProgressBar" parent="Interface" unique_id=910387552]
+offset_left = 128.0
+offset_top = 16.0
+offset_right = 1045.0
+offset_bottom = 43.0
+
+[connection signal="pressed" from="Interface/Button_base" to="." method="_on_button_base_pressed"]
