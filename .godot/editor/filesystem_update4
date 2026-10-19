@@ -1,10 +1,5 @@
-res://scene/world.tscn
-res://scene/world.gd
+res://scene/Base.gd
 res://GLOBAL.gd
-res://scene/Base.tscn
-res://scene/ennemie/kayou.tscn
-res://scene/craft/Base.tscn
-res://scene/craft/Base.gd
-res://scene/ennemie/kayou_spawn.gd
-res://scene/ennemie/kayou.gd
-res://scene/panel_inventaire.gd
+res://scene/world.gd
+res://macon.gd
+res://scene/macon.tscn
