@@ -78,7 +78,6 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 
 #verifie que la souris est sur le batiment
 func _on_area_2d_mouse_entered() -> void:
-	print("bruh")
 	mouse_overed = true
 func _on_area_2d_mouse_exited() -> void:
 	mouse_overed = false

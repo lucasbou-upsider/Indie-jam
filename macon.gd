@@ -9,6 +9,7 @@ var bodycount := 0
 
 func _ready() -> void:
 	collision_shape_2d.disabled = true
+	GLOBAL.network[self] = {}
 
 
 

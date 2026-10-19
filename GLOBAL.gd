@@ -7,8 +7,6 @@ var network = {}
 
 var DEBUG := true
 
-var is_useless := true
-
 #inventaire
 var charbon := 0
 var bois := 0
@@ -58,6 +56,7 @@ func is_powered(node, explored = []) -> bool:
 func connect_buildings(b1, b2):
 	print(b1)
 	print(b2)
+	print(GLOBAL.network)
 	network[b1][b2] = ""
 	network[b2][b1] = ""
 

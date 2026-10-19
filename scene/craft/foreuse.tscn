@@ -50,7 +50,7 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.00980358
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=134821111]
+[node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
 polygon = PackedVector2Array(-19, 13, 17, 13, 17, -16, -19, -16)
 disabled = true
 

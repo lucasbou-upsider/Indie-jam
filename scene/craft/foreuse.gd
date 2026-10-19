@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
+@onready var collision_polygon_2d: CollisionPolygon2D = $PhysicsShape
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var timer: Timer = $Timer
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
@@ -17,6 +17,7 @@ func _ready() -> void:
 	#cout du batiments
 	if GLOBAL.brique >= cost:
 		GLOBAL.brique -= cost
+		GLOBAL.network[self] = {}
 	else:
 		queue_free()
 
@@ -26,7 +27,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
 	elif Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
-		print(self)
 		if !GLOBAL.b1_tem:
 			GLOBAL.b1_tem = self
 		else:
