@@ -1,21 +1,35 @@
 extends RigidBody2D
 
-var pv := 10
+@export var pv := 10
 var is_blueprint := true
 var bodycount := 0
+var cost = 100
+var cost2 = 20
+var mouse_overed := true
 @onready var collision_shape_2d: CollisionPolygon2D = $PhysicsShape
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
-	collision_shape_2d.disabled = true
-
+	if GLOBAL.pierre >= cost and GLOBAL.bois >= cost2:
+		GLOBAL.pierre -= cost 
+		GLOBAL.bois -= cost2
+	else:
+		queue_free()
 
 
 func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		place_self()
+
+#destruction
+	if Input.is_action_just_pressed("click droit"):
+		if mouse_overed:
+			GLOBAL.brique += cost
+			queue_free()
+		sleeping = false
+
 
 	# blueprint
 	if is_blueprint:
@@ -31,24 +45,34 @@ func _process(_delta: float) -> void:
 	else:
 		sprite_2d.modulate = Color(1.0, 0.98, 0.984, 0.98)
 
+#une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 		collision_shape_2d.disabled = false
-
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	if is_blueprint:
-		bodycount -= 1
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if is_blueprint:
-		bodycount += 1
-	elif not is_blueprint and not area.get_parent().is_blueprint:
-		if area.get_parent().get_parent().name == "kayou_spawn":
-			pv -= 1
 
 
 func _on_production_timer_timeout() -> void:
 	if GLOBAL.pierre >= 1:
 		GLOBAL.pierre -= 1
 		GLOBAL.brique += 1
+
+
+func _on_clearance_area_area_entered(area: Area2D) -> void:
+	#degats
+	if !is_blueprint:
+		print(area.get_parent().get_parent().name)
+		if area.get_parent().get_parent().name == "kayou_spawn":
+			pv -= 1
+	#regarder si possible de placer
+	if is_blueprint :
+		bodycount += 1
+func _on_clearance_area_area_exited(_area: Area2D) -> void:
+	if is_blueprint:
+		bodycount -= 1
+
+
+func _on_clearance_area_mouse_entered() -> void:
+	mouse_overed = true
+func _on_clearance_area_mouse_exited() -> void:
+	mouse_overed = false

@@ -25,10 +25,11 @@ func _process(_delta: float) -> void:
 		place_self()
 
 	#destruction
-	if mouse_overed:
-		if Input.is_action_just_pressed("click droit"):
+	if Input.is_action_just_pressed("click droit"):
+		if mouse_overed:
 			GLOBAL.brique += cost
 			queue_free()
+		sleeping = false
 
 
 

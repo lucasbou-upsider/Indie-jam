@@ -18,6 +18,7 @@ texture = ExtResource("2_1t3kc")
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=1435343466]
 polygon = PackedVector2Array(-537, 60, -538, -76, -20, -77, -21, -199, 357, -199, 361, 63)
+disabled = true
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
 
@@ -38,4 +39,8 @@ offset_bottom = 48.0
 theme_override_font_sizes/font_size = 124
 text = "macon"
 
+[connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
+[connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]
+[connection signal="mouse_entered" from="ClearanceArea" to="." method="_on_clearance_area_mouse_entered"]
+[connection signal="mouse_exited" from="ClearanceArea" to="." method="_on_clearance_area_mouse_exited"]
 [connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]
