@@ -46,7 +46,7 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			GLOBAL.brique += cost
+			GLOBAL.brique += cost/2
 			queue_free()
 		sleeping = false
 

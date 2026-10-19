@@ -48,8 +48,8 @@ func _process(_delta: float) -> void:
 #destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			GLOBAL.pierre += cost 
-			GLOBAL.bois += cost2
+			GLOBAL.pierre += cost/2
+			GLOBAL.bois += cost2/2
 			queue_free()
 		sleeping = false
 
