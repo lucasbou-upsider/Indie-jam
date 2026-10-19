@@ -112,14 +112,14 @@ sprite_frames = SubResource("SpriteFrames_x0iyh")
 autoplay = "default"
 frame_progress = 0.7766654
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1820767853]
-polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
-disabled = true
-
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=738852126]
 polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1820767853]
+polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
+disabled = true
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
 wait_time = 2.0

@@ -64,13 +64,13 @@ offset_left = -2246.0
 offset_top = -1479.0
 offset_right = 2233.0
 offset_bottom = 437.0
+mouse_filter = 2
 
 [node name="kayou_spawn" type="Node2D" parent="." unique_id=1171627499]
 position = Vector2(2, -2614.3901)
 script = ExtResource("2_w4qq1")
 
 [node name="sol" type="StaticBody2D" parent="." unique_id=880192580]
-visible = false
 position = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sol" unique_id=1606727996]
