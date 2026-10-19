@@ -3,8 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://byxo1qtpjx30p" path="res://scene/craft/Base.tscn" id="1_pjass"]
 [ext_resource type="Script" uid="uid://dy7qnufb0wjm5" path="res://scene/world.gd" id="1_txmk2"]
 [ext_resource type="Script" uid="uid://xf8stc6u11am" path="res://scene/ennemie/kayou_spawn.gd" id="2_w4qq1"]
+[ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="3_hcb8y"]
 [ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/panel_inventaire.gd" id="4_emkrx"]
 [ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="4_m5mgf"]
+[ext_resource type="Texture2D" uid="uid://h06bgpm8ppos" path="res://sprite/New_Piskel_9.png" id="4_y3jn2"]
+[ext_resource type="Shader" uid="uid://nype5xorkfev" path="res://blur.gdshader" id="5_yur6x"]
+[ext_resource type="Texture2D" uid="uid://dogd8ac5sp5uc" path="res://sprite/New_Piskel_11.png" id="6_0tg4p"]
+[ext_resource type="Script" uid="uid://cghki5sqkqt7b" path="res://scene/button_objet.gd" id="7_7ghph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
+shader = ExtResource("5_yur6x")
+shader_parameter/blur_amount = 0.29500010901249984
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5dri"]
 size = Vector2(2492, 1126)
@@ -13,19 +24,71 @@ size = Vector2(2492, 1126)
 position = Vector2(0, 3)
 script = ExtResource("1_txmk2")
 
+[node name="background" type="Node2D" parent="." unique_id=1059103624]
+
+[node name="NewPiskel8" type="Sprite2D" parent="background" unique_id=648332481]
+position = Vector2(-53.659546, -1309.296)
+scale = Vector2(30.53956, 19.139275)
+texture = ExtResource("3_hcb8y")
+
+[node name="Parallax2D2" type="Parallax2D" parent="background" unique_id=700915540]
+scroll_scale = Vector2(1.2, 1.2)
+
+[node name="NewPiskel9" type="Sprite2D" parent="background/Parallax2D2" unique_id=381188141]
+position = Vector2(-67, -808)
+scale = Vector2(30, 30)
+texture = ExtResource("4_y3jn2")
+region_enabled = true
+region_rect = Rect2(0, 128.22966, 128, 127.77034)
+
+[node name="Parallax2D" type="Parallax2D" parent="background" unique_id=1863338679]
+scroll_offset = Vector2(3.855, 0)
+
+[node name="NewPiskel9" type="Sprite2D" parent="background/Parallax2D" unique_id=1248317594]
+position = Vector2(-1235.9109, -716.33246)
+scale = Vector2(19.046, 14.355)
+texture = ExtResource("4_y3jn2")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 127.79976)
+
+[node name="NewPiskel10" type="Sprite2D" parent="background/Parallax2D" unique_id=2067747842]
+position = Vector2(1196.7427, -716.3446)
+scale = Vector2(19.046, 14.355)
+texture = ExtResource("4_y3jn2")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 127.79976)
+
+[node name="ColorRect2" type="ColorRect" parent="background" unique_id=2023942064]
+material = SubResource("ShaderMaterial_yur6x")
+offset_left = -2246.0
+offset_top = -1479.0
+offset_right = 2233.0
+offset_bottom = 437.0
+
 [node name="kayou_spawn" type="Node2D" parent="." unique_id=1171627499]
-position = Vector2(2, -1834)
+position = Vector2(2, -2614.3901)
 script = ExtResource("2_w4qq1")
 
 [node name="sol" type="StaticBody2D" parent="." unique_id=880192580]
+visible = false
 position = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sol" unique_id=1606727996]
 position = Vector2(-2, 567)
 shape = SubResource("RectangleShape2D_p5dri")
 
+[node name="ColorRect" type="ColorRect" parent="sol" unique_id=1182014782]
+offset_left = -1247.5905
+offset_right = 1251.4022
+offset_bottom = 1131.9579
+color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
 position = Vector2(-1, -328)
+limit_left = -1998
+limit_top = -2525
+limit_right = 1834
+limit_bottom = 198
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
@@ -73,20 +136,118 @@ offset_bottom = 621.0
 layout_mode = 2
 text = "base"
 
+[node name="HSeparator" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=2141390701]
+layout_mode = 2
+
 [node name="Button_foreuse" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1474403478]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "foreuse"
+script = ExtResource("7_7ghph")
+
+[node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse" unique_id=907432009]
+visible = false
+layout_mode = 0
+offset_left = -58.622314
+offset_top = -0.005783081
+offset_right = -12.666504
+offset_bottom = 22.994217
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=263716741]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=252196491]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "50"
 
 [node name="Button_macon" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1279974408]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "macon"
+script = ExtResource("7_7ghph")
+
+[node name="panel_info2" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_macon" unique_id=501244171]
+visible = false
+layout_mode = 0
+offset_left = -108.17432
+offset_top = -0.1277008
+offset_right = -12.846436
+offset_bottom = 22.8723
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=48378412]
+texture_filter = 1
+position = Vector2(13.327393, 11.131227)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(0.3593483, 10.342881, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1891089585]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "20"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1763363567]
+texture_filter = 1
+position = Vector2(56.69348, 14.368684)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(0.40892792, 22.310093, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=2067007618]
+layout_mode = 0
+offset_left = 67.460205
+offset_top = -0.27687073
+offset_right = 107.460205
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "100"
 
 [node name="Button_four" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1625611913]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "four"
+script = ExtResource("7_7ghph")
+
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_four" unique_id=1203119699]
+visible = false
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=47145353]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1753348646]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "200"
 
 [node name="Panel_inventaire" type="Panel" parent="Interface" unique_id=255062353]
 offset_left = 10.0
@@ -132,9 +293,12 @@ text = "      0"
 fit_content = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/bois" unique_id=1572426792]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(0, 10.050829, 15.019302, 12.4642105)
 
 [node name="pierre" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=611138262]
 layout_mode = 2
@@ -142,10 +306,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/pierre" unique_id=1685979673]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/pierre" unique_id=2077289026]
+texture_filter = 1
+position = Vector2(11, 13.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(0, 21.777035, 15.019302, 12.4642105)
 
 [node name="brique" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=638354899]
 layout_mode = 2
@@ -153,10 +320,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/brique" unique_id=937456655]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/brique" unique_id=1588650321]
+texture_filter = 1
+position = Vector2(12, 13.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.746616, 11.055933, 15.019302, 12.4642105)
 
 [node name="HSeparator" type="HSeparator" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=529528253]
 layout_mode = 2
@@ -167,10 +337,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_fer" unique_id=673413858]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_fer" unique_id=681211420]
+texture_filter = 1
+position = Vector2(10, 10.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(0.39569092, -1.4343424, 15.019302, 11.741752)
 
 [node name="lingot_fer" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1908718955]
 layout_mode = 2
@@ -178,10 +351,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_fer" unique_id=101793275]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_fer" unique_id=1754800775]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.602249, 21.076416, 15.019302, 12.4642105)
 
 [node name="plaque_fer" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=600393060]
 layout_mode = 2
@@ -189,10 +365,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/plaque_fer" unique_id=1772572004]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/plaque_fer" unique_id=458660377]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.858126, 0.23389435, 15.019302, 12.4642105)
 
 [node name="HSeparator3" type="HSeparator" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1857483934]
 layout_mode = 2
@@ -336,6 +515,12 @@ scale = Vector2(0.1679688, 0.15478517)
 texture = ExtResource("4_m5mgf")
 
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_base" to="." method="_on_button_base_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_foreuse" to="Interface/Panel_construction/VBoxContainer/Button_foreuse" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_foreuse" to="Interface/Panel_construction/VBoxContainer/Button_foreuse" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse" to="." method="_on_button_foreuse_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_macon" to="Interface/Panel_construction/VBoxContainer/Button_macon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_macon" to="Interface/Panel_construction/VBoxContainer/Button_macon" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_macon" to="." method="_on_button_macon_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_four" to="Interface/Panel_construction/VBoxContainer/Button_four" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_four" to="Interface/Panel_construction/VBoxContainer/Button_four" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_four" to="." method="_on_button_four_pressed"]

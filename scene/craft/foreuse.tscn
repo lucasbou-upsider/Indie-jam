@@ -71,7 +71,7 @@ disabled = true
 polygon = PackedVector2Array(-19, -16, -19, 13, 17, 13, 17, -16)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
-target_position = Vector2(0, 19)
+target_position = Vector2(0, 15)
 
 [node name="Timer" type="Timer" parent="." unique_id=127513847]
 wait_time = 2.0

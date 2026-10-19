@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btukiu61dok1y"]
 
 [ext_resource type="Script" uid="uid://b5g88l0a3fgxk" path="res://scene/ennemie/kayou.gd" id="1_2baxm"]
-[ext_resource type="Texture2D" uid="uid://bdxkcfwhdems" path="res://sprite/New_Piskel_4.png" id="2_2baxm"]
+[ext_resource type="Texture2D" uid="uid://xxc4n5nfwjym" path="res://sprite/New_Piskel_4_1.png" id="2_2baxm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x0iyh"]
 radius = 14.0
