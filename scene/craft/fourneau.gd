@@ -49,7 +49,8 @@ func _process(_delta: float) -> void:
 			GLOBAL.brique += cost/2
 			queue_free()
 		sleeping = false
-
+	if pv == 0:
+		queue_free()
 
 
 	#regarde si l'objet est en blueprint ou pas
@@ -95,8 +96,6 @@ func _on_clearance_area_area_entered(area: Area2D) -> void:
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= 1
-			if pv == 0:
-				queue_free()
 func _on_clearance_area_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:

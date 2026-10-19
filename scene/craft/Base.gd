@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var pv: int
+var pv: int = GLOBAL.base_pv
 var is_blueprint := true
 var bodycount := 0
 var mouse_overed := false
@@ -14,6 +14,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	#pv connecter pour foreuse
+	GLOBAL.base_pv = pv
+	
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		place_self()

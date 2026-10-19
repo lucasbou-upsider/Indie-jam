@@ -52,6 +52,8 @@ func _process(_delta: float) -> void:
 			GLOBAL.bois += cost2/2
 			queue_free()
 		sleeping = false
+	if pv == 0:
+		queue_free()
 
 
 	# blueprint
@@ -87,8 +89,6 @@ func _on_clearance_area_area_entered(area: Area2D) -> void:
 		print(area.get_parent().get_parent().name)
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= 1
-			if pv == 0:
-				queue_free()
 	#regarder si possible de placer
 	if is_blueprint :
 		bodycount += 1

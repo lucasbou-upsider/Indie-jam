@@ -10,6 +10,11 @@
 [ext_resource type="Shader" uid="uid://nype5xorkfev" path="res://blur.gdshader" id="5_yur6x"]
 [ext_resource type="Texture2D" uid="uid://dogd8ac5sp5uc" path="res://sprite/New_Piskel_11.png" id="6_0tg4p"]
 [ext_resource type="Script" uid="uid://cghki5sqkqt7b" path="res://scene/button_objet.gd" id="7_7ghph"]
+[ext_resource type="Texture2D" uid="uid://c57tr2fctforg" path="res://sprite/New_Piskel_1.png" id="7_na5tu"]
+[ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="10_f345f"]
+[ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="11_bqa5m"]
+[ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="12_a0bac"]
+[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="13_tmyho"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
 shader = ExtResource("5_yur6x")
@@ -112,29 +117,34 @@ text = "0,0"
 horizontal_alignment = 1
 
 [node name="Panel_construction" type="Panel" parent="Interface" unique_id=854815581]
-offset_left = 1069.0
+offset_left = 1059.0826
 offset_top = 55.0
 offset_right = 1136.0
 offset_bottom = 639.0
 
 [node name="Label2" type="Label" parent="Interface/Panel_construction" unique_id=298868717]
 layout_mode = 0
-offset_left = 15.0
-offset_top = -2.0
-offset_right = 94.0
-offset_bottom = 21.0
+offset_left = 19.240967
+offset_top = -1.6144562
+offset_right = 98.24097
+offset_bottom = 21.385544
 text = "build"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/Panel_construction" unique_id=1813219988]
 layout_mode = 0
-offset_left = -1.2770996
-offset_top = 23.812935
-offset_right = 66.7229
-offset_bottom = 619.8129
+offset_left = 4.5059814
+offset_top = 24.198479
+offset_right = 72.50598
+offset_bottom = 620.1985
 
 [node name="Button_base" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=139180536]
 layout_mode = 2
-text = "base"
+text = " "
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_base" unique_id=427841801]
+position = Vector2(34.214233, 29.379677)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("7_na5tu")
 
 [node name="HSeparator" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=2141390701]
 layout_mode = 2
@@ -142,7 +152,7 @@ layout_mode = 2
 [node name="Button_foreuse" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1474403478]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "foreuse"
+text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse" unique_id=907432009]
@@ -170,10 +180,17 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "50"
 
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse" unique_id=763849505]
+position = Vector2(33.5614, 12.839867)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("10_f345f")
+region_enabled = true
+region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
+
 [node name="Button_macon" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1279974408]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "macon"
+text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info2" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_macon" unique_id=501244171]
@@ -218,10 +235,17 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "100"
 
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_macon" unique_id=750842504]
+position = Vector2(34.23706, 12.434471)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("11_bqa5m")
+region_enabled = true
+region_rect = Rect2(440.5479, 154.67122, 40.84735, 67.14342)
+
 [node name="Button_four" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1625611913]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "four"
+text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_four" unique_id=1203119699]
@@ -249,13 +273,20 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "200"
 
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_four" unique_id=1053197035]
+position = Vector2(31.187256, 11.257103)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("12_a0bac")
+region_enabled = true
+region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
+
 [node name="HSeparator2" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1504828169]
 layout_mode = 2
 
 [node name="Button_bloc_cuivre" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1305983379]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "bloc bri"
+text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" unique_id=2023215182]
@@ -283,10 +314,17 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "500"
 
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" unique_id=1392980220]
+position = Vector2(33.034668, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("13_tmyho")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
 [node name="Button_piti_bloc_cuivre2" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=987157448]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "piti bloc bri"
+text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" unique_id=1863883776]
@@ -313,6 +351,13 @@ offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
 text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" unique_id=786532953]
+position = Vector2(33.297974, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("13_tmyho")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Panel_inventaire" type="Panel" parent="Interface" unique_id=255062353]
 offset_left = 10.0

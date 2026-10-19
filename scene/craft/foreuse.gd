@@ -59,6 +59,9 @@ func _process(_delta: float) -> void:
 	elif is_blueprint == false:
 		collision_polygon_2d.disabled = false
 		if ray_cast_2d.is_colliding():
+			print(ray_cast_2d.get_collider())
+			if ray_cast_2d.get_collider().get("pv"):
+				ray_cast_2d.get_collider().pv -= 1
 			ray_cast_2d.enabled = false
 			sprite_2d.play("new_animation")
 			timer.start()
