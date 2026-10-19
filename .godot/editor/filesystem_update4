@@ -10,7 +10,16 @@ res://scene/craft/foreuse.gd
 res://scene/craft/foreuse.tscn
 res://scene/world.tscn
 res://scene/craft/macon.gd
+<<<<<<< Updated upstream
 res://scene/craft/macon.tscn
 res://scene/craft/Base.tscn
 res://scene/craft/fourneau.gd
 res://scene/craft/fourneau.tscn
+=======
+res://scene/ennemie/kayou.tscn
+res://scene/ennemie/kayou.gd
+res://macon.gd
+res://scene/panel_inventaire.gd
+res://scene/craft/fourneau.gd
+res://scene/ennemie/kayou_spawn.gd
+>>>>>>> Stashed changes
