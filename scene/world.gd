@@ -22,9 +22,9 @@ func _process(_delta: float) -> void:
 	
 	#deplacement de la camera
 	if Input.is_action_pressed("courir"):
-		speed = 10
+		speed = 5
 	else:
-		speed = 20
+		speed = 10
 	if Input.is_action_pressed("droite"):
 		camera_2d.position += Vector2(speed,0)
 	if Input.is_action_pressed("gauche"):
