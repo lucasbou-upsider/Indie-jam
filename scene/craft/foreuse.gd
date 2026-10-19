@@ -12,13 +12,16 @@ var bodycount = 0
 var mouse_overed := false
 var cost = 50
 
-
+func defreeze():
+	sleeping = false
 func _ready() -> void:
+	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	if GLOBAL.brique >= cost:
 		GLOBAL.brique -= cost
 		GLOBAL.network[self] = {}
 	else:
+		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
@@ -48,8 +51,11 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
 			GLOBAL.brique += cost/2
+			SIGNAL.emit_signal("defreeze")
 			queue_free()
-		sleeping = false
+	if pv == 0:
+		SIGNAL.emit_signal("defreeze")
+		queue_free()
 
 	#regarde si l'objet est en blueprint ou pas
 	if is_blueprint:
@@ -59,7 +65,6 @@ func _process(_delta: float) -> void:
 	elif is_blueprint == false:
 		collision_polygon_2d.disabled = false
 		if ray_cast_2d.is_colliding():
-			print(ray_cast_2d.get_collider())
 			if ray_cast_2d.get_collider().get("pv"):
 				ray_cast_2d.get_collider().pv -= 1
 			ray_cast_2d.enabled = false
@@ -94,8 +99,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= 1
-			if pv == 0:
-				queue_free()
+
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:

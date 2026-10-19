@@ -2,7 +2,10 @@ extends RigidBody2D
 
 @onready var despawn: Timer = $Despawn
 
+func defreeze():
+	sleeping = false
 func _ready() -> void:
+	SIGNAL.connect("defreeze", defreeze)
 	freeze = true
 	var chute_aleatoire = randf_range(0, 2)
 	await get_tree().create_timer(chute_aleatoire).timeout 
@@ -18,4 +21,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_despawn_timeout() -> void:
+	SIGNAL.emit_signal("defreeze")
 	queue_free()

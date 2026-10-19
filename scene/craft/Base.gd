@@ -7,8 +7,13 @@ var mouse_overed := false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+#defreez pour les signaux
+
+func defreeze():
+	sleeping = false
 
 func _ready() -> void:
+	SIGNAL.connect("defreeze", defreeze)
 	collision_shape_2d.disabled = true
 	GLOBAL.network[self] = {}
 

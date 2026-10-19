@@ -9,13 +9,16 @@ var bodycount = 0
 var mouse_overed := false
 @export var cost = 500
 
-
+func defreeze():
+	sleeping = false
 func _ready() -> void:
+	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	if GLOBAL.brique >= cost:
 		GLOBAL.brique -= cost
 		GLOBAL.network[self] = {}
 	else:
+		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
@@ -44,9 +47,11 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
 			GLOBAL.brique += cost/2
+			SIGNAL.emit_signal("defreeze")
 			queue_free()
 		sleeping = false
 	if pv == 0:
+		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 

@@ -11,13 +11,16 @@ var mouse_overed := false
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
-
+func defreeze():
+	sleeping = false
 func _ready() -> void:
+	SIGNAL.connect("defreeze", defreeze)
 	if GLOBAL.pierre >= cost and GLOBAL.bois >= cost2:
 		GLOBAL.pierre -= cost 
 		GLOBAL.bois -= cost2
 		GLOBAL.network[self] = {}
 	else:
+		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
@@ -50,9 +53,11 @@ func _process(_delta: float) -> void:
 		if mouse_overed:
 			GLOBAL.pierre += cost/2
 			GLOBAL.bois += cost2/2
+			SIGNAL.emit_signal("defreeze")
 			queue_free()
 		sleeping = false
 	if pv == 0:
+		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
