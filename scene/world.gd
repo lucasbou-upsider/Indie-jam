@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 		camera_2d.position += Vector2(0,speed)
 
 #coordonées 
-	coordoné.text = str(get_global_mouse_position())
+	coordoné.text = str(Vector2i(get_global_mouse_position()))
 
 func _on_button_base_pressed() -> void:
 	add_child(BASE.instantiate())

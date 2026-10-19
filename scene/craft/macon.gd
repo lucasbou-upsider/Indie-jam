@@ -22,8 +22,15 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	# Input
-	if Input.is_action_just_pressed("click gauche"):
+	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
+	elif Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
+		print(self)
+		if !GLOBAL.b1_tem:
+			GLOBAL.b1_tem = self
+		else:
+			GLOBAL.b2_tem = self
+			GLOBAL.connect_buildings(GLOBAL.b1_tem, GLOBAL.b2_tem)
 
 #destruction
 	if Input.is_action_just_pressed("click droit"):

@@ -30,6 +30,8 @@ var lingot_gluantite := 0
 var lingot_voidium := 0
 var lingot_topaxium := 0
 
+
+
 func _ready():
 	if DEBUG:
 		charbon = 1000
@@ -38,6 +40,9 @@ func _ready():
 		brique = 1000
 		minerai_fer = 1000
 		lingot_fer = 1000
+
+var b1_tem
+var b2_tem
 
 func is_powered(node, explored = []) -> bool:
 	var new_explored = duplicate(explored)
@@ -51,6 +56,8 @@ func is_powered(node, explored = []) -> bool:
 		return result
 
 func connect_buildings(b1, b2):
+	print(b1)
+	print(b2)
 	network[b1][b2] = ""
 	network[b2][b1] = ""
 
