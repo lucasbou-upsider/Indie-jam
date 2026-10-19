@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="1_p4roy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(167, 181)
+size = Vector2(129, 129)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ralbk"]
-size = Vector2(734, 130)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqikg"]
+size = Vector2(131, 131)
 
 [node name="fourneau" type="RigidBody2D" unique_id=1767498378]
 
@@ -14,12 +14,11 @@ size = Vector2(734, 130)
 texture = ExtResource("1_p4roy")
 
 [node name="PhysicsShape" type="CollisionShape2D" parent="." unique_id=1110012592]
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=1417652553]
 
 [node name="ClearanceShape" type="CollisionShape2D" parent="ClearanceArea" unique_id=1335507028]
-
-[node name="base ref" type="CollisionShape2D" parent="." unique_id=2104657983]
-position = Vector2(-243, -209.5)
-shape = SubResource("RectangleShape2D_ralbk")
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_sqikg")

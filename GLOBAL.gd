@@ -3,6 +3,8 @@ extends Node
 #pv
 var base_pv := 100
 
+var network = {}
+
 var DEBUG := true
 
 #inventaire
@@ -34,3 +36,22 @@ func _ready():
 		brique = 1000
 		minerai_fer = 1000
 		lingot_fer = 1000
+
+func is_powered(node, explored = []) -> bool:
+	var new_explored = duplicate(explored)
+	new_explored.append_array(network[node])
+	if node.name == "Base":
+		return true
+	else:
+		var result := false
+		for i in range(len(network[node])):
+			result = result or is_powered(network[node][i], new_explored)
+		return result
+
+func connect_buildings(b1, b2):
+	network[b1][b2] = ""
+	network[b2][b1] = ""
+
+func disconnect_building(b1, b2):
+	network[b1].del(b2)
+	network[b2].del(b1)
