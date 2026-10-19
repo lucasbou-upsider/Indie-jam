@@ -40,6 +40,7 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:
 		bodycount -= 1
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#degats
 	if !is_blueprint:

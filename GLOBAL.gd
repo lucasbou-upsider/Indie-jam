@@ -39,8 +39,12 @@ func _ready():
 		minerai_fer = 1000
 		lingot_fer = 1000
 
-var b1_tem
-var b2_tem
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("3"):
+		print("connected:", are_connected(selected, selected2))
+
+var selected
+var selected2
 
 func is_powered(node, explored = []) -> bool:
 	var new_explored = duplicate(explored)
@@ -54,12 +58,20 @@ func is_powered(node, explored = []) -> bool:
 		return result
 
 func connect_buildings(b1, b2):
-	print(b1)
-	print(b2)
-	print(GLOBAL.network)
-	network[b1][b2] = ""
-	network[b2][b1] = ""
+	if DEBUG:
+		print(b1)
+		print(b2)
+		print("b1:", network[b1])
+		print("b2:", network[b2])
+	network[b1][b2] = "ok"
+	network[b2][b1] = "ok"
 
+func are_connected(b1, b2) -> bool:
+	if DEBUG:
+		print(b1)
+		print(network[b1].keys())
+		print(b2)
+	return b1 in network[b2].keys() or b2 in network[b1].keys()
 
 func disconnect_building(b1, b2):
 	network[b1].del(b2)
