@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="4_m5mgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5dri"]
-size = Vector2(2492, 24)
+size = Vector2(2492, 1126)
 
 [node name="world" type="Node2D" unique_id=1481596678]
 position = Vector2(0, 3)
@@ -21,7 +21,7 @@ script = ExtResource("2_w4qq1")
 position = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sol" unique_id=1606727996]
-position = Vector2(-2, 16)
+position = Vector2(-2, 567)
 shape = SubResource("RectangleShape2D_p5dri")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
