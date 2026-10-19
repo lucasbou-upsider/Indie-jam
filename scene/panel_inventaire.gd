@@ -15,16 +15,13 @@ extends Panel
 @onready var barre_acier: RichTextLabel = $VBoxContainer/barre_acier
 @onready var minerai_gluantite: RichTextLabel = $VBoxContainer/minerai_gluantite
 @onready var lingot_gluantite: RichTextLabel = $VBoxContainer/lingot_gluantite
-@onready var minerai_axelium: RichTextLabel = $VBoxContainer/minerai_axelium
-@onready var lingot_axelium: RichTextLabel = $VBoxContainer/lingot_axelium
+@onready var minerai_topaxium: RichTextLabel = $VBoxContainer/minerai_topaxium
+@onready var lingot_topaxium: RichTextLabel = $VBoxContainer/lingot_topaxium
 @onready var minerai_voidium: RichTextLabel = $VBoxContainer/minerai_voidium
 @onready var lingot_voidium: RichTextLabel = $VBoxContainer/lingot_voidium
 
-
-
 func _ready() -> void:
 	pass
-
 
 func _process(_delta: float) -> void:
 	charbon.text = "      " + str(GLOBAL.charbon)
@@ -42,7 +39,7 @@ func _process(_delta: float) -> void:
 	barre_acier.text = "      " + str(GLOBAL.barre_acier)
 	minerai_gluantite.text = "      " + str(GLOBAL.minerai_gluantite)
 	lingot_gluantite.text = "      " + str(GLOBAL.lingot_gluantite)
-	minerai_axelium.text = "      " + str(GLOBAL.minerai_axelium)
-	lingot_axelium.text = "      " + str(GLOBAL.lingot_axelium)
+	minerai_topaxium.text = "      " + str(GLOBAL.minerai_topaxium)
+	lingot_topaxium.text = "      " + str(GLOBAL.lingot_topaxium)
 	minerai_voidium.text = "      " + str(GLOBAL.minerai_voidium)
 	lingot_voidium.text = "      " + str(GLOBAL.lingot_voidium)

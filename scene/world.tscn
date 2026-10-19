@@ -272,24 +272,24 @@ position = Vector2(11, 11.093751)
 scale = Vector2(0.1679688, 0.15478517)
 texture = ExtResource("4_m5mgf")
 
-[node name="minerai_axelium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=2140329339]
+[node name="minerai_topaxium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=2140329339]
 layout_mode = 2
 bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_axelium" unique_id=2120539696]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_topaxium" unique_id=2120539696]
 position = Vector2(11, 11.093751)
 scale = Vector2(0.1679688, 0.15478517)
 texture = ExtResource("4_m5mgf")
 
-[node name="lingot_axelium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=779109299]
+[node name="lingot_topaxium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=779109299]
 layout_mode = 2
 bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_axelium" unique_id=2126442206]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_topaxium" unique_id=2126442206]
 position = Vector2(11, 11.093751)
 scale = Vector2(0.1679688, 0.15478517)
 texture = ExtResource("4_m5mgf")
@@ -317,3 +317,4 @@ scale = Vector2(0.1679688, 0.15478517)
 texture = ExtResource("4_m5mgf")
 
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_base" to="." method="_on_button_base_pressed"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse" to="." method="_on_button_foreuse_pressed"]

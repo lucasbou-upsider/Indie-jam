@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://02wx8g0s1olf"]
+
+[ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse.gd" id="1_p5dri"]
+[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="1_tblhl"]
+
+[node name="foreuse" type="RigidBody2D" unique_id=1505809120]
+script = ExtResource("1_p5dri")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=513195299]
+position = Vector2(44, -69.5)
+scale = Vector2(0.76562494, 1.9453125)
+texture = ExtResource("1_tblhl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1332496010]
+position = Vector2(-72.97957, 37.269077)
+scale = Vector2(1.5739797, 0.41767076)
+texture = ExtResource("1_tblhl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1071327156]
+position = Vector2(44, -69.5)
+scale = Vector2(0.76562494, 1.9453125)
+polygon = PackedVector2Array(-57.4694, -60.91567, -58.77552, 10.024096, -169.79594, 8.995983, -173.71432, 62.457836, 65.30613, 62.457836, 54.857147, -64)
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=566869362]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=1782314719]
+position = Vector2(44, -69.5)
+scale = Vector2(0.76562494, 1.9453125)
+polygon = PackedVector2Array(-57.4694, -60.91567, -58.77552, 10.024096, -169.79594, 8.995983, -173.71432, 62.457836, 65.30613, 62.457836, 54.857147, -64)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
+target_position = Vector2(0, 65)
+
+[node name="Timer" type="Timer" parent="." unique_id=127513847]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

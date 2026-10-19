@@ -1,6 +1,8 @@
 extends Node2D
 
-const base = preload("uid://byxo1qtpjx30p")
+const BASE = preload("uid://byxo1qtpjx30p")
+const FOREUSE = preload("uid://02wx8g0s1olf")
+
 var speed = 30
 
 @onready var progress_bar: ProgressBar = $Interface/ProgressBar
@@ -32,4 +34,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_base_pressed() -> void:
-	add_child(base.instantiate())
+	add_child(BASE.instantiate())
+func _on_button_foreuse_pressed() -> void:
+	add_child(FOREUSE.instantiate())
