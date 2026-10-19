@@ -47,30 +47,21 @@ var selected
 var selected2
 
 func is_powered(node, explored = []) -> bool:
-	var new_explored = duplicate(explored)
-	new_explored.append_array(network[node])
 	if node.name == "Base":
 		return true
 	else:
+		var new_explored = explored.duplicate()
+		new_explored.append_array(network[node].keys())
 		var result := false
-		for i in range(len(network[node])):
-			result = result or is_powered(network[node][i], new_explored)
+		for i in range(len(network[node].keys())):
+			result = result or is_powered(network[node].keys()[i], new_explored)
 		return result
 
 func connect_buildings(b1, b2):
-	if DEBUG:
-		print(b1)
-		print(b2)
-		print("b1:", network[b1])
-		print("b2:", network[b2])
 	network[b1][b2] = "ok"
 	network[b2][b1] = "ok"
 
 func are_connected(b1, b2) -> bool:
-	if DEBUG:
-		print(b1)
-		print(network[b1].keys())
-		print(b2)
 	return b1 in network[b2].keys() or b2 in network[b1].keys()
 
 func disconnect_building(b1, b2):

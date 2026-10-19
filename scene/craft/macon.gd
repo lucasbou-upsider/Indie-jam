@@ -37,10 +37,13 @@ func _process(_delta: float) -> void:
 		elif GLOBAL.selected == null:
 			GLOBAL.selected = self
 	
-	elif Input.is_action_just_pressed("1"):
-		GLOBAL.selected = self
-	elif Input.is_action_just_pressed("2"):
-		GLOBAL.selected2 = self
+	if mouse_overed:
+		if Input.is_action_just_pressed("1"):
+			GLOBAL.selected = self
+		elif Input.is_action_just_pressed("2"):
+			GLOBAL.selected2 = self
+		elif Input.is_action_just_pressed("4"):
+			print(GLOBAL.is_powered(self))
 
 #destruction
 	if Input.is_action_just_pressed("click droit"):

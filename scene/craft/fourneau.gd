@@ -24,7 +24,25 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
-
+		
+	elif Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
+		if (GLOBAL.selected != null) and (GLOBAL.selected != self) and (not GLOBAL.selected in GLOBAL.network[self].keys()):
+			GLOBAL.connect_buildings(GLOBAL.selected, self)
+			GLOBAL.selected = null
+		elif GLOBAL.selected == self:
+			GLOBAL.selected = null
+		elif GLOBAL.selected == null:
+			GLOBAL.selected = self
+	
+	if mouse_overed:
+		if Input.is_action_just_pressed("1"):
+			GLOBAL.selected = self
+		elif Input.is_action_just_pressed("2"):
+			GLOBAL.selected2 = self
+		elif Input.is_action_just_pressed("4"):
+			print(GLOBAL.is_powered(self))
+	
+	
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
@@ -65,7 +83,6 @@ func _on_production_timer_timeout() -> void:
 
 #verifie que la souris est sur le batiment
 func _on_clearance_area_mouse_entered() -> void:
-	print("bruh")
 	mouse_overed = true
 func _on_clearance_area_mouse_exited() -> void:
 	mouse_overed = false
