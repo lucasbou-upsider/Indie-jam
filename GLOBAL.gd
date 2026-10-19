@@ -7,6 +7,8 @@ var network = {}
 
 var DEBUG := true
 
+var is_useless := true
+
 #inventaire
 var charbon := 0
 var bois := 0
