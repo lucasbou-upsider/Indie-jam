@@ -1,43 +1,128 @@
 [gd_scene format=3 uid="uid://bmqj2ocb6rh52"]
 
 [ext_resource type="Script" uid="uid://p867nqxvx4qq" path="res://scene/craft/macon.gd" id="1_vxaob"]
-[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="2_1t3kc"]
+[ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="3_vhrpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dib5d"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snwpc"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro3rj"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4o6"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n80g"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ath0m"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72mui"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su2ln"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j81hm"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u057"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faq83"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeiw3"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xmrp"]
+atlas = ExtResource("3_vhrpa")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0iyh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dib5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snwpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro3rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4o6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n80g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ath0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72mui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su2ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j81hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u057")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faq83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeiw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xmrp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Macon" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_vxaob")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1327477798]
-position = Vector2(-275.5, -7.5000024)
-scale = Vector2(4.085937, 1.1015625)
-texture = ExtResource("2_1t3kc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
+texture_filter = 1
+position = Vector2(-12, 1)
+sprite_frames = SubResource("SpriteFrames_x0iyh")
+autoplay = "default"
+frame_progress = 0.680144
 
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=466378004]
-position = Vector2(108.420654, -54.921974)
-scale = Vector2(0.7284895, 1.858156)
-texture = ExtResource("2_1t3kc")
-
-[node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=1435343466]
-polygon = PackedVector2Array(-537, 60, -538, -76, -20, -77, -21, -199, 357, -199, 361, 63)
-disabled = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1820767853]
+polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
 
-[node name="ClearanceShape" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=1006935158]
-position = Vector2(-2.43252, 0.4475832)
-scale = Vector2(1.0224931, 1.0551076)
-polygon = PackedVector2Array(-529.65393, 62.12866, -530.6319, -77.193634, -21.093033, -77.193634, -23.049036, -195.66496, 358.3716, -195.66496, 361.30563, 64.02419)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=738852126]
+polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
 wait_time = 2.0
 autostart = true
-
-[node name="Label" type="Label" parent="." unique_id=1034210439]
-offset_left = -69.0
-offset_top = -122.0
-offset_right = 337.0
-offset_bottom = 48.0
-theme_override_font_sizes/font_size = 124
-text = "macon"
 
 [connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
 [connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]

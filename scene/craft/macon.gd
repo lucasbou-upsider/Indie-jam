@@ -7,8 +7,9 @@ var cost = 100
 var cost2 = 20
 var elec_efficacity = [2, 5, 10] 
 var mouse_overed := false
-@onready var collision_shape_2d: CollisionPolygon2D = $PhysicsShape
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_shape_2d: CollisionPolygon2D = $CollisionPolygon2D
+@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 
 
 func _ready() -> void:
