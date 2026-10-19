@@ -6,21 +6,23 @@
 [ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/panel_inventaire.gd" id="4_emkrx"]
 [ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="4_m5mgf"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x0iyh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5dri"]
+size = Vector2(2492, 24)
 
 [node name="world" type="Node2D" unique_id=1481596678]
 position = Vector2(0, 3)
 script = ExtResource("1_txmk2")
 
 [node name="kayou_spawn" type="Node2D" parent="." unique_id=1171627499]
-position = Vector2(-5, -9385)
+position = Vector2(2, -1834)
 script = ExtResource("2_w4qq1")
 
 [node name="sol" type="StaticBody2D" parent="." unique_id=880192580]
 position = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sol" unique_id=1606727996]
-shape = SubResource("WorldBoundaryShape2D_x0iyh")
+position = Vector2(-2, 16)
+shape = SubResource("RectangleShape2D_p5dri")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
 position = Vector2(-1, -328)

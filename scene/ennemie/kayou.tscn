@@ -10,6 +10,7 @@ radius = 14.0
 radius = 23.086792
 
 [node name="kayou" type="RigidBody2D" unique_id=495438462]
+gravity_scale = 0.5
 script = ExtResource("1_2baxm")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1684763018]
