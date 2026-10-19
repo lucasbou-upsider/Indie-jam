@@ -61,6 +61,7 @@ func connect_buildings(b1, b2):
 	network[b1][b2] = ""
 	network[b2][b1] = ""
 
+
 func disconnect_building(b1, b2):
 	network[b1].del(b2)
 	network[b2].del(b1)
