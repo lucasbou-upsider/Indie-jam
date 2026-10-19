@@ -88,10 +88,15 @@ func _on_clearance_area_mouse_exited() -> void:
 	mouse_overed = false
 
 
-func _on_clearance_area_area_entered(_area: Area2D) -> void:
+func _on_clearance_area_area_entered(area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint :
 		bodycount += 1
+	if !is_blueprint:
+		if area.get_parent().get_parent().name == "kayou_spawn":
+			pv -= 1
+			if pv == 0:
+				queue_free()
 func _on_clearance_area_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:

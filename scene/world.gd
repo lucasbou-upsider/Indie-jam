@@ -4,6 +4,8 @@ const BASE = preload("uid://byxo1qtpjx30p")
 const FOREUSE = preload("uid://02wx8g0s1olf")
 const MACON = preload("uid://bmqj2ocb6rh52")
 const FOURNEAU = preload("uid://oowuyr1jo2gt")
+const BLOC_CUIVRE = preload("uid://cw4heslictg5a")
+const PETIT_BLOC_BRIQUE = preload("uid://bebxrd2yuskte")
 
 var speed
 
@@ -45,3 +47,7 @@ func _on_button_macon_pressed() -> void:
 	add_child(MACON.instantiate())
 func _on_button_four_pressed() -> void:
 	add_child(FOURNEAU.instantiate())
+func _on_button_bloc_cuivre_pressed() -> void:
+	add_child(BLOC_CUIVRE.instantiate())
+func _on_button_piti_bloc_cuivre_2_pressed() -> void:
+	add_child(PETIT_BLOC_BRIQUE.instantiate())

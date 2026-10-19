@@ -10,6 +10,7 @@ size = Vector2(100, 32)
 size = Vector2(102, 34)
 
 [node name="Base" type="RigidBody2D" unique_id=1313463931]
+mass = 10.0
 script = ExtResource("1_fd1db")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122953327]

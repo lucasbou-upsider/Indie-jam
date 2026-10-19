@@ -51,8 +51,6 @@ func _process(_delta: float) -> void:
 			queue_free()
 		sleeping = false
 
-
-
 	#regarde si l'objet est en blueprint ou pas
 	if is_blueprint:
 		collision_polygon_2d.disabled = true
@@ -86,10 +84,15 @@ func _on_timer_timeout() -> void:
 	ray_cast_2d.enabled = true
 
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
+func _on_area_2d_area_entered(area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint :
 		bodycount += 1
+	if !is_blueprint:
+		if area.get_parent().get_parent().name == "kayou_spawn":
+			pv -= 1
+			if pv == 0:
+				queue_free()
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:

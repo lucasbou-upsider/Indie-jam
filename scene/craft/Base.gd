@@ -60,7 +60,6 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#degats
 	if !is_blueprint:
-		print(area.get_parent().get_parent().name)
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			GLOBAL.base_pv -= 1
 	#regarder si possible de placer
