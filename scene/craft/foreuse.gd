@@ -51,6 +51,7 @@ func _process(_delta: float) -> void:
 		collision_polygon_2d.disabled = false
 		if ray_cast_2d.is_colliding():
 			ray_cast_2d.enabled = false
+			sprite_2d.play("new_animation")
 			timer.start()
 
 	#blueprint
@@ -69,6 +70,7 @@ func place_self():
 
 #production
 func _on_timer_timeout() -> void:
+	sprite_2d.play("arret")
 	GLOBAL.pierre += 1
 	ray_cast_2d.enabled = true
 

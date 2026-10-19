@@ -1,22 +1,20 @@
 extends RigidBody2D
 
 @onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
-@onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var timer: Timer = $Timer
-@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var is_blueprint := true
 var elec_efficacity = [2, 5, 10]
 @export var pv = 10
 var bodycount = 0
 var mouse_overed := false
-var cost_brick = 50
+var cost = 200
 
 
 func _ready() -> void:
 	#cout du batiments
-	if GLOBAL.brique >= cost_brick:
-		GLOBAL.brique -= cost_brick
+	if GLOBAL.brique >= cost:
+		GLOBAL.brique -= cost
 		GLOBAL.network[self] = {}
 	else:
 		queue_free()
@@ -30,7 +28,7 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			GLOBAL.brique += cost_brick
+			GLOBAL.brique += cost
 			queue_free()
 		sleeping = false
 
@@ -43,9 +41,6 @@ func _process(_delta: float) -> void:
 		linear_velocity = Vector2(0,0)
 	elif is_blueprint == false:
 		collision_polygon_2d.disabled = false
-		if ray_cast_2d.is_colliding():
-			ray_cast_2d.enabled = false
-			timer.start()
 
 	#blueprint
 	if is_blueprint:
@@ -61,17 +56,26 @@ func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 
-#production
-func _on_timer_timeout() -> void:
-	GLOBAL.pierre += 1
-	ray_cast_2d.enabled = true
+
+func _on_production_timer_timeout() -> void:
+	if GLOBAL.minerai_fer >= 1 and GLOBAL.bois:
+		GLOBAL.minerai_fer -= 1
+		GLOBAL.lingot_fer += 1
 
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
+#verifie que la souris est sur le batiment
+func _on_clearance_area_mouse_entered() -> void:
+	print("bruh")
+	mouse_overed = true
+func _on_clearance_area_mouse_exited() -> void:
+	mouse_overed = false
+
+
+func _on_clearance_area_area_entered(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint :
 		bodycount += 1
-func _on_area_2d_area_exited(_area: Area2D) -> void:
+func _on_clearance_area_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:
 		bodycount -= 1

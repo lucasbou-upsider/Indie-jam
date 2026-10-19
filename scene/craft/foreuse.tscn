@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse.gd" id="1_p5dri"]
 [ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="2_p5dri"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5dri"]
+atlas = ExtResource("2_p5dri")
+region = Rect2(128, 128, 128, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1255"]
 atlas = ExtResource("2_p5dri")
 region = Rect2(0, 0, 128, 128)
@@ -21,6 +25,14 @@ region = Rect2(128, 128, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x0iyh"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5dri")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y1255")
@@ -46,9 +58,8 @@ script = ExtResource("1_p5dri")
 texture_filter = 1
 position = Vector2(33, -1)
 sprite_frames = SubResource("SpriteFrames_x0iyh")
-animation = &"new_animation"
+animation = &"arret"
 autoplay = "new_animation"
-frame_progress = 0.00980358
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
 polygon = PackedVector2Array(-19, 13, 17, 13, 17, -16, -19, -16)
