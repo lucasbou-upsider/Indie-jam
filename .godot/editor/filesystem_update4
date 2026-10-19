@@ -1,5 +1,7 @@
+res://scene/Base.gd
+res://GLOBAL.gd
 res://scene/world.gd
-res://scene/world.tscn
+res://macon.gd
 res://scene/macon.tscn
 res://scene/craft/foreuse.tscn
 res://scene/craft/macon.tscn
