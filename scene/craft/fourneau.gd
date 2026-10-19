@@ -2,12 +2,14 @@ extends RigidBody2D
 
 @onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var label: Label = $Label
 
 var is_blueprint := true
 var elec_efficacity = [2, 5, 10]
 @export var pv = 10
 var bodycount = 0
 var mouse_overed := false
+var is_powered := false
 var cost = 200
 
 func defreeze():
@@ -18,6 +20,7 @@ func _ready() -> void:
 	if GLOBAL.brique >= cost:
 		GLOBAL.brique -= cost
 		GLOBAL.network[self] = {}
+		update_powered()
 	else:
 		SIGNAL.emit_signal("defreeze")
 		queue_free()
@@ -43,7 +46,7 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("2"):
 			GLOBAL.selected2 = self
 		elif Input.is_action_just_pressed("4"):
-			print(GLOBAL.is_powered(self))
+			print(GLOBAL.is_powered(self, [self]))
 	
 	
 	#destruction
@@ -51,6 +54,9 @@ func _process(_delta: float) -> void:
 		if mouse_overed:
 			GLOBAL.brique += cost/2
 			SIGNAL.emit_signal("defreeze")
+			for node in GLOBAL.network[self].keys():
+				GLOBAL.disconnect_building(self, node)
+			GLOBAL.network.erase(self)
 			queue_free()
 		sleeping = false
 	if pv == 0:
@@ -80,6 +86,20 @@ func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 
+func update_powered():
+	if GLOBAL.is_powered(self, [self]):
+		if not is_powered:
+			for node in GLOBAL.network.keys():
+				node.update_powered()
+		is_powered = true
+		label.text = "on"
+	
+	else:
+		if is_powered:
+			for node in GLOBAL.network.keys():
+				node.update_powered()
+		is_powered = false
+		label.text = "off"
 
 func _on_production_timer_timeout() -> void:
 	if GLOBAL.minerai_fer >= 1 and GLOBAL.bois:

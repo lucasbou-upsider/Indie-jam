@@ -42,28 +42,47 @@ func _ready():
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("3"):
 		print("connected:", are_connected(selected, selected2))
+	if Input.is_action_just_pressed("5"):
+		selected = null
+		selected2 = null
 
 var selected
 var selected2
 
-func is_powered(node, explored = []) -> bool:
-	if node.name == "Base":
+func is_powered(node, explored) -> bool:
+	print()
+	if node is Base:
+		print("finish ok")
 		return true
+	elif len(network[node]) == 0:
+		return false
 	else:
 		var new_explored = explored.duplicate()
+		print("old - ", explored)
 		new_explored.append_array(network[node].keys())
-		var result := false
-		for i in range(len(network[node].keys())):
-			result = result or is_powered(network[node].keys()[i], new_explored)
-		return result
+		print("new - ", new_explored)
+		
+		for key in network[node].keys():  #network[node].keys() est le tableau des noeuds connectés à node
+			if not key in explored:
+				print("key - ", key)
+				print("net - ", network)
+				if is_powered(key, new_explored):
+					return true
+		
+		return false
 
 func connect_buildings(b1, b2):
 	network[b1][b2] = "ok"
 	network[b2][b1] = "ok"
+	b1.update_powered()
+	b2.update_powered()
 
 func are_connected(b1, b2) -> bool:
+	print(network)
 	return b1 in network[b2].keys() or b2 in network[b1].keys()
 
 func disconnect_building(b1, b2):
-	network[b1].del(b2)
-	network[b2].del(b1)
+	network[b1].erase(b2)
+	network[b2].erase(b1)
+	b1.update_powered()
+	b2.update_powered()

@@ -4,6 +4,7 @@ extends RigidBody2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var timer: Timer = $Timer
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var label: Label = $Label
 
 var is_blueprint := true
 var elec_efficacity = [2, 5, 10]
@@ -11,6 +12,7 @@ var elec_efficacity = [2, 5, 10]
 var bodycount = 0
 var mouse_overed := false
 var cost = 50
+var is_powered := false
 
 func defreeze():
 	sleeping = false
@@ -20,6 +22,7 @@ func _ready() -> void:
 	if GLOBAL.brique >= cost:
 		GLOBAL.brique -= cost
 		GLOBAL.network[self] = {}
+		update_powered()
 	else:
 		SIGNAL.emit_signal("defreeze")
 		queue_free()
@@ -45,13 +48,17 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("2"):
 			GLOBAL.selected2 = self
 		elif Input.is_action_just_pressed("4"):
-			print(GLOBAL.is_powered(self))
+			print(GLOBAL.is_powered(self, [self]))
+			print(is_powered)
 
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
 			GLOBAL.brique += cost/2
 			SIGNAL.emit_signal("defreeze")
+			for node in GLOBAL.network[self].keys():
+				GLOBAL.disconnect_building(self, node)
+			GLOBAL.network.erase(self)
 			queue_free()
 	if pv == 0:
 		SIGNAL.emit_signal("defreeze")
@@ -84,6 +91,21 @@ func _process(_delta: float) -> void:
 func place_self():
 	if bodycount == 0:
 		is_blueprint = false
+
+func update_powered():
+	if GLOBAL.is_powered(self, [self]):
+		if not is_powered:
+			for node in GLOBAL.network.keys():
+				node.update_powered()
+		is_powered = true
+		label.text = "on"
+	
+	else:
+		if is_powered:
+			for node in GLOBAL.network.keys():
+				node.update_powered()
+		is_powered = false
+		label.text = "off"
 
 #production
 func _on_timer_timeout() -> void:

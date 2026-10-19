@@ -7,8 +7,10 @@ var cost = 100
 var cost2 = 20
 var elec_efficacity = [2, 5, 10] 
 var mouse_overed := false
+var is_powered := false
 @onready var collision_shape_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var label: Label = $Label
 
 
 func defreeze():
@@ -19,6 +21,7 @@ func _ready() -> void:
 		GLOBAL.pierre -= cost 
 		GLOBAL.bois -= cost2
 		GLOBAL.network[self] = {}
+		update_powered()
 	else:
 		SIGNAL.emit_signal("defreeze")
 		queue_free()
@@ -46,7 +49,7 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("2"):
 			GLOBAL.selected2 = self
 		elif Input.is_action_just_pressed("4"):
-			print(GLOBAL.is_powered(self))
+			print(GLOBAL.is_powered(self, [self]))
 
 #destruction
 	if Input.is_action_just_pressed("click droit"):
@@ -54,6 +57,9 @@ func _process(_delta: float) -> void:
 			GLOBAL.pierre += cost/2
 			GLOBAL.bois += cost2/2
 			SIGNAL.emit_signal("defreeze")
+			for node in GLOBAL.network[self].keys():
+				GLOBAL.disconnect_building(self, node)
+			GLOBAL.network.erase(self)
 			queue_free()
 		sleeping = false
 	if pv == 0:
@@ -81,6 +87,20 @@ func place_self():
 		is_blueprint = false
 		collision_shape_2d.disabled = false
 
+func update_powered():
+	if GLOBAL.is_powered(self, [self]):
+		if not is_powered:
+			for node in GLOBAL.network.keys():
+				node.update_powered()
+		is_powered = true
+		label.text = "on"
+	
+	else:
+		if is_powered:
+			for node in GLOBAL.network.keys():
+				node.update_powered()
+		is_powered = false
+		label.text = "off"
 
 func _on_production_timer_timeout() -> void:
 	if GLOBAL.pierre >= 1:

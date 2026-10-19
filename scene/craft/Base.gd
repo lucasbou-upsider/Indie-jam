@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Base
 
 var pv: int = GLOBAL.base_pv
 var is_blueprint := true
@@ -25,6 +26,8 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		place_self()
+	if Input.is_action_just_pressed("5"):
+		print(GLOBAL.is_powered(self, [self]))
 
 	# blueprint
 	if is_blueprint == true:
@@ -59,6 +62,9 @@ func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 		collision_shape_2d.disabled = false
+
+func update_powered():  #IMPORTANT - ne pas retirer (Youri)
+	pass
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
