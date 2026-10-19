@@ -35,15 +35,8 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_base_pressed() -> void:
-	if GLOBAL.pierre >= 100:
-		add_child(BASE.instantiate())
-		GLOBAL.pierre -= 100
+	add_child(BASE.instantiate())
 func _on_button_foreuse_pressed() -> void:
-	if GLOBAL.brique >= 50:
-		add_child(FOREUSE.instantiate())
-		GLOBAL.brique -= 50
+	add_child(FOREUSE.instantiate())
 func _on_button_macon_pressed() -> void:
-	if GLOBAL.pierre >= 100 and GLOBAL.bois >= 20:
-		add_child(MACON.instantiate())
-		GLOBAL.pierre -= 100
-		GLOBAL.bois -= 20
+	add_child(MACON.instantiate())

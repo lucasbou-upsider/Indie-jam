@@ -50,8 +50,3 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint :
 		bodycount += 1
-		#si objet tombe de trop haut faire des degats
-		#elif !area.get_parent().is_blueprint:
-			#print(area.get_parent().linear_velocity)
-			#if area.get_parent().linear_velocity >= Vector2(0,700):
-				#print("aie")

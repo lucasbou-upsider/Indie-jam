@@ -6,3 +6,6 @@ res://scene/macon.tscn
 res://scene/craft/foreuse.tscn
 res://scene/craft/macon.tscn
 res://GLOBAL.gd
+res://scene/craft/Base.tscn
+res://scene/craft/Base.gd
+res://scene/craft/foreuse.gd

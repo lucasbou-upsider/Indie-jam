@@ -6,19 +6,33 @@ extends RigidBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var is_blueprint := true
-var pv = 10
+@export var pv = 10
 var bodycount = 0
+var mouse_overed := false
+var cost = 50
 
 func _ready() -> void:
-	pass
+	#cout du batiments
+	if GLOBAL.brique >= cost:
+		GLOBAL.brique -= cost
+	else:
+		queue_free()
 
 
 func _process(_delta: float) -> void:
 	# Input
-	if Input.is_action_just_pressed("click gauche"):
+	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
 
+	#destruction
+	if mouse_overed:
+		if Input.is_action_just_pressed("click droit"):
+			GLOBAL.brique += cost
+			queue_free()
 
+
+
+	#regarde si l'objet est en blueprint ou pas
 	if is_blueprint:
 		collision_polygon_2d.disabled = true
 		global_position = get_global_mouse_position()
@@ -27,9 +41,9 @@ func _process(_delta: float) -> void:
 		collision_polygon_2d.disabled = false
 		if ray_cast_2d.is_colliding():
 			ray_cast_2d.enabled = false
-			print("fer")
 			timer.start()
 
+	#blueprint
 	if is_blueprint:
 		if bodycount == 0:
 			sprite_2d.modulate = Color(1.0, 1.0, 1.0, 0.494)
@@ -38,10 +52,12 @@ func _process(_delta: float) -> void:
 	else:
 		sprite_2d.modulate = Color(1.0, 0.98, 0.984, 0.98)
 
+#une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 
+#production
 func _on_timer_timeout() -> void:
 	GLOBAL.pierre += 1
 	ray_cast_2d.enabled = true
@@ -55,3 +71,9 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:
 		bodycount -= 1
+
+#verifie que la souris est sur le batiment
+func _on_area_2d_mouse_entered() -> void:
+	mouse_overed = true
+func _on_area_2d_mouse_exited() -> void:
+	mouse_overed = false
