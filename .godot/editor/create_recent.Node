@@ -9,6 +9,5 @@ CollisionShape2D
 RigidBody2D
 HSeparator
 RichTextLabel
-Sprite2D
 Node2D
 VBoxContainer
