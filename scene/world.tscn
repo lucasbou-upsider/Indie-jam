@@ -69,6 +69,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "foreuse"
 
+[node name="Button_macon" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1279974408]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "macon"
+
 [node name="Panel_inventaire" type="Panel" parent="Interface" unique_id=255062353]
 offset_left = 10.0
 offset_top = 11.0
@@ -318,3 +323,4 @@ texture = ExtResource("4_m5mgf")
 
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_base" to="." method="_on_button_base_pressed"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse" to="." method="_on_button_foreuse_pressed"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_macon" to="." method="_on_button_macon_pressed"]

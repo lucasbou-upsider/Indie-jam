@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://bmqj2ocb6rh52"]
 
-[ext_resource type="Script" uid="uid://p867nqxvx4qq" path="res://macon.gd" id="1_vyuw4"]
-[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="2_gdwmf"]
+[ext_resource type="Script" uid="uid://p867nqxvx4qq" path="res://scene/craft/macon.gd" id="1_vxaob"]
+[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="2_1t3kc"]
 
 [node name="Macon" type="RigidBody2D" unique_id=1216213044]
-script = ExtResource("1_vyuw4")
+script = ExtResource("1_vxaob")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1327477798]
 position = Vector2(-275.5, -7.5000024)
 scale = Vector2(4.085937, 1.1015625)
-texture = ExtResource("2_gdwmf")
+texture = ExtResource("2_1t3kc")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=466378004]
 position = Vector2(108.420654, -54.921974)
 scale = Vector2(0.7284895, 1.858156)
-texture = ExtResource("2_gdwmf")
+texture = ExtResource("2_1t3kc")
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=1435343466]
 polygon = PackedVector2Array(-537, 60, -538, -76, -20, -77, -21, -199, 357, -199, 361, 63)
@@ -29,5 +29,13 @@ polygon = PackedVector2Array(-529.65393, 62.12866, -530.6319, -77.193634, -21.09
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
 wait_time = 2.0
 autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1034210439]
+offset_left = -69.0
+offset_top = -122.0
+offset_right = 337.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 124
+text = "macon"
 
 [connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]

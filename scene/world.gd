@@ -2,6 +2,7 @@ extends Node2D
 
 const BASE = preload("uid://byxo1qtpjx30p")
 const FOREUSE = preload("uid://02wx8g0s1olf")
+const MACON = preload("uid://bmqj2ocb6rh52")
 
 var speed = 30
 
@@ -37,3 +38,5 @@ func _on_button_base_pressed() -> void:
 	add_child(BASE.instantiate())
 func _on_button_foreuse_pressed() -> void:
 	add_child(FOREUSE.instantiate())
+func _on_button_macon_pressed() -> void:
+	add_child(MACON.instantiate())
