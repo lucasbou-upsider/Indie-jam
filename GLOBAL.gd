@@ -3,6 +3,8 @@ extends Node
 #pv
 var base_pv := 100
 
+var DEBUG := true
+
 #inventaire
 var charbon := 0
 var bois := 0
@@ -23,3 +25,12 @@ var minerai_topaxium := 0
 var lingot_gluantite := 0
 var lingot_voidium := 0
 var lingot_topaxium := 0
+
+func _ready():
+	if DEBUG:
+		charbon = 1000
+		bois = 1000
+		pierre = 1000
+		brique = 1000
+		minerai_fer = 1000
+		lingot_fer = 1000
