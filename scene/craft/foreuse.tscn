@@ -1,48 +1,70 @@
 [gd_scene format=3 uid="uid://02wx8g0s1olf"]
 
 [ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse.gd" id="1_p5dri"]
-[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="1_tblhl"]
+[ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="2_p5dri"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1255"]
+atlas = ExtResource("2_p5dri")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdh24"]
+atlas = ExtResource("2_p5dri")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yqs4"]
+atlas = ExtResource("2_p5dri")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6156"]
+atlas = ExtResource("2_p5dri")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0iyh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1255")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdh24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yqs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6156")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 13.0
+}]
 
 [node name="foreuse" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_p5dri")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=513195299]
-position = Vector2(44, -69.5)
-scale = Vector2(0.76562494, 1.9453125)
-texture = ExtResource("1_tblhl")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
+texture_filter = 1
+position = Vector2(33, -1)
+sprite_frames = SubResource("SpriteFrames_x0iyh")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.00980358
 
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1332496010]
-position = Vector2(-72.97957, 37.269077)
-scale = Vector2(1.5739797, 0.41767076)
-texture = ExtResource("1_tblhl")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1071327156]
-position = Vector2(44, -69.5)
-scale = Vector2(0.76562494, 1.9453125)
-polygon = PackedVector2Array(-57.4694, -60.91567, -58.77552, 10.024096, -169.79594, 8.995983, -173.71432, 62.457836, 65.30613, 62.457836, 54.857147, -64)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=134821111]
+polygon = PackedVector2Array(-19, 13, 17, 13, 17, -16, -19, -16)
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=566869362]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=1782314719]
-position = Vector2(44, -69.5)
-scale = Vector2(0.76562494, 1.9453125)
-polygon = PackedVector2Array(-57.4694, -60.91567, -58.77552, 10.024096, -169.79594, 8.995983, -173.71432, 62.457836, 65.30613, 62.457836, 54.857147, -64)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
+polygon = PackedVector2Array(-19, -16, -19, 13, 17, 13, 17, -16)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
-target_position = Vector2(0, 65)
+target_position = Vector2(0, 19)
 
 [node name="Timer" type="Timer" parent="." unique_id=127513847]
 wait_time = 2.0
 one_shot = true
-
-[node name="Label" type="Label" parent="." unique_id=670414528]
-offset_left = -105.0
-offset_top = -54.0
-offset_right = 123.0
-offset_bottom = 32.0
-theme_override_font_sizes/font_size = 62
-text = "foreuse"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

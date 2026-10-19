@@ -3,13 +3,15 @@ extends RigidBody2D
 @onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var timer: Timer = $Timer
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 var is_blueprint := true
+var elec_efficacity = [2, 5, 10]
 @export var pv = 10
 var bodycount = 0
 var mouse_overed := false
 var cost = 50
+
 
 func _ready() -> void:
 	#cout du batiments
@@ -75,6 +77,7 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 
 #verifie que la souris est sur le batiment
 func _on_area_2d_mouse_entered() -> void:
+	print("bruh")
 	mouse_overed = true
 func _on_area_2d_mouse_exited() -> void:
 	mouse_overed = false

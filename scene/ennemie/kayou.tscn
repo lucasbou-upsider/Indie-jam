@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://btukiu61dok1y"]
 
 [ext_resource type="Script" uid="uid://b5g88l0a3fgxk" path="res://scene/ennemie/kayou.gd" id="1_2baxm"]
-[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="1_nrhm5"]
+[ext_resource type="Texture2D" uid="uid://bdxkcfwhdems" path="res://sprite/New_Piskel_4.png" id="2_2baxm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x0iyh"]
-radius = 68.0294
+radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4a50"]
-radius = 83.02409
+radius = 23.086792
 
 [node name="kayou" type="RigidBody2D" unique_id=495438462]
 script = ExtResource("1_2baxm")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1684763018]
-texture = ExtResource("1_nrhm5")
+texture_filter = 1
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(0.2578125, 0.2265625)
+texture = ExtResource("2_2baxm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628127502]
 shape = SubResource("CircleShape2D_x0iyh")

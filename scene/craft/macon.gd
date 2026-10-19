@@ -5,7 +5,8 @@ var is_blueprint := true
 var bodycount := 0
 var cost = 100
 var cost2 = 20
-var mouse_overed := true
+var elec_efficacity = [2, 5, 10] 
+var mouse_overed := false
 @onready var collision_shape_2d: CollisionPolygon2D = $PhysicsShape
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -26,7 +27,8 @@ func _process(_delta: float) -> void:
 #destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			GLOBAL.brique += cost
+			GLOBAL.pierre += cost 
+			GLOBAL.bois += cost2
 			queue_free()
 		sleeping = false
 

@@ -8,3 +8,5 @@ res://scene/craft/Base.tscn
 res://scene/craft/Base.gd
 res://scene/craft/foreuse.gd
 res://scene/craft/macon.gd
+res://scene/ennemie/kayou.tscn
+res://scene/ennemie/kayou.gd
