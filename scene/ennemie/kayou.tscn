@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btukiu61dok1y"]
+
+[ext_resource type="Script" uid="uid://b5g88l0a3fgxk" path="res://scene/ennemie/kayou.gd" id="1_2baxm"]
+[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="1_nrhm5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x0iyh"]
+radius = 68.0294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4a50"]
+radius = 83.02409
+
+[node name="kayou" type="RigidBody2D" unique_id=495438462]
+script = ExtResource("1_2baxm")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1684763018]
+texture = ExtResource("1_nrhm5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628127502]
+shape = SubResource("CircleShape2D_x0iyh")
+
+[node name="area_kayou" type="Area2D" parent="." unique_id=1644609227]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_kayou" unique_id=1178398914]
+shape = SubResource("CircleShape2D_o4a50")
+
+[node name="Despawn" type="Timer" parent="." unique_id=1822630666]
+wait_time = 2.0
+
+[connection signal="body_entered" from="area_kayou" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]

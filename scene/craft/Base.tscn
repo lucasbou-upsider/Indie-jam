@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byxo1qtpjx30p"]
 
-[ext_resource type="Script" uid="uid://bklmbpp2ndvr3" path="res://scene/Base.gd" id="1_bmgoh"]
-[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="2_in47f"]
+[ext_resource type="Script" uid="uid://bklmbpp2ndvr3" path="res://scene/craft/Base.gd" id="1_fd1db"]
+[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="2_vghjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0iyh"]
 size = Vector2(726, 121)
@@ -10,12 +10,12 @@ size = Vector2(726, 121)
 size = Vector2(734, 130)
 
 [node name="Base" type="RigidBody2D" unique_id=1313463931]
-script = ExtResource("1_bmgoh")
+script = ExtResource("1_fd1db")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122953327]
 position = Vector2(7.6293945e-06, 0)
 scale = Vector2(5.7070313, 1)
-texture = ExtResource("2_in47f")
+texture = ExtResource("2_vghjg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266822311]
 position = Vector2(0, 0.5)

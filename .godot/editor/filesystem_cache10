@@ -1,9 +1,11 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792359849
-GLOBAL.gd::GDScript::2143528270806602422::1792357666::0::1::::<>Node<><>0<>0<><>::
+::res://::1792398446
+GLOBAL.gd::GDScript::2143528270806602422::1792398446::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::697287327512390100::1792343574::1792352379::1::::<><><>0<>0<>b401026aba3e66966bfef22cbe6b3743<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1792343740::0::1::::<><><>0<>0<><>::
-::res://scene/::1792359849
-Base.tscn::PackedScene::4119330958308892729::1792359868::0::1::::<><><>0<>0<><>::uid://bklmbpp2ndvr3::::res://scene/rigid_body_2d.gd<>uid://j61hq17ylyme::::res://icon.svg
-Base.gd::GDScript::3111748477341774906::1792358444::0::1::::<>RigidBody2D<><>0<>0<><>::
-world.tscn::PackedScene::5339516059793769153::1792359492::0::1::::<><><>0<>0<><>::
+::res://scene/::1792398711
+world.gd::GDScript::8910850131997764602::1792398219::0::1::::<>Node2D<><>0<>0<><>::
+world.tscn::PackedScene::5339516059793769153::1792399004::0::1::::<><><>0<>0<><>::uid://byxo1qtpjx30p::::res://scene/Base.tscn<>uid://dy7qnufb0wjm5::::res://scene/world.gd
+::res://scene/craft/::0
+Base.gd::GDScript::3111748477341774906::1792363989::0::1::::<>RigidBody2D<><>0<>0<><>::
+Base.tscn::PackedScene::4119330958308892729::1792399004::0::1::::<><><>0<>0<><>::uid://bklmbpp2ndvr3::::res://scene/Base.gd<>uid://j61hq17ylyme::::res://icon.svg

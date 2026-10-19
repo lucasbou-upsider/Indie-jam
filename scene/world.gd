@@ -1,7 +1,10 @@
 extends Node2D
 
 const base = preload("uid://byxo1qtpjx30p")
+var speed = 30
+
 @onready var progress_bar: ProgressBar = $Interface/ProgressBar
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 func _ready() -> void:
@@ -9,8 +12,22 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	#pv
 	progress_bar.value = GLOBAL.base_pv
-
+	
+	#deplacement de la camera
+	if Input.is_action_pressed("courir"):
+		speed = 40
+	else:
+		speed = 30
+	if Input.is_action_pressed("droite"):
+		camera_2d.position += Vector2(speed,0)
+	if Input.is_action_pressed("gauche"):
+		camera_2d.position += Vector2(-speed,0)
+	if Input.is_action_pressed("haut"):
+		camera_2d.position += Vector2(0,-speed)
+	if Input.is_action_pressed("bas"):
+		camera_2d.position += Vector2(0,speed)
 
 
 
