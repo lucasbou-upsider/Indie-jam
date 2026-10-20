@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwmo1yckrvxbn"]
 
-[ext_resource type="Script" uid="uid://bbyqfekswdwdq" path="res://scene/craft/scierie.gd" id="1_lm7yd"]
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_8t735"]
 [ext_resource type="Texture2D" uid="uid://bby3csl3w3ev3" path="res://sprite/New_Piskel_5_1.png" id="2_8t735"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t735"]
@@ -150,7 +150,11 @@ animations = [{
 }]
 
 [node name="scierie" type="RigidBody2D" unique_id=1216213044]
-script = ExtResource("1_lm7yd")
+script = ExtResource("1_8t735")
+minerai_produit = "bois"
+production = 1
+position_x_droite = 735
+position_x_gauche = 400
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
 texture_filter = 1
@@ -168,10 +172,6 @@ disabled = true
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
 wait_time = 4.0
-
-[node name="Label" type="Label" parent="." unique_id=754685015]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
 [connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]

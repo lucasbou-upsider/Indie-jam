@@ -110,6 +110,10 @@ func _process(_delta: float) -> void:
 #une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
+		if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
+			sprite_2d.play("default")
+		else :
+			sprite_2d.play("arret")
 		electrical_strenght()
 		production_timer.start()
 		is_blueprint = false
@@ -123,6 +127,7 @@ func electrical_strenght():
 func _on_production_timer_timeout() -> void:
 	electrical_strenght()
 	if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
+		sprite_2d.play("default")
 		if demande != "" and demande2 != "":
 			if GLOBAL.get(demande) >= cout_demande and GLOBAL.get(demande2) >= cout_demande2:
 				GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
@@ -133,9 +138,9 @@ func _on_production_timer_timeout() -> void:
 				GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
 				GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
 		else:
-			if GLOBAL.get(demande) >= cout_demande:
-				GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
-				GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
+			GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
+	else :
+		sprite_2d.play("arret")
 
 
 func _on_clearance_area_area_entered(area: Area2D) -> void:
