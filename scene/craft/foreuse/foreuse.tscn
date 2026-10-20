@@ -1,26 +1,26 @@
-[gd_scene format=3 uid="uid://k50d24v80i8n"]
+[gd_scene format=3 uid="uid://02wx8g0s1olf"]
 
-[ext_resource type="Script" uid="uid://b1hiq6jrdttc6" path="res://scene/craft/foreuse_fer.gd" id="1_rgaya"]
-[ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="2_8xcb1"]
+[ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_xpbly"]
+[ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="2_128wf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5dri"]
-atlas = ExtResource("2_8xcb1")
+atlas = ExtResource("2_128wf")
 region = Rect2(128, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1255"]
-atlas = ExtResource("2_8xcb1")
+atlas = ExtResource("2_128wf")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdh24"]
-atlas = ExtResource("2_8xcb1")
+atlas = ExtResource("2_128wf")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8yqs4"]
-atlas = ExtResource("2_8xcb1")
+atlas = ExtResource("2_128wf")
 region = Rect2(0, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j6156"]
-atlas = ExtResource("2_8xcb1")
+atlas = ExtResource("2_128wf")
 region = Rect2(128, 128, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x0iyh"]
@@ -51,26 +51,24 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="foreuse_fer" type="RigidBody2D" unique_id=1505809120]
-modulate = Color(0.443559, 0.07677955, 0.20115602, 1)
-script = ExtResource("1_rgaya")
+[node name="foreuse" type="RigidBody2D" unique_id=1505809120]
+script = ExtResource("1_xpbly")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
-position = Vector2(43.000004, -5.000001)
-scale = Vector2(1.28125, 1.265625)
+position = Vector2(33, -1)
 sprite_frames = SubResource("SpriteFrames_x0iyh")
 animation = &"arret"
 autoplay = "new_animation"
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
-polygon = PackedVector2Array(-24, 13, 23, 13, 20, -24, -20, -24)
+polygon = PackedVector2Array(-19, 13, 17, 13, 17, -16, -19, -16)
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=566869362]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
-polygon = PackedVector2Array(-20, -24, -24, 13, 23, 13, 20, -24)
+polygon = PackedVector2Array(-19, -16, -19, 13, 17, 13, 17, -16)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
 target_position = Vector2(0, 15)

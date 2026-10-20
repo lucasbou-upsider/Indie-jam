@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://xf8stc6u11am" path="res://scene/ennemie/kayou_spawn.gd" id="2_w4qq1"]
 [ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="3_hcb8y"]
 [ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/panel_inventaire.gd" id="4_emkrx"]
-[ext_resource type="Texture2D" uid="uid://j61hq17ylyme" path="res://icon.svg" id="4_m5mgf"]
 [ext_resource type="Texture2D" uid="uid://h06bgpm8ppos" path="res://sprite/New_Piskel_9.png" id="4_y3jn2"]
 [ext_resource type="Shader" uid="uid://nype5xorkfev" path="res://blur.gdshader" id="5_yur6x"]
 [ext_resource type="Texture2D" uid="uid://dogd8ac5sp5uc" path="res://sprite/New_Piskel_11.png" id="6_0tg4p"]
@@ -23,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://b4b5cjgwqdmxa" path="res://sprite/New_Piskel_17.png" id="12_oiypb"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="13_tmyho"]
 [ext_resource type="Texture2D" uid="uid://cqi5v42mlxc1s" path="res://sprite/New_Piskel_5_2.png" id="18_e4vd1"]
+[ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="21_a81yy"]
+[ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="24_qfj6m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
 shader = ExtResource("5_yur6x")
@@ -364,9 +365,8 @@ text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse" unique_id=907432009]
-visible = false
 layout_mode = 0
-offset_left = -58.622314
+offset_left = -93.40491
 offset_top = -0.005783081
 offset_right = -12.666504
 offset_bottom = 22.994217
@@ -381,12 +381,30 @@ region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=252196491]
 layout_mode = 0
-offset_left = 24.273926
-offset_top = -0.27687073
-offset_right = 64.273926
-offset_bottom = 39.72313
+offset_left = 25.33783
+offset_top = -0.46764374
+offset_right = 65.33783
+offset_bottom = 39.532356
 bbcode_enabled = true
-text = "50"
+text = "50 "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=1796851273]
+layout_mode = 0
+offset_left = 41.795044
+offset_top = -2.457512
+offset_right = 81.795044
+offset_bottom = 37.54249
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=1611268158]
+texture_filter = 1
+position = Vector2(67.50538, 11.663872)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(-0.2668848, 22.899496, 14.978158, 8.63389)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse" unique_id=763849505]
 position = Vector2(33.5614, 12.839867)
@@ -402,9 +420,8 @@ text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_fer" unique_id=543894605]
-visible = false
 layout_mode = 0
-offset_left = -118.661865
+offset_left = -149.92133
 offset_top = -0.005783081
 offset_right = -12.666504
 offset_bottom = 22.994217
@@ -443,6 +460,24 @@ offset_bottom = 39.723145
 bbcode_enabled = true
 text = "200"
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=1721044912]
+layout_mode = 0
+offset_left = 98.678955
+offset_top = -2.6315231
+offset_right = 138.67896
+offset_bottom = 37.368477
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=737975420]
+texture_filter = 1
+position = Vector2(124.9618, 11.316017)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(1.3575277, 0.46229744, 14.978158, 8.63389)
+
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_fer" unique_id=98490587]
 self_modulate = Color(0.24225739, 0.2421219, 0, 1)
 position = Vector2(33.5614, 12.839867)
@@ -458,9 +493,8 @@ text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_scierie" unique_id=82908825]
-visible = false
 layout_mode = 0
-offset_left = -104.20563
+offset_left = -139.81769
 offset_top = -0.1542511
 offset_right = -11.103455
 offset_bottom = 22.845749
@@ -499,6 +533,24 @@ offset_bottom = 39.920975
 bbcode_enabled = true
 text = "100"
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=1095074599]
+layout_mode = 0
+offset_left = 88.76398
+offset_top = -2.2836838
+offset_right = 128.76398
+offset_bottom = 37.716316
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=129398518]
+texture_filter = 1
+position = Vector2(115.25312, 11.59803)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.42654896, 10.417669, 14.978158, 12.162695)
+
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_scierie" unique_id=1034741649]
 position = Vector2(31.998047, 12.338158)
 scale = Vector2(0.41, 0.41)
@@ -513,9 +565,8 @@ text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info2" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_macon" unique_id=501244171]
-visible = false
 layout_mode = 0
-offset_left = -108.17432
+offset_left = -182.27045
 offset_top = -0.1277008
 offset_right = -12.846436
 offset_bottom = 22.8723
@@ -554,6 +605,42 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "100"
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1855193593]
+layout_mode = 0
+offset_left = 93.82605
+offset_top = -1.9118271
+offset_right = 133.82605
+offset_bottom = 38.088173
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1041447692]
+texture_filter = 1
+position = Vector2(117.61732, 11.953529)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.5506582, 22.408972, 14.978158, 8.63389)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=2003710671]
+texture_filter = 1
+position = Vector2(157.30524, 12.548103)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(14.939391, 12.925486, 14.978158, 8.63389)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=9833119]
+layout_mode = 0
+offset_left = 124.42694
+offset_top = -0.3786316
+offset_right = 164.42694
+offset_bottom = 39.62137
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " =>"
+
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_macon" unique_id=750842504]
 position = Vector2(34.23706, 12.434471)
 scale = Vector2(0.36, 0.36)
@@ -568,9 +655,8 @@ text = " "
 script = ExtResource("7_7ghph")
 
 [node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_four" unique_id=1203119699]
-visible = false
 layout_mode = 0
-offset_left = -66.02161
+offset_left = -137.15479
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
@@ -592,6 +678,42 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "200"
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=892402354]
+layout_mode = 0
+offset_left = 49.007263
+offset_top = -3.4460526
+offset_right = 89.00726
+offset_bottom = 36.553947
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=714457904]
+texture_filter = 1
+position = Vector2(73.180916, 9.246376)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(2.9135742, -0.8367624, 12.426636, 9.810501)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1035576500]
+texture_filter = 1
+position = Vector2(114.466125, 10.258995)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.838691, 21.918444, 14.978158, 8.63389)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1118503894]
+layout_mode = 0
+offset_left = 79.789246
+offset_top = -1.196167
+offset_right = 119.789246
+offset_bottom = 38.803833
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " =>"
+
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_four" unique_id=1053197035]
 position = Vector2(31.187256, 11.257103)
 scale = Vector2(0.41, 0.41)
@@ -601,6 +723,78 @@ region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
 
 [node name="HSeparator2" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1504828169]
 layout_mode = 2
+
+[node name="Button_foreuse_cuivre" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1046700688]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" unique_id=1599703569]
+layout_mode = 0
+offset_left = -146.03223
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=1708668608]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=745137032]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "20"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=1293343385]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=424608625]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=431270195]
+layout_mode = 0
+offset_left = 95.85571
+offset_top = -2.3425674
+offset_right = 135.85571
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=1347151655]
+texture_filter = 1
+position = Vector2(120.08485, 11.663872)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.408294, 32.358654, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" unique_id=1171459422]
+position = Vector2(32.41687, 11.858818)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("21_a81yy")
+region_enabled = true
+region_rect = Rect2(123.75711, 155.18965, 100.24289, 56.348694)
 
 [node name="HSeparator3" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1447174630]
 layout_mode = 2
@@ -791,10 +985,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/charbon" unique_id=962454906]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D2" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/charbon" unique_id=98659735]
+texture_filter = 1
+position = Vector2(11.539581, 12.46006)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.03952837, 59.80865, 13.072027, 11.272251)
 
 [node name="bois" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=817703598]
 layout_mode = 2
@@ -822,7 +1019,7 @@ position = Vector2(11, 13.000001)
 scale = Vector2(1.6839845, 1.835205)
 texture = ExtResource("6_0tg4p")
 region_enabled = true
-region_rect = Rect2(0, 21.777035, 15.019302, 12.4642105)
+region_rect = Rect2(0, 21.98808, 15.019302, 12.253166)
 
 [node name="brique" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=638354899]
 layout_mode = 2
@@ -892,10 +1089,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/cuivre" unique_id=1810168223]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/cuivre" unique_id=1876524810]
+texture_filter = 1
+position = Vector2(11.307373, 12.165955)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(16.61251, 32.788708, 13.424866, 8.619373)
 
 [node name="etain" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1142632573]
 layout_mode = 2
@@ -903,10 +1103,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/etain" unique_id=1469592074]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/etain" unique_id=1437041858]
+texture_filter = 1
+position = Vector2(12.264938, 10.780914)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.806674, 40.835796, 14.978158, 9.292004)
 
 [node name="bronze" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=849401404]
 layout_mode = 2
@@ -914,10 +1117,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/bronze" unique_id=699256973]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/bronze" unique_id=176920513]
+texture_filter = 1
+position = Vector2(12.264938, 10.780914)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(1.531559, 50.391975, 13.736412, 8.93425)
 
 [node name="engrenage_bronze" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1514831582]
 layout_mode = 2
@@ -925,10 +1131,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/engrenage_bronze" unique_id=1644077826]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/engrenage_bronze" unique_id=925184003]
+texture_filter = 1
+position = Vector2(12.804512, 13.29895)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.694999, 50.328438, 14.978158, 12.8342705)
 
 [node name="HSeparator4" type="HSeparator" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1420825463]
 layout_mode = 2
@@ -939,10 +1148,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_acier" unique_id=387657101]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_acier" unique_id=1948734883]
+texture_filter = 1
+position = Vector2(11.128769, 11.14444)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.397712, 62.05137, 14.978158, 9.375725)
 
 [node name="barre_acier" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=607768499]
 layout_mode = 2
@@ -950,10 +1162,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/barre_acier" unique_id=868108290]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/barre_acier" unique_id=1362504774]
+texture_filter = 1
+position = Vector2(10.171196, 10.928955)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(-0.3233118, 71.47816, 13.271712, 12.834267)
 
 [node name="HSeparator5" type="HSeparator" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1770963757]
 layout_mode = 2
@@ -964,10 +1179,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_gluantite" unique_id=1107410778]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_gluantite" unique_id=1521986218]
+texture_filter = 1
+position = Vector2(14.060734, 12.089661)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(14.975562, 101.06252, 14.978158, 13.672874)
 
 [node name="lingot_gluantite" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=1225348942]
 layout_mode = 2
@@ -975,10 +1193,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_gluantite" unique_id=1722195036]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_gluantite" unique_id=1853369623]
+texture_filter = 1
+position = Vector2(11.912651, 11.366577)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.23603725, 114.096634, 14.978158, 11.134094)
 
 [node name="minerai_topaxium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=2140329339]
 layout_mode = 2
@@ -986,10 +1207,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_topaxium" unique_id=2120539696]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_topaxium" unique_id=190448935]
+texture_filter = 1
+position = Vector2(14.011368, 9.260986)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(12.92517, 71.10216, 18.493858, 14.064133)
 
 [node name="lingot_topaxium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=779109299]
 layout_mode = 2
@@ -997,10 +1221,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_topaxium" unique_id=2126442206]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_topaxium" unique_id=192472936]
+texture_filter = 1
+position = Vector2(10.171196, 12.820129)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.019824028, 87.4894, 13.540421, 12.834267)
 
 [node name="minerai_voidium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=2102971817]
 layout_mode = 2
@@ -1008,10 +1235,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_voidium" unique_id=772997581]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/minerai_voidium" unique_id=682134757]
+texture_filter = 1
+position = Vector2(11.88954, 11.401306)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(13.656817, 85.733, 16.327507, 15.2727585)
 
 [node name="lingot_voidium" type="RichTextLabel" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=294027918]
 layout_mode = 2
@@ -1019,10 +1249,13 @@ bbcode_enabled = true
 text = "      0"
 fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_voidium" unique_id=1920571123]
-position = Vector2(11, 11.093751)
-scale = Vector2(0.1679688, 0.15478517)
-texture = ExtResource("4_m5mgf")
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_inventaire/VBoxContainer/lingot_voidium" unique_id=1912705308]
+texture_filter = 1
+position = Vector2(10.277573, 9.731506)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(-0.19196415, 98.85984, 14.978158, 12.8342705)
 
 [node name="Panel_vague" type="Panel" parent="Interface" unique_id=233649210]
 offset_left = 10.409683
@@ -1065,6 +1298,9 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_four" to="Interface/Panel_construction/VBoxContainer/Button_four" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_four" to="Interface/Panel_construction/VBoxContainer/Button_four" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_four" to="." method="_on_button_four_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="." method="_on_button_foreuse_cuivre_pressed"]
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" to="." method="_on_button_bloc_cuivre_pressed"]

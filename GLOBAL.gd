@@ -38,6 +38,7 @@ func _ready():
 		brique = 1000
 		minerai_fer = 1000
 		lingot_fer = 1000
+		plaque_fer = 1000
 
 func calcul_electrical_strength(bat_pos_x):
 	if bat_pos_x > -400 and bat_pos_x < 400:

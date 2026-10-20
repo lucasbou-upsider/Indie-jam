@@ -1,33 +1,29 @@
-[gd_scene format=3 uid="uid://02wx8g0s1olf"]
+[gd_scene format=3 uid="uid://cpcrfnudbmj5r"]
 
-[ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse.gd" id="1_p5dri"]
-[ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="2_p5dri"]
+[ext_resource type="Script" uid="uid://b6huf7tx8dm4n" path="res://scene/craft/foreuse/foreuse_cuivre.gd" id="1_ie6a2"]
+[ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="3_kmbk6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p5dri"]
-atlas = ExtResource("2_p5dri")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hewwf"]
+atlas = ExtResource("3_kmbk6")
 region = Rect2(128, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1255"]
-atlas = ExtResource("2_p5dri")
+[sub_resource type="AtlasTexture" id="AtlasTexture_p657m"]
+atlas = ExtResource("3_kmbk6")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdh24"]
-atlas = ExtResource("2_p5dri")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kb05"]
+atlas = ExtResource("3_kmbk6")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yqs4"]
-atlas = ExtResource("2_p5dri")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijwlc"]
+atlas = ExtResource("3_kmbk6")
 region = Rect2(0, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j6156"]
-atlas = ExtResource("2_p5dri")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x0iyh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_eg4ui"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p5dri")
+"texture": SubResource("AtlasTexture_hewwf")
 }],
 "loop": 1,
 "name": &"arret",
@@ -35,40 +31,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y1255")
+"texture": SubResource("AtlasTexture_p657m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fdh24")
+"texture": SubResource("AtlasTexture_8kb05")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8yqs4")
+"texture": SubResource("AtlasTexture_ijwlc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j6156")
+"texture": SubResource("AtlasTexture_hewwf")
 }],
 "loop": 1,
 "name": &"new_animation",
 "speed": 13.0
 }]
 
-[node name="foreuse" type="RigidBody2D" unique_id=1505809120]
-script = ExtResource("1_p5dri")
+[node name="foreuse_cuivre" type="RigidBody2D" unique_id=1505809120]
+script = ExtResource("1_ie6a2")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
-position = Vector2(33, -1)
-sprite_frames = SubResource("SpriteFrames_x0iyh")
+position = Vector2(19, -1)
+sprite_frames = SubResource("SpriteFrames_eg4ui")
 animation = &"arret"
 autoplay = "new_animation"
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
-polygon = PackedVector2Array(-19, 13, 17, 13, 17, -16, -19, -16)
+polygon = PackedVector2Array(-32, 13, 32, 13, 33, -30, 20, -30, 8, -24, -8, -24, -20, -30, -33, -30)
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=566869362]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
-polygon = PackedVector2Array(-19, -16, -19, 13, 17, 13, 17, -16)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=213291601]
+polygon = PackedVector2Array(-32, 13, 32, 13, 33, -30, 20, -30, 8, -24, -8, -24, -20, -30, -33, -30)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
 target_position = Vector2(0, 15)

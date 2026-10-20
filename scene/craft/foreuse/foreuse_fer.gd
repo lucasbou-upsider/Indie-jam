@@ -59,6 +59,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
 			GLOBAL.brique += cost/2
+			GLOBAL.bois += cost2/2
 			SIGNAL.emit_signal("defreeze")
 			for node in GLOBAL.network[self].keys():
 				GLOBAL.disconnect_building(self, node)
