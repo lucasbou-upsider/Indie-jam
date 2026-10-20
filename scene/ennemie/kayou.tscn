@@ -1,35 +1,104 @@
 [gd_scene format=3 uid="uid://btukiu61dok1y"]
 
 [ext_resource type="Script" uid="uid://b5g88l0a3fgxk" path="res://scene/ennemie/kayou.gd" id="1_2baxm"]
-[ext_resource type="Texture2D" uid="uid://xxc4n5nfwjym" path="res://sprite/New_Piskel_4_1.png" id="2_2baxm"]
+[ext_resource type="Texture2D" uid="uid://deuqi6a2ofkd4" path="res://sprite/New_Piskel_4_1(1).png" id="2_2baxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4ht2"]
+atlas = ExtResource("2_2baxm")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdtxp"]
+atlas = ExtResource("2_2baxm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8c2r"]
+atlas = ExtResource("2_2baxm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3thy4"]
+atlas = ExtResource("2_2baxm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4ht2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4ht2")
+}],
+"loop": 1,
+"name": &"anti",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdtxp")
+}],
+"loop": 1,
+"name": &"base",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8c2r")
+}],
+"loop": 1,
+"name": &"feu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3thy4")
+}],
+"loop": 1,
+"name": &"gros",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x0iyh"]
 radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4a50"]
-radius = 23.086792
+radius = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrhm5"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2baxm"]
+radius = 39.0
 
 [node name="kayou" type="RigidBody2D" unique_id=495438462]
 gravity_scale = 0.5
 script = ExtResource("1_2baxm")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1684763018]
-texture_filter = 1
-position = Vector2(9.536743e-07, 0)
-scale = Vector2(0.2578125, 0.2265625)
-texture = ExtResource("2_2baxm")
+[node name="KayouSprites" type="AnimatedSprite2D" parent="." unique_id=1870911451]
+position = Vector2(-1, 0)
+scale = Vector2(0.275, 0.275)
+sprite_frames = SubResource("SpriteFrames_c4ht2")
+animation = &"anti"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628127502]
+[node name="PhysicsShapePiti" type="CollisionShape2D" parent="." unique_id=1569416377]
 shape = SubResource("CircleShape2D_x0iyh")
 
-[node name="area_kayou" type="Area2D" parent="." unique_id=1644609227]
+[node name="DespawnAreaPiti" type="Area2D" parent="." unique_id=1178525929]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area_kayou" unique_id=1178398914]
+[node name="AreaShape" type="CollisionShape2D" parent="DespawnAreaPiti" unique_id=530798678]
 shape = SubResource("CircleShape2D_o4a50")
 
 [node name="Despawn" type="Timer" parent="." unique_id=1822630666]
 wait_time = 2.0
 one_shot = true
 
-[connection signal="body_entered" from="area_kayou" to="." method="_on_area_2d_body_entered"]
+[node name="PhysicsShapeGros" type="CollisionShape2D" parent="." unique_id=1959186263]
+visible = false
+shape = SubResource("CircleShape2D_nrhm5")
+disabled = true
+
+[node name="DespawnAreaGros" type="Area2D" parent="." unique_id=2020905311]
+visible = false
+
+[node name="AreaShape" type="CollisionShape2D" parent="DespawnAreaGros" unique_id=2130449662]
+shape = SubResource("CircleShape2D_2baxm")
+
+[connection signal="body_entered" from="DespawnAreaPiti" to="." method="_on_despawn_area_piti_body_entered"]
 [connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
+[connection signal="body_entered" from="DespawnAreaGros" to="." method="_on_despawn_area_gros_body_entered"]
