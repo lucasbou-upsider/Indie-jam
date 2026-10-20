@@ -25,7 +25,6 @@ func _ready() -> void:
 		GLOBAL.network[self] = {}
 		update_powered()
 	else:
-		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
@@ -64,6 +63,7 @@ func _process(_delta: float) -> void:
 		sleeping = false
 	if pv == 0:
 		SIGNAL.emit_signal("defreeze")
+		GLOBAL.network.erase(self)
 		queue_free()
 
 

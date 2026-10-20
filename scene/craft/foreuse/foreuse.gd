@@ -24,12 +24,12 @@ func _ready() -> void:
 		GLOBAL.network[self] = {}
 		update_powered()
 	else:
-		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
 func _process(_delta: float) -> void:
-	# Input
+	queue_redraw()
+	
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
 	
@@ -62,6 +62,7 @@ func _process(_delta: float) -> void:
 			queue_free()
 	if pv == 0:
 		SIGNAL.emit_signal("defreeze")
+		GLOBAL.network.erase(self)
 		queue_free()
 
 	#regarde si l'objet est en blueprint ou pas
@@ -95,6 +96,10 @@ func place_self():
 func electrical_strenght():
 	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x))
 
+func _draw():
+	if is_instance_valid(self):
+		for n in GLOBAL.network[self].keys():
+			draw_line(self.global_position, n.global_position-self.global_position, Color.YELLOW, 3)
 
 func update_powered():
 	if GLOBAL.is_powered(self):

@@ -18,7 +18,6 @@ func _ready() -> void:
 		GLOBAL.brique -= cost
 		GLOBAL.network[self] = {}
 	else:
-		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
 
