@@ -6,11 +6,26 @@ extends RigidBody2D
 @onready var production_timer: Timer = $production_timer
 
 var is_blueprint := true
-var elec_efficacity = [1, 3, 10]
 @export var pv = 10
+@export var elec_efficacity = [1, 3, 10]
+@export_category("cout de construction")
+@export var cost := 0
+@export var minerai := ""
+@export var cost2 := 0
+@export var minerai2 := ""
+@export var cost3 := 0
+@export var minerai3 := ""
+@export var cost4 := 0
+@export var minerai4 := ""
+@export_category("production")
+@export var production = 0
+@export var minerai_produit := ""
+@export var production2 = 0
+@export var minerai_produit2 := ""
+
 var bodycount = 0
 var mouse_overed := false
-var cost = 50
+
 
 func defreeze():
 	sleeping = false
@@ -18,10 +33,32 @@ func _ready() -> void:
 	electrical_strenght()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if GLOBAL.brique >= cost:
-		GLOBAL.brique -= cost
-	else:
-		queue_free()
+	if GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3) and GLOBAL.get(minerai4):
+		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 and GLOBAL.get(minerai4) >= cost4:
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
+			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
+			GLOBAL.set(minerai4, GLOBAL.get(minerai4) - cost4)
+		else:
+			queue_free()
+	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3):
+		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
+			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
+		else:
+			queue_free()
+	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2):
+		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
+		else:
+			queue_free()
+	elif GLOBAL.get(minerai):
+		if GLOBAL.get(minerai) >= cost:
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+		else:
+			queue_free()
 
 
 func _process(_delta: float) -> void:
@@ -32,7 +69,14 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			GLOBAL.brique += cost/2
+			if GLOBAL.get(minerai):
+				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
+			if GLOBAL.get(minerai2):
+				GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
+			if GLOBAL.get(minerai3):
+				GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
+			if GLOBAL.get(minerai4):
+				GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
 	if pv == 0:
@@ -74,13 +118,15 @@ func electrical_strenght():
 func _on_timer_timeout() -> void:
 	electrical_strenght()
 	sprite_2d.play("arret")
-	GLOBAL.pierre += 1
+	GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production) 
+	if GLOBAL.get(minerai_produit2):
+		GLOBAL.set(minerai_produit2, GLOBAL.get(minerai_produit2) + production2) 
 	ray_cast_2d.enabled = true
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#regarder si possible de placer
-	if is_blueprint :
+	if is_blueprint and area.name != "verif_Area2D":
 		bodycount += 1
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":

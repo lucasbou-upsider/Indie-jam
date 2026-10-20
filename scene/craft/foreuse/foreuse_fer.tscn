@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://k50d24v80i8n"]
 
-[ext_resource type="Script" uid="uid://b1hiq6jrdttc6" path="res://scene/craft/foreuse/foreuse_fer.gd" id="1_rgaya"]
+[ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_3ukbr"]
 [ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="2_8xcb1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5dri"]
@@ -53,7 +53,13 @@ animations = [{
 
 [node name="foreuse_fer" type="RigidBody2D" unique_id=1505809120]
 modulate = Color(0.443559, 0.07677955, 0.20115602, 1)
-script = ExtResource("1_rgaya")
+script = ExtResource("1_3ukbr")
+cost = 200
+minerai = "brique"
+cost2 = 200
+minerai2 = "bois"
+production = 1
+minerai_produit = "minerai_fer"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1

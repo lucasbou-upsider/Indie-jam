@@ -88,7 +88,7 @@ func _on_production_timer_timeout() -> void:
 
 func _on_clearance_area_area_entered(area: Area2D) -> void:
 	#degats
-	if !is_blueprint:
+	if !is_blueprint and area.name != "verif_Area2D":
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= 1
 	#regarder si possible de placer

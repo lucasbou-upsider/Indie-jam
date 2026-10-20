@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpcrfnudbmj5r"]
 
-[ext_resource type="Script" uid="uid://b6huf7tx8dm4n" path="res://scene/craft/foreuse/foreuse_cuivre.gd" id="1_ie6a2"]
+[ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_mndkn"]
 [ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="3_kmbk6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hewwf"]
@@ -48,7 +48,13 @@ animations = [{
 }]
 
 [node name="foreuse_cuivre" type="RigidBody2D" unique_id=1505809120]
-script = ExtResource("1_ie6a2")
+script = ExtResource("1_mndkn")
+cost = 20
+minerai = "plaque_fer"
+cost2 = 100
+minerai2 = "brique"
+production = 1
+minerai_produit = "cuivre"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1

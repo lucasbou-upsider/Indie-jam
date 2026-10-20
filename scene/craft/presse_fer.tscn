@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpalbk5akejka"]
 
-[ext_resource type="Script" uid="uid://k3orxhpho7ig" path="res://scene/craft/presse_fer.gd" id="1_3kfr8"]
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_ynqwk"]
 [ext_resource type="Texture2D" uid="uid://br7haanodffnm" path="res://sprite/New_Piskel_3_2.png" id="2_ynqwk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esi3b"]
@@ -243,7 +243,17 @@ animations = [{
 }]
 
 [node name="presse_fer" type="RigidBody2D" unique_id=1216213044]
-script = ExtResource("1_3kfr8")
+script = ExtResource("1_ynqwk")
+cost = 200
+minerai = "bois"
+cost2 = 100
+minerai2 = "pierre"
+cost3 = 100
+minerai3 = "brique"
+demande = "lingot_fer"
+cout_demande = 1
+minerai_produit = "plaque_fer"
+production = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
 texture_filter = 1
@@ -261,10 +271,6 @@ disabled = true
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
 wait_time = 2.0
-
-[node name="Label" type="Label" parent="." unique_id=754685015]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
 [connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]

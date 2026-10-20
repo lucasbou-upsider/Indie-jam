@@ -56,7 +56,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= 1
 	#regarder si possible de placer
-	if is_blueprint :
+	if is_blueprint and area.name != "verif_Area2D":
 		bodycount += 1
 
 func _on_area_2d_mouse_entered() -> void:

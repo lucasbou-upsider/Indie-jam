@@ -53,6 +53,10 @@ animations = [{
 
 [node name="foreuse" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_xpbly")
+cost = 50
+minerai = "brique"
+production = 1
+minerai_produit = "pierre"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1

@@ -64,7 +64,7 @@ func place_self():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#regarder si possible de placer
-	if is_blueprint :
+	if is_blueprint and area.name != "verif_Area2D":
 		bodycount += 1
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":

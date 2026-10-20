@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oowuyr1jo2gt"]
 
 [ext_resource type="Texture2D" uid="uid://be6wtm88uepqa" path="res://sprite/New_Piskel_6.png" id="1_ralbk"]
-[ext_resource type="Script" uid="uid://hqtiy5to6t2g" path="res://scene/craft/fourneau.gd" id="1_sqikg"]
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_sqikg"]
 [ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="2_sqikg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l46py"]
@@ -57,6 +57,12 @@ animations = [{
 
 [node name="fourneau" type="RigidBody2D" unique_id=1767498378]
 script = ExtResource("1_sqikg")
+cost = 200
+minerai = "brique"
+demande = "minerai_fer"
+cout_demande = 1
+minerai_produit = "lingot_fer"
+production = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914465001]
 texture_filter = 1

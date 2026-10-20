@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmqj2ocb6rh52"]
 
-[ext_resource type="Script" uid="uid://p867nqxvx4qq" path="res://scene/craft/macon.gd" id="1_vxaob"]
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_vxaob"]
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="3_vhrpa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dib5d"]
@@ -104,6 +104,14 @@ animations = [{
 
 [node name="Macon" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_vxaob")
+cost = 100
+minerai = "pierre"
+cost2 = 20
+minerai2 = "bois"
+demande = "pierre"
+cout_demande = 1
+minerai_produit = "brique"
+production = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
 texture_filter = 1
