@@ -39,12 +39,25 @@ func _ready():
 		minerai_fer = 1000
 		lingot_fer = 1000
 
+func calcul_electrical_strenght(bat_pos_x):
+	if bat_pos_x > -400 and bat_pos_x < 400:
+		return 0
+	elif bat_pos_x > -900 and bat_pos_x < 900:
+		return 1
+	else:
+		return 2
+
+
+
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("3"):
 		print("connected:", are_connected(selected, selected2))
 	if Input.is_action_just_pressed("5"):
 		selected = null
 		selected2 = null
+
+
+### electricité
 
 var selected
 var selected2

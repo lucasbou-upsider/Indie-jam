@@ -75,7 +75,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	#degats
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":
-			GLOBAL.base_pv -= 1
+			pv -= 1
 	#regarder si possible de placer
 	if is_blueprint :
 		bodycount += 1

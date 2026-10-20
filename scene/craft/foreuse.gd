@@ -2,12 +2,12 @@ extends RigidBody2D
 
 @onready var collision_polygon_2d: CollisionPolygon2D = $PhysicsShape
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var timer: Timer = $Timer
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var label: Label = $Label
+@onready var production_timer: Timer = $production_timer
 
 var is_blueprint := true
-var elec_efficacity = [2, 5, 10]
+var elec_efficacity = [1, 3, 10]
 @export var pv = 10
 var bodycount = 0
 var mouse_overed := false
@@ -17,6 +17,7 @@ var is_powered := false
 func defreeze():
 	sleeping = false
 func _ready() -> void:
+	electrical_strenght()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	if GLOBAL.brique >= cost:
@@ -76,7 +77,7 @@ func _process(_delta: float) -> void:
 				ray_cast_2d.get_collider().pv -= 1
 			ray_cast_2d.enabled = false
 			sprite_2d.play("new_animation")
-			timer.start()
+			production_timer.start()
 
 	#blueprint
 	if is_blueprint:
@@ -91,6 +92,10 @@ func _process(_delta: float) -> void:
 func place_self():
 	if bodycount == 0:
 		is_blueprint = false
+
+func electrical_strenght():
+	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strenght(position.x))
+
 
 func update_powered():
 	if GLOBAL.is_powered(self, [self]):
@@ -109,6 +114,7 @@ func update_powered():
 
 #production
 func _on_timer_timeout() -> void:
+	electrical_strenght()
 	sprite_2d.play("arret")
 	GLOBAL.pierre += 1
 	ray_cast_2d.enabled = true

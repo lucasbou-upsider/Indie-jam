@@ -1,11 +1,12 @@
 extends Node2D
 
-const BASE = preload("uid://byxo1qtpjx30p")
 const FOREUSE = preload("uid://02wx8g0s1olf")
 const MACON = preload("uid://bmqj2ocb6rh52")
 const FOURNEAU = preload("uid://oowuyr1jo2gt")
 const BLOC_CUIVRE = preload("uid://cw4heslictg5a")
 const PETIT_BLOC_BRIQUE = preload("uid://bebxrd2yuskte")
+const SCIERIE = preload("uid://cwmo1yckrvxbn")
+const FOREUSE_FER = preload("uid://k50d24v80i8n")
 
 var speed
 
@@ -38,9 +39,13 @@ func _process(_delta: float) -> void:
 
 #coordonées 
 	coordoné.text = str(Vector2i(get_global_mouse_position()))
+	if Vector2i(get_global_mouse_position()).x  > -400 and Vector2i(get_global_mouse_position()).x  < 400:
+		coordoné.self_modulate = Color(1.0, 1.0, 1.0)
+	elif Vector2i(get_global_mouse_position()).x  > -900 and Vector2i(get_global_mouse_position()).x  < 900:
+		coordoné.self_modulate = Color(1.0, 0.559, 0.274)
+	else:
+		coordoné.self_modulate = Color(1.0, 0.245, 0.188)
 
-func _on_button_base_pressed() -> void:
-	add_child(BASE.instantiate())
 func _on_button_foreuse_pressed() -> void:
 	add_child(FOREUSE.instantiate())
 func _on_button_macon_pressed() -> void:
@@ -51,3 +56,7 @@ func _on_button_bloc_cuivre_pressed() -> void:
 	add_child(BLOC_CUIVRE.instantiate())
 func _on_button_piti_bloc_cuivre_2_pressed() -> void:
 	add_child(PETIT_BLOC_BRIQUE.instantiate())
+func _on_button_scierie_pressed() -> void:
+	add_child(SCIERIE.instantiate())
+func _on_button_foreuse_fer_pressed() -> void:
+	add_child(FOREUSE_FER.instantiate())

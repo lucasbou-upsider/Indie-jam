@@ -11,11 +11,14 @@ var is_powered := false
 @onready var collision_shape_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $Label
+@onready var production_timer: Timer = $ProductionTimer
 
 
 func defreeze():
 	sleeping = false
 func _ready() -> void:
+	electrical_strenght()
+	production_timer.start()
 	SIGNAL.connect("defreeze", defreeze)
 	if GLOBAL.pierre >= cost and GLOBAL.bois >= cost2:
 		GLOBAL.pierre -= cost 
@@ -87,6 +90,11 @@ func place_self():
 		is_blueprint = false
 		collision_shape_2d.disabled = false
 
+
+func electrical_strenght():
+	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strenght(position.x))
+
+
 func update_powered():
 	if GLOBAL.is_powered(self, [self]):
 		if not is_powered:
@@ -103,6 +111,7 @@ func update_powered():
 		label.text = "off"
 
 func _on_production_timer_timeout() -> void:
+	electrical_strenght()
 	if GLOBAL.pierre >= 1:
 		GLOBAL.pierre -= 1
 		GLOBAL.brique += 1
@@ -111,7 +120,6 @@ func _on_production_timer_timeout() -> void:
 func _on_clearance_area_area_entered(area: Area2D) -> void:
 	#degats
 	if !is_blueprint:
-		print(area.get_parent().get_parent().name)
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= 1
 	#regarder si possible de placer

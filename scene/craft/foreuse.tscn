@@ -73,7 +73,7 @@ polygon = PackedVector2Array(-19, -16, -19, 13, 17, 13, 17, -16)
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
 target_position = Vector2(0, 15)
 
-[node name="Timer" type="Timer" parent="." unique_id=127513847]
+[node name="production_timer" type="Timer" parent="." unique_id=127513847]
 wait_time = 2.0
 one_shot = true
 
@@ -87,4 +87,4 @@ offset_bottom = 10.0
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="production_timer" to="." method="_on_timer_timeout"]

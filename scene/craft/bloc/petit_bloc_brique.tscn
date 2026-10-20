@@ -1,28 +1,30 @@
-[gd_scene format=3 uid="uid://cw4heslictg5a"]
+[gd_scene format=3 uid="uid://bebxrd2yuskte"]
 
-[ext_resource type="Script" uid="uid://b4qltmh477oi5" path="res://scene/craft/bloc_brique.gd" id="1_46gov"]
-[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_fj4cd"]
+[ext_resource type="Script" uid="uid://b4qltmh477oi5" path="res://scene/craft/bloc/bloc_brique.gd" id="1_fyfnc"]
+[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_ykqc3"]
 
-[node name="bloc_brique" type="RigidBody2D" unique_id=1505809120]
+[node name="petit_bloc_brique" type="RigidBody2D" unique_id=1505809120]
 mass = 5.0
-script = ExtResource("1_46gov")
+script = ExtResource("1_fyfnc")
+pv = 20
+cost = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
 texture_filter = 1
-position = Vector2(22, 24)
-texture = ExtResource("2_fj4cd")
+position = Vector2(33, 42)
+texture = ExtResource("2_ykqc3")
 region_enabled = true
-region_rect = Rect2(0, 122.81318, 128, 133.18683)
+region_rect = Rect2(-0.75131226, 1.1000137, 128, 133.18683)
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
 visible = false
-polygon = PackedVector2Array(-26, 26, 28, 26, 28, -27, -26, -27)
+polygon = PackedVector2Array(-14, 13, 15, 13, 15, -15, -14, -15)
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=566869362]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
-polygon = PackedVector2Array(-26, -27, -26, 26, 28, 26, 28, -27)
+polygon = PackedVector2Array(-14, -15, -14, 13, 15, 13, 15, -15)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

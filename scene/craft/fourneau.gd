@@ -3,18 +3,21 @@ extends RigidBody2D
 @onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $Label
+@onready var production_timer: Timer = $ProductionTimer
 
 var is_blueprint := true
-var elec_efficacity = [2, 5, 10]
+@export var elec_efficacity = [2, 5, 10]
 @export var pv = 10
+@export var cost = 200
 var bodycount = 0
 var mouse_overed := false
 var is_powered := false
-var cost = 200
 
 func defreeze():
 	sleeping = false
 func _ready() -> void:
+	electrical_strenght()
+	production_timer.start()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	if GLOBAL.brique >= cost:
@@ -86,6 +89,9 @@ func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 
+func electrical_strenght():
+	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strenght(position.x))
+
 func update_powered():
 	if GLOBAL.is_powered(self, [self]):
 		if not is_powered:
@@ -102,6 +108,7 @@ func update_powered():
 		label.text = "off"
 
 func _on_production_timer_timeout() -> void:
+	electrical_strenght()
 	if GLOBAL.minerai_fer >= 1 and GLOBAL.bois:
 		GLOBAL.minerai_fer -= 1
 		GLOBAL.lingot_fer += 1

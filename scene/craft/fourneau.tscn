@@ -76,7 +76,6 @@ disabled = true
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=384895210]
 wait_time = 5.0
-autostart = true
 
 [node name="Label" type="Label" parent="." unique_id=1991486283]
 offset_right = 40.0

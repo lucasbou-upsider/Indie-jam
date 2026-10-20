@@ -123,7 +123,6 @@ disabled = true
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
 wait_time = 2.0
-autostart = true
 
 [node name="Label" type="Label" parent="." unique_id=754685015]
 offset_right = 40.0
