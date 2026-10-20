@@ -33,7 +33,7 @@ func _ready() -> void:
 	electrical_strenght()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3) and GLOBAL.get(minerai4):
+	if GLOBAL.get(minerai) != 0 and GLOBAL.get(minerai2) != 0 and GLOBAL.get(minerai3) != 0 and GLOBAL.get(minerai4) != 0:
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 and GLOBAL.get(minerai4) >= cost4:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
@@ -41,20 +41,20 @@ func _ready() -> void:
 			GLOBAL.set(minerai4, GLOBAL.get(minerai4) - cost4)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3):
+	elif GLOBAL.get(minerai) != 0 and GLOBAL.get(minerai2) != 0 and GLOBAL.get(minerai3) != 0:
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2):
+	elif GLOBAL.get(minerai) != 0 and GLOBAL.get(minerai2) != 0:
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai):
+	elif GLOBAL.get(minerai) != 0:
 		if GLOBAL.get(minerai) >= cost:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 		else:
@@ -128,9 +128,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint and area.name != "verif_Area2D":
 		bodycount += 1
-	if !is_blueprint:
+	if !is_blueprint and area.name != "verif_Area2D":
 		if area.get_parent().get_parent().name == "kayou_spawn":
-			pv -= 1
+			pv -= GLOBAL.degats[ area.get_parent().type ]
+			if area.get_parent().type == "anti":
+				area.get_parent().queue_free()
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer

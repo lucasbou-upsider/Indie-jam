@@ -54,7 +54,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	#degats
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":
-			pv -= 1
+			pv -= GLOBAL.degats[ area.get_parent().type ]
+			if area.get_parent().type == "anti":
+				area.get_parent().queue_free()
 	#regarder si possible de placer
 	if is_blueprint and area.name != "verif_Area2D":
 		bodycount += 1

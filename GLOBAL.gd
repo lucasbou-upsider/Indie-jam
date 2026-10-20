@@ -2,7 +2,7 @@ extends Node
 
 #pv
 var base_pv := 100
-
+var degats = {"base": 1, "gros": 3, "feu": 6, "anti": 1000000000}
 var DEBUG := true
 
 #inventaire
@@ -27,7 +27,6 @@ var lingot_voidium := 0
 var lingot_topaxium := 0
 
 
-
 func _ready():
 	if DEBUG:
 		charbon = 1000
@@ -38,7 +37,7 @@ func _ready():
 		lingot_fer = 1000
 		plaque_fer = 1000
 
-func calcul_electrical_strength(bat_pos_x):
+func calcul_electrical_strength(bat_pos_x) -> int:
 	if bat_pos_x > -400 and bat_pos_x < 400:
 		return 0
 	elif bat_pos_x > -900 and bat_pos_x < 900:
