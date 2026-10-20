@@ -90,7 +90,7 @@ func place_self():
 		is_blueprint = false
 
 func electrical_strenght():
-	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strenght(position.x))
+	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x))
 
 func update_powered():
 	if GLOBAL.is_powered(self):
