@@ -16,7 +16,6 @@ func _ready() -> void:
 	#cout du batiments
 	if GLOBAL.brique >= cost:
 		GLOBAL.brique -= cost
-		GLOBAL.network[self] = {}
 	else:
 		SIGNAL.emit_signal("defreeze")
 		queue_free()
@@ -26,22 +25,6 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
-	
-	elif Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
-		if (GLOBAL.selected != null) and (GLOBAL.selected != self) and (not GLOBAL.selected in GLOBAL.network[self].keys()):
-			GLOBAL.connect_buildings(GLOBAL.selected, self)
-			GLOBAL.selected = null
-		elif GLOBAL.selected == self:
-			GLOBAL.selected = null
-		elif GLOBAL.selected == null:
-			GLOBAL.selected = self
-	
-	elif Input.is_action_just_pressed("1"):
-		GLOBAL.selected = self
-		print(GLOBAL.selected == self)
-	elif Input.is_action_just_pressed("2"):
-		GLOBAL.selected2 = self
-		print(GLOBAL.selected2 == self)
 
 	#destruction
 	if Input.is_action_just_pressed("click droit"):

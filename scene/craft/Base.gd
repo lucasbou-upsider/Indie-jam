@@ -16,7 +16,6 @@ func defreeze():
 func _ready() -> void:
 	SIGNAL.connect("defreeze", defreeze)
 	collision_shape_2d.disabled = true
-	GLOBAL.network[self] = {}
 
 
 func _process(_delta: float) -> void:
@@ -26,8 +25,6 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		place_self()
-	if Input.is_action_just_pressed("5"):
-		print(GLOBAL.is_powered(self))
 
 	# blueprint
 	if is_blueprint == true:
@@ -42,29 +39,11 @@ func _process(_delta: float) -> void:
 			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
 	else:
 		sprite_2d.self_modulate = Color(1.0, 0.98, 0.984, 0.98)
-	
-	if Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
-		if (GLOBAL.selected != null) and (GLOBAL.selected != self) and (not GLOBAL.selected in GLOBAL.network[self].keys()):
-			GLOBAL.connect_buildings(GLOBAL.selected, self)
-			GLOBAL.selected = null
-		elif GLOBAL.selected == self:
-			GLOBAL.selected = null
-		elif GLOBAL.selected == null:
-			GLOBAL.selected = self
-	
-	if mouse_overed:
-		if Input.is_action_just_pressed("1"):
-			GLOBAL.selected = self
-		elif Input.is_action_just_pressed("2"):
-			GLOBAL.selected2 = self
 
 func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 		collision_shape_2d.disabled = false
-
-func update_powered():  #IMPORTANT - ne pas retirer (Youri)
-	pass
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer

@@ -8,7 +8,6 @@ extends RigidBody2D
 var is_blueprint := true
 var bodycount := 0
 var mouse_overed := false
-var is_powered := false
 
 @onready var production_timer: Timer = $ProductionTimer
 @onready var collision_shape_2d: CollisionPolygon2D = $CollisionPolygon2D
@@ -25,8 +24,6 @@ func _ready() -> void:
 	if GLOBAL.pierre >= cost and GLOBAL.brique >= cost2:
 		GLOBAL.pierre -= cost 
 		GLOBAL.bois -= cost2
-		GLOBAL.network[self] = {}
-		update_powered()
 	else:
 		queue_free()
 
@@ -35,25 +32,7 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
-		
-	elif Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
-		if (GLOBAL.selected != null) and (GLOBAL.selected != self) and (not GLOBAL.selected in GLOBAL.network[self].keys()):
-			GLOBAL.connect_buildings(GLOBAL.selected, self)
-			GLOBAL.selected = null
-		elif GLOBAL.selected == self:
-			GLOBAL.selected = null
-		elif GLOBAL.selected == null:
-			GLOBAL.selected = self
-		elif GLOBAL.selected == null:
-			GLOBAL.selected = self
-	
-	if mouse_overed:
-		if Input.is_action_just_pressed("1"):
-			GLOBAL.selected = self
-		elif Input.is_action_just_pressed("2"):
-			GLOBAL.selected2 = self
-		elif Input.is_action_just_pressed("4"):
-			print(GLOBAL.is_powered(self))
+
 
 #destruction
 	if Input.is_action_just_pressed("click droit"):
@@ -61,14 +40,10 @@ func _process(_delta: float) -> void:
 			GLOBAL.pierre += cost/2
 			GLOBAL.brique += cost2/2
 			SIGNAL.emit_signal("defreeze")
-			for node in GLOBAL.network[self].keys():
-				GLOBAL.disconnect_building(self, node)
-			GLOBAL.network.erase(self)
 			queue_free()
 		sleeping = false
 	if pv == 0:
 		SIGNAL.emit_signal("defreeze")
-		GLOBAL.network.erase(self)
 		queue_free()
 
 
@@ -101,20 +76,6 @@ func electrical_strenght():
 	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x))
 
 
-func update_powered():
-	if GLOBAL.is_powered(self):
-		if not is_powered:
-			is_powered = true
-			for node in GLOBAL.network.keys():
-				node.update_powered()
-		label.text = "on"
-	
-	else:
-		if is_powered:
-			is_powered = false
-			for node in GLOBAL.network.keys():
-				node.update_powered()
-		label.text = "off"
 
 func _on_production_timer_timeout() -> void:
 	electrical_strenght()

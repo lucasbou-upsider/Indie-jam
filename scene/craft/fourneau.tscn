@@ -77,10 +77,6 @@ disabled = true
 [node name="ProductionTimer" type="Timer" parent="." unique_id=384895210]
 wait_time = 5.0
 
-[node name="Label" type="Label" parent="." unique_id=1991486283]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
 [connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]
 [connection signal="mouse_entered" from="ClearanceArea" to="." method="_on_clearance_area_mouse_entered"]

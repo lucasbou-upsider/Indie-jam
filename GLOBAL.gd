@@ -3,8 +3,6 @@ extends Node
 #pv
 var base_pv := 100
 
-var network = {}
-
 var DEBUG := true
 
 #inventaire
@@ -47,56 +45,3 @@ func calcul_electrical_strength(bat_pos_x):
 		return 1
 	else:
 		return 2
-
-
-
-func _process(_delta) -> void:
-	if Input.is_action_just_pressed("3"):
-		print("connected:", are_connected(selected, selected2))
-	if Input.is_action_just_pressed("5"):
-		selected = null
-		selected2 = null
-	
-	for node in network.keys():
-		if not is_instance_valid(node):
-			network.erase(node)
-
-
-### electricité
-
-var selected
-var selected2
-
-func is_powered(node) -> bool:
-	var queue := []
-	var explored := []
-	var current
-	for key in network[node].keys():
-		queue.push_back(key)
-		explored.push_back(key)
-	while not queue == []:
-		current = queue.pop_front()
-		for n in network[current].keys():
-			if n is Base:
-				return true
-			elif not n in explored:
-				queue.push_back(n)
-				explored.push_back(n)
-	return false
-
-
-func connect_buildings(b1, b2):
-	network[b1][b2] = "ok"
-	network[b2][b1] = "ok"
-	b1.update_powered()
-	b2.update_powered()
-
-func are_connected(b1, b2) -> bool:
-	print(network)
-	return b1 in network[b2].keys() or b2 in network[b1].keys()
-
-func disconnect_building(b1, b2):
-	network[b1].erase(b2)
-	network[b2].erase(b1)
-	b1.update_powered()
-	b2.update_powered()
