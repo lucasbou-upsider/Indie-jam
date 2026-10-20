@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click gauche"):
 		place_self()
 	if Input.is_action_just_pressed("5"):
-		print(GLOBAL.is_powered(self, [self]))
+		print(GLOBAL.is_powered(self))
 
 	# blueprint
 	if is_blueprint == true:

@@ -52,7 +52,7 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("2"):
 			GLOBAL.selected2 = self
 		elif Input.is_action_just_pressed("4"):
-			print(GLOBAL.is_powered(self, [self]))
+			print(GLOBAL.is_powered(self))
 
 #destruction
 	if Input.is_action_just_pressed("click droit"):
@@ -96,18 +96,18 @@ func electrical_strenght():
 
 
 func update_powered():
-	if GLOBAL.is_powered(self, [self]):
+	if GLOBAL.is_powered(self):
 		if not is_powered:
+			is_powered = true
 			for node in GLOBAL.network.keys():
 				node.update_powered()
-		is_powered = true
 		label.text = "on"
 	
 	else:
 		if is_powered:
+			is_powered = false
 			for node in GLOBAL.network.keys():
 				node.update_powered()
-		is_powered = false
 		label.text = "off"
 
 func _on_production_timer_timeout() -> void:

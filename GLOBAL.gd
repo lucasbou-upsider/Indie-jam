@@ -66,27 +66,23 @@ func _process(_delta) -> void:
 var selected
 var selected2
 
-func is_powered(node, explored) -> bool:
-	print()
-	if node is Base:
-		print("finish ok")
-		return true
-	elif len(network[node]) == 0:
-		return false
-	else:
-		var new_explored = explored.duplicate()
-		print("old - ", explored)
-		new_explored.append_array(network[node].keys())
-		print("new - ", new_explored)
-		
-		for key in network[node].keys():  #network[node].keys() est le tableau des noeuds connectés à node
-			if not key in explored:
-				print("key - ", key)
-				print("net - ", network)
-				if is_powered(key, new_explored):
-					return true
-		
-		return false
+func is_powered(node) -> bool:
+	var queue := []
+	var explored := []
+	var current
+	for key in network[node].keys():
+		queue.push_back(key)
+		explored.push_back(key)
+	while not queue == []:
+		current = queue.pop_front()
+		for n in network[current].keys():
+			if n is Base:
+				return true
+			elif not n in explored:
+				queue.push_back(n)
+				explored.push_back(n)
+	return false
+
 
 func connect_buildings(b1, b2):
 	network[b1][b2] = "ok"
