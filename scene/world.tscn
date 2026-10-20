@@ -158,7 +158,7 @@ script = ExtResource("2_w4qq1")
 script = ExtResource("6_1402k")
 
 [node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
-wait_time = 20.0
+wait_time = 0.001
 one_shot = true
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]

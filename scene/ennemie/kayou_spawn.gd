@@ -11,8 +11,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("a"):
 		wave(70, 3)
 
-func wave(wave_number: int, strength):
-	var types := ["base", "base", "base", "base", "base", "base", "base", "base", "gros", "gros", "feu", "feu", "anti", "base"]
+func wave(wave_number: int, strength): # 0 <= strength <= 4
+	var types := ["base", "base", "base", "base", "base", "base", "base", "base", "gros", "gros", "feu", "feu", "anti", "base", "gros", "feu"]
 	for i in range(wave_number):
 		var rando = rng.randi_range(0,7)
 		spawn_kayou(types[rando+2*strength])
