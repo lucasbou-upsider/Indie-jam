@@ -29,18 +29,19 @@ var is_powered := false
 @export var minerai_produit := ""
 @export var production = 0
 @export_category("specificité ?")
-@export var position_x: int
-@export var position_y: int
+@export var position_x_droite: int = 1275
+@export var position_x_gauche: int = -1280
+@export var position_y_haut: int = -10000
+@export var position_y_bas: int = 50
 
 
 func defreeze():
 	sleeping = false
 func _ready() -> void:
-	electrical_strenght()
-	production_timer.start()
+	global_position = get_global_mouse_position()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3) and GLOBAL.get(minerai4):
+	if minerai != "" and minerai2 != "" and minerai3 != "" and minerai4 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 and GLOBAL.get(minerai4) >= cost4:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
@@ -48,20 +49,20 @@ func _ready() -> void:
 			GLOBAL.set(minerai4, GLOBAL.get(minerai4) - cost4)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3):
+	elif minerai != "" and minerai2 != "" and minerai3 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2):
+	elif minerai != "" and minerai2 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai):
+	elif minerai != "":
 		if GLOBAL.get(minerai) >= cost:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 		else:
@@ -72,36 +73,17 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
-		
-	elif Input.is_action_just_pressed("click gauche") and mouse_overed and !is_blueprint:
-		if (GLOBAL.selected != null) and (GLOBAL.selected != self) and (not GLOBAL.selected in GLOBAL.network[self].keys()):
-			GLOBAL.connect_buildings(GLOBAL.selected, self)
-			GLOBAL.selected = null
-		elif GLOBAL.selected == self:
-			GLOBAL.selected = null
-		elif GLOBAL.selected == null:
-			GLOBAL.selected = self
-		elif GLOBAL.selected == null:
-			GLOBAL.selected = self
-	
-	if mouse_overed:
-		if Input.is_action_just_pressed("1"):
-			GLOBAL.selected = self
-		elif Input.is_action_just_pressed("2"):
-			GLOBAL.selected2 = self
-		elif Input.is_action_just_pressed("4"):
-			print(GLOBAL.is_powered(self))
 
 #destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			if GLOBAL.get(minerai):
+			if minerai != "" :
 				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
-			if GLOBAL.get(minerai2):
+			if minerai2 != "":
 				GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
-			if GLOBAL.get(minerai3):
+			if minerai3 != "":
 				GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
-			if GLOBAL.get(minerai4):
+			if minerai4 != "":
 				GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
@@ -128,6 +110,8 @@ func _process(_delta: float) -> void:
 #une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
+		electrical_strenght()
+		production_timer.start()
 		is_blueprint = false
 		collision_shape_2d.disabled = false
 
@@ -136,20 +120,22 @@ func electrical_strenght():
 	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x))
 
 
-
 func _on_production_timer_timeout() -> void:
 	electrical_strenght()
-	if GLOBAL.get(demande) and GLOBAL.get(demande2):
-		if GLOBAL.get(demande) >= cout_demande and GLOBAL.get(demande2) >= cout_demande2:
-			GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
-			GLOBAL.set(demande2, GLOBAL.get(demande2) - cout_demande2)
-			GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
-	else:
-		if GLOBAL.get(demande) >= cout_demande:
-			GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
-			print(GLOBAL.get(minerai_produit))
-			print(production)
-			GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
+	if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
+		if demande != "" and demande2 != "":
+			if GLOBAL.get(demande) >= cout_demande and GLOBAL.get(demande2) >= cout_demande2:
+				GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
+				GLOBAL.set(demande2, GLOBAL.get(demande2) - cout_demande2)
+				GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
+		elif demande != "":
+			if GLOBAL.get(demande) >= cout_demande:
+				GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
+				GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
+		else:
+			if GLOBAL.get(demande) >= cout_demande:
+				GLOBAL.set(demande, GLOBAL.get(demande) - cout_demande)
+				GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
 
 
 func _on_clearance_area_area_entered(area: Area2D) -> void:

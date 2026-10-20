@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_ykqc3"]
 
 [node name="petit_bloc_brique" type="RigidBody2D" unique_id=1505809120]
-mass = 5.0
 script = ExtResource("1_pnq06")
 pv = 20
 cost = 300

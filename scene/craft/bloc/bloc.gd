@@ -23,20 +23,20 @@ func defreeze():
 func _ready() -> void:
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3):
+	if minerai != "" and minerai2 != "" and minerai3 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2):
+	elif minerai != "" and minerai2 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai):
+	elif minerai != "":
 		if GLOBAL.get(minerai) >= cost:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 		else:
@@ -51,11 +51,11 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			if GLOBAL.get(minerai):
+			if minerai != "":
 				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
-			if GLOBAL.get(minerai2):
+			if minerai2 != "":
 				GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
-			if GLOBAL.get(minerai3):
+			if minerai3 != "":
 				GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()

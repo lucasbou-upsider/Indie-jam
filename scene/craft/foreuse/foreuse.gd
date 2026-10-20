@@ -33,7 +33,7 @@ func _ready() -> void:
 	electrical_strenght()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3) and GLOBAL.get(minerai4):
+	if minerai != "" and minerai2 != "" and minerai3 != "" and minerai4 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 and GLOBAL.get(minerai4) >= cost4:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
@@ -41,20 +41,20 @@ func _ready() -> void:
 			GLOBAL.set(minerai4, GLOBAL.get(minerai4) - cost4)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3):
+	elif minerai != "" and minerai2 != "" and minerai3 != "" :
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2):
+	elif minerai != "" and minerai2 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 		else:
 			queue_free()
-	elif GLOBAL.get(minerai):
+	elif minerai != "":
 		if GLOBAL.get(minerai) >= cost:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 		else:
@@ -69,13 +69,13 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			if GLOBAL.get(minerai):
+			if minerai != "":
 				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
-			if GLOBAL.get(minerai2):
+			if minerai2 != "":
 				GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
-			if GLOBAL.get(minerai3):
+			if minerai3 != "":
 				GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
-			if GLOBAL.get(minerai4):
+			if minerai4 != "":
 				GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
@@ -109,6 +109,8 @@ func _process(_delta: float) -> void:
 #une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
+		electrical_strenght()
+		production_timer.start()
 		is_blueprint = false
 
 func electrical_strenght():
@@ -118,6 +120,7 @@ func electrical_strenght():
 func _on_timer_timeout() -> void:
 	electrical_strenght()
 	sprite_2d.play("arret")
+
 	GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production) 
 	if GLOBAL.get(minerai_produit2):
 		GLOBAL.set(minerai_produit2, GLOBAL.get(minerai_produit2) + production2) 
