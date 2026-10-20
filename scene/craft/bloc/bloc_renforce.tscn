@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://djp8kufdndlut"]
 
-[ext_resource type="Script" uid="uid://b4qltmh477oi5" path="res://scene/craft/bloc/bloc_brique.gd" id="1_tqy7p"]
+[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc_renforce.gd" id="1_tqy7p"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_qim2f"]
 
 [node name="bloc_renforce" type="RigidBody2D" unique_id=1505809120]
-mass = 5.0
+mass = 10.0
 script = ExtResource("1_tqy7p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
-modulate = Color(0.21176471, 0.21176471, 0.28235295, 1)
+self_modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
 texture_filter = 1
 position = Vector2(22, 24)
 texture = ExtResource("2_qim2f")

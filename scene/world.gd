@@ -7,6 +7,8 @@ const BLOC_CUIVRE = preload("uid://cw4heslictg5a")
 const PETIT_BLOC_BRIQUE = preload("uid://bebxrd2yuskte")
 const SCIERIE = preload("uid://cwmo1yckrvxbn")
 const FOREUSE_FER = preload("uid://k50d24v80i8n")
+const BLOC_RENFORCE = preload("uid://djp8kufdndlut")
+const PTIT_BLOC_RENFORCE = preload("uid://b86jdqoskpqse")
 
 var speed
 
@@ -60,3 +62,7 @@ func _on_button_scierie_pressed() -> void:
 	add_child(SCIERIE.instantiate())
 func _on_button_foreuse_fer_pressed() -> void:
 	add_child(FOREUSE_FER.instantiate())
+func _on_button_bloc_renforce_pressed() -> void:
+	add_child(BLOC_RENFORCE.instantiate())
+func _on_button_piti_bloc_renforce_pressed() -> void:
+	add_child(PTIT_BLOC_RENFORCE.instantiate())
