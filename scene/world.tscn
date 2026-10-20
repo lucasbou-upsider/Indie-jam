@@ -721,6 +721,79 @@ texture = ExtResource("12_a0bac")
 region_enabled = true
 region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
 
+[node name="Button_presse" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=978655140]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_presse" unique_id=634469777]
+layout_mode = 0
+offset_left = -137.15479
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1087500510]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1849378701]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "200"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=825912512]
+layout_mode = 0
+offset_left = 49.007263
+offset_top = -3.4460526
+offset_right = 89.00726
+offset_bottom = 36.553947
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=529642844]
+texture_filter = 1
+position = Vector2(73.180916, 9.246376)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(2.9135742, -0.8367624, 12.426636, 9.810501)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=745813412]
+texture_filter = 1
+position = Vector2(114.466125, 10.258995)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.838691, 21.918444, 14.978158, 8.63389)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1407178982]
+layout_mode = 0
+offset_left = 79.789246
+offset_top = -1.196167
+offset_right = 119.789246
+offset_bottom = 38.803833
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " =>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_presse" unique_id=1329470456]
+position = Vector2(31.187256, 11.257103)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("12_a0bac")
+region_enabled = true
+region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
+
 [node name="HSeparator2" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1504828169]
 layout_mode = 2
 
@@ -1298,6 +1371,9 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_four" to="Interface/Panel_construction/VBoxContainer/Button_four" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_four" to="Interface/Panel_construction/VBoxContainer/Button_four" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_four" to="." method="_on_button_four_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_presse" to="Interface/Panel_construction/VBoxContainer/Button_presse" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_presse" to="Interface/Panel_construction/VBoxContainer/Button_presse" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_presse" to="." method="_on_button_presse_pressed"]
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="." method="_on_button_foreuse_cuivre_pressed"]
