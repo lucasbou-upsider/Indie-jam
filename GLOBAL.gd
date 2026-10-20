@@ -55,6 +55,10 @@ func _process(_delta) -> void:
 	if Input.is_action_just_pressed("5"):
 		selected = null
 		selected2 = null
+	
+	for node in network.keys():
+		if not is_instance_valid(node):
+			network.erase(node)
 
 
 ### electricité

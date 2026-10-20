@@ -1,5 +1,4 @@
 extends RigidBody2D
-
 @onready var collision_polygon_2d: CollisionPolygon2D = $PhysicsShape
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D

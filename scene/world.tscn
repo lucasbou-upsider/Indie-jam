@@ -315,6 +315,7 @@ position_smoothing_speed = 8.0
 
 [node name="Base" parent="." unique_id=1313463931 instance=ExtResource("1_pjass")]
 position = Vector2(2, -433)
+mass = 1.0
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=476184838]
 
