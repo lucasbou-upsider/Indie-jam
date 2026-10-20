@@ -9,7 +9,6 @@ var is_powered := false
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var production_timer: Timer = $ProductionTimer
 
-
 @export var pv := 10
 @export var elec_efficacity = [2, 5, 10] 
 @export_category("cout de construction")

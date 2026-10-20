@@ -5,21 +5,42 @@ extends RigidBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var is_blueprint := true
-@export var pv = 40
+@export var pv = 0
 var bodycount = 0
 var mouse_overed := false
-@export var cost = 400
+
+
+@export_category("cout de construction")
+@export var cost := 0
+@export var minerai := ""
+@export var cost2 := 0
+@export var minerai2 := ""
+@export var cost3 := 0
+@export var minerai3 := ""
 
 func defreeze():
 	sleeping = false
 func _ready() -> void:
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if GLOBAL.lingot_fer >= cost:
-		GLOBAL.lingot_fer -= cost
-	else:
-		SIGNAL.emit_signal("defreeze")
-		queue_free()
+	if GLOBAL.get(minerai) and GLOBAL.get(minerai2) and GLOBAL.get(minerai3):
+		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
+			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
+		else:
+			queue_free()
+	elif GLOBAL.get(minerai) and GLOBAL.get(minerai2):
+		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
+		else:
+			queue_free()
+	elif GLOBAL.get(minerai):
+		if GLOBAL.get(minerai) >= cost:
+			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
+		else:
+			queue_free()
 
 
 func _process(_delta: float) -> void:
@@ -30,7 +51,12 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_just_pressed("click droit"):
 		if mouse_overed:
-			GLOBAL.lingot_fer += cost/2
+			if GLOBAL.get(minerai):
+				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
+			if GLOBAL.get(minerai2):
+				GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
+			if GLOBAL.get(minerai3):
+				GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
 		sleeping = false

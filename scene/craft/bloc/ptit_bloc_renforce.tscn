@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b86jdqoskpqse"]
 
-[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc_renforce.gd" id="1_kfmqo"]
+[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_kfmqo"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_ceq7u"]
 
 [node name="ptit_bloc_renforce" type="RigidBody2D" unique_id=1505809120]
@@ -8,6 +8,7 @@ mass = 10.0
 script = ExtResource("1_kfmqo")
 pv = 30
 cost = 250
+minerai = "lingot_fer"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=929330411]
 self_modulate = Color(0.26657522, 0.2665752, 0.2665752, 1)

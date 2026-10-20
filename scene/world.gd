@@ -11,6 +11,7 @@ const BLOC_RENFORCE = preload("uid://djp8kufdndlut")
 const PTIT_BLOC_RENFORCE = preload("uid://b86jdqoskpqse")
 const FOREUSE_CUIVRE = preload("uid://cpcrfnudbmj5r")
 const PRESSE_FER = preload("uid://bpalbk5akejka")
+const BLOC_BRONZE = preload("uid://b7a2fcystwnuy")
 
 
 var speed
@@ -73,3 +74,5 @@ func _on_button_foreuse_cuivre_pressed() -> void:
 	add_child(FOREUSE_CUIVRE.instantiate())
 func _on_button_presse_pressed() -> void:
 	add_child(PRESSE_FER.instantiate())
+func _on_button_bloc_bronze_pressed() -> void:
+	add_child(BLOC_BRONZE.instantiate())

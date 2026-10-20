@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bebxrd2yuskte"]
 
-[ext_resource type="Script" uid="uid://b4qltmh477oi5" path="res://scene/craft/bloc/bloc_brique.gd" id="1_fyfnc"]
+[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_pnq06"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_ykqc3"]
 
 [node name="petit_bloc_brique" type="RigidBody2D" unique_id=1505809120]
 mass = 5.0
-script = ExtResource("1_fyfnc")
+script = ExtResource("1_pnq06")
 pv = 20
 cost = 300
+minerai = "brique"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
 texture_filter = 1
