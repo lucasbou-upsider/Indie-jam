@@ -79,7 +79,7 @@ func _process(_delta: float) -> void:
 				GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
-	if pv == 0:
+	if pv <= 0:
 		SIGNAL.emit_signal("defreeze")
 		queue_free()
 

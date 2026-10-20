@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
 		sleeping = false
-	if pv == 0:
+	if pv <= 0:
 		SIGNAL.emit_signal("defreeze")
 		queue_free()
 
