@@ -146,11 +146,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		bodycount += 1
 	if !is_blueprint and area.name != "verif_Area2D":
 		if area.get_parent().get_parent().name == "kayou_spawn":
-			var pv_float:float = pv
-			var pv_max_float:float = pv_max
-			var shader: ShaderMaterial = sprite_2d.material
-			var shader_value:float = (pv_float/pv_max_float)*0.8+0.2
-			shader.set_shader_parameter("dissolve_value", shader_value)
 			pv -= GLOBAL.degats[ area.get_parent().type ]
 			if area.get_parent().type == "anti":
 				area.get_parent().queue_free()
