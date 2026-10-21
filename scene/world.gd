@@ -70,41 +70,43 @@ func quake(intensity):
 
 func _on_button_foreuse_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(FOREUSE)
+		spawn(FOREUSE)
 func _on_button_macon_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(MACON)
+		spawn(MACON)
 func _on_button_four_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(FOURNEAU)
+		spawn(FOURNEAU)
 func _on_button_bloc_cuivre_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(BLOC_CUIVRE)
+		spawn(BLOC_CUIVRE)
 func _on_button_piti_bloc_cuivre_2_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(PETIT_BLOC_BRIQUE)
+		spawn(PETIT_BLOC_BRIQUE)
 func _on_button_scierie_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(SCIERIE)
+		spawn(SCIERIE)
 func _on_button_foreuse_fer_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(FOREUSE_FER)
+		spawn(FOREUSE_FER)
 func _on_button_bloc_renforce_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(BLOC_RENFORCE)
+		spawn(BLOC_RENFORCE)
 func _on_button_piti_bloc_renforce_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(PTIT_BLOC_RENFORCE)
+		spawn(PTIT_BLOC_RENFORCE)
 func _on_button_foreuse_cuivre_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(FOREUSE_CUIVRE)
+		spawn(FOREUSE_CUIVRE)
 func _on_button_presse_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(PRESSE_FER)
+		spawn(PRESSE_FER)
 func _on_button_bloc_bronze_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	spawn(BLOC_BRONZE)
+		spawn(BLOC_BRONZE)
 func _on_button_piti_bloc_bronze_pressed() -> void:
-	spawn(PETIT_BLOC_BRONZE)
+	if not GLOBAL.mouse_busy:
+		spawn(PETIT_BLOC_BRONZE)
 func _on_button_foreuse_etain_pressed() -> void:
-	spawn(FOREUSE_ETAIN)
+	if not GLOBAL.mouse_busy:
+		spawn(FOREUSE_ETAIN)
