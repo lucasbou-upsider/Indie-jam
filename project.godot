@@ -104,6 +104,7 @@ verif_pv={
 
 [physics]
 
+common/physics_ticks_per_second=180
 3d/physics_engine="Jolt Physics"
 
 [rendering]

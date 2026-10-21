@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b050uia4uvrc"]
+
+[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_aka34"]
+[ext_resource type="Texture2D" uid="uid://cyrj4oisdwewv" path="res://sprite/New_Piskel_10_5.png" id="4_oe2ua"]
+
+[node name="bloc_topaxium" type="RigidBody2D" unique_id=1505809120]
+script = ExtResource("1_aka34")
+pv = 60
+cost = 400
+minerai = "lingot_topaxium"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
+texture_filter = 1
+position = Vector2(22, 24)
+texture = ExtResource("4_oe2ua")
+region_enabled = true
+region_rect = Rect2(0, 122.81318, 128, 133.18683)
+
+[node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=1889715249]
+visible = false
+polygon = PackedVector2Array(-25.972992, -2.4277878, -26, 26, 78, 26, 77.97673, -2.4099903)
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=566869362]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
+polygon = PackedVector2Array(-25.972992, -2.4277878, -26, 26, 78, 26, 77.97673, -2.4099903)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

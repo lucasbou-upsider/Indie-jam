@@ -10,7 +10,6 @@ cost = 150
 minerai = "lingot_gluantite"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
-texture_filter = 1
 position = Vector2(33, 42)
 texture = ExtResource("2_kqx1s")
 region_enabled = true
