@@ -42,11 +42,6 @@ var tween: Tween
 @onready var tool_tip_player: AudioStreamPlayer = $Interface/ToolTip/Whoosher
 
 
-
-
-
-
-
 func _ready() -> void:
 	tool_tip.get_parent().visible = false
 	tool_tip.get_parent().offset_transform_position = Vector2(0, -100)
