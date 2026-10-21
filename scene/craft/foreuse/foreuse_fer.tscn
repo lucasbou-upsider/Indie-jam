@@ -2,13 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_3ukbr"]
 [ext_resource type="Texture2D" uid="uid://bsy8l2sbrjks4" path="res://sprite/New_Piskel_3_3.png" id="2_kjxjk"]
-[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_tvrv2"]
-[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_040hx"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnx33"]
-shader = ExtResource("2_tvrv2")
-shader_parameter/dissolve_texture = ExtResource("3_040hx")
-shader_parameter/dissolve_value = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s17j3"]
 atlas = ExtResource("2_kjxjk")
@@ -69,7 +62,6 @@ minerai_produit = "minerai_fer"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
-material = SubResource("ShaderMaterial_hnx33")
 position = Vector2(-13.999992, -5)
 scale = Vector2(1.28125, 1.265625)
 sprite_frames = SubResource("SpriteFrames_x0iyh")

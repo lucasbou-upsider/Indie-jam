@@ -1,36 +1,33 @@
 [gd_scene format=3 uid="uid://cpcrfnudbmj5r"]
 
 [ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_mndkn"]
-[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_n64lt"]
-[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_7yklx"]
 [ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="3_kmbk6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_whfjr"]
-shader = ExtResource("2_n64lt")
-shader_parameter/dissolve_texture = ExtResource("3_7yklx")
-shader_parameter/dissolve_value = 1.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hewwf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n64lt"]
 atlas = ExtResource("3_kmbk6")
 region = Rect2(128, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p657m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmbk6"]
 atlas = ExtResource("3_kmbk6")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kb05"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yklx"]
 atlas = ExtResource("3_kmbk6")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijwlc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_whfjr"]
 atlas = ExtResource("3_kmbk6")
 region = Rect2(0, 128, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eg4ui"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fdhi"]
+atlas = ExtResource("3_kmbk6")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jq0nv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hewwf")
+"texture": SubResource("AtlasTexture_n64lt")
 }],
 "loop": 1,
 "name": &"arret",
@@ -38,16 +35,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p657m")
+"texture": SubResource("AtlasTexture_kmbk6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8kb05")
+"texture": SubResource("AtlasTexture_7yklx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ijwlc")
+"texture": SubResource("AtlasTexture_whfjr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hewwf")
+"texture": SubResource("AtlasTexture_4fdhi")
 }],
 "loop": 1,
 "name": &"new_animation",
@@ -67,10 +64,9 @@ minerai_produit = "cuivre"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
-material = SubResource("ShaderMaterial_whfjr")
 position = Vector2(19, -1)
-sprite_frames = SubResource("SpriteFrames_eg4ui")
-animation = &"arret"
+sprite_frames = SubResource("SpriteFrames_jq0nv")
+animation = &"new_animation"
 autoplay = "new_animation"
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]

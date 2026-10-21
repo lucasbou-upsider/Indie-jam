@@ -1,17 +1,9 @@
 [gd_scene format=3 uid="uid://bcbxkhon40xyh"]
 
 [ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_6f5e3"]
-[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="1_xmfh7"]
-[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="2_n5l3c"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_nojtj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywpl5"]
-shader = ExtResource("1_xmfh7")
-shader_parameter/dissolve_texture = ExtResource("2_n5l3c")
-shader_parameter/dissolve_value = 1.0
-
 [node name="petit_bloc_bronze" type="RigidBody2D" unique_id=1505809120]
-material = SubResource("ShaderMaterial_ywpl5")
 script = ExtResource("1_6f5e3")
 pv = 40
 cost = 250

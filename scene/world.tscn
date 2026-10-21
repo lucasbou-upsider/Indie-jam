@@ -23,7 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="13_tmyho"]
 [ext_resource type="Texture2D" uid="uid://cqi5v42mlxc1s" path="res://sprite/New_Piskel_5_2.png" id="18_e4vd1"]
 [ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="21_a81yy"]
+[ext_resource type="Texture2D" uid="uid://bsy8l2sbrjks4" path="res://sprite/New_Piskel_3_3.png" id="21_puhxk"]
 [ext_resource type="Texture2D" uid="uid://br7haanodffnm" path="res://sprite/New_Piskel_3_2.png" id="22_qfj6m"]
+[ext_resource type="Texture2D" uid="uid://j6emkjcu8am8" path="res://sprite/image.png" id="24_n02kn"]
 [ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="24_qfj6m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
@@ -643,12 +645,11 @@ region_enabled = true
 region_rect = Rect2(1.3575277, 0.46229744, 14.978158, 8.63389)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_fer" unique_id=98490587]
-self_modulate = Color(0.24225739, 0.2421219, 0, 1)
-position = Vector2(33.5614, 12.839867)
-scale = Vector2(0.41, 0.41)
-texture = ExtResource("10_f345f")
+position = Vector2(34.15478, 12.34527)
+scale = Vector2(0.33710784, 0.32361713)
+texture = ExtResource("21_puhxk")
 region_enabled = true
-region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
+region_rect = Rect2(165.16922, 144.52786, 76.4606, 71.32901)
 
 [node name="Button_four" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1625611913]
 layout_mode = 2
@@ -904,6 +905,79 @@ scale = Vector2(0.41, 0.41)
 texture = ExtResource("21_a81yy")
 region_enabled = true
 region_rect = Rect2(123.75711, 155.18965, 100.24289, 56.348694)
+
+[node name="Button_foreuse_etain" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=31944456]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" unique_id=1613720165]
+layout_mode = 0
+offset_left = -146.03223
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=1891601459]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(-0.10861206, 10.480111, 15.019302, 12.081988)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=132741158]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "30"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=1040740158]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("6_0tg4p")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=650694837]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=1718996517]
+layout_mode = 0
+offset_left = 95.85571
+offset_top = -2.3425674
+offset_right = 135.85571
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=1876832054]
+texture_filter = 1
+position = Vector2(120.08485, 11.663872)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(14.7779, 41.688488, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" unique_id=1432133776]
+position = Vector2(32.350994, 12.411596)
+rotation = 3.1415927
+scale = Vector2(0.34120688, 0.33629277)
+texture = ExtResource("24_n02kn")
+region_enabled = true
+region_rect = Rect2(123.75711, 135.87827, 100.24289, 75.66008)
 
 [node name="HSeparator3" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1447174630]
 layout_mode = 2
@@ -1496,6 +1570,9 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="." method="_on_button_foreuse_cuivre_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_etain" to="." method="_on_button_foreuse_etain_pressed"]
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" to="." method="_on_button_bloc_cuivre_pressed"]

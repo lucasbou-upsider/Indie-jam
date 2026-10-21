@@ -111,11 +111,12 @@ func _process(_delta: float) -> void:
 	#blueprint
 	if is_blueprint:
 		if bodycount == 0:
-			sprite_2d.modulate = Color(1.0, 1.0, 1.0, 0.494)
+			print(sprite_2d.self_modulate)
+			sprite_2d.self_modulate = Color(1.0, 1.0, 1.0, 0.494)
 		else:
-			sprite_2d.modulate = Color(0.729, 0.114, 0.267, 0.565)
+			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
 	else:
-		sprite_2d.modulate = Color(1.0, 0.98, 0.984, 0.98)
+		sprite_2d.self_modulate = Color(1.0, 0.98, 0.984, 0.98)
 
 #une fois le blueplrint fini placer
 func place_self():

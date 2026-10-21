@@ -13,6 +13,7 @@ const FOREUSE_CUIVRE = preload("uid://cpcrfnudbmj5r")
 const PRESSE_FER = preload("uid://bpalbk5akejka")
 const BLOC_BRONZE = preload("uid://b7a2fcystwnuy")
 const PETIT_BLOC_BRONZE = preload("uid://bcbxkhon40xyh")
+const FOREUSE_ETAIN = preload("uid://ci1fnijdajo78")
 
 
 var speed
@@ -102,4 +103,8 @@ func _on_button_presse_pressed() -> void:
 	    spawn(PRESSE_FER)
 func _on_button_bloc_bronze_pressed() -> void:
 	if not GLOBAL.mouse_busy:
-	    spawn(PETIT_BLOC_BRONZE)
+	spawn(BLOC_BRONZE)
+func _on_button_piti_bloc_bronze_pressed() -> void:
+	spawn(PETIT_BLOC_BRONZE)
+func _on_button_foreuse_etain_pressed() -> void:
+	spawn(FOREUSE_ETAIN)
