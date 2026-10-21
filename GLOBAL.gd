@@ -5,6 +5,7 @@ var base_pv := 100
 var degats = {"base": 1, "gros": 3, "feu": 6, "anti": 1000000000}
 var DEBUG := true
 var mouse_busy := false
+var selected = null
 
 #inventaire
 var charbon := 0
@@ -27,6 +28,20 @@ var lingot_gluantite := 0
 var lingot_voidium := 0
 var lingot_topaxium := 0
 
+func _process(_delta) -> void:
+	mouse_busy = selected != null
+	if Input.is_action_just_pressed("a"):
+		print(selected)
+
+func unselect() -> void:
+	if selected != null:
+		selected.modulate = Color(1, 1, 1, 1)
+		selected = null
+
+func select(node):
+	selected = node
+	selected.modulate =Color(0.8, 1, 0.8, 1.0)
+	
 
 func _ready():
 	if DEBUG:

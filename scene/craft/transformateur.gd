@@ -42,70 +42,48 @@ func defreeze():
 
 func _ready() -> void:
 	pv_max = pv 
-	GLOBAL.mouse_busy = true
 	global_position = get_global_mouse_position()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	if minerai != "" and minerai2 != "" and minerai3 != "" and minerai4 != "":
-		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 and GLOBAL.get(minerai4) >= cost4:
-			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
-			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
-			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
-			GLOBAL.set(minerai4, GLOBAL.get(minerai4) - cost4)
-		else:
-			queue_free()
-			GLOBAL.mouse_busy = false
-	elif minerai != "" and minerai2 != "" and minerai3 != "":
-		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
-			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
-			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
-			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
-		else:
-			queue_free()
-			GLOBAL.mouse_busy = false
-	elif minerai != "" and minerai2 != "":
-		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
-			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
-			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
-		else:
-			queue_free()
-			GLOBAL.mouse_busy = false
-	elif minerai != "":
-		if GLOBAL.get(minerai) >= cost:
-			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
-		else:
-			queue_free()
-			GLOBAL.mouse_busy = false
+	var affordable := true
+	var minerais = [[minerai, cost], [minerai2, cost2], [minerai3, cost3], [minerai4, cost4]]
+	
+	for mat in minerais:
+		if mat[0] != "":
+			if not GLOBAL.get(mat[0]) >= mat[1]:
+				affordable = false
+	
+	if affordable:
+		for mat in minerais:
+			if mat[0] != "":
+				GLOBAL.set(mat[0], GLOBAL.get(mat[0]) - mat[1] )
+		GLOBAL.select(self)
+	else:
+		queue_free()
 
 
 func _process(_delta: float) -> void:
 	# Input
-	if Input.is_action_just_pressed("click gauche") and is_blueprint:
-		place_self()
+	if Input.is_action_just_pressed("click gauche"):
+		if is_blueprint:
+			place_self()
+		elif mouse_overed:
+			if GLOBAL.selected == self:
+				GLOBAL.unselect()
+			else:
+				GLOBAL.select(self)
 
 
 
 	#destruction
 	if Input.is_action_pressed("click droit"):
 		if mouse_overed:
-			if !is_blueprint:
-				if minerai != "" :
-					GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
-				if minerai2 != "":
-					GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
-				if minerai3 != "":
-					GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
-				if minerai4 != "":
-					GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
-			else :
-				if minerai != "" :
-					GLOBAL.set(minerai, GLOBAL.get(minerai) + cost)
-				if minerai2 != "":
-					GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2)
-				if minerai3 != "":
-					GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3)
-				if minerai4 != "":
-					GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4)
+			var refund_mult = 0.5
+			if is_blueprint:
+				refund_mult = 1
+			for mat in [[minerai, cost], [minerai2, cost2], [minerai3, cost3], [minerai4, cost4]]:
+				if mat[0] != "":
+					GLOBAL.set(mat[0], GLOBAL.get(mat[0]) + mat[1]*refund_mult)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
 		sleeping = false
@@ -122,16 +100,15 @@ func _process(_delta: float) -> void:
 	# regarder si posibilité sde placer pour la couleur
 	if is_blueprint:
 		if bodycount == 0:
-			sprite_2d.modulate = Color(1.0, 1.0, 1.0, 0.494)
+			sprite_2d.self_modulate = Color(1.0, 1.0, 1.0, 0.494)
 		else:
-			sprite_2d.modulate = Color(0.729, 0.114, 0.267, 0.565)
-	else:
-		sprite_2d.modulate = Color(1.0, 0.98, 0.984, 0.98)
+			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
 
 #une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
-		GLOBAL.mouse_busy = false
+		sprite_2d.self_modulate = Color(1, 1, 1, 1)
+		GLOBAL.unselect()
 		if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
 			sprite_2d.play("default")
 		else :

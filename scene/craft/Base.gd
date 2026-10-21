@@ -14,7 +14,7 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
-	GLOBAL.mouse_busy = true
+	GLOBAL.select(self)
 	SIGNAL.connect("defreeze", defreeze)
 	collision_shape_2d.disabled = true
 
@@ -39,14 +39,13 @@ func _process(_delta: float) -> void:
 			sprite_2d.self_modulate = Color(1.0, 1.0, 1.0, 0.494)
 		else:
 			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
-	else:
-		sprite_2d.self_modulate = Color(1.0, 0.98, 0.984, 0.98)
 
 func place_self():
 	if bodycount == 0:
+		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		is_blueprint = false
 		collision_shape_2d.disabled = false
-		GLOBAL.mouse_busy = false
+		GLOBAL.unselect()
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer

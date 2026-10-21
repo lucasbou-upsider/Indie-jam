@@ -65,10 +65,11 @@ func _process(_delta: float) -> void:
 	else:
 		coordoné.self_modulate = Color(1.0, 0.245, 0.188)
 
-func spawn(batiments):
-	var newbat = batiments.instantiate()
-	newbat.global_position = get_global_mouse_position()
-	add_child(newbat)
+func try_spawn(batiment):
+	if GLOBAL.selected == null:
+		var newbat = batiment.instantiate()
+		newbat.global_position = get_global_mouse_position()
+		add_child(newbat)
 
 
 func quake(intensity):
@@ -89,62 +90,42 @@ func _on_quaker_timeout() -> void:
 		earth_quake(randi_range(200, 700))
 
 func _on_button_foreuse_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(FOREUSE)
+	try_spawn(FOREUSE)
 func _on_button_macon_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(MACON)
+	try_spawn(MACON)
 func _on_button_four_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(FOURNEAU)
+	try_spawn(FOURNEAU)
 func _on_button_bloc_cuivre_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_CUIVRE)
+	try_spawn(BLOC_CUIVRE)
 func _on_button_piti_bloc_cuivre_2_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PETIT_BLOC_BRIQUE)
+	try_spawn(PETIT_BLOC_BRIQUE)
 func _on_button_scierie_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(SCIERIE)
+	try_spawn(SCIERIE)
 func _on_button_foreuse_fer_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(FOREUSE_FER)
+	try_spawn(FOREUSE_FER)
 func _on_button_bloc_renforce_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_RENFORCE)
+	try_spawn(BLOC_RENFORCE)
 func _on_button_piti_bloc_renforce_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PTIT_BLOC_RENFORCE)
+	try_spawn(PTIT_BLOC_RENFORCE)
 func _on_button_foreuse_cuivre_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(FOREUSE_CUIVRE)
+	try_spawn(FOREUSE_CUIVRE)
 func _on_button_presse_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PRESSE_FER)
+	try_spawn(PRESSE_FER)
 func _on_button_bloc_bronze_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_BRONZE)
+	try_spawn(BLOC_BRONZE)
 func _on_button_piti_bloc_bronze_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PETIT_BLOC_BRONZE)
+	try_spawn(PETIT_BLOC_BRONZE)
 func _on_button_foreuse_etain_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(FOREUSE_ETAIN)
+	try_spawn(FOREUSE_ETAIN)
 func _on_button_piti_bloc_acier_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PETIT_BLOC_ACIER)
+	try_spawn(PETIT_BLOC_ACIER)
 func _on_button_bloc_acier_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_ACIER)
+	try_spawn(BLOC_ACIER)
 func _on_button_bloc_gluantite_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_GLUANTITE)
+	try_spawn(BLOC_GLUANTITE)
 func _on_button_piti_bloc_gluantite_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PETIT_BLOC_GLUANTITE)
+	try_spawn(PETIT_BLOC_GLUANTITE)
 func _on_button_piti_bloc_topaxium_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PETIT_BLOC_TOPAXIUM)
+	try_spawn(PETIT_BLOC_TOPAXIUM)
 func _on_button_bloc_topaxium_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_TOPAXIUM)
+	try_spawn(BLOC_TOPAXIUM)
