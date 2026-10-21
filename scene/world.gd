@@ -12,6 +12,7 @@ const PTIT_BLOC_RENFORCE = preload("uid://b86jdqoskpqse")
 const FOREUSE_CUIVRE = preload("uid://cpcrfnudbmj5r")
 const PRESSE_FER = preload("uid://bpalbk5akejka")
 const BLOC_BRONZE = preload("uid://b7a2fcystwnuy")
+const PETIT_BLOC_BRONZE = preload("uid://bcbxkhon40xyh")
 
 
 var speed
@@ -52,27 +53,34 @@ func _process(_delta: float) -> void:
 	else:
 		coordoné.self_modulate = Color(1.0, 0.245, 0.188)
 
+func spawn(batiments):
+	var newbat = batiments.instantiate()
+	newbat.global_position = get_global_mouse_position()
+	add_child(newbat)
+
 func _on_button_foreuse_pressed() -> void:
-	add_child(FOREUSE.instantiate())
+	spawn(FOREUSE)
 func _on_button_macon_pressed() -> void:
-	add_child(MACON.instantiate())
+	spawn(MACON)
 func _on_button_four_pressed() -> void:
-	add_child(FOURNEAU.instantiate())
+	spawn(FOURNEAU)
 func _on_button_bloc_cuivre_pressed() -> void:
-	add_child(BLOC_CUIVRE.instantiate())
+	spawn(BLOC_CUIVRE)
 func _on_button_piti_bloc_cuivre_2_pressed() -> void:
-	add_child(PETIT_BLOC_BRIQUE.instantiate())
+	spawn(PETIT_BLOC_BRIQUE)
 func _on_button_scierie_pressed() -> void:
-	add_child(SCIERIE.instantiate())
+	spawn(SCIERIE)
 func _on_button_foreuse_fer_pressed() -> void:
-	add_child(FOREUSE_FER.instantiate())
+	spawn(FOREUSE_FER)
 func _on_button_bloc_renforce_pressed() -> void:
-	add_child(BLOC_RENFORCE.instantiate())
+	spawn(BLOC_RENFORCE)
 func _on_button_piti_bloc_renforce_pressed() -> void:
-	add_child(PTIT_BLOC_RENFORCE.instantiate())
+	spawn(PTIT_BLOC_RENFORCE)
 func _on_button_foreuse_cuivre_pressed() -> void:
-	add_child(FOREUSE_CUIVRE.instantiate())
+	spawn(FOREUSE_CUIVRE)
 func _on_button_presse_pressed() -> void:
-	add_child(PRESSE_FER.instantiate())
+	spawn(PRESSE_FER)
 func _on_button_bloc_bronze_pressed() -> void:
-	add_child(BLOC_BRONZE.instantiate())
+	spawn(BLOC_BRONZE)
+func _on_button_piti_bloc_bronze_pressed() -> void:
+	spawn(PETIT_BLOC_BRONZE)

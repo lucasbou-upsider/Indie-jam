@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_gqe5s"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_tohpo"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_yk37i"]
+[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_tyr4e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk37i"]
+shader = ExtResource("2_yk37i")
+shader_parameter/dissolve_texture = ExtResource("3_tyr4e")
+shader_parameter/dissolve_value = 1.0
 
 [node name="bloc_bronze" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_gqe5s")
@@ -14,6 +21,7 @@ cost3 = 50
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
 self_modulate = Color(1, 1, 0, 1)
 texture_filter = 1
+material = SubResource("ShaderMaterial_yk37i")
 position = Vector2(22, 24)
 texture = ExtResource("2_tohpo")
 region_enabled = true

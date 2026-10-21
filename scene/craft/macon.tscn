@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://bmqj2ocb6rh52"]
 
 [ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_vxaob"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_1t3kc"]
+[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_dib5d"]
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="3_vhrpa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfj6m"]
+shader = ExtResource("2_1t3kc")
+shader_parameter/dissolve_texture = ExtResource("3_dib5d")
+shader_parameter/dissolve_value = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dib5d"]
 atlas = ExtResource("3_vhrpa")
@@ -115,17 +122,20 @@ production = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
 texture_filter = 1
+material = SubResource("ShaderMaterial_qfj6m")
 position = Vector2(-12, 1)
 sprite_frames = SubResource("SpriteFrames_x0iyh")
 autoplay = "default"
 frame_progress = 0.7766654
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
+visible = false
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=738852126]
 polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1820767853]
+visible = false
 polygon = PackedVector2Array(-10, -33, 10, -33, 10, 20, 11, 20, 11, 24, -11, 24, -11, 20, -10, 20)
 disabled = true
 

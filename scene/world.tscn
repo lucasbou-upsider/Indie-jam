@@ -908,20 +908,25 @@ region_rect = Rect2(123.75711, 155.18965, 100.24289, 56.348694)
 [node name="HSeparator3" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1447174630]
 layout_mode = 2
 
-[node name="Button_bloc_cuivre" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1305983379]
+[node name="GridContainer" type="GridContainer" parent="Interface/Panel_construction/VBoxContainer" unique_id=699291426]
+layout_mode = 2
+columns = 2
+
+[node name="Button_bloc_cuivre" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=1305983379]
+custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
 
-[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" unique_id=2023215182]
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" unique_id=2023215182]
 layout_mode = 0
 offset_left = -66.02161
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre/panel_info3" unique_id=916616094]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre/panel_info3" unique_id=916616094]
 texture_filter = 1
 position = Vector2(13.507202, 12.030519)
 scale = Vector2(1.6839845, 1.835205)
@@ -929,7 +934,7 @@ texture = ExtResource("6_0tg4p")
 region_enabled = true
 region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre/panel_info3" unique_id=1607459541]
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre/panel_info3" unique_id=1607459541]
 layout_mode = 0
 offset_left = 24.273926
 offset_top = -0.27687073
@@ -938,27 +943,28 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "500"
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" unique_id=1392980220]
-position = Vector2(33.034668, 11.786537)
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" unique_id=1392980220]
+position = Vector2(16.847412, 11.786537)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("13_tmyho")
 region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
-[node name="Button_piti_bloc_cuivre2" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=987157448]
+[node name="Button_piti_bloc_cuivre2" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=987157448]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
 
-[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" unique_id=1863883776]
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" unique_id=1863883776]
 layout_mode = 0
 offset_left = -66.02161
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2/panel_info3" unique_id=1617218518]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2/panel_info3" unique_id=1617218518]
 texture_filter = 1
 position = Vector2(13.507202, 12.030519)
 scale = Vector2(1.6839845, 1.835205)
@@ -966,7 +972,7 @@ texture = ExtResource("6_0tg4p")
 region_enabled = true
 region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2/panel_info3" unique_id=754118090]
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2/panel_info3" unique_id=754118090]
 layout_mode = 0
 offset_left = 24.273926
 offset_top = -0.27687073
@@ -975,27 +981,28 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "300"
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" unique_id=786532953]
-position = Vector2(33.297974, 13.103218)
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" unique_id=786532953]
+position = Vector2(14.821655, 13.103218)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("13_tmyho")
 region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
-[node name="Button_bloc_renforce" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1510904695]
+[node name="Button_bloc_renforce" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=1510904695]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
 
-[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" unique_id=428805179]
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" unique_id=428805179]
 layout_mode = 0
 offset_left = -66.02161
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce/panel_info3" unique_id=168063667]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce/panel_info3" unique_id=168063667]
 texture_filter = 1
 position = Vector2(13.507202, 12.030519)
 scale = Vector2(1.6839845, 1.835205)
@@ -1003,7 +1010,7 @@ texture = ExtResource("6_0tg4p")
 region_enabled = true
 region_rect = Rect2(15.903397, 21.57505, 15.019302, 11.741752)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce/panel_info3" unique_id=207227446]
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce/panel_info3" unique_id=207227446]
 layout_mode = 0
 offset_left = 24.273926
 offset_top = -0.27687073
@@ -1012,28 +1019,30 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "400"
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" unique_id=2097331066]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" unique_id=2097331066]
 self_modulate = Color(0.19076231, 0.19076234, 0.19076231, 1)
-position = Vector2(33.034668, 11.786537)
+position = Vector2(16.847412, 11.786537)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("13_tmyho")
 region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
-[node name="Button_piti_bloc_renforce" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=430405013]
+[node name="Button_piti_bloc_renforce" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=430405013]
+custom_minimum_size = Vector2(28.325, 0)
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
 
-[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" unique_id=440143715]
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" unique_id=440143715]
 layout_mode = 0
 offset_left = -66.02161
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce/panel_info3" unique_id=2109874876]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce/panel_info3" unique_id=2109874876]
 texture_filter = 1
 position = Vector2(13.507202, 12.030519)
 scale = Vector2(1.6839845, 1.835205)
@@ -1041,7 +1050,7 @@ texture = ExtResource("6_0tg4p")
 region_enabled = true
 region_rect = Rect2(15.903397, 21.57505, 15.019302, 11.741752)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce/panel_info3" unique_id=360490113]
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce/panel_info3" unique_id=360490113]
 layout_mode = 0
 offset_left = 24.273926
 offset_top = -0.27687073
@@ -1050,28 +1059,29 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "250"
 
-[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" unique_id=1118383977]
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" unique_id=1118383977]
 self_modulate = Color(0.18000486, 0.18000486, 0.18000486, 1)
-position = Vector2(33.297974, 13.103218)
+position = Vector2(14.821655, 13.103218)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("13_tmyho")
 region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
-[node name="Button_bloc_bronze" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1322718944]
+[node name="Button_bloc_bronze" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=1322718944]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
 
-[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" unique_id=1883470134]
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" unique_id=1883470134]
 layout_mode = 0
 offset_left = -66.02161
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze/panel_info3" unique_id=448763939]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze/panel_info3" unique_id=448763939]
 texture_filter = 1
 position = Vector2(12.167053, 11.695497)
 scale = Vector2(1.6839845, 1.835205)
@@ -1079,7 +1089,7 @@ texture = ExtResource("24_qfj6m")
 region_enabled = true
 region_rect = Rect2(0.07582092, 50.172592, 15.019302, 9.856674)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze/panel_info3" unique_id=1499638090]
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze/panel_info3" unique_id=1499638090]
 layout_mode = 0
 offset_left = 24.273926
 offset_top = -0.27687073
@@ -1088,28 +1098,29 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "400"
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" unique_id=1834423457]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" unique_id=1834423457]
 self_modulate = Color(1, 1, 0, 1)
-position = Vector2(33.034668, 11.786537)
+position = Vector2(16.847412, 11.786537)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("13_tmyho")
 region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
-[node name="Button_piti_bloc_bronze" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1640370131]
+[node name="Button_piti_bloc_bronze" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=1640370131]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
 
-[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" unique_id=753854604]
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" unique_id=753854604]
 layout_mode = 0
 offset_left = -66.02161
 offset_top = -0.94563293
 offset_right = -12.884033
 offset_bottom = 22.054367
 
-[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze/panel_info3" unique_id=1874692264]
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze/panel_info3" unique_id=1874692264]
 texture_filter = 1
 position = Vector2(12.638184, 11.740846)
 scale = Vector2(1.6839845, 1.835205)
@@ -1117,7 +1128,7 @@ texture = ExtResource("24_qfj6m")
 region_enabled = true
 region_rect = Rect2(0.6693573, 50.064682, 15.019302, 9.286369)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze/panel_info3" unique_id=2134944304]
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze/panel_info3" unique_id=2134944304]
 layout_mode = 0
 offset_left = 24.273926
 offset_top = -0.27687073
@@ -1126,9 +1137,9 @@ offset_bottom = 39.72313
 bbcode_enabled = true
 text = "250"
 
-[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" unique_id=1527045135]
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" unique_id=1527045135]
 self_modulate = Color(1, 1, 0, 1)
-position = Vector2(33.297974, 13.103218)
+position = Vector2(14.821655, 13.103218)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("13_tmyho")
 region_enabled = true
@@ -1485,21 +1496,21 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="." method="_on_button_foreuse_cuivre_pressed"]
-[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" method="_on_mouse_exited"]
-[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_bloc_cuivre" to="." method="_on_button_bloc_cuivre_pressed"]
-[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" to="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" to="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_cuivre2" to="." method="_on_button_piti_bloc_cuivre_2_pressed"]
-[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" method="_on_mouse_exited"]
-[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_bloc_renforce" to="." method="_on_button_bloc_renforce_pressed"]
-[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" method="_on_mouse_exited"]
-[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_renforce" to="." method="_on_button_piti_bloc_renforce_pressed"]
-[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" method="_on_mouse_exited"]
-[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_bloc_bronze" to="." method="_on_button_bloc_bronze_pressed"]
-[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" method="_on_mouse_exited"]
-[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_piti_bloc_bronze" to="." method="_on_button_piti_bloc_renforce_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_cuivre" to="." method="_on_button_bloc_cuivre_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" to="." method="_on_button_piti_bloc_cuivre_2_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" to="." method="_on_button_bloc_renforce_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" to="." method="_on_button_piti_bloc_renforce_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" to="." method="_on_button_bloc_bronze_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" to="." method="_on_button_piti_bloc_bronze_pressed"]

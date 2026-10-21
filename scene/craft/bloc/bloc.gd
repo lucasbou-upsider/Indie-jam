@@ -8,7 +8,7 @@ var is_blueprint := true
 @export var pv = 0
 var bodycount = 0
 var mouse_overed := false
-
+var pv_max
 
 @export_category("cout de construction")
 @export var cost := 0
@@ -21,6 +21,7 @@ var mouse_overed := false
 func defreeze():
 	sleeping = false
 func _ready() -> void:
+	pv_max = pv
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	if minerai != "" and minerai2 != "" and minerai3 != "":
@@ -49,7 +50,7 @@ func _process(_delta: float) -> void:
 		place_self()
 
 	#destruction
-	if Input.is_action_just_pressed("click droit"):
+	if Input.is_action_pressed("click droit"):
 		if mouse_overed:
 			if minerai != "":
 				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
@@ -94,7 +95,16 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		bodycount += 1
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":
-			pv -= 1
+			var pv_float:float = pv
+			var pv_max_float:float = pv_max
+			var shader := sprite_2d.material
+			var shader_value:float = (pv_float/pv_max_float)*0.8+0.2
+			print(shader)
+			shader.set_shader_parameter("dissolve_value", shader_value)
+			#shader.set_shader_parameter("dissolve_value", shader_value)
+			pv -= GLOBAL.degats[ area.get_parent().type ]
+			if area.get_parent().type == "anti":
+				area.get_parent().queue_free()
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
 	if is_blueprint:

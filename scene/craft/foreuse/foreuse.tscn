@@ -53,6 +53,7 @@ animations = [{
 
 [node name="foreuse" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_xpbly")
+elec_efficacity = [1, 2, 3]
 cost = 50
 minerai = "brique"
 production = 1

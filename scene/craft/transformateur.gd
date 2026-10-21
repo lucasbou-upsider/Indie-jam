@@ -5,6 +5,7 @@ var is_blueprint := true
 var bodycount := 0
 var mouse_overed := false
 var is_powered := false
+var pv_max := 0
 @onready var collision_shape_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var production_timer: Timer = $ProductionTimer
@@ -38,6 +39,7 @@ var is_powered := false
 func defreeze():
 	sleeping = false
 func _ready() -> void:
+	pv_max = pv 
 	global_position = get_global_mouse_position()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
@@ -74,8 +76,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click gauche") and is_blueprint:
 		place_self()
 
-#destruction
-	if Input.is_action_just_pressed("click droit"):
+
+
+	#destruction
+	if Input.is_action_pressed("click droit"):
 		if mouse_overed:
 			if minerai != "" :
 				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
@@ -142,11 +146,15 @@ func _on_production_timer_timeout() -> void:
 	else :
 		sprite_2d.play("arret")
 
-
 func _on_clearance_area_area_entered(area: Area2D) -> void:
 	#degats
 	if !is_blueprint and area.name != "verif_Area2D":
 		if area.get_parent().get_parent().name == "kayou_spawn":
+			var pv_float:float = pv
+			var pv_max_float:float = pv_max
+			var shader := sprite_2d.material as ShaderMaterial
+			var shader_value:float = (pv_float/pv_max_float)*0.8+0.2
+			shader.set_shader_parameter("dissolve_value", shader_value)
 			pv -= GLOBAL.degats[ area.get_parent().type ]
 			if area.get_parent().type == "anti":
 				area.get_parent().queue_free()

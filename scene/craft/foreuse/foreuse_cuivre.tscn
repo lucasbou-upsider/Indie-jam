@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://cpcrfnudbmj5r"]
 
 [ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_mndkn"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_n64lt"]
+[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_7yklx"]
 [ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="3_kmbk6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whfjr"]
+shader = ExtResource("2_n64lt")
+shader_parameter/dissolve_texture = ExtResource("3_7yklx")
+shader_parameter/dissolve_value = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hewwf"]
 atlas = ExtResource("3_kmbk6")
@@ -49,6 +56,8 @@ animations = [{
 
 [node name="foreuse_cuivre" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_mndkn")
+pv = 25
+elec_efficacity = [1, 2, 3]
 cost = 20
 minerai = "plaque_fer"
 cost2 = 100
@@ -58,6 +67,7 @@ minerai_produit = "cuivre"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
+material = SubResource("ShaderMaterial_whfjr")
 position = Vector2(19, -1)
 sprite_frames = SubResource("SpriteFrames_eg4ui")
 animation = &"arret"

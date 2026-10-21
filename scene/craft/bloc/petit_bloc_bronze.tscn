@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bcbxkhon40xyh"]
+
+[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_6f5e3"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="1_xmfh7"]
+[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="2_n5l3c"]
+[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_nojtj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywpl5"]
+shader = ExtResource("1_xmfh7")
+shader_parameter/dissolve_texture = ExtResource("2_n5l3c")
+shader_parameter/dissolve_value = 1.0
+
+[node name="petit_bloc_bronze" type="RigidBody2D" unique_id=1505809120]
+material = SubResource("ShaderMaterial_ywpl5")
+script = ExtResource("1_6f5e3")
+pv = 40
+cost = 250
+minerai = "bronze"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
+texture_filter = 1
+position = Vector2(33, 42)
+texture = ExtResource("2_nojtj")
+region_enabled = true
+region_rect = Rect2(-0.75131226, 1.1000137, 128, 133.18683)
+
+[node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
+visible = false
+polygon = PackedVector2Array(-14, 13, 15, 13, 15, -15, -14, -15)
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=566869362]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
+polygon = PackedVector2Array(-14, -15, -14, 13, 15, 13, 15, -15)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
