@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://cicrbxdj73ek4"]
 
-[ext_resource type="PackedScene" uid="uid://byxo1qtpjx30p" path="res://scene/craft/Base.tscn" id="1_pjass"]
 [ext_resource type="Script" uid="uid://dy7qnufb0wjm5" path="res://scene/world.gd" id="1_txmk2"]
 [ext_resource type="Script" uid="uid://xf8stc6u11am" path="res://scene/ennemie/kayou_spawn.gd" id="2_w4qq1"]
 [ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="3_hcb8y"]
@@ -333,10 +332,6 @@ limit_right = 1834
 limit_bottom = 198
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
-
-[node name="Base" parent="." unique_id=1313463931 instance=ExtResource("1_pjass")]
-position = Vector2(2, -433)
-mass = 1.0
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=476184838]
 
@@ -2186,6 +2181,21 @@ offset_right = 105.3326
 offset_bottom = 34.805332
 theme_override_font_sizes/font_size = 17
 text = "  300"
+horizontal_alignment = 1
+
+[node name="ToolTip" type="Panel" parent="Interface" unique_id=1269617451]
+offset_left = 427.0
+offset_top = 54.0
+offset_right = 741.0
+offset_bottom = 130.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/ToolTip" unique_id=1372653129]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 313.0
+offset_bottom = 41.0
+fit_content = true
 horizontal_alignment = 1
 
 [connection signal="timeout" from="kayou_spawn/quake_timer" to="." method="_on_quake_timer_timeout"]

@@ -57,7 +57,7 @@ func _ready() -> void:
 		for mat in minerais:
 			if mat[0] != "":
 				GLOBAL.set(mat[0], GLOBAL.get(mat[0]) - mat[1] )
-		GLOBAL.select(self)
+		get_parent().select(self)
 	else:
 		queue_free()
 
@@ -69,9 +69,9 @@ func _process(_delta: float) -> void:
 			place_self()
 		elif mouse_overed:
 			if GLOBAL.selected == self:
-				GLOBAL.unselect()
+				get_parent().unselect()
 			else:
-				GLOBAL.select(self)
+				get_parent().select(self)
 
 
 
@@ -108,7 +108,7 @@ func _process(_delta: float) -> void:
 func place_self():
 	if bodycount == 0:
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
-		GLOBAL.unselect()
+		get_parent().unselect()
 		if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
 			sprite_2d.play("default")
 		else :
@@ -155,8 +155,14 @@ func _on_clearance_area_area_exited(_area: Area2D) -> void:
 	if is_blueprint:
 		bodycount -= 1
 
-
 func _on_clearance_area_mouse_entered() -> void:
 	mouse_overed = true
 func _on_clearance_area_mouse_exited() -> void:
 	mouse_overed = false
+
+
+func tooltipify():
+	var res := "Processer\n"
+	res = res + "hp: "+str(pv)+"/"+str(pv_max)
+	res = res + "\nproduction time: "+str(production_timer.wait_time)+"s"
+	return res

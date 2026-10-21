@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name Base
 
+var pv_max: int = 100
 var pv: int = GLOBAL.base_pv
 var is_blueprint := true
 var bodycount := 0
@@ -8,13 +9,13 @@ var mouse_overed := false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-#defreez pour les signaux
+#defreeze pour les signaux
 
 func defreeze():
 	sleeping = false
 
 func _ready() -> void:
-	GLOBAL.select(self)
+	get_parent().select(self)
 	SIGNAL.connect("defreeze", defreeze)
 	collision_shape_2d.disabled = true
 
@@ -26,7 +27,13 @@ func _process(_delta: float) -> void:
 	
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
-		place_self()
+		if is_blueprint:
+			place_self()
+		elif mouse_overed:
+			if GLOBAL.selected == self:
+				get_parent().unselect()
+			else:
+				get_parent().select(self)
 
 	# blueprint
 	if is_blueprint == true:
@@ -45,7 +52,7 @@ func place_self():
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		is_blueprint = false
 		collision_shape_2d.disabled = false
-		GLOBAL.unselect()
+		get_parent().unselect()
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
@@ -67,3 +74,8 @@ func _on_area_2d_mouse_entered() -> void:
 	mouse_overed = true
 func _on_area_2d_mouse_exited() -> void:
 	mouse_overed = false
+
+func tooltipify():
+	var res := "Base\n"
+	res = res + "hp: "+str(pv)+"/"+str(pv_max)
+	return res

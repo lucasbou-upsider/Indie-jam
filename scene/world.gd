@@ -25,10 +25,11 @@ const PETIT_BLOC_VOIDIUM = preload("uid://crq1oh7y42s1t")
 const FUSIONNEUR_DE_BRONZE = preload("uid://78oce3mk04lx")
 const TRANSFORMATEUR = preload("uid://rtn0xcaetf3g")
 const CRAMEUR = preload("uid://c3d6mctffdjwo")
-
+const BASE = preload("uid://byxo1qtpjx30p")
 
 var speed
 var quake_queue = []
+
 
 @onready var progress_bar: ProgressBar = $Interface/ProgressBar
 @onready var camera_2d: Camera2D = $Camera2D
@@ -36,9 +37,12 @@ var quake_queue = []
 @onready var quake_timer: Timer = $kayou_spawn/quake_timer
 @onready var quaker: Timer = $kayou_spawn/quaker
 
+@onready var tool_tip: RichTextLabel = $Interface/ToolTip/RichTextLabel
+
 
 func _ready() -> void:
-	pass 
+	tool_tip.get_parent().visible = false
+	add_child(BASE.instantiate())
 
 
 func _process(_delta: float) -> void:
@@ -75,6 +79,20 @@ func try_spawn(batiment):
 		var newbat = batiment.instantiate()
 		newbat.global_position = get_global_mouse_position()
 		add_child(newbat)
+
+
+func unselect() -> void:
+	if GLOBAL.selected != null:
+		tool_tip.get_parent().visible = false
+		tool_tip.text = "no building selected"
+		GLOBAL.selected.modulate = Color(1, 1, 1, 1)
+		GLOBAL.selected = null
+
+func select(node) -> void:
+	GLOBAL.selected = node
+	tool_tip.get_parent().visible = true
+	tool_tip.text = GLOBAL.selected.tooltipify()
+	GLOBAL.selected.modulate =Color(0.8, 1, 0.8, 1.0)
 
 
 func quake(intensity):

@@ -51,7 +51,7 @@ func _ready() -> void:
 		for mat in minerais:
 			if mat[0] != "":
 				GLOBAL.set(mat[0], GLOBAL.get(mat[0]) - mat[1] )
-		GLOBAL.select(self)
+		get_parent().select(self)
 	else:
 		queue_free()
 
@@ -63,9 +63,9 @@ func _process(_delta: float) -> void:
 			place_self()
 		elif mouse_overed:
 			if GLOBAL.selected == self:
-				GLOBAL.unselect()
+				get_parent().unselect()
 			else:
-				GLOBAL.select(self)
+				get_parent().select(self)
 
 	#destruction
 	if Input.is_action_pressed("click droit"):
@@ -107,7 +107,7 @@ func _process(_delta: float) -> void:
 func place_self():
 	if bodycount == 0:
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
-		GLOBAL.unselect()
+		get_parent().unselect()
 		electrical_strenght()
 		production_timer.start()
 		is_blueprint = false
@@ -146,3 +146,9 @@ func _on_area_2d_mouse_entered() -> void:
 	mouse_overed = true
 func _on_area_2d_mouse_exited() -> void:
 	mouse_overed = false
+
+func tooltipify():
+	var res := "Drill\n"
+	res = res + "hp: "+str(pv)+"/"+str(pv_max)
+	res = res + "\nproduction time: "+str(production_timer.wait_time)+"s"
+	return res
