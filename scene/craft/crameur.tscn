@@ -183,7 +183,7 @@ texture_filter = 1
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_wwvk7")
 autoplay = "default"
-frame_progress = 0.76573414
+frame_progress = 0.14210582
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
 

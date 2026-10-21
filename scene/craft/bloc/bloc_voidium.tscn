@@ -6,7 +6,7 @@
 [node name="bloc_voidium" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_tmgbw")
 is_voidium = true
-pv = 70
+pv = 60
 cost = 400
 minerai = "lingot_voidium"
 
