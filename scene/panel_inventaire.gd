@@ -12,11 +12,13 @@ func _process(_delta: float) -> void:
 		v_box_container_2.visible = false
 		v_box_container.visible = true
 		for r in ressources.keys():
+			if GLOBAL.get(r) > 9999: GLOBAL.set(r, 9999)
 			ressources[r].text = "      " + str(GLOBAL.get(r)) + "  |  " + get_parent().get_parent().calculate_production(r)
 	else:
 		v_box_container_2.visible = true
 		v_box_container.visible = false
 		for r in ressources2.keys():
+			if GLOBAL.get(r) > 9999: GLOBAL.set(r, 9999)
 			ressources2[r].text = "      " + str(GLOBAL.get(r)) 
 
 
