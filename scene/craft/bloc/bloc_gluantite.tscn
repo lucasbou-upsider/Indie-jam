@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bc266li4ka4m4"]
+
+[ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_y367o"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_6muge"]
+[ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_07jer"]
+[ext_resource type="Texture2D" uid="uid://daukomdkjvjdq" path="res://sprite/New_Piskel_10_4.png" id="4_rdgj0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk37i"]
+shader = ExtResource("2_6muge")
+shader_parameter/dissolve_texture = ExtResource("3_07jer")
+shader_parameter/dissolve_value = 1.0
+
+[node name="bloc_gluantite" type="RigidBody2D" unique_id=1505809120]
+script = ExtResource("1_y367o")
+pv = 70
+cost = 400
+minerai = "lingot_gluantite"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
+texture_filter = 1
+material = SubResource("ShaderMaterial_yk37i")
+position = Vector2(22, 24)
+texture = ExtResource("4_rdgj0")
+region_enabled = true
+region_rect = Rect2(0, 122.81318, 128, 133.18683)
+
+[node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
+visible = false
+polygon = PackedVector2Array(-26, 26, 28, 26, 28, -27, -26, -27)
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=566869362]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=515065430]
+polygon = PackedVector2Array(-26, -27, -26, 26, 28, 26, 28, -27)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

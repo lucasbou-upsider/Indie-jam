@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b7a2fcystwnuy"]
 
 [ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_gqe5s"]
-[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_tohpo"]
 [ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="2_yk37i"]
 [ext_resource type="Texture2D" uid="uid://coeptoljx0621" path="res://sprite/1k_Dissolve_Noise_Texture.png" id="3_tyr4e"]
+[ext_resource type="Texture2D" uid="uid://c451n4g5n1d1o" path="res://sprite/New_Piskel_10_2.png" id="4_yk37i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yk37i"]
 shader = ExtResource("2_yk37i")
@@ -19,11 +19,10 @@ cost2 = 50
 cost3 = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
-self_modulate = Color(1, 1, 0, 1)
 texture_filter = 1
 material = SubResource("ShaderMaterial_yk37i")
 position = Vector2(22, 24)
-texture = ExtResource("2_tohpo")
+texture = ExtResource("4_yk37i")
 region_enabled = true
 region_rect = Rect2(0, 122.81318, 128, 133.18683)
 

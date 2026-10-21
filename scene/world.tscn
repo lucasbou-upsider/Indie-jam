@@ -27,6 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://br7haanodffnm" path="res://sprite/New_Piskel_3_2.png" id="22_qfj6m"]
 [ext_resource type="Texture2D" uid="uid://j6emkjcu8am8" path="res://sprite/image.png" id="24_n02kn"]
 [ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="24_qfj6m"]
+[ext_resource type="Texture2D" uid="uid://dye251udf5c12" path="res://sprite/New_Piskel_10_1.png" id="27_7h02s"]
+[ext_resource type="Texture2D" uid="uid://c451n4g5n1d1o" path="res://sprite/New_Piskel_10_2.png" id="28_fb6u6"]
+[ext_resource type="Texture2D" uid="uid://2doww6atbmoy" path="res://sprite/New_Piskel_10_3.png" id="29_fb6u6"]
+[ext_resource type="Texture2D" uid="uid://daukomdkjvjdq" path="res://sprite/New_Piskel_10_4.png" id="30_spjrp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
 shader = ExtResource("5_yur6x")
@@ -1053,7 +1057,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "300"
+text = "150"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_cuivre2" unique_id=786532953]
 position = Vector2(14.821655, 13.103218)
@@ -1094,10 +1098,9 @@ bbcode_enabled = true
 text = "400"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_renforce" unique_id=2097331066]
-self_modulate = Color(0.19076231, 0.19076234, 0.19076231, 1)
 position = Vector2(16.847412, 11.786537)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("13_tmyho")
+texture = ExtResource("27_7h02s")
 region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
@@ -1131,13 +1134,12 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "250"
+text = "150"
 
 [node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_renforce" unique_id=1118383977]
-self_modulate = Color(0.18000486, 0.18000486, 0.18000486, 1)
 position = Vector2(14.821655, 13.103218)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("13_tmyho")
+texture = ExtResource("27_7h02s")
 region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
@@ -1173,10 +1175,9 @@ bbcode_enabled = true
 text = "400"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_bronze" unique_id=1834423457]
-self_modulate = Color(1, 1, 0, 1)
 position = Vector2(16.847412, 11.786537)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("13_tmyho")
+texture = ExtResource("28_fb6u6")
 region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
@@ -1209,13 +1210,164 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "250"
+text = "150"
 
 [node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" unique_id=1527045135]
-self_modulate = Color(1, 1, 0, 1)
 position = Vector2(14.821655, 13.103218)
 scale = Vector2(0.41, 0.41)
-texture = ExtResource("13_tmyho")
+texture = ExtResource("28_fb6u6")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_acier" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=1147704497]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" unique_id=1951408839]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier/panel_info3" unique_id=70928528]
+texture_filter = 1
+position = Vector2(12.074768, 13.449128)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.185879, 62.70288, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier/panel_info3" unique_id=1692221708]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "400"
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" unique_id=1912675002]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("29_fb6u6")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_acier" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=965578561]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" unique_id=1389877459]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier/panel_info3" unique_id=1794041873]
+texture_filter = 1
+position = Vector2(12.638184, 11.740846)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.410877, 62.226433, 15.019302, 9.286369)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier/panel_info3" unique_id=1851919446]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" unique_id=388389756]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("29_fb6u6")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_gluantite" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=79440544]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" unique_id=54460791]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite/panel_info3" unique_id=571730818]
+texture_filter = 1
+position = Vector2(12.074768, 12.909547)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.3215065, 115.40382, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite/panel_info3" unique_id=1903028295]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "400"
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" unique_id=1668907616]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("30_spjrp")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_gluantite" type="Button" parent="Interface/Panel_construction/VBoxContainer/GridContainer" unique_id=595409375]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info3" type="Panel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" unique_id=1394941978]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite/panel_info3" unique_id=917513493]
+texture_filter = 1
+position = Vector2(12.638184, 11.740846)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.45622253, 114.20908, 14.691181, 11.662239)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite/panel_info3" unique_id=2134435909]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" unique_id=1091246725]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("30_spjrp")
 region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
@@ -1591,3 +1743,15 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_bronze" to="." method="_on_button_piti_bloc_bronze_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_acier" to="." method="_on_button_bloc_acier_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_acier" to="." method="_on_button_piti_bloc_acier_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_bloc_gluantite" to="." method="_on_button_bloc_gluantite_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" to="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridContainer/Button_piti_bloc_gluantite" to="." method="_on_button_piti_bloc_gluantite_pressed"]

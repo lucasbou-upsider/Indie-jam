@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djp8kufdndlut"]
 
 [ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_tqy7p"]
-[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_qim2f"]
+[ext_resource type="Texture2D" uid="uid://dye251udf5c12" path="res://sprite/New_Piskel_10_1.png" id="2_tqy7p"]
 
 [node name="bloc_renforce" type="RigidBody2D" unique_id=1505809120]
 mass = 10.0
@@ -11,10 +11,9 @@ cost = 400
 minerai = "lingot_fer"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
-self_modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
 texture_filter = 1
 position = Vector2(22, 24)
-texture = ExtResource("2_qim2f")
+texture = ExtResource("2_tqy7p")
 region_enabled = true
 region_rect = Rect2(0, 122.81318, 128, 133.18683)
 

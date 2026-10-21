@@ -37,6 +37,18 @@ func _ready():
 		minerai_fer = 1000
 		lingot_fer = 1000
 		plaque_fer = 1000
+		etain = 1000
+		bronze = 1000
+		engrenage_bronze = 1000
+		lingot_acier = 1000
+		barre_acier = 1000
+		minerai_gluantite = 1000
+		minerai_voidium = 1000
+		minerai_topaxium = 1000
+		lingot_gluantite = 1000
+		lingot_voidium = 1000
+		lingot_topaxium = 1000
+
 
 func calcul_electrical_strength(bat_pos_x) -> int:
 	if bat_pos_x > -400 and bat_pos_x < 400:

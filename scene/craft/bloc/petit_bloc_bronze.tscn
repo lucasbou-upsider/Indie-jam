@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bcbxkhon40xyh"]
 
 [ext_resource type="Script" uid="uid://cc0cmfb1d4kkn" path="res://scene/craft/bloc/bloc.gd" id="1_6f5e3"]
-[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="2_nojtj"]
+[ext_resource type="Texture2D" uid="uid://c451n4g5n1d1o" path="res://sprite/New_Piskel_10_2.png" id="2_6f5e3"]
 
 [node name="petit_bloc_bronze" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_6f5e3")
 pv = 40
-cost = 250
+cost = 150
 minerai = "bronze"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]
 texture_filter = 1
 position = Vector2(33, 42)
-texture = ExtResource("2_nojtj")
+texture = ExtResource("2_6f5e3")
 region_enabled = true
 region_rect = Rect2(-0.75131226, 1.1000137, 128, 133.18683)
 
