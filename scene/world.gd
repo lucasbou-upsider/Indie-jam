@@ -40,6 +40,12 @@ var quake_queue = []
 @onready var tool_tip: RichTextLabel = $Interface/ToolTip/RichTextLabel
 
 
+
+
+
+
+
+
 func _ready() -> void:
 	tool_tip.get_parent().visible = false
 	add_child(BASE.instantiate())
@@ -55,7 +61,7 @@ func _process(_delta: float) -> void:
 	
 	#deplacement de la camera
 	if Input.is_action_just_pressed("verif_pv"):
-		earth_quake(500)
+		print(calculate_production("pierre"))
 	if Input.is_action_pressed("courir"):
 		speed = 5
 	else:
@@ -84,6 +90,22 @@ func try_spawn(batiment):
 		newbat.global_position = get_global_mouse_position()
 		add_child(newbat)
 
+func calculate_production(ressource):
+	var res: float = 0.0
+	for bat in self.get_children():
+		if bat is foreuse:
+			if bat.minerai_produit == ressource:
+				res += bat.production/bat.production_timer.wait_time
+			elif bat.minerai_produit2 == ressource:
+				res += bat.production2/bat.production_timer.wait_time
+		elif bat is transformateur:
+			if bat.demande == ressource:
+				res -= bat.cout_demande/bat.production_timer.wait_time
+			elif bat.demande2 == ressource:
+				res -= bat.cout_demande2/bat.production_timer.wait_time
+			elif bat.minerai_produit == ressource:
+				res += bat.production/bat.production_timer.wait_time
+	return str(res)+"/s"
 
 func unselect() -> void:
 	if GLOBAL.selected != null:
@@ -115,6 +137,10 @@ func _on_quake_timer_timeout() -> void:
 func _on_quaker_timeout() -> void:
 	if randi_range(0, 4) == 0:
 		earth_quake(randi_range(200, 700))
+
+
+
+
 
 func _on_button_foreuse_pressed() -> void:
 	try_spawn(FOREUSE)
