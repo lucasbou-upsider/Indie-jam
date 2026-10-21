@@ -88,14 +88,24 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_pressed("click droit"):
 		if mouse_overed:
-			if minerai != "" :
-				GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
-			if minerai2 != "":
-				GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
-			if minerai3 != "":
-				GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
-			if minerai4 != "":
-				GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
+			if !is_blueprint:
+				if minerai != "" :
+					GLOBAL.set(minerai, GLOBAL.get(minerai) + cost/2)
+				if minerai2 != "":
+					GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2/2)
+				if minerai3 != "":
+					GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3/2)
+				if minerai4 != "":
+					GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4/2)
+			else :
+				if minerai != "" :
+					GLOBAL.set(minerai, GLOBAL.get(minerai) + cost)
+				if minerai2 != "":
+					GLOBAL.set(minerai2, GLOBAL.get(minerai2) + cost2)
+				if minerai3 != "":
+					GLOBAL.set(minerai3, GLOBAL.get(minerai3) + cost3)
+				if minerai4 != "":
+					GLOBAL.set(minerai4, GLOBAL.get(minerai4) + cost4)
 			SIGNAL.emit_signal("defreeze")
 			queue_free()
 		sleeping = false
