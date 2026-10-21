@@ -26,10 +26,11 @@ const FUSIONNEUR_DE_BRONZE = preload("uid://78oce3mk04lx")
 const TRANSFORMATEUR = preload("uid://rtn0xcaetf3g")
 const CRAMEUR = preload("uid://c3d6mctffdjwo")
 const BASE = preload("uid://byxo1qtpjx30p")
+const FUSIONNEUR_D_ACIER = preload("uid://b08u6oy6tq0n8")
 
 var speed
 var quake_queue = []
-
+var tween: Tween
 
 @onready var progress_bar: ProgressBar = $Interface/ProgressBar
 @onready var camera_2d: Camera2D = $Camera2D
@@ -48,6 +49,7 @@ var quake_queue = []
 
 func _ready() -> void:
 	tool_tip.get_parent().visible = false
+	tool_tip.get_parent().offset_transform_position = Vector2(0, -100)
 	add_child(BASE.instantiate())
 
 
@@ -113,6 +115,7 @@ func calculate_production(ressource):
 
 func unselect() -> void:
 	if GLOBAL.selected != null:
+		tool_tip.get_parent().offset_transform_position = Vector2(0, -100)
 		tool_tip.get_parent().visible = false
 		tool_tip.text = "no building selected"
 		GLOBAL.selected.modulate = Color(1, 1, 1, 1)
@@ -121,6 +124,10 @@ func unselect() -> void:
 func select(node) -> void:
 	GLOBAL.selected = node
 	tool_tip.get_parent().visible = true
+	if tween: tween.kill()
+	tween = create_tween()
+	tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,10), 0.05)
+	tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,0), 0.1)
 	tool_tip.text = GLOBAL.selected.tooltipify()
 	GLOBAL.selected.modulate =Color(0.8, 1, 0.8, 1.0)
 
@@ -196,3 +203,5 @@ func _on_button_transformateur_pressed() -> void:
 	try_spawn(TRANSFORMATEUR)
 func _on_button_crameur_pressed() -> void:
 	try_spawn(CRAMEUR)
+func _on_button_fusionneur_dacier_pressed() -> void:
+	try_spawn(FUSIONNEUR_D_ACIER)
