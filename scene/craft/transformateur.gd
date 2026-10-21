@@ -12,7 +12,7 @@ var pv_max := 0
 @onready var production_timer: Timer = $ProductionTimer
 
 @export var pv := 10
-@export var elec_efficacity = [2, 5, 10] 
+@export var elec_efficacity = [2, 5, 10]
 @export_category("cout de construction")
 @export var cost := 0
 @export var minerai := ""
@@ -41,18 +41,18 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
-	pv_max = pv 
+	pv_max = pv
 	global_position = get_global_mouse_position()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	var affordable := true
 	var minerais = [[minerai, cost], [minerai2, cost2], [minerai3, cost3], [minerai4, cost4]]
-	
+
 	for mat in minerais:
 		if mat[0] != "":
 			if not GLOBAL.get(mat[0]) >= mat[1]:
 				affordable = false
-	
+
 	if affordable:
 		for mat in minerais:
 			if mat[0] != "":
@@ -103,7 +103,7 @@ func _process(_delta: float) -> void:
 	if is_blueprint:
 		global_position = get_global_mouse_position()
 		linear_velocity = Vector2(0,0)
-	
+
 	# regarder si posibilité sde placer pour la couleur
 	if is_blueprint:
 		if bodycount == 0:

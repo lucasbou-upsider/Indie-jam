@@ -14,7 +14,7 @@ func _ready() -> void:
 	SIGNAL.connect("defreeze", defreeze)
 	freeze = true
 	var chute_aleatoire = randf_range(0, 2)
-	await get_tree().create_timer(chute_aleatoire).timeout 
+	await get_tree().create_timer(chute_aleatoire).timeout
 	freeze = false
 
 func set_type(new_type):

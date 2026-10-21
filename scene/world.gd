@@ -56,11 +56,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#pv
 	progress_bar.value = GLOBAL.base_pv
-	
+
 	#update tooltip
 	if GLOBAL.selected != null:
 		tool_tip.text = GLOBAL.selected.tooltipify()
-	
+
 	#deplacement de la camera
 	if Input.is_action_just_pressed("verif_pv"):
 		print(calculate_production("pierre"))
@@ -77,7 +77,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("bas"):
 		camera_2d.position += Vector2(0,speed)
 
-#coordonées 
+#coordonées
 	coordoné.text = str(Vector2i(get_global_mouse_position()))
 	if Vector2i(get_global_mouse_position()).x  > -400 and Vector2i(get_global_mouse_position()).x  < 400:
 		coordoné.self_modulate = Color(1.0, 1.0, 1.0)
@@ -111,7 +111,7 @@ func calculate_production(ressource):
 				res -= bat.cout_demande2/bat.production_timer.wait_time
 			elif bat.minerai_produit == ressource:
 				res += bat.production/bat.production_timer.wait_time
-	return str(res)+"/s"
+	return str(snapped(res, 0.01))+"/s"
 
 func unselect() -> void:
 	if GLOBAL.selected != null:

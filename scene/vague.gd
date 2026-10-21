@@ -13,7 +13,7 @@ func _ready() -> void:
 	vague_timer.start()
 
 func _process(_delta: float) -> void:
-	label_time_left.text = str(int(vague_timer.time_left)) 
+	label_time_left.text = str(int(vague_timer.time_left))
 
 func _on_vague_timer_timeout() -> void:
 	print("vague de " + str(nbr_meteorite[vague_number%nbr_meteorite.size()]) + " meteorites ")

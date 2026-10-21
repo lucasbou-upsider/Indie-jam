@@ -39,10 +39,10 @@ func _ready() -> void:
 	electrical_strenght()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
-	
+
 	var affordable := true
 	var minerais = [[minerai, cost], [minerai2, cost2], [minerai3, cost3], [minerai4, cost4]]
-	
+
 	for mat in minerais:
 		if mat[0] != "":
 			if GLOBAL.get(mat[0]) < mat[1]:
@@ -57,7 +57,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
+
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
 			place_self()
@@ -127,9 +127,9 @@ func _on_timer_timeout() -> void:
 	electrical_strenght()
 	sprite_2d.play("arret")
 
-	GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production) 
+	GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
 	if GLOBAL.get(minerai_produit2):
-		GLOBAL.set(minerai_produit2, GLOBAL.get(minerai_produit2) + production2) 
+		GLOBAL.set(minerai_produit2, GLOBAL.get(minerai_produit2) + production2)
 	ray_cast_2d.enabled = true
 
 

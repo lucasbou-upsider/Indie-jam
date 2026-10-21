@@ -30,12 +30,12 @@ func _ready() -> void:
 	#cout du batiments
 	var affordable := true
 	var minerais = [[minerai, cost], [minerai2, cost2], [minerai3, cost3]]
-	
+
 	for mat in minerais:
 		if mat[0] != "":
 			if not GLOBAL.get(mat[0]) >= mat[1]:
 				affordable = false
-	
+
 	if affordable:
 		for mat in minerais:
 			if mat[0] != "":
@@ -62,7 +62,7 @@ func _process(_delta: float) -> void:
 
 
 	#destruction
-	if Input.is_action_pressed("click droit"): 
+	if Input.is_action_pressed("click droit"):
 		if mouse_overed:
 			var refund_mult = 0.5
 			if is_blueprint:

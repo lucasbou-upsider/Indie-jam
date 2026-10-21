@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://daukomdkjvjdq" path="res://sprite/New_Piskel_10_4.png" id="30_spjrp"]
 [ext_resource type="Texture2D" uid="uid://cyrj4oisdwewv" path="res://sprite/New_Piskel_10_5.png" id="31_13g4d"]
 [ext_resource type="Texture2D" uid="uid://b5o7fbneheiel" path="res://sprite/New_Piskel_10_6.png" id="32_tl5qk"]
+[ext_resource type="AudioStream" uid="uid://wxic2gxt1d3f" path="res://sounds/whoosh.mp3" id="35_qsqtq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
 shader = ExtResource("5_yur6x")
@@ -1963,6 +1964,14 @@ scale = Vector2(0.41, 0.41)
 texture = ExtResource("32_tl5qk")
 region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Interface/Panel_construction/VBoxContainer/GridBloc" unique_id=1150610860]
+stream = ExtResource("35_qsqtq")
+max_polyphony = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Interface/Panel_construction/VBoxContainer" unique_id=1888966538]
+stream = ExtResource("35_qsqtq")
+max_polyphony = 2
 
 [node name="Panel_inventaire" type="Panel" parent="Interface" unique_id=255062353]
 offset_left = 8.420013

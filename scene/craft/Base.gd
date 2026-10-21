@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 	#pv connecter pour foreuse
 	GLOBAL.base_pv = pv
 	GLOBAL.mouse_busy = false
-	
+
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 	if is_blueprint == true:
 		global_position = get_global_mouse_position()
 		linear_velocity = Vector2(0,0)
-	
+
 	# regarder si posibilité sde placer pour la couleur
 	if is_blueprint:
 		if bodycount == 0:

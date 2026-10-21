@@ -31,7 +31,7 @@ var lingot_topaxium := 0
 
 func _process(_delta) -> void:
 	mouse_busy = selected != null
- 
+
 
 func _ready():
 	if DEBUG:
