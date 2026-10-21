@@ -148,7 +148,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			var pv_float:float = pv
 			var pv_max_float:float = pv_max
-			var shader := sprite_2d.material as ShaderMaterial
+			var shader: ShaderMaterial = sprite_2d.material
 			var shader_value:float = (pv_float/pv_max_float)*0.8+0.2
 			shader.set_shader_parameter("dissolve_value", shader_value)
 			pv -= GLOBAL.degats[ area.get_parent().type ]
