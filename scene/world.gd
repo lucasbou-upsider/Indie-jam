@@ -21,10 +21,13 @@ const PETIT_BLOC_GLUANTITE = preload("uid://b05mxi2sgjtaq")
 
 
 var speed
+var quake_queue = []
 
 @onready var progress_bar: ProgressBar = $Interface/ProgressBar
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var coordoné: Label = $Interface/Coordoné
+@onready var quake_timer: Timer = $kayou_spawn/quake_timer
+@onready var quaker: Timer = $kayou_spawn/quaker
 
 
 func _ready() -> void:
@@ -37,7 +40,7 @@ func _process(_delta: float) -> void:
 	
 	#deplacement de la camera
 	if Input.is_action_just_pressed("verif_pv"):
-		quake(randi_range(200, 700))
+		earth_quake(500)
 	if Input.is_action_pressed("courir"):
 		speed = 5
 	else:
@@ -71,6 +74,17 @@ func quake(intensity):
 		if c is bloc or c is transformateur or c is foreuse:
 			c.linear_velocity = Vector2(randf_range(-1, 1), randf_range(-1, 1))*intensity
 
+func earth_quake(intensity):
+	for i in range(3):
+		quake_queue.push_back(intensity)
+
+func _on_quake_timer_timeout() -> void:
+	if quake_queue.size() > 0:
+		quake(quake_queue.pop_front())
+
+func _on_quaker_timeout() -> void:
+	if randi_range(0, 4) == 0:
+		earth_quake(randi_range(200, 700))
 
 func _on_button_foreuse_pressed() -> void:
 	if not GLOBAL.mouse_busy:

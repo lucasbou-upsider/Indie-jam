@@ -160,6 +160,13 @@ mouse_filter = 2
 position = Vector2(2, -2614.3901)
 script = ExtResource("2_w4qq1")
 
+[node name="quake_timer" type="Timer" parent="kayou_spawn" unique_id=853342485]
+autostart = true
+
+[node name="quaker" type="Timer" parent="kayou_spawn" unique_id=1968657509]
+wait_time = 180.0
+autostart = true
+
 [node name="Vague" type="Node2D" parent="." unique_id=1873581090]
 script = ExtResource("6_1402k")
 
@@ -1700,6 +1707,8 @@ theme_override_font_sizes/font_size = 17
 text = "  300"
 horizontal_alignment = 1
 
+[connection signal="timeout" from="kayou_spawn/quake_timer" to="." method="_on_quake_timer_timeout"]
+[connection signal="timeout" from="kayou_spawn/quaker" to="." method="_on_quaker_timeout"]
 [connection signal="timeout" from="Vague/vague_Timer" to="Vague" method="_on_vague_timer_timeout"]
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_scierie" to="Interface/Panel_construction/VBoxContainer/Button_scierie" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_scierie" to="Interface/Panel_construction/VBoxContainer/Button_scierie" method="_on_mouse_exited"]
