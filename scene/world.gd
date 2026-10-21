@@ -20,6 +20,9 @@ const BLOC_GLUANTITE = preload("uid://bc266li4ka4m4")
 const PETIT_BLOC_GLUANTITE = preload("uid://b05mxi2sgjtaq")
 const BLOC_TOPAXIUM = preload("uid://b050uia4uvrc")
 const PETIT_BLOC_TOPAXIUM = preload("uid://r24foany4415")
+const BLOC_VOIDIUM = preload("uid://dcwmhedpnjfb7")
+const PETIT_BLOC_VOIDIUM = preload("uid://crq1oh7y42s1t")
+const FUSIONNEUR_DE_BRONZE = preload("uid://78oce3mk04lx")
 
 
 var speed
@@ -128,4 +131,14 @@ func _on_button_piti_bloc_gluantite_pressed() -> void:
 func _on_button_piti_bloc_topaxium_pressed() -> void:
 	try_spawn(PETIT_BLOC_TOPAXIUM)
 func _on_button_bloc_topaxium_pressed() -> void:
-	try_spawn(BLOC_TOPAXIUM)
+	if not GLOBAL.mouse_busy:
+		spawn(BLOC_TOPAXIUM)
+func _on_button_piti_bloc_voidium_pressed() -> void:
+	if not GLOBAL.mouse_busy:
+		spawn(PETIT_BLOC_VOIDIUM)
+func _on_button_bloc_voidium_pressed() -> void:
+	if not GLOBAL.mouse_busy:
+		spawn(BLOC_VOIDIUM)
+func _on_button_fusionneur_bronze_pressed() -> void:
+	if not GLOBAL.mouse_busy:
+		spawn(FUSIONNEUR_DE_BRONZE)

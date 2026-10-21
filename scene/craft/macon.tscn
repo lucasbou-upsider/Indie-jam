@@ -60,6 +60,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dib5d")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dib5d")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_snwpc")
@@ -117,8 +125,8 @@ production = 1
 texture_filter = 1
 position = Vector2(-12, 1)
 sprite_frames = SubResource("SpriteFrames_x0iyh")
+animation = &"arret"
 autoplay = "default"
-frame_progress = 0.7766654
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
 

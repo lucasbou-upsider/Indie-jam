@@ -11,8 +11,8 @@ var bodycount = 0
 var mouse_overed := false
 var pv_max
 
-@export var pv = 0
 @export var is_voidium := false
+@export var pv = 0
 @export_category("cout de construction")
 @export var cost := 0
 @export var minerai := ""
@@ -55,7 +55,6 @@ func _process(_delta: float) -> void:
 				GLOBAL.unselect()
 			else:
 				GLOBAL.select(self)
-
 
 
 
@@ -106,7 +105,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if !is_blueprint:
 		if area.get_parent().get_parent().name == "kayou_spawn":
 			pv -= GLOBAL.degats[ area.get_parent().type ]
-			if area.get_parent().type == "anti":
+			if area.get_parent().type == "anti" and is_voidium:
+				pv += GLOBAL.degats["anti"] - 10
+			if area.get_parent().type == "anti" and !is_voidium:
 				area.get_parent().queue_free()
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer
