@@ -65,7 +65,10 @@ func _process(_delta: float) -> void:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
 			else:
+				get_parent().unselect()
 				get_parent().select(self)
+		elif not mouse_overed and GLOBAL.selected:
+			get_parent().unselect()
 
 	#destruction
 	if Input.is_action_pressed("click droit"):
@@ -77,9 +80,13 @@ func _process(_delta: float) -> void:
 				if mat[0] != "":
 					GLOBAL.set(mat[0], GLOBAL.get(mat[0]) + mat[1]*refund_mult)
 			SIGNAL.emit_signal("defreeze")
+			if GLOBAL.selected == self:
+				get_parent().unselect()
 			queue_free()
 	if pv <= 0:
 		SIGNAL.emit_signal("defreeze")
+		if GLOBAL.selected == self:
+			get_parent().unselect()
 		queue_free()
 
 	#regarde si l'objet est en blueprint ou pas

@@ -33,7 +33,10 @@ func _process(_delta: float) -> void:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
 			else:
+				get_parent().unselect()
 				get_parent().select(self)
+		elif not mouse_overed and GLOBAL.selected == self:
+			get_parent().unselect()
 
 	# blueprint
 	if is_blueprint == true:
