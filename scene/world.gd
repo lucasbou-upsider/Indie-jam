@@ -94,11 +94,15 @@ func calculate_production(ressource):
 	var res: float = 0.0
 	for bat in self.get_children():
 		if bat is foreuse:
+			if bat.is_blueprint:
+				continue
 			if bat.minerai_produit == ressource:
 				res += bat.production/bat.production_timer.wait_time
 			elif bat.minerai_produit2 == ressource:
 				res += bat.production2/bat.production_timer.wait_time
 		elif bat is transformateur:
+			if bat.is_blueprint:
+				continue
 			if bat.demande == ressource:
 				res -= bat.cout_demande/bat.production_timer.wait_time
 			elif bat.demande2 == ressource:
