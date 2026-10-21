@@ -23,6 +23,8 @@ const PETIT_BLOC_TOPAXIUM = preload("uid://r24foany4415")
 const BLOC_VOIDIUM = preload("uid://dcwmhedpnjfb7")
 const PETIT_BLOC_VOIDIUM = preload("uid://crq1oh7y42s1t")
 const FUSIONNEUR_DE_BRONZE = preload("uid://78oce3mk04lx")
+const TRANSFORMATEUR = preload("uid://rtn0xcaetf3g")
+const CRAMEUR = preload("uid://c3d6mctffdjwo")
 
 
 var speed
@@ -138,3 +140,7 @@ func _on_button_bloc_voidium_pressed() -> void:
 	try_spawn(BLOC_VOIDIUM)
 func _on_button_fusionneur_bronze_pressed() -> void:
 	try_spawn(FUSIONNEUR_DE_BRONZE)
+func _on_button_transformateur_pressed() -> void:
+	try_spawn(TRANSFORMATEUR)
+func _on_button_crameur_pressed() -> void:
+	try_spawn(CRAMEUR)

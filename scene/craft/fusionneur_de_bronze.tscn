@@ -218,13 +218,11 @@ autoplay = "default"
 frame_progress = 0.5876415
 
 [node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
-visible = false
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=738852126]
 polygon = PackedVector2Array(-29, -39, -22, -39, -22, -42, -19, -42, -19, -43, -14, -43, -14, -39, -9, -39, -9, -18, 9, -18, 9.046097, -39, 14, -39, 14, -42, 14, -43, 19, -43, 19, -42, 22, -42, 22, -39, 29, -39, 29, 19, 10, 19, 10, 21, 9, 21, 9, 37, 10, 37, 10, 41, -10, 41, -10, 37, -9, 37, -9, 21, -10, 21, -10, 19, -29, 19)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=399457864]
-visible = false
 polygon = PackedVector2Array(-29, -39, -22, -39, -22, -42, -19, -42, -19, -43, -14, -43, -14, -39, -9, -39, -9, -18, 9, -18, 9.046097, -39, 14, -39, 14, -42, 14, -43, 19, -43, 19, -42, 22, -42, 22, -39, 29, -39, 29, 19, 10, 19, 10, 21, 9, 21, 9, 37, 10, 37, 10, 41, -10, 41, -10, 37, -9, 37, -9, 21, -10, 21, -10, 19, -29, 19)
 disabled = true
 

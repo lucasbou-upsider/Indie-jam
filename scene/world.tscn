@@ -29,7 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="24_qfj6m"]
 [ext_resource type="Texture2D" uid="uid://owiv5v02mmx6" path="res://sprite/New_Piskel_10_7.png" id="26_lvrhu"]
 [ext_resource type="Texture2D" uid="uid://dye251udf5c12" path="res://sprite/New_Piskel_10_1.png" id="27_7h02s"]
+[ext_resource type="Texture2D" uid="uid://clivgu60pp5xw" path="res://sprite/New_Piskel_10_8.png" id="27_hb7oa"]
 [ext_resource type="Texture2D" uid="uid://c451n4g5n1d1o" path="res://sprite/New_Piskel_10_2.png" id="28_fb6u6"]
+[ext_resource type="Texture2D" uid="uid://cyodn5hra5qdm" path="res://sprite/New_Piskel_18.png" id="28_qsqtq"]
 [ext_resource type="Texture2D" uid="uid://2doww6atbmoy" path="res://sprite/New_Piskel_10_3.png" id="29_fb6u6"]
 [ext_resource type="Texture2D" uid="uid://daukomdkjvjdq" path="res://sprite/New_Piskel_10_4.png" id="30_spjrp"]
 [ext_resource type="Texture2D" uid="uid://cyrj4oisdwewv" path="res://sprite/New_Piskel_10_5.png" id="31_13g4d"]
@@ -41,7 +43,7 @@ shader_parameter/blur_amount = 0.29500010901249984
 shader_parameter/mix_amount = 0.0
 shader_parameter/color_over = Color(0, 0, 0, 1)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1402k"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb7oa"]
 texture = ExtResource("7_1402k")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -49,7 +51,7 @@ texture_region_size = Vector2i(128, 128)
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7xoa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsqtq"]
 texture = ExtResource("9_ol7uo")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -62,7 +64,7 @@ texture_region_size = Vector2i(128, 128)
 1:2/0 = 0
 2:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vme25"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f62m"]
 texture = ExtResource("10_a7xoa")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -75,7 +77,7 @@ texture_region_size = Vector2i(128, 128)
 1:2/0 = 0
 2:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oiypb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8o2l"]
 texture = ExtResource("11_vme25")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -88,7 +90,7 @@ texture_region_size = Vector2i(128, 128)
 1:2/0 = 0
 2:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a81yy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr18f"]
 texture = ExtResource("12_oiypb")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -103,11 +105,11 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_1402k"]
 tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_1402k")
-sources/1 = SubResource("TileSetAtlasSource_a7xoa")
-sources/2 = SubResource("TileSetAtlasSource_vme25")
-sources/3 = SubResource("TileSetAtlasSource_oiypb")
-sources/4 = SubResource("TileSetAtlasSource_a81yy")
+sources/0 = SubResource("TileSetAtlasSource_hb7oa")
+sources/1 = SubResource("TileSetAtlasSource_qsqtq")
+sources/2 = SubResource("TileSetAtlasSource_1f62m")
+sources/3 = SubResource("TileSetAtlasSource_p8o2l")
+sources/4 = SubResource("TileSetAtlasSource_mr18f")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5dri"]
 size = Vector2(2559.841, 383.92947)
@@ -324,7 +326,7 @@ scale = Vector2(1.0519919, 1.4358603)
 texture = ExtResource("6_tmyho")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
-position = Vector2(-1, -328)
+position = Vector2(-1, -767.3801)
 limit_left = -1998
 limit_top = -2525
 limit_right = 1834
@@ -1117,6 +1119,205 @@ scale = Vector2(0.26315537, 0.25616258)
 texture = ExtResource("26_lvrhu")
 region_enabled = true
 region_rect = Rect2(278.10413, 265.75143, 86.21057, 99.552704)
+
+[node name="Button_transformateur" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=638508107]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur" unique_id=1739741760]
+layout_mode = 0
+offset_left = -243.39746
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=2040640995]
+texture_filter = 1
+position = Vector2(63.454712, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.256901, 31.67506, 15.019302, 10.199917)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=868965986]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=487232979]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.217541, 40.942028, 15.019302, 9.952255)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1139047645]
+layout_mode = 0
+offset_left = 124.77362
+offset_top = -0.0072631836
+offset_right = 164.77362
+offset_bottom = 39.992737
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=810904077]
+texture_filter = 1
+position = Vector2(109.96173, 12.090547)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(-2.3771858, 50.68919, 17.431858, 8.648365)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=2075793116]
+layout_mode = 0
+offset_left = 73.5105
+offset_top = -0.09698486
+offset_right = 113.5105
+offset_bottom = 39.903015
+bbcode_enabled = true
+text = "150"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1626386022]
+layout_mode = 0
+offset_left = 148.64398
+offset_top = -2.3425674
+offset_right = 188.64398
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=400757393]
+layout_mode = 0
+offset_left = 188.34369
+offset_top = -1.1313858
+offset_right = 228.34369
+offset_bottom = 38.868614
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=559733371]
+texture_filter = 1
+position = Vector2(173.82977, 10.958672)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.2614851, 50.856777, 14.966533, 8.856777)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1537075410]
+texture_filter = 1
+position = Vector2(219.68567, 11.722649)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.382268, 50.187775, 14.978158, 12.763428)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_transformateur" unique_id=818736394]
+position = Vector2(34.41043, 12.182789)
+scale = Vector2(0.26315537, 0.25616258)
+texture = ExtResource("27_hb7oa")
+region_enabled = true
+region_rect = Rect2(241.22131, 269.84952, 86.21057, 99.552704)
+
+[node name="HSeparator4" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=920342449]
+layout_mode = 2
+
+[node name="Button_crameur" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=648323706]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("7_7ghph")
+
+[node name="panel_info" type="Panel" parent="Interface/Panel_construction/VBoxContainer/Button_crameur" unique_id=857655424]
+layout_mode = 0
+offset_left = -186.82776
+offset_top = 0.95010376
+offset_right = -11.210144
+offset_bottom = 23.950104
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=1399168248]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "500"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=109631588]
+texture_filter = 1
+position = Vector2(13.965881, 11.346192)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(0.28925705, 22.499065, 15.019302, 9.330185)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=4973542]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=2017650376]
+texture_filter = 1
+position = Vector2(66.629456, 10.618043)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(15.457617, 50.09436, 14.683456, 12.837536)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=1832684651]
+layout_mode = 0
+offset_left = 92.63922
+offset_top = -2.3425674
+offset_right = 132.63922
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=322818534]
+layout_mode = 0
+offset_left = 132.33893
+offset_top = -1.1313858
+offset_right = 172.33893
+offset_bottom = 38.868614
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=338632708]
+texture_filter = 1
+position = Vector2(117.82501, 10.958672)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(-0.79184437, 10.303738, 14.966533, 11.973923)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=682015693]
+texture_filter = 1
+position = Vector2(163.68091, 11.722649)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("24_qfj6m")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_crameur" unique_id=2087092359]
+position = Vector2(35.079258, 13.074635)
+scale = Vector2(0.29915473, 0.29564613)
+texture = ExtResource("28_qsqtq")
+region_rect = Rect2(241.22131, 269.84952, 86.21057, 99.552704)
 
 [node name="HSeparator3" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1447174630]
 layout_mode = 2
@@ -2017,6 +2218,12 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_fusionneur_bronze" to="Interface/Panel_construction/VBoxContainer/Button_fusionneur_bronze" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_fusionneur_bronze" to="Interface/Panel_construction/VBoxContainer/Button_fusionneur_bronze" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_fusionneur_bronze" to="." method="_on_button_fusionneur_bronze_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_transformateur" to="Interface/Panel_construction/VBoxContainer/Button_transformateur" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_transformateur" to="Interface/Panel_construction/VBoxContainer/Button_transformateur" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_transformateur" to="." method="_on_button_transformateur_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/Button_crameur" to="Interface/Panel_construction/VBoxContainer/Button_crameur" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/Button_crameur" to="Interface/Panel_construction/VBoxContainer/Button_crameur" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/Button_crameur" to="." method="_on_button_crameur_pressed"]
 [connection signal="mouse_entered" from="Interface/Panel_construction/VBoxContainer/GridBloc/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/GridBloc/Button_bloc_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_construction/VBoxContainer/GridBloc/Button_bloc_cuivre" to="Interface/Panel_construction/VBoxContainer/GridBloc/Button_bloc_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_construction/VBoxContainer/GridBloc/Button_bloc_cuivre" to="." method="_on_button_bloc_cuivre_pressed"]

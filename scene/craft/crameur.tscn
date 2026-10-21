@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://c3d6mctffdjwo"]
+
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_dv4jo"]
+[ext_resource type="Texture2D" uid="uid://cyodn5hra5qdm" path="res://sprite/New_Piskel_18.png" id="2_qbhva"]
+[ext_resource type="Texture2D" uid="uid://c0hxyojkabhnk" path="res://sprite/New_Piskel_10_9.png" id="3_1voxi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugxus"]
+atlas = ExtResource("2_qbhva")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xyeg"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch2li"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go45l"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ai6"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nepk3"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um61r"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bwml"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omvv2"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnoe8"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krerk"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjvui"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h06ba"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fcna"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc27k"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y3m2"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raycu"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fju1h"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8to5"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aq47"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wctx"]
+atlas = ExtResource("3_1voxi")
+region = Rect2(384, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwvk7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugxus")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xyeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch2li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go45l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ai6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nepk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um61r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bwml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omvv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnoe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krerk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjvui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h06ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fcna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc27k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y3m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raycu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fju1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8to5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aq47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wctx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="crameur" type="RigidBody2D" unique_id=1216213044]
+script = ExtResource("1_dv4jo")
+pv = 20
+elec_efficacity = [5, 7, 10]
+cost = 500
+minerai = "pierre"
+cost2 = 50
+minerai2 = "engrenage_bronze"
+demande = "bois"
+cout_demande = 2
+minerai_produit = "charbon"
+production = 1
+position_y_bas = -200
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
+texture_filter = 1
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_wwvk7")
+autoplay = "default"
+frame_progress = 0.76573414
+
+[node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=738852126]
+polygon = PackedVector2Array(-36, -42, -12, -42, -12, -14, 12, -14, 12, -43, 36, -43, 36, 16, -36, 16, -36, 12, -37, 12, -37, 7, -29, 7, -29, -1, -36, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=301808051]
+polygon = PackedVector2Array(-36, -42, -12, -42, -12, -14, 12, -14, 12, -43, 36, -43, 36, 16, -36, 16, -36, 12, -37, 12, -37, 7, -29, 7, -29, -1, -36, -1)
+disabled = true
+
+[node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
+wait_time = 2.0
+
+[connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
+[connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]
+[connection signal="mouse_entered" from="ClearanceArea" to="." method="_on_clearance_area_mouse_entered"]
+[connection signal="mouse_exited" from="ClearanceArea" to="." method="_on_clearance_area_mouse_exited"]
+[connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]
