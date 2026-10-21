@@ -131,14 +131,10 @@ func _on_button_piti_bloc_gluantite_pressed() -> void:
 func _on_button_piti_bloc_topaxium_pressed() -> void:
 	try_spawn(PETIT_BLOC_TOPAXIUM)
 func _on_button_bloc_topaxium_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_TOPAXIUM)
+	try_spawn(BLOC_TOPAXIUM)
 func _on_button_piti_bloc_voidium_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(PETIT_BLOC_VOIDIUM)
+	try_spawn(PETIT_BLOC_VOIDIUM)
 func _on_button_bloc_voidium_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(BLOC_VOIDIUM)
+	try_spawn(BLOC_VOIDIUM)
 func _on_button_fusionneur_bronze_pressed() -> void:
-	if not GLOBAL.mouse_busy:
-		spawn(FUSIONNEUR_DE_BRONZE)
+	try_spawn(FUSIONNEUR_DE_BRONZE)
