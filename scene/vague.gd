@@ -1,8 +1,10 @@
 extends Node2D
+@warning_ignore_start("integer_division")
+
 
 @onready var vague_timer: Timer = $vague_Timer
 @onready var label_time_left: Label = $"../Interface/Panel_vague/time_left"
-@onready var kayou_spawn: Node2D = $"../kayou_spawn"
+@warning_ignore("shadowed_global_identifier") @onready var kayou_spawn: Node2D = $"../kayou_spawn"
 
 var vague_number = 0
 var nbr_meteorite = [100, 200, 250, 250, 300, 400]

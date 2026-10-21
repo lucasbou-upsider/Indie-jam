@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+@warning_ignore_start("integer_division")
 
 var is_blueprint := true
 var bodycount := 0

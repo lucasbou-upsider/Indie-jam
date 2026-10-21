@@ -1,3 +1,3 @@
 extends Node
 
-signal defreeze
+@warning_ignore("unused_signal") signal defreeze
