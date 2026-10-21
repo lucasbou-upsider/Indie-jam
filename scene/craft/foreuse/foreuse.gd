@@ -8,6 +8,7 @@ class_name foreuse
 @onready var label: Label = $Label
 @onready var production_timer: Timer = $production_timer
 
+
 var is_blueprint := true
 @export var pv = 10
 @export var elec_efficacity = [1, 3, 10]
@@ -57,7 +58,6 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
 			place_self()
@@ -82,6 +82,7 @@ func _process(_delta: float) -> void:
 			SIGNAL.emit_signal("defreeze")
 			if GLOBAL.selected == self:
 				get_parent().unselect()
+			$"../banger".play()
 			queue_free()
 	if pv <= 0:
 		SIGNAL.emit_signal("defreeze")

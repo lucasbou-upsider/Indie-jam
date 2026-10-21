@@ -96,6 +96,7 @@ func _process(_delta: float) -> void:
 		SIGNAL.emit_signal("defreeze")
 		if GLOBAL.selected == self:
 			get_parent().unselect()
+		$"../banger".play()
 		queue_free()
 
 

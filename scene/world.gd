@@ -39,7 +39,7 @@ var tween: Tween
 @onready var quaker: Timer = $kayou_spawn/quaker
 
 @onready var tool_tip: RichTextLabel = $Interface/ToolTip/RichTextLabel
-
+@onready var tool_tip_player: AudioStreamPlayer = $Interface/ToolTip/Whoosher
 
 
 
@@ -126,6 +126,7 @@ func select(node) -> void:
 	tool_tip.get_parent().visible = true
 	if tween: tween.kill()
 	tween = create_tween()
+	tool_tip_player.play()
 	tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,10), 0.05)
 	tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,0), 0.1)
 	tool_tip.text = GLOBAL.selected.tooltipify()

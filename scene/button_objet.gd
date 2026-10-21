@@ -1,5 +1,4 @@
 extends Button
-@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 var panel_info
 var tween:Tween
@@ -13,7 +12,6 @@ func _ready() -> void:
 	panel_info.offset_transform_position = Vector2(100, 0)
 
 func _on_mouse_entered() -> void:
-	audio_stream_player.play()
 	if tween:tween.kill()
 	panel_info.visible = true
 	tween = create_tween()
