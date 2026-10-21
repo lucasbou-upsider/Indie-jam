@@ -4,6 +4,7 @@ extends Node
 var base_pv := 100
 var degats = {"base": 1, "gros": 3, "feu": 6, "anti": 1000000000}
 var DEBUG := true
+var mouse_busy := false
 
 #inventaire
 var charbon := 0

@@ -14,6 +14,7 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
+	GLOBAL.mouse_busy = true
 	SIGNAL.connect("defreeze", defreeze)
 	collision_shape_2d.disabled = true
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#pv connecter pour foreuse
 	GLOBAL.base_pv = pv
+	GLOBAL.mouse_busy = false
 	
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
@@ -44,6 +46,7 @@ func place_self():
 	if bodycount == 0:
 		is_blueprint = false
 		collision_shape_2d.disabled = false
+		GLOBAL.mouse_busy = false
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	#regarder si possible de placer

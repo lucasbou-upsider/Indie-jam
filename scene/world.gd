@@ -31,6 +31,8 @@ func _process(_delta: float) -> void:
 	progress_bar.value = GLOBAL.base_pv
 	
 	#deplacement de la camera
+	if Input.is_action_just_pressed("verif_pv"):
+		quake(randi_range(200, 700))
 	if Input.is_action_pressed("courir"):
 		speed = 5
 	else:
@@ -58,29 +60,46 @@ func spawn(batiments):
 	newbat.global_position = get_global_mouse_position()
 	add_child(newbat)
 
+
+func quake(intensity):
+	for c in get_children():
+		if c is bloc or c is transformateur or c is foreuse:
+			c.linear_velocity = Vector2(randf_range(-1, 1), randf_range(-1, 1))*intensity
+
+
 func _on_button_foreuse_pressed() -> void:
-	spawn(FOREUSE)
+	if not GLOBAL.mouse_busy:
+	    spawn(FOREUSE)
 func _on_button_macon_pressed() -> void:
-	spawn(MACON)
+	if not GLOBAL.mouse_busy:
+	    spawn(MACON)
 func _on_button_four_pressed() -> void:
-	spawn(FOURNEAU)
+	if not GLOBAL.mouse_busy:
+	    spawn(FOURNEAU)
 func _on_button_bloc_cuivre_pressed() -> void:
-	spawn(BLOC_CUIVRE)
+	if not GLOBAL.mouse_busy:
+	    spawn(BLOC_CUIVRE)
 func _on_button_piti_bloc_cuivre_2_pressed() -> void:
-	spawn(PETIT_BLOC_BRIQUE)
+	if not GLOBAL.mouse_busy:
+	    spawn(PETIT_BLOC_BRIQUE)
 func _on_button_scierie_pressed() -> void:
-	spawn(SCIERIE)
+	if not GLOBAL.mouse_busy:
+	    spawn(SCIERIE)
 func _on_button_foreuse_fer_pressed() -> void:
-	spawn(FOREUSE_FER)
+	if not GLOBAL.mouse_busy:
+	    spawn(FOREUSE_FER)
 func _on_button_bloc_renforce_pressed() -> void:
-	spawn(BLOC_RENFORCE)
+	if not GLOBAL.mouse_busy:
+	    spawn(BLOC_RENFORCE)
 func _on_button_piti_bloc_renforce_pressed() -> void:
-	spawn(PTIT_BLOC_RENFORCE)
+	if not GLOBAL.mouse_busy:
+	    spawn(PTIT_BLOC_RENFORCE)
 func _on_button_foreuse_cuivre_pressed() -> void:
-	spawn(FOREUSE_CUIVRE)
+	if not GLOBAL.mouse_busy:
+	    spawn(FOREUSE_CUIVRE)
 func _on_button_presse_pressed() -> void:
-	spawn(PRESSE_FER)
+	if not GLOBAL.mouse_busy:
+	    spawn(PRESSE_FER)
 func _on_button_bloc_bronze_pressed() -> void:
-	spawn(BLOC_BRONZE)
-func _on_button_piti_bloc_bronze_pressed() -> void:
-	spawn(PETIT_BLOC_BRONZE)
+	if not GLOBAL.mouse_busy:
+	    spawn(PETIT_BLOC_BRONZE)

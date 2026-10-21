@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name transformateur
 @warning_ignore_start("integer_division")
 
 var is_blueprint := true
@@ -38,8 +39,10 @@ var pv_max := 0
 
 func defreeze():
 	sleeping = false
+
 func _ready() -> void:
 	pv_max = pv 
+	GLOBAL.mouse_busy = true
 	global_position = get_global_mouse_position()
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
@@ -51,6 +54,7 @@ func _ready() -> void:
 			GLOBAL.set(minerai4, GLOBAL.get(minerai4) - cost4)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 	elif minerai != "" and minerai2 != "" and minerai3 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 and GLOBAL.get(minerai3) >= cost3 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
@@ -58,17 +62,20 @@ func _ready() -> void:
 			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 	elif minerai != "" and minerai2 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 	elif minerai != "":
 		if GLOBAL.get(minerai) >= cost:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 
 
 func _process(_delta: float) -> void:
@@ -114,6 +121,7 @@ func _process(_delta: float) -> void:
 #une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
+		GLOBAL.mouse_busy = false
 		if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
 			sprite_2d.play("default")
 		else :

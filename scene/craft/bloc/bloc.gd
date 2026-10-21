@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name bloc
 @warning_ignore_start("integer_division")
 
 @onready var collision_polygon_2d: CollisionPolygon2D = $PhysicsShape
@@ -20,8 +21,10 @@ var pv_max
 
 func defreeze():
 	sleeping = false
+
 func _ready() -> void:
 	pv_max = pv
+	GLOBAL.mouse_busy = true
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments
 	if minerai != "" and minerai2 != "" and minerai3 != "":
@@ -31,17 +34,20 @@ func _ready() -> void:
 			GLOBAL.set(minerai3, GLOBAL.get(minerai3) - cost3)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 	elif minerai != "" and minerai2 != "":
 		if GLOBAL.get(minerai) >= cost and GLOBAL.get(minerai2) >= cost2 :
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 			GLOBAL.set(minerai2, GLOBAL.get(minerai2) - cost2)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 	elif minerai != "":
 		if GLOBAL.get(minerai) >= cost:
 			GLOBAL.set(minerai, GLOBAL.get(minerai) - cost)
 		else:
 			queue_free()
+			GLOBAL.mouse_busy = false
 
 
 func _process(_delta: float) -> void:
@@ -87,6 +93,7 @@ func _process(_delta: float) -> void:
 #une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0:
+		GLOBAL.mouse_busy = false
 		is_blueprint = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
