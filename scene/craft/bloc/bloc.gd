@@ -6,11 +6,13 @@ class_name bloc
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var is_blueprint := true
-@export var pv = 0
+
 var bodycount = 0
 var mouse_overed := false
 var pv_max
 
+@export var pv = 0
+@export var is_voidium := false
 @export_category("cout de construction")
 @export var cost := 0
 @export var minerai := ""
