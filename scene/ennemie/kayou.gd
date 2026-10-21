@@ -24,10 +24,14 @@ func set_type(new_type):
 		$KayouSprites.scale = Vector2(0.55, 0.55)
 		$PhysicsShapeGros.disabled = false
 		$PhysicsShapePiti.disabled = true
+		$DespawnAreaGros/AreaShape.disabled = false
+		$DespawnAreaPiti/AreaShape.disabled = true
 	else:
 		$KayouSprites.scale = Vector2(0.275, 0.275)
 		$PhysicsShapeGros.disabled = true
 		$PhysicsShapePiti.disabled = false
+		$DespawnAreaGros/AreaShape.disabled = true
+		$DespawnAreaPiti/AreaShape.disabled = false
 
 func _on_despawn_timeout() -> void:
 	SIGNAL.emit_signal("defreeze")
