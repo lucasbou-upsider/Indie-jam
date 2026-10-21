@@ -49,6 +49,10 @@ func _process(_delta: float) -> void:
 	#pv
 	progress_bar.value = GLOBAL.base_pv
 	
+	#update tooltip
+	if GLOBAL.selected != null:
+		tool_tip.text = GLOBAL.selected.tooltipify()
+	
 	#deplacement de la camera
 	if Input.is_action_just_pressed("verif_pv"):
 		earth_quake(500)

@@ -67,13 +67,13 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
 			place_self()
-		elif mouse_overed:
+		elif mouse_overed and not is_blueprint:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
 			else:
 				get_parent().unselect()
 				get_parent().select(self)
-		elif not mouse_overed and GLOBAL.selected:
+		elif not mouse_overed and GLOBAL.selected == self and not is_blueprint:
 			get_parent().unselect()
 
 

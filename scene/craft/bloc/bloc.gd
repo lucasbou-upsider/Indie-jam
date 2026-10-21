@@ -50,13 +50,13 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
 			place_self()
-		elif mouse_overed:
+		elif mouse_overed and not is_blueprint:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
 			else:
 				get_parent().unselect()
 				get_parent().select(self)
-		elif not mouse_overed and GLOBAL.selected:
+		elif not mouse_overed and GLOBAL.selected == self and not is_blueprint:
 			get_parent().unselect()
 
 
@@ -94,9 +94,9 @@ func _process(_delta: float) -> void:
 	#blueprint
 	if is_blueprint:
 		if bodycount == 0:
-			sprite_2d.modulate = Color(1.0, 1.0, 1.0, 0.494)
+			sprite_2d.self_modulate = Color(1.0, 1.0, 1.0, 0.494)
 		else:
-			sprite_2d.modulate = Color(0.729, 0.114, 0.267, 0.565)
+			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
 
 #une fois le blueplrint fini placer
 func place_self():
