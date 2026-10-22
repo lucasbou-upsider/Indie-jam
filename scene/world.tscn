@@ -121,6 +121,9 @@ sources/4 = SubResource("TileSetAtlasSource_mr18f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5dri"]
 size = Vector2(2559.841, 383.92947)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np4qc"]
+size = Vector2(2559.841, 2424.1643)
+
 [node name="world" type="Node2D" unique_id=1481596678]
 script = ExtResource("1_txmk2")
 
@@ -133,11 +136,12 @@ script = ExtResource("2_mr18f")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Tuto" unique_id=618716233]
 
-[node name="fond" type="Panel" parent="Tuto/CanvasLayer" unique_id=1528507372]
-offset_left = -64.34155
-offset_top = -23.568237
-offset_right = 1231.8018
-offset_bottom = 668.083
+[node name="ColorRect" type="ColorRect" parent="Tuto/CanvasLayer" unique_id=716730175]
+offset_left = -25.289001
+offset_top = -14.641006
+offset_right = 1156.709
+offset_bottom = 673.55597
+color = Color(0, 0, 0, 0.14117648)
 
 [node name="Panel" type="Panel" parent="Tuto/CanvasLayer" unique_id=2055190334]
 offset_left = 389.147
@@ -147,8 +151,11 @@ offset_bottom = 427.56308
 
 [node name="RichTextTutoLabel" type="RichTextLabel" parent="Tuto/CanvasLayer/Panel" unique_id=1928091959]
 layout_mode = 0
-offset_right = 388.69998
+offset_left = 11.853943
+offset_right = 370.07236
 offset_bottom = 177.49998
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
 text = "Qiusjdoiqjsoidj"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -284,6 +291,14 @@ shape = SubResource("RectangleShape2D_p5dri")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="sol/Area2D" unique_id=520913992]
 position = Vector2(0.050048828, 192.03566)
 shape = SubResource("RectangleShape2D_p5dri")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="sol/Area2D" unique_id=979659449]
+position = Vector2(-2584.3943, -833.9329)
+shape = SubResource("RectangleShape2D_np4qc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="sol/Area2D" unique_id=2026968926]
+position = Vector2(2569.8872, -833.9329)
+shape = SubResource("RectangleShape2D_np4qc")
 
 [node name="plage" type="Node2D" parent="." unique_id=1098411776]
 

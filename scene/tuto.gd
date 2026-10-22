@@ -7,20 +7,21 @@ extends Control
 @onready var panel_vague: Panel = $"../Interface/Panel_vague"
 @onready var rich_text_tuto_label: RichTextLabel = $CanvasLayer/Panel/RichTextTutoLabel
 const BASE = preload("uid://byxo1qtpjx30p")
+@onready var vague_timer: Timer = $"../Vague/vague_Timer"
 
 
 var phrases = [
-	"welcome to MAMADOU, a game about base-building and defense",
-	"here are the basics...",
-	"your goal is to defend your base against 20 waves of incoming meteors",
-	"in the top left is the time left before the next wave",
-	"on the left you can see your resources and production...",
-	"...and on the right the buildings",
-	"every building is affected by physics, produces some resources and may consume others to do so",
-	"some buildings have specific placement requirements",
+	" welcome to [wave]MAMADOU[/wave], a game about [u]base-building and defense[/u]",
+	"here are [wave]the basics...[/wave]",
+	"your [pulse][color=00ff00]goal[/color][/pulse] is to defend your base against 20 waves of [shake][color=d70000]incoming meteors[shake]",
+	"in the [wave]top left[/wave] is the time left before the [color=d70000]next wave",
+	"on the left you can see your [color=ffff00]resources and production...",
+	"...and on the right [color=ff8500]the buildings",
+	"every [color=ff8500]building[/color] is affected by [rainbow]physics[/rainbow], [fade]produces[/fade] some resources and may [fade] consume [/fade]others to do so",
+	"some [color=ff8500]buildings[/color] have specific placement requirements",
 	"horizontally, the closer the building is to the center, the faster it works",
 	"the game is divided into 4 main phases, each with new dangers and buildings",
-	"Have fun!"
+	"[rainbow]Have fun!"
 ]
 
 var numero_phrase = 0
@@ -48,6 +49,13 @@ func _input(event: InputEvent) -> void:
 			panel_inventaire.visible = true
 		if numero_phrase == 5:
 			panel_construction.visible = true
+		if numero_phrase == 8:
+			coordoné.visible = true
 		if numero_phrase == 11:
-			queue_free()
+			vague_timer.start()
 			get_parent().add_child(BASE.instantiate())
+			queue_free()
+		
+		
+		
+		

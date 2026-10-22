@@ -11,7 +11,7 @@ var vague_number = 0
 var nbr_meteorite = [100, 200, 250, 250, 300]
 
 func _ready() -> void:
-	vague_timer.start()
+	pass
 
 func _process(delta: float) -> void:
 	if vague_timer.time_left <= 50:
