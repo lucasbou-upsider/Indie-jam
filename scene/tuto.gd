@@ -19,8 +19,10 @@ var phrases = [
 	"...and on the right [color=ff8500]the buildings",
 	"every [color=ff8500]building[/color] is affected by [rainbow]physics[/rainbow], [fade]produces[/fade] some resources and may [fade] consume [/fade]others to do so",
 	"some [color=ff8500]buildings[/color] have specific [shake]placement requirements",
-	"horizontally, the closer the building is to [i]the center[/i], the [rainbow]faster[/rainbow] it works",
-	"the game is divided into [wave]4 main phases[/wave], each with new [color=d70000]dangers[/color] and [color=ff8500]buildings",
+	"horizontally, the closer the building is to [i]the center[/i], the [rainbow]faster[/rainbow] it works (3 tiers, signaled by color of coordinates in top-right)",
+	"also, controls are: \n\n[u][color=8888dd]left click[/color][/u] to [color=22ff22]select/place[/color] buildings, \n[u][color=8888dd]right click[/color][/u] to [color=ff2222]delete[/color] (deletes on contact while held),",
+	"and [u][color=8888dd]ZQSD[/color][/u] to move camera.\n\n[i][wave]You can also [color=8888dd]use arrows and SpaceBar[/color] to navigate the menus![/wave][/i]",
+	"overall, the game is divided into [wave]4 main phases[/wave], each with new [color=d70000]dangers[/color] and [color=ff8500]buildings",
 	"[rainbow]Have fun!"
 ]
 
@@ -51,7 +53,7 @@ func _input(event: InputEvent) -> void:
 			panel_construction.visible = true
 		if numero_phrase == 8:
 			coordoné.visible = true
-		elif numero_phrase == 11:
+		elif numero_phrase == phrases.size():
 			vague_timer.start()
 			get_parent().add_child(BASE.instantiate())
 			get_parent().tuto_over = true

@@ -79,7 +79,8 @@ func _process(_delta: float) -> void:
 			camera_2d.position += Vector2(-speed,0)
 		if Input.is_action_pressed("haut"):
 			camera_2d.position += Vector2(0,-speed)
-		if Input.is_action_pressed("bas"):
+		if Input.is_action_pressed("bas") and camera_2d.position.y <= -100:
+			print(camera_2d.position.y)
 			camera_2d.position += Vector2(0,speed)
 
 #coordonées
