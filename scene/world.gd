@@ -211,3 +211,9 @@ func _on_button_transformateur_puissant_pressed() -> void:
 	try_spawn(TRANSFORMATEUR_PUISSANT)
 func _on_button_foreuse_voidium_pressed() -> void:
 	try_spawn(FOREUSE_VOIDIUM)
+
+
+func _on_kill_zone_area_entered(area: Area2D) -> void:
+	if area.get_parent() == GLOBAL.selected:
+		GLOBAL.unselect()
+	area.get_parent().queue_free()

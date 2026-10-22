@@ -45,6 +45,7 @@ func _ready() -> void:
 	var affordable := true
 	var minerais = [[minerai, cost], [minerai2, cost2], [minerai3, cost3]]
 
+
 	for mat in minerais:
 		if mat[0] != "":
 			if not GLOBAL.get(mat[0]) >= mat[1]:
@@ -60,9 +61,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
-	
-	
+
+
+
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:

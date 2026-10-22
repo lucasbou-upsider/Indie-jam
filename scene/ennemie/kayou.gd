@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name kayou
 
 @onready var despawn: Timer = $Despawn
 

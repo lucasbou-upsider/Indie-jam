@@ -78,10 +78,10 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
-	
-	
-	
+
+
+
+
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
@@ -124,15 +124,12 @@ func _process(_delta: float) -> void:
 	if is_blueprint:
 		global_position = get_global_mouse_position()
 		linear_velocity = Vector2(0,0)
-
-	# regarder si posibilité sde placer pour la couleur
-	if is_blueprint:
 		if bodycount == 0:
 			sprite_2d.self_modulate = Color(1.0, 1.0, 1.0, 0.494)
 		else:
 			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
 
-#une fois le blueplrint fini placer
+
 func place_self():
 	if bodycount == 0 :
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
@@ -193,5 +190,7 @@ func _on_clearance_area_mouse_exited() -> void:
 func tooltipify():
 	var res := "Processer\n"
 	res = res + "hp: "+str(pv)+"/"+str(pv_max)
-	res = res + "\nproduction time: "+str(production_timer.wait_time)+"s"
+	res = res + "\nproduction time: "+str(elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x)))+"s"
+	if not ((position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas)):
+		res = res + "\n\n[color=ff2222]requirements not met:\nbuilding will not work"
 	return res

@@ -34,7 +34,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
+
 	#pv connecter pour foreuse
 	GLOBAL.base_pv = pv
 	GLOBAL.mouse_busy = false

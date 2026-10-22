@@ -81,9 +81,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 
-	
-	
-	
+
+
+
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
 			if GLOBAL.is_paused == false:
@@ -138,7 +138,6 @@ func _process(_delta: float) -> void:
 		else:
 			sprite_2d.self_modulate = Color(0.729, 0.114, 0.267, 0.565)
 
-#une fois le blueplrint fini placer
 func place_self():
 	if bodycount == 0 :
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
@@ -190,5 +189,7 @@ func _on_area_2d_mouse_exited() -> void:
 func tooltipify():
 	var res := "Drill\n"
 	res = res + "hp: "+str(pv)+"/"+str(pv_max)
-	res = res + "\nproduction time: "+str(production_timer.wait_time)+"s"
+	res = res + "\nproduction time: "+str(elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x)))+"s"
+	if not ((position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas)):
+		res = res + "\n\n[color=ff2222]requirements not met:\nbuilding will not work"
 	return res

@@ -143,6 +143,8 @@ func load_game():
 					continue
 				new_object.set(i, node_data[i])
 			new_object.modulate = Color(1, 1, 1, 1)
+			if !new_object is kayou:
+				new_object.place_self()
 		else:
 			for i in node_data.keys():
 				if i != "filename":
