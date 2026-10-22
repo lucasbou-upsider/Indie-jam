@@ -18,9 +18,9 @@ var phrases = [
 	"on the left you can see your [color=ffff00]resources and production...",
 	"...and on the right [color=ff8500]the buildings",
 	"every [color=ff8500]building[/color] is affected by [rainbow]physics[/rainbow], [fade]produces[/fade] some resources and may [fade] consume [/fade]others to do so",
-	"some [color=ff8500]buildings[/color] have specific placement requirements",
-	"horizontally, the closer the building is to the center, the faster it works",
-	"the game is divided into 4 main phases, each with new dangers and buildings",
+	"some [color=ff8500]buildings[/color] have specific [shake]placement requirements",
+	"horizontally, the closer the building is to [i]the center[/i], the [rainbow]faster[/rainbow] it works",
+	"the game is divided into [wave]4 main phases[/wave], each with new [color=d70000]dangers[/color] and [color=ff8500]buildings",
 	"[rainbow]Have fun!"
 ]
 
