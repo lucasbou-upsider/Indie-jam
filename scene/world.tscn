@@ -12,16 +12,14 @@
 [ext_resource type="Script" uid="uid://ok4880vox4y3" path="res://scene/vague.gd" id="6_1402k"]
 [ext_resource type="Texture2D" uid="uid://bdxkcfwhdems" path="res://sprite/New_Piskel_4.png" id="6_tmyho"]
 [ext_resource type="Script" uid="uid://cghki5sqkqt7b" path="res://scene/button_objet.gd" id="7_7ghph"]
-[ext_resource type="Texture2D" uid="uid://cy17dfxv5f6wn" path="res://sprite/New_Piskel_5_4.png" id="7_1402k"]
 [ext_resource type="AudioStream" uid="uid://d3rf2nt7qg540" path="res://sounds/warn.mp3" id="8_kof1m"]
-[ext_resource type="Texture2D" uid="uid://i5qxi8a07d4s" path="res://sprite/New_Piskel_14.png" id="9_ol7uo"]
-[ext_resource type="Texture2D" uid="uid://cw3c07xmosxg5" path="res://sprite/New_Piskel_15.png" id="10_a7xoa"]
 [ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="10_f345f"]
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="11_bqa5m"]
-[ext_resource type="Texture2D" uid="uid://c7dq4g3jicrcp" path="res://sprite/New_Piskel_16.png" id="11_vme25"]
+[ext_resource type="Texture2D" uid="uid://dp7n2b3l0hnl0" path="res://sprite/image_9.png" id="12_6wtm3"]
 [ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="12_a0bac"]
 [ext_resource type="Texture2D" uid="uid://bby3csl3w3ev3" path="res://sprite/New_Piskel_5_1.png" id="12_hnm4a"]
 [ext_resource type="Texture2D" uid="uid://b4b5cjgwqdmxa" path="res://sprite/New_Piskel_17.png" id="12_oiypb"]
+[ext_resource type="Texture2D" uid="uid://djd0a7gh01ypx" path="res://sprite/image_6.png" id="13_exac4"]
 [ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="13_tmyho"]
 [ext_resource type="Script" uid="uid://dkt6se1dfb8a8" path="res://scene/camera.gd" id="14_mr18f"]
 [ext_resource type="Texture2D" uid="uid://cqi5v42mlxc1s" path="res://sprite/New_Piskel_5_2.png" id="18_e4vd1"]
@@ -58,53 +56,6 @@ shader_parameter/blur_amount = 0.29500010901249984
 shader_parameter/mix_amount = 0.0
 shader_parameter/color_over = Color(0, 0, 0, 1)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb7oa"]
-texture = ExtResource("7_1402k")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsqtq"]
-texture = ExtResource("9_ol7uo")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f62m"]
-texture = ExtResource("10_a7xoa")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8o2l"]
-texture = ExtResource("11_vme25")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr18f"]
 texture = ExtResource("12_oiypb")
 texture_region_size = Vector2i(128, 128)
@@ -118,13 +69,29 @@ texture_region_size = Vector2i(128, 128)
 1:2/0 = 0
 2:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exac4"]
+texture = ExtResource("12_6wtm3")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckm0y"]
+texture = ExtResource("13_exac4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_1402k"]
 tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_hb7oa")
-sources/1 = SubResource("TileSetAtlasSource_qsqtq")
-sources/2 = SubResource("TileSetAtlasSource_1f62m")
-sources/3 = SubResource("TileSetAtlasSource_p8o2l")
 sources/4 = SubResource("TileSetAtlasSource_mr18f")
+sources/5 = SubResource("TileSetAtlasSource_exac4")
+sources/6 = SubResource("TileSetAtlasSource_ckm0y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5dri"]
 size = Vector2(2559.841, 383.92947)
@@ -278,8 +245,8 @@ text = "quit"
 [node name="background" type="Node2D" parent="." unique_id=1059103624]
 
 [node name="NewPiskel8" type="Sprite2D" parent="background" unique_id=648332481]
-position = Vector2(11.462769, -934.84314)
-scale = Vector2(30.53956, 19.139275)
+position = Vector2(7.285801, -1118.6421)
+scale = Vector2(32.758728, 22.468021)
 texture = ExtResource("3_hcb8y")
 
 [node name="Parallax2D2" type="Parallax2D" parent="background" unique_id=700915540]
@@ -335,7 +302,7 @@ autostart = true
 script = ExtResource("6_1402k")
 
 [node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
-wait_time = 300.0
+wait_time = 3.0
 one_shot = true
 
 [node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
@@ -396,14 +363,16 @@ region_rect = Rect2(4.5402794, 0.026657104, 114.500275, 127.92029)
 position = Vector2(0, -3)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="sol" unique_id=586020175]
-tile_map_data = PackedByteArray("AAD2/wAABAAAAAIAAAD3/wAAAwAAAAAAAAD4/wAAAwAAAAAAAAD5/wAAAwAAAAAAAAD6/wAAAwAAAAAAAAD7/wAAAwAAAAAAAAD8/wAAAwAAAAAAAAD9/wAAAwAAAAAAAAD+/wAAAwAAAAAAAAD//wAAAwAAAAAAAAAAAAAAAwAAAAAAAAABAAAAAwAAAAAAAAACAAAAAwAAAAAAAAADAAAAAwAAAAAAAAAEAAAAAwAAAAAAAAAFAAAAAwAAAAAAAAAGAAAAAwAAAAAAAAAHAAAAAwAAAAAAAAAIAAAAAwAAAAAAAAAJAAAABAAAAAEAAAD2/wEABAABAAIAAAD3/wEAAwABAAAAAAD4/wEAAwABAAAAAAD5/wEAAwABAAAAAAD6/wEAAwABAAAAAAD7/wEAAwABAAAAAAD8/wEAAwABAAAAAAD9/wEAAwABAAAAAAD+/wEAAwABAAAAAAD//wEAAwABAAAAAAAAAAEAAwABAAAAAAABAAEAAwABAAAAAAACAAEAAwABAAAAAAADAAEAAwABAAAAAAAEAAEAAwABAAAAAAAFAAEAAwABAAAAAAAGAAEAAwABAAAAAAAHAAEAAwABAAAAAAAIAAEAAwABAAAAAAAJAAEABAABAAEAAAD2/wIAAwACAAIAAAD3/wIAAQACAAAAAAD4/wIAAQACAAAAAAD5/wIAAQACAAAAAAD6/wIAAQACAAAAAAD7/wIAAQACAAAAAAD8/wIAAQACAAAAAAD9/wIAAQACAAAAAAD+/wIAAQACAAAAAAD//wIAAQACAAAAAAAAAAIAAQACAAAAAAABAAIAAQACAAAAAAACAAIAAQACAAAAAAADAAIAAQACAAAAAAAEAAIAAQACAAAAAAAFAAIAAQACAAAAAAAGAAIAAQACAAAAAAAHAAIAAQACAAAAAAAIAAIAAQACAAAAAAAJAAIAAwACAAEAAAA=")
+tile_map_data = PackedByteArray("AAD2/wAABQAAAAAAAAD3/wAABQAAAAAAAAD4/wAABAAAAAAAAAD5/wAABAAAAAAAAAD6/wAABAAAAAAAAAD7/wAABAAAAAAAAAD8/wAABAAAAAAAAAD9/wAABAAAAAAAAAD+/wAABAAAAAAAAAD//wAABAAAAAAAAAAAAAAABAAAAAAAAAABAAAABAAAAAAAAAACAAAABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAAGAAAABAAAAAAAAAAHAAAABAAAAAAAAAAIAAAABgAAAAAAAAAJAAAABgAAAAEAAAD2/wEABQAAAAAAAAD3/wEABQAAAAAAAAD4/wEABAABAAAAAAD5/wEABAABAAAAAAD6/wEABAABAAAAAAD7/wEABAABAAAAAAD8/wEABAABAAAAAAD9/wEABAABAAAAAAD+/wEABAABAAAAAAD//wEABAABAAAAAAAAAAEABAABAAAAAAABAAEABAABAAAAAAACAAEABAABAAAAAAADAAEABAABAAAAAAAEAAEABAABAAAAAAAFAAEABAABAAAAAAAGAAEABAABAAAAAAAHAAEABAABAAAAAAAIAAEABgABAAAAAAAJAAEABgABAAEAAAD2/wIABQAAAAAAAAD3/wIABQAAAAAAAAD4/wIABAACAAAAAAD5/wIABAACAAAAAAD6/wIABAACAAAAAAD7/wIABAACAAAAAAD8/wIABAACAAAAAAD9/wIABAACAAAAAAD+/wIABAACAAAAAAD//wIABAACAAAAAAAAAAIABAACAAAAAAABAAIABAACAAAAAAACAAIABAACAAAAAAADAAIABAACAAAAAAAEAAIABAACAAAAAAAFAAIABAACAAAAAAAGAAIABAACAAAAAAAHAAIABAACAAAAAAAIAAIABAACAAAAAAAJAAIABAACAAEAAAA=")
 tile_set = SubResource("TileSet_1402k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sol" unique_id=1606727996]
+visible = false
 position = Vector2(0.050048828, 192.03566)
 shape = SubResource("RectangleShape2D_p5dri")
 
 [node name="Area2D" type="Area2D" parent="sol" unique_id=1623669815]
+visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="sol/Area2D" unique_id=520913992]
 position = Vector2(0.050048828, 192.03566)
@@ -455,51 +424,12 @@ position = Vector2(-638.52606, 42.145035)
 scale = Vector2(1.0519919, 1.4358603)
 texture = ExtResource("6_tmyho")
 
-[node name="voidbiome" type="Node2D" parent="." unique_id=1364809986]
-
-[node name="Sprite2D12" type="Sprite2D" parent="voidbiome" unique_id=1724255482]
-modulate = Color(0.11422508, 0.11422507, 1.2032688e-08, 1)
-position = Vector2(-1220.3208, 14.895641)
-scale = Vector2(1.0519919, 1.4358603)
-texture = ExtResource("6_tmyho")
-
-[node name="Sprite2D13" type="Sprite2D" parent="voidbiome" unique_id=797345963]
-modulate = Color(0.11422508, 0.11422507, 1.2032688e-08, 1)
-position = Vector2(-1133.5144, 18.438793)
-scale = Vector2(1.0519919, 1.4358603)
-texture = ExtResource("6_tmyho")
-
-[node name="Sprite2D14" type="Sprite2D" parent="voidbiome" unique_id=749146961]
-modulate = Color(0.11422508, 0.11422507, 1.2032688e-08, 1)
-position = Vector2(-1216.7778, 107.01686)
-scale = Vector2(1.0519919, 1.4358603)
-texture = ExtResource("6_tmyho")
-
-[node name="topaxbiome" type="Node2D" parent="." unique_id=2046336671]
-
-[node name="Sprite2D15" type="Sprite2D" parent="topaxbiome" unique_id=1479258352]
-modulate = Color(0.7529412, 0.49411765, 0, 1)
-position = Vector2(1150.5671, 8.328492)
-scale = Vector2(1.0519919, 1.4358603)
-texture = ExtResource("6_tmyho")
-
-[node name="Sprite2D16" type="Sprite2D" parent="topaxbiome" unique_id=574842636]
-modulate = Color(0.7529412, 0.49411765, 0, 1)
-position = Vector2(1237.3735, 11.871644)
-scale = Vector2(1.0519919, 1.4358603)
-texture = ExtResource("6_tmyho")
-
-[node name="Sprite2D17" type="Sprite2D" parent="topaxbiome" unique_id=1158025232]
-modulate = Color(0.7529412, 0.49411765, 0, 1)
-position = Vector2(1154.1101, 100.44972)
-scale = Vector2(1.0519919, 1.4358603)
-texture = ExtResource("6_tmyho")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
 position = Vector2(-1, -767.3801)
 limit_left = -1998
 limit_top = -2525
 limit_right = 1834
+limit_bottom = 198
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
@@ -722,6 +652,7 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_bronze" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1322718944]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -760,6 +691,7 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_bronze" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1640370131]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -798,6 +730,7 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_acier" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1147704497]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -836,6 +769,7 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_acier" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=965578561]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -874,6 +808,7 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_gluantite" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=79440544]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -912,6 +847,7 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_gluantite" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=595409375]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -950,6 +886,7 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_topaxium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=62283589]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -988,6 +925,7 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 115.60303, 65.36447)
 
 [node name="Button_piti_bloc_topaxium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=240467073]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -1026,6 +964,7 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_voidium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=845191306]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -1064,6 +1003,7 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_voidium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1460234126]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
@@ -1109,19 +1049,19 @@ offset_bottom = 639.0
 
 [node name="Label2" type="RichTextLabel" parent="Interface/Panel_construction" unique_id=471331085]
 layout_mode = 0
-offset_left = -0.15734863
-offset_top = 1.5198822
-offset_right = 78.84265
-offset_bottom = 24.519882
+offset_left = -1.0463867
+offset_top = 0.6271324
+offset_right = 77.95361
+offset_bottom = 23.627132
 bbcode_enabled = true
 text = "[wave amp=5 freq = 2] build"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/Panel_construction" unique_id=1813219988]
 layout_mode = 0
-offset_left = 4.5059814
-offset_top = 24.198479
-offset_right = 72.50598
-offset_bottom = 620.1985
+offset_left = 4.2770996
+offset_top = 20.155762
+offset_right = 72.2771
+offset_bottom = 616.15576
 
 [node name="HSeparator" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=2141390701]
 layout_mode = 2
@@ -1597,9 +1537,11 @@ region_enabled = true
 region_rect = Rect2(166.53311, 148.64984, 52.592102, 93.27106)
 
 [node name="HSeparator2" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1504828169]
+visible = false
 layout_mode = 2
 
 [node name="Button_foreuse_cuivre" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1046700688]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -1672,6 +1614,7 @@ region_enabled = true
 region_rect = Rect2(123.75711, 155.18965, 100.24289, 56.348694)
 
 [node name="Button_foreuse_etain" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=31944456]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -1745,6 +1688,7 @@ region_enabled = true
 region_rect = Rect2(123.75711, 135.87827, 100.24289, 75.66008)
 
 [node name="Button_fusionneur_bronze" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1804200894]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -1870,6 +1814,7 @@ region_enabled = true
 region_rect = Rect2(278.10413, 265.75143, 86.21057, 99.552704)
 
 [node name="Button_transformateur" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=638508107]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -1977,9 +1922,11 @@ region_enabled = true
 region_rect = Rect2(241.22131, 269.84952, 86.21057, 99.552704)
 
 [node name="HSeparator4" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=920342449]
+visible = false
 layout_mode = 2
 
 [node name="Button_crameur" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=648323706]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2069,6 +2016,7 @@ texture = ExtResource("28_qsqtq")
 region_rect = Rect2(241.22131, 269.84952, 86.21057, 99.552704)
 
 [node name="Button_fusionneur_d\'acier" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=782796754]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2177,6 +2125,7 @@ region_enabled = true
 region_rect = Rect2(274.27917, 254.97348, 111.82825, 99.552704)
 
 [node name="Button_transformateur_puissant" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=816968288]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2285,9 +2234,11 @@ region_enabled = true
 region_rect = Rect2(274.27917, 254.97348, 111.82825, 99.552704)
 
 [node name="HSeparator3" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=1447174630]
+visible = false
 layout_mode = 2
 
 [node name="Button_foreuse_voidium" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1382487801]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2377,6 +2328,7 @@ region_enabled = true
 region_rect = Rect2(36.147644, 4.4013557, 88.058014, 98.783035)
 
 [node name="Button_foreuse_topaxium" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=727998052]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2466,6 +2418,7 @@ region_enabled = true
 region_rect = Rect2(36.147644, 4.4013557, 88.058014, 98.783035)
 
 [node name="Button_foreuse_gluantite" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=2074030464]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2555,6 +2508,7 @@ region_enabled = true
 region_rect = Rect2(128.39896, 143.13333, 82.36615, 85.5206)
 
 [node name="Button_four_voidium" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1615740946]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2663,6 +2617,7 @@ region_enabled = true
 region_rect = Rect2(128.39896, 143.13333, 82.36615, 85.5206)
 
 [node name="Button_four_gluantite" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=431752489]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "
@@ -2771,6 +2726,7 @@ region_enabled = true
 region_rect = Rect2(128.39896, 143.13333, 82.36615, 85.5206)
 
 [node name="Button_four_topaxium" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1462915112]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = " "

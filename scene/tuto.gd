@@ -8,6 +8,7 @@ extends Control
 @onready var rich_text_tuto_label: RichTextLabel = $CanvasLayer/Panel/RichTextTutoLabel
 const BASE = preload("uid://byxo1qtpjx30p")
 @onready var vague_timer: Timer = $"../Vague/vague_Timer"
+@onready var panel_mur: Panel = $"../Interface/Panel_mur"
 
 
 var phrases = [
@@ -28,6 +29,7 @@ var phrases = [
 
 var numero_phrase = 0
 func _ready() -> void:
+	panel_mur.visible = false
 	progress_bar.visible = false
 	panel_construction.visible = false
 	coordoné.visible = false
@@ -51,6 +53,7 @@ func _input(event: InputEvent) -> void:
 			panel_inventaire.visible = true
 		elif numero_phrase == 5:
 			panel_construction.visible = true
+			panel_mur.visible = true
 		if numero_phrase == 8:
 			coordoné.visible = true
 		elif numero_phrase == phrases.size():
