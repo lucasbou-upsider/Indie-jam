@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var vague_timer: Timer = $vague_Timer
 @onready var label_time_left: RichTextLabel = $"../Interface/Panel_vague/time_left"
+@onready var warner: AudioStreamPlayer = $warner
 @warning_ignore("shadowed_global_identifier") @onready var kayou_spawn: Node2D = $"../kayou_spawn"
 
 var vague_number = 0
@@ -13,10 +14,14 @@ func _ready() -> void:
 	vague_timer.start()
 
 func _process(_delta: float) -> void:
-	if vague_timer.time_left <= 50:
+	if vague_timer.time_left <= 50 and 49 <= vague_timer.time_left:
+		if not warner.has_stream_playback():
+			warner.play()
 		label_time_left.text = "[shake rate=15 level=7]" + str(int(vague_timer.time_left))
 		label_time_left.self_modulate = Color(0.869, 0.0, 0.09)
-	elif vague_timer.time_left <= 100:
+	elif vague_timer.time_left <= 100 and 99 <= vague_timer.time_left:
+		if not warner.has_stream_playback():
+			warner.play()
 		label_time_left.text = "[shake rate=10 level=4]" + str(int(vague_timer.time_left))
 		label_time_left.self_modulate = Color(1.0, 0.476, 0.428)
 	elif vague_timer.time_left > 100:

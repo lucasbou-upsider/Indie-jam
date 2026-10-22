@@ -10,17 +10,17 @@ const BASE = preload("uid://byxo1qtpjx30p")
 
 
 var phrases = [
-	"bienvenu dans MAMADOU, un jeu de gestion de batiments et de defence",
-	"voici les bases du jeu...",
-	"votre objectif est de defendre votre base contre 20 vagues de meteorites",
-	"en haut a gauche se trouve le temps avant la prochaine vague",
-	"a gauche vous pouvez voir votre prodution",
-	"et a droite vos batiments",
-	"chaque batimens est affecté par la physique et coute des minerais pour etre construit, et en echange en produit d'autre",
-	"placez les bien car certain batiments on des specificités de placement pour fonctionner",
-	"plus le batiments est proche du centre, plus il est performant",
-	"pour finir, le jeu est divisé en 4 phases augmentant chacun la difficulté des meteorites mais aussi debloquant de nouveau craft",
-	"bonne chance !"
+	"welcome to MAMADOU, a game about base-building and defense",
+	"here are the basics...",
+	"your goal is to defend your base against 20 waves of incoming meteors",
+	"in the top left is the time left before the next wave",
+	"on the left you can see your resources and production...",
+	"...and on the right the buildings",
+	"every building is affected by physics, produces some resources and may consume others to do so",
+	"some buildings have specific placement requirements",
+	"horizontally, the closer the building is to the center, the faster it works",
+	"the game is divided into 4 main phases, each with new dangers and buildings",
+	"Have fun!"
 ]
 
 var numero_phrase = 0

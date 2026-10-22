@@ -210,8 +210,10 @@ autostart = true
 script = ExtResource("6_1402k")
 
 [node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
-wait_time = 105.0
+wait_time = 104.73
 one_shot = true
+
+[node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]
 
