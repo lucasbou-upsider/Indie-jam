@@ -37,6 +37,7 @@ var tween: Tween
 @onready var coordoné: Label = $Interface/Coordoné
 @onready var quake_timer: Timer = $kayou_spawn/quake_timer
 @onready var quaker: Timer = $kayou_spawn/quaker
+@onready var camera: Camera2D = $Camera2D
 
 @onready var tool_tip: RichTextLabel = $Interface/ToolTip/RichTextLabel
 @onready var tool_tip_player: AudioStreamPlayer = $Interface/ToolTip/Whoosher
@@ -58,7 +59,7 @@ func _process(_delta: float) -> void:
 
 	#deplacement de la camera
 	if Input.is_action_just_pressed("verif_pv"):
-		print(calculate_production("pierre"))
+		earth_quake(500)
 	if Input.is_action_pressed("courir"):
 		speed = 5
 	else:
@@ -139,6 +140,7 @@ func earth_quake(intensity):
 
 func _on_quake_timer_timeout() -> void:
 	if quake_queue.size() > 0:
+		camera.screen_shake()
 		quake(quake_queue.pop_front())
 
 func _on_quaker_timeout() -> void:
