@@ -195,6 +195,40 @@ offset_right = 1232.6152
 offset_bottom = 698.66656
 color = Color(0, 0, 0, 0.3254902)
 
+[node name="Label" type="RichTextLabel" parent="Victory and death/death" unique_id=1294867223]
+self_modulate = Color(1, 0, 0, 1)
+offset_left = 284.04626
+offset_top = 32.42251
+offset_right = 944.8247
+offset_bottom = 185.72745
+theme_override_font_sizes/normal_font_size = 85
+bbcode_enabled = true
+text = "[shake ]YOU ARE DEAD"
+
+[node name="replay" type="Button" parent="Victory and death/death" unique_id=1502952650]
+offset_left = 379.05627
+offset_top = 195.35045
+offset_right = 758.49854
+offset_bottom = 299.35046
+theme_override_font_sizes/font_size = 70
+text = "replay"
+
+[node name="menu" type="Button" parent="Victory and death/death" unique_id=805562046]
+offset_left = 427.67123
+offset_top = 343.01938
+offset_right = 704.62646
+offset_bottom = 467.39993
+theme_override_font_sizes/font_size = 70
+text = "menu"
+
+[node name="quit" type="Button" parent="Victory and death/death" unique_id=1905664321]
+offset_left = 451.33786
+offset_top = 512.1806
+offset_right = 668.3981
+offset_bottom = 616.1806
+theme_override_font_sizes/font_size = 70
+text = "quit"
+
 [node name="background" type="Node2D" parent="." unique_id=1059103624]
 
 [node name="NewPiskel8" type="Sprite2D" parent="background" unique_id=648332481]
@@ -260,7 +294,6 @@ one_shot = true
 
 [node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
 stream = ExtResource("8_kof1m")
-bus = &"SFX"
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]
 
@@ -3006,19 +3039,15 @@ horizontal_alignment = 1
 stream = ExtResource("35_qsqtq")
 volume_db = -10.0
 max_polyphony = 2
-bus = &"SFX"
 
 [node name="banger" type="AudioStreamPlayer" parent="." unique_id=440276755]
 stream = ExtResource("39_mr18f")
-bus = &"SFX"
 
 [node name="plopper" type="AudioStreamPlayer" parent="." unique_id=789098846]
 stream = ExtResource("40_yadev")
-bus = &"SFX"
 
 [node name="tinker" type="AudioStreamPlayer" parent="." unique_id=153690077]
 stream = ExtResource("41_1gmmm")
-bus = &"SFX"
 
 [node name="KillZone" type="Area2D" parent="." unique_id=1404450531]
 
@@ -3026,6 +3055,9 @@ bus = &"SFX"
 position = Vector2(0, 7205)
 shape = SubResource("RectangleShape2D_5aaqh")
 
+[connection signal="pressed" from="Victory and death/death/replay" to="Victory and death" method="_on_replay_pressed"]
+[connection signal="pressed" from="Victory and death/death/menu" to="Victory and death" method="_on_menu_pressed"]
+[connection signal="pressed" from="Victory and death/death/quit" to="Victory and death" method="_on_quit_pressed"]
 [connection signal="timeout" from="kayou_spawn/quake_timer" to="." method="_on_quake_timer_timeout"]
 [connection signal="timeout" from="kayou_spawn/quaker" to="." method="_on_quaker_timeout"]
 [connection signal="timeout" from="Vague/vague_Timer" to="Vague" method="_on_vague_timer_timeout"]
