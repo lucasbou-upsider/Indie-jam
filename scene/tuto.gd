@@ -54,8 +54,5 @@ func _input(event: InputEvent) -> void:
 		elif numero_phrase == 11:
 			vague_timer.start()
 			get_parent().add_child(BASE.instantiate())
+			get_parent().tuto_over = true
 			queue_free()
-		
-		
-		
-		

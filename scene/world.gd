@@ -31,6 +31,7 @@ const FUSIONNEUR_D_ACIER = preload("uid://b08u6oy6tq0n8")
 var speed
 var quake_queue = []
 var tween: Tween
+var tuto_over := false
 
 @onready var progress_bar: ProgressBar = $Interface/ProgressBar
 @onready var camera_2d: Camera2D = $Camera2D
@@ -83,7 +84,7 @@ func _process(_delta: float) -> void:
 		coordoné.self_modulate = Color(1.0, 0.245, 0.188)
 
 func try_spawn(batiment):
-	if GLOBAL.selected == null:
+	if GLOBAL.selected == null and tuto_over:
 		var newbat = batiment.instantiate()
 		newbat.global_position = get_global_mouse_position()
 		add_child(newbat)

@@ -414,7 +414,6 @@ polygon = PackedVector2Array(-18, -43, 6, -43, 6, -29, 5, -29, 5, -15, 30, -15, 
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1944436012]
 polygon = PackedVector2Array(-18, -43, 6, -43, 6, -29, 5, -29, 5, -15, 30, -15, 30, 15, 5, 15, 5, 29, 6, 29, 6, 43, -18, 43)
-disabled = true
 one_way_collision_margin = 0.0
 
 [node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]

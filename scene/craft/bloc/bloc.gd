@@ -24,6 +24,19 @@ var pv_max
 func defreeze():
 	sleeping = false
 
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"is_blueprint": is_blueprint,
+		"rotation": rotation,
+		"pv": pv,
+		"collision_polygon_2d.disabled": collision_polygon_2d.disabled
+	}
+	return save_dict
+
 func _ready() -> void:
 	add_to_group("persist")
 	pv_max = pv
