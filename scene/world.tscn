@@ -40,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://b5o7fbneheiel" path="res://sprite/New_Piskel_10_6.png" id="32_tl5qk"]
 [ext_resource type="AudioStream" uid="uid://wxic2gxt1d3f" path="res://sounds/whoosh.mp3" id="35_qsqtq"]
 [ext_resource type="AudioStream" uid="uid://d3diga5ed4psd" path="res://sounds/smash.mp3" id="39_mr18f"]
+[ext_resource type="AudioStream" uid="uid://d3modivcg05a4" path="res://sounds/plop.mp3" id="40_yadev"]
+[ext_resource type="AudioStream" uid="uid://dc038cn6rts07" path="res://sounds/tink.mp3" id="41_1gmmm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yur6x"]
 shader = ExtResource("5_yur6x")
@@ -2709,6 +2711,12 @@ max_polyphony = 2
 
 [node name="banger" type="AudioStreamPlayer" parent="." unique_id=440276755]
 stream = ExtResource("39_mr18f")
+
+[node name="plopper" type="AudioStreamPlayer" parent="." unique_id=789098846]
+stream = ExtResource("40_yadev")
+
+[node name="tinker" type="AudioStreamPlayer" parent="." unique_id=153690077]
+stream = ExtResource("41_1gmmm")
 
 [connection signal="timeout" from="kayou_spawn/quake_timer" to="." method="_on_quake_timer_timeout"]
 [connection signal="timeout" from="kayou_spawn/quaker" to="." method="_on_quaker_timeout"]

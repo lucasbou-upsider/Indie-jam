@@ -54,6 +54,7 @@ func place_self():
 	if bodycount == 0:
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		is_blueprint = false
+		$"../tinker".play()
 		collision_shape_2d.disabled = false
 		get_parent().unselect()
 

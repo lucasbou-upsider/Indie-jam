@@ -123,6 +123,7 @@ func place_self():
 			sprite_2d.play("arret")
 		electrical_strenght()
 		production_timer.start()
+		$"../tinker".play()
 		is_blueprint = false
 		collision_shape_2d.disabled = false
 

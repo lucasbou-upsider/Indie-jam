@@ -118,6 +118,7 @@ func place_self():
 		get_parent().unselect()
 		electrical_strenght()
 		production_timer.start()
+		$"../tinker".play()
 		is_blueprint = false
 
 func electrical_strenght():

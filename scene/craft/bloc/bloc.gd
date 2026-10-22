@@ -104,6 +104,7 @@ func place_self():
 	if bodycount == 0:
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		get_parent().unselect()
+		$"../tinker".play()
 		is_blueprint = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
