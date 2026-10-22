@@ -4,7 +4,7 @@ extends Node
 var tool_tip: RichTextLabel
 var base_pv := 100
 var degats = {"base": 1, "gros": 3, "feu": 6, "anti": 1000000000}
-var DEBUG := true
+var DEBUG := false
 var mouse_busy := false
 var selected = null
 var is_paused = false
@@ -14,9 +14,9 @@ var is_paused = false
 var time_left: float
 var vague_number: int
 var charbon := 0
-var bois := 0
+var bois := 100
 var pierre := 0
-var brique := 50
+var brique := 300
 var minerai_fer := 0
 var lingot_fer := 0
 var plaque_fer := 0

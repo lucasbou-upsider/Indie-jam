@@ -62,14 +62,15 @@ func _process(delta: float) -> void:
 	if vague_timer.time_left < 100 and vague_timer.time_left+delta >=100:
 		warner.play()
 	elif vague_timer.time_left < 50 and vague_timer.time_left+delta >=50:
-		warner.play()
+		$"../musique/base".stream_paused = true
+		$"../musique/meteor".play()
 
 func _on_vague_timer_timeout() -> void:
 	get_parent().camera.screen_shake(0, 7, -2)
 	kayou_spawn.wave(nbr_meteorite[vague_number%nbr_meteorite.size()], int(vague_number/nbr_meteorite.size()))
 	vague_number += 1
 
-	await get_tree().create_timer(6).timeout
+	await get_tree().create_timer(10).timeout
 	if int(vague_number/nbr_meteorite.size()) == 1:
 		h_separator_2.visible = true
 		button_foreuse_etain.visible = true
@@ -98,6 +99,8 @@ func _on_vague_timer_timeout() -> void:
 		button_piti_bloc_topaxium.visible = true
 		button_bloc_voidium.visible = true
 		button_piti_bloc_voidium.visible = true
+	$"../musique/meteor".stop()
+	$"../musique/base".stream_paused = false
 	vague_timer.start()
 
 

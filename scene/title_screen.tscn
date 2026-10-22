@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="12_t65bv"]
 [ext_resource type="Texture2D" uid="uid://be6wtm88uepqa" path="res://sprite/New_Piskel_6.png" id="13_miuoy"]
 [ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="14_kgdf7"]
-[ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="15_kgdf7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t65bv"]
 shader = ExtResource("3_nohhj")
@@ -560,18 +559,11 @@ text = "play"
 
 [node name="titre" type="Label" parent="panel" unique_id=239538204]
 layout_mode = 0
-offset_left = 454.0
-offset_top = 14.0
-offset_right = 1232.0
-offset_bottom = 172.0
+offset_left = 488.60602
+offset_top = 12.668991
+offset_right = 1266.606
+offset_bottom = 170.66899
 theme_override_font_sizes/font_size = 116
-text = "CHADIUM"
-
-[node name="NewPiskel111" type="Sprite2D" parent="panel/titre" unique_id=1145495278]
-position = Vector2(623, 81)
-scale = Vector2(9.357142, 6.8076925)
-texture = ExtResource("15_kgdf7")
-region_enabled = true
-region_rect = Rect2(15.811607, 114.26218, 14.630672, 13.673515)
+text = "FALLCTORY"
 
 [connection signal="pressed" from="panel/Button" to="." method="_on_button_pressed"]

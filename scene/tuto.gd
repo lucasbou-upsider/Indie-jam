@@ -12,7 +12,7 @@ const BASE = preload("uid://byxo1qtpjx30p")
 
 
 var phrases = [
-	" welcome to [wave]MAMADOU[/wave], a game about [u]base-building and defense[/u]",
+	" welcome to [wave]FALLCTORY[/wave], a game about [u]base-building and defense[/u]",
 	"here are [wave]the basics...[/wave]",
 	"your [pulse][color=00ff00]goal[/color][/pulse] is to defend your base against 20 waves of [shake][color=d70000]incoming meteors[shake]",
 	"in the [wave]top left[/wave] is the time left before the [color=d70000]next wave",
