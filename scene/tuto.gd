@@ -39,7 +39,7 @@ func _process(_delta: float) -> void:
 		rich_text_tuto_label.text = phrases[numero_phrase]
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("click droit") or event.is_action_pressed("click gauche"):
+	if event.is_action_pressed("click droit") or event.is_action_pressed("click gauche") and GLOBAL.is_paused == false:
 		numero_phrase += 1
 		if numero_phrase == 2:
 			progress_bar.visible = true

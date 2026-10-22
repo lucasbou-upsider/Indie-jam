@@ -313,11 +313,12 @@ script = ExtResource("1_k01l3")
 position = Vector2(583, 625)
 
 [node name="NewPiskel8" type="Sprite2D" parent="background" unique_id=383549259]
-position = Vector2(-53.659546, -1309.296)
+position = Vector2(-7.709839, -927.91315)
 scale = Vector2(30.53956, 19.139275)
 texture = ExtResource("1_0ctqs")
 
 [node name="Parallax2D2" type="Parallax2D" parent="background" unique_id=218886365]
+visible = false
 scroll_scale = Vector2(1.2, 1.2)
 
 [node name="NewPiskel9" type="Sprite2D" parent="background/Parallax2D2" unique_id=2010337525]
@@ -328,6 +329,7 @@ region_enabled = true
 region_rect = Rect2(0, 128.22966, 128, 127.77034)
 
 [node name="Parallax2D" type="Parallax2D" parent="background" unique_id=2044197820]
+visible = false
 scroll_scale = Vector2(1.1, 1.1)
 scroll_offset = Vector2(3.855, 0)
 

@@ -34,6 +34,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	
 	#pv connecter pour foreuse
 	GLOBAL.base_pv = pv
 	GLOBAL.mouse_busy = false
@@ -41,7 +42,8 @@ func _process(_delta: float) -> void:
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
-			place_self()
+			if GLOBAL.is_paused == false:
+				place_self()
 		elif mouse_overed and not is_blueprint:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
@@ -96,3 +98,7 @@ func tooltipify():
 	var res := "Base\n"
 	res = res + "hp: "+str(pv)+"/"+str(pv_max)
 	return res
+
+
+func _on_auto_pose_timeout() -> void:
+	place_self()

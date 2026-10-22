@@ -26,6 +26,11 @@ var is_blueprint := true
 @export var minerai_produit := ""
 @export var production2 = 0
 @export var minerai_produit2 := ""
+@export_category("specificité ?")
+@export var position_x_droite: int = 1275
+@export var position_x_gauche: int = -1280
+@export var position_y_haut: int = -10000
+@export var position_y_bas: int = 50
 
 var pv_max := 0
 var bodycount = 0
@@ -75,9 +80,14 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+
+	
+	
+	
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
-			place_self()
+			if GLOBAL.is_paused == false:
+				place_self()
 		elif mouse_overed and not is_blueprint:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
@@ -88,7 +98,7 @@ func _process(_delta: float) -> void:
 			get_parent().unselect()
 
 	#destruction
-	if Input.is_action_pressed("click droit"):
+	if Input.is_action_pressed("click droit") and GLOBAL.is_paused == false:
 		if mouse_overed:
 			var refund_mult = 0.5
 			if is_blueprint:
@@ -108,7 +118,7 @@ func _process(_delta: float) -> void:
 		queue_free()
 
 	#regarde si l'objet est en blueprint ou pas
-	if is_blueprint:
+	if is_blueprint and GLOBAL.is_paused != true:
 		collision_polygon_2d.disabled = true
 		global_position = get_global_mouse_position()
 		linear_velocity = Vector2(0,0)
@@ -130,13 +140,18 @@ func _process(_delta: float) -> void:
 
 #une fois le blueplrint fini placer
 func place_self():
-	if bodycount == 0:
+	if bodycount == 0 :
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		get_parent().unselect()
 		electrical_strenght()
 		production_timer.start()
 		$"../tinker".play()
 		is_blueprint = false
+	if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
+		pass
+	else :
+		elec_efficacity = [999999999,999999999,99999999]
+		sprite_2d.speed_scale = 0.2
 
 func electrical_strenght():
 	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x))
@@ -145,7 +160,6 @@ func electrical_strenght():
 func _on_timer_timeout() -> void:
 	electrical_strenght()
 	sprite_2d.play("arret")
-
 	GLOBAL.set(minerai_produit, GLOBAL.get(minerai_produit) + production)
 	if GLOBAL.get(minerai_produit2):
 		GLOBAL.set(minerai_produit2, GLOBAL.get(minerai_produit2) + production2)

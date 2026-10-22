@@ -7,6 +7,8 @@ var degats = {"base": 1, "gros": 3, "feu": 6, "anti": 1000000000}
 var DEBUG := true
 var mouse_busy := false
 var selected = null
+var is_paused = false
+
 
 #inventaire
 var charbon := 0

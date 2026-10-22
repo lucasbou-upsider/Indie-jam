@@ -29,7 +29,12 @@ disabled = true
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_o4a50")
 
+[node name="auto_pose" type="Timer" parent="." unique_id=886380584]
+wait_time = 250.0
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="auto_pose" to="." method="_on_auto_pose_timeout"]

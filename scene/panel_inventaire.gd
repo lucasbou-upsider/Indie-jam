@@ -7,6 +7,10 @@ extends Panel
 
 var tween: Tween
 var is_detailed := false
+func _ready() -> void:
+	_on_change_button_pressed()
+
+
 func _process(_delta: float) -> void:
 	if !is_detailed:
 		v_box_container_2.visible = false

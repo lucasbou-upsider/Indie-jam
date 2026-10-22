@@ -78,10 +78,15 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	
+	
+	
+	
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:
-			place_self()
+			if GLOBAL.is_paused == false:
+				place_self()
 		elif mouse_overed and not is_blueprint:
 			if GLOBAL.selected == self:
 				get_parent().unselect()
@@ -94,7 +99,7 @@ func _process(_delta: float) -> void:
 
 
 	#destruction
-	if Input.is_action_pressed("click droit"):
+	if Input.is_action_pressed("click droit") and GLOBAL.is_paused == false:
 		if mouse_overed:
 			var refund_mult = 0.5
 			if is_blueprint:
@@ -129,7 +134,7 @@ func _process(_delta: float) -> void:
 
 #une fois le blueplrint fini placer
 func place_self():
-	if bodycount == 0:
+	if bodycount == 0 :
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		get_parent().unselect()
 		if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
