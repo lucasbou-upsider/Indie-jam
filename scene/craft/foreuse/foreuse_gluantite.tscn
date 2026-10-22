@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dknya783jo4a5"]
+
+[ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_7e84o"]
+[ext_resource type="Texture2D" uid="uid://mgghvwhovdd5" path="res://sprite/New_Piskel_19.png" id="2_7e84o"]
+[ext_resource type="Texture2D" uid="uid://csmf6nqnjtftw" path="res://sprite/New_Piskel_3_4.png" id="3_fxe8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg0b3"]
+atlas = ExtResource("3_fxe8e")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ixug"]
+atlas = ExtResource("3_fxe8e")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npko7"]
+atlas = ExtResource("3_fxe8e")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uiam"]
+atlas = ExtResource("3_fxe8e")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oadkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7e84o")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg0b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ixug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npko7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uiam")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 13.0
+}]
+
+[node name="foreuse_gluantite" type="RigidBody2D" unique_id=1505809120]
+script = ExtResource("1_7e84o")
+pv = 25
+elec_efficacity = [5, 2, 3]
+cost = 50
+minerai = "barre_acier"
+cost2 = 50
+minerai2 = "engrenage_bronze"
+cost3 = 50
+minerai3 = "plaque_fer"
+production = 1
+minerai_produit = "minerai_gluantite"
+position_x_droite = 150
+position_x_gauche = -150
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
+texture_filter = 1
+position = Vector2(34, -1)
+sprite_frames = SubResource("SpriteFrames_oadkl")
+animation = &"arret"
+autoplay = "new_animation"
+
+[node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=1993722260]
+polygon = PackedVector2Array(-18, 13, 18, 13, 16, -13, 12, -16, 9, -27, 0, -32, -9, -26, -13, -16, -16, -13)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=566869362]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=627256213]
+polygon = PackedVector2Array(-18, 13, 18, 13, 16, -13, 12, -16, 9, -27, 0, -32, -9, -26, -13, -16, -16, -13)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2096382292]
+target_position = Vector2(0, 15)
+
+[node name="production_timer" type="Timer" parent="." unique_id=127513847]
+wait_time = 2.0
+one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=698079226]
+offset_left = -21.0
+offset_top = -13.0
+offset_right = 19.0
+offset_bottom = 10.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="production_timer" to="." method="_on_timer_timeout"]

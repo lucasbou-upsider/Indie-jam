@@ -3,27 +3,31 @@
 [ext_resource type="Script" uid="uid://d2q1g7af3jy0x" path="res://scene/craft/foreuse/foreuse.gd" id="1_3v7k4"]
 [ext_resource type="Texture2D" uid="uid://blxikl2rl3qwx" path="res://sprite/New_Piskel_3_3_1.png" id="2_2dwpe"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iy7yh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v7k4"]
 atlas = ExtResource("2_2dwpe")
 region = Rect2(128, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6d3v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dwpe"]
 atlas = ExtResource("2_2dwpe")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhwqs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy7yh"]
 atlas = ExtResource("2_2dwpe")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5mftg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6d3v"]
 atlas = ExtResource("2_2dwpe")
 region = Rect2(0, 128, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gj2ia"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhwqs"]
+atlas = ExtResource("2_2dwpe")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mftg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iy7yh")
+"texture": SubResource("AtlasTexture_3v7k4")
 }],
 "loop": 1,
 "name": &"arret",
@@ -31,16 +35,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2dwpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy7yh")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_h6d3v")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rhwqs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5mftg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iy7yh")
 }],
 "loop": 1,
 "name": &"new_animation",
@@ -64,8 +68,8 @@ position_x_droite = -1077
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
 position = Vector2(-11, -1)
-sprite_frames = SubResource("SpriteFrames_gj2ia")
-animation = &"arret"
+sprite_frames = SubResource("SpriteFrames_5mftg")
+animation = &"new_animation"
 autoplay = "new_animation"
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=1993722260]

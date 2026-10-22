@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bjcivtwxk31nc"]
+
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_g66sn"]
+[ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="2_mltgp"]
+[ext_resource type="Texture2D" uid="uid://bgd2n2mdvmr1h" path="res://sprite/image_4.png" id="3_holvk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dib5d"]
+atlas = ExtResource("2_mltgp")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86tj4"]
+atlas = ExtResource("3_holvk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huon4"]
+atlas = ExtResource("3_holvk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67pit"]
+atlas = ExtResource("3_holvk")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5khvk"]
+atlas = ExtResource("3_holvk")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2fnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dib5d")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86tj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huon4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67pit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5khvk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="four_voidium" type="RigidBody2D" unique_id=1216213044]
+script = ExtResource("1_g66sn")
+elec_efficacity = [2, 5, 5]
+cost = 100
+minerai = "minerai_voidium"
+cost2 = 50
+minerai2 = "barre_acier"
+demande = "charbon"
+cout_demande = 2
+demande2 = "minerai_voidium"
+cout_demande2 = 1
+minerai_produit = "lingot_voidium"
+production = 1
+position_x_droite = -1077
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
+texture_filter = 1
+position = Vector2(12, 5)
+sprite_frames = SubResource("SpriteFrames_k2fnv")
+autoplay = "default"
+
+[node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=823231695]
+polygon = PackedVector2Array(11, -31, 15, -27, 15, 2, 16, 2, 16, 5, 15, 5, 15, 17, -16, 17, -16, 5, -17, 5, -17, 2, -18, 1, -24, 1, -26, -1, -26, -15, -24, -17, -16, -17, -16, -26, -12, -31, -10, -31, -10, -35, -5, -35, -5, -38, -1, -38, -1, -31)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1820767853]
+polygon = PackedVector2Array(11, -31, 15, -27, 15, 2, 16, 2, 16, 5, 15, 5, 15, 17, -16, 17, -16, 5, -17, 5, -17, 2, -18, 1, -24, 1, -26, -1, -26, -15, -24, -17, -16, -17, -16, -26, -12, -31, -10, -31, -10, -35, -5, -35, -5, -38, -1, -38, -1, -31)
+disabled = true
+
+[node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
+wait_time = 2.0
+
+[connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
+[connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]
+[connection signal="mouse_entered" from="ClearanceArea" to="." method="_on_clearance_area_mouse_entered"]
+[connection signal="mouse_exited" from="ClearanceArea" to="." method="_on_clearance_area_mouse_exited"]
+[connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]

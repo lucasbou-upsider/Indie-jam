@@ -29,6 +29,11 @@ const BASE = preload("uid://byxo1qtpjx30p")
 const FUSIONNEUR_D_ACIER = preload("uid://b08u6oy6tq0n8")
 const TRANSFORMATEUR_PUISSANT = preload("uid://b3gijqxm3x0rl")
 const FOREUSE_VOIDIUM = preload("uid://4viktq8q5syd")
+const FOREUSE_TOPAXIUM = preload("uid://i503tap15w60")
+const FOREUSE_GLUANTITE = preload("uid://dknya783jo4a5")
+const FOUR_VOIDIUM = preload("uid://bjcivtwxk31nc")
+const FOUR_GLUANTITE = preload("uid://civ2cvbou7bx3")
+const FOUR_TOPAXIUM = preload("uid://cfhpjvli34q5j")
 
 var speed
 var quake_queue = []
@@ -211,7 +216,16 @@ func _on_button_transformateur_puissant_pressed() -> void:
 	try_spawn(TRANSFORMATEUR_PUISSANT)
 func _on_button_foreuse_voidium_pressed() -> void:
 	try_spawn(FOREUSE_VOIDIUM)
-
+func _on_button_foreuse_topaxium_pressed() -> void:
+	try_spawn(FOREUSE_TOPAXIUM)
+func _on_button_foreuse_gluantite_pressed() -> void:
+	try_spawn(FOREUSE_GLUANTITE)
+func _on_button_four_voidium_pressed() -> void:
+	try_spawn(FOUR_VOIDIUM)
+func _on_button_four_voidium_2_pressed() -> void:
+	try_spawn(FOUR_GLUANTITE)
+func _on_button_four_topaxium_pressed() -> void:
+	try_spawn(FOUR_TOPAXIUM)
 
 func _on_kill_zone_area_entered(area: Area2D) -> void:
 	if area.get_parent() == GLOBAL.selected:

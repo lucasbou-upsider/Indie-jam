@@ -7,7 +7,7 @@ extends Node2D
 @onready var warner: AudioStreamPlayer = $warner
 @warning_ignore("shadowed_global_identifier") @onready var kayou_spawn: Node2D = $"../kayou_spawn"
 
-var vague_number = 0
+@export var vague_number = 0
 const nbr_meteorite = [100, 200, 250, 250, 300]
 
 func _ready() -> void:

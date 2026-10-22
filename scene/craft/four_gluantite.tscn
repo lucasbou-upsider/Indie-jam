@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://civ2cvbou7bx3"]
+
+[ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_pkuj6"]
+[ext_resource type="Texture2D" uid="uid://b51hkp42icmma" path="res://sprite/image_3.png" id="2_hhsih"]
+[ext_resource type="Texture2D" uid="uid://b0dxfpqkyn52i" path="res://sprite/image_7.png" id="2_w4il6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeafa"]
+atlas = ExtResource("2_hhsih")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqu06"]
+atlas = ExtResource("2_hhsih")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he2yq"]
+atlas = ExtResource("2_hhsih")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5262"]
+atlas = ExtResource("2_hhsih")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6nfh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w4il6")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeafa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqu06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he2yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5262")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="four_gluantite" type="RigidBody2D" unique_id=1216213044]
+script = ExtResource("1_pkuj6")
+elec_efficacity = [5, 5, 5]
+cost = 100
+minerai = "minerai_gluantite"
+cost2 = 50
+minerai2 = "barre_acier"
+demande = "charbon"
+cout_demande = 2
+demande2 = "minerai_gluantite"
+cout_demande2 = 1
+minerai_produit = "lingot_gluantite"
+production = 1
+position_x_droite = 150
+position_x_gauche = -150
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1419743357]
+texture_filter = 1
+position = Vector2(12, 5)
+sprite_frames = SubResource("SpriteFrames_6nfh7")
+animation = &"arret"
+autoplay = "default"
+
+[node name="ClearanceArea" type="Area2D" parent="." unique_id=507090390]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClearanceArea" unique_id=1371943804]
+polygon = PackedVector2Array(11, -31, 15, -27, 15, 2, 16, 2, 16, 5, 15, 5, 15, 17, -16, 17, -16, 5, -17, 5, -17, 2, -18, 1, -24, 1, -26, -1, -26, -15, -24, -17, -16, -17, -16, -26, -12, -31, -10, -31, -10, -35, -5, -35, -5, -38, -1, -38, -1, -31)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1820767853]
+polygon = PackedVector2Array(11, -31, 15, -27, 15, 2, 16, 2, 16, 5, 15, 5, 15, 17, -16, 17, -16, 5, -17, 5, -17, 2, -18, 1, -24, 1, -26, -1, -26, -15, -24, -17, -16, -17, -16, -26, -12, -31, -10, -31, -10, -35, -5, -35, -5, -38, -1, -38, -1, -31)
+disabled = true
+
+[node name="ProductionTimer" type="Timer" parent="." unique_id=1083826690]
+wait_time = 2.0
+
+[connection signal="area_entered" from="ClearanceArea" to="." method="_on_clearance_area_area_entered"]
+[connection signal="area_exited" from="ClearanceArea" to="." method="_on_clearance_area_area_exited"]
+[connection signal="mouse_entered" from="ClearanceArea" to="." method="_on_clearance_area_mouse_entered"]
+[connection signal="mouse_exited" from="ClearanceArea" to="." method="_on_clearance_area_mouse_exited"]
+[connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]
