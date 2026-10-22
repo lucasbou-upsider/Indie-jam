@@ -61,8 +61,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 
-
-
 	# Input
 	if Input.is_action_just_pressed("click gauche"):
 		if is_blueprint:

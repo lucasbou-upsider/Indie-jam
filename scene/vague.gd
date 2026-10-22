@@ -65,7 +65,6 @@ func _process(delta: float) -> void:
 		warner.play()
 
 func _on_vague_timer_timeout() -> void:
-	print("vague de " + str(nbr_meteorite[vague_number%nbr_meteorite.size()]) + " meteorites ")
 	get_parent().camera.screen_shake(0, 7, -2)
 	kayou_spawn.wave(nbr_meteorite[vague_number%nbr_meteorite.size()], int(vague_number/nbr_meteorite.size()))
 	vague_number += 1

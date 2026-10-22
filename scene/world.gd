@@ -67,8 +67,6 @@ func _process(_delta: float) -> void:
 
 	#deplacement de la camera
 	if GLOBAL.is_paused == false:
-		if Input.is_action_just_pressed("verif_pv"):
-			earth_quake(500)
 		if Input.is_action_pressed("courir"):
 			speed = 5
 		else:
@@ -80,7 +78,6 @@ func _process(_delta: float) -> void:
 		if Input.is_action_pressed("haut"):
 			camera_2d.position += Vector2(0,-speed)
 		if Input.is_action_pressed("bas") and camera_2d.position.y <= -100:
-			print(camera_2d.position.y)
 			camera_2d.position += Vector2(0,speed)
 
 #coordonées

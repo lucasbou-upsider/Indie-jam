@@ -113,8 +113,6 @@ func save_game():
 	"lingot_topaxium": lingot_topaxium
 	}
 	save_file.store_line(JSON.stringify(global_save))
-	print("\nsaved\n")
-
 
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):

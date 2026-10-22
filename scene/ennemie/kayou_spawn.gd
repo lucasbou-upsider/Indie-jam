@@ -8,9 +8,7 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	for i in range(1, 6):
-		if Input.is_action_just_pressed(str(i)):
-			wave(100, i-1)
+	pass
 
 func wave(wave_number: int, strength): # 0 <= strength <= 4
 	var types := ["base", "base", "base", "base", "base", "base", "base", "base", "gros", "gros", "feu", "feu", "anti", "base", "gros", "feu"]

@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		v_box_container.visible = false
 		for r in ressources2.keys():
 			if GLOBAL.get(r) > 9999: GLOBAL.set(r, 9999)
-			ressources2[r].text = "      " + str(GLOBAL.get(r)) 
+			ressources2[r].text = "      " + str(GLOBAL.get(r))
 
 
 func _on_change_button_pressed() -> void:
