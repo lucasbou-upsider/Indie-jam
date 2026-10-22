@@ -51,7 +51,6 @@ func save():
 		"is_blueprint": is_blueprint,
 		"rotation": rotation,
 		"pv": pv,
-		"collision_polygon_2d.disabled": collision_polygon_2d.disabled
 	}
 	return save_dict
 

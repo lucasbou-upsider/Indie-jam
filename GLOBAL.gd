@@ -11,6 +11,8 @@ var is_paused = false
 
 
 #inventaire
+var time_left: float
+var vague_number: int
 var charbon := 0
 var bois := 0
 var pierre := 0
@@ -75,8 +77,11 @@ func save_game():
 	var save_nodes = get_tree().get_nodes_in_group("persist")
 	for node in save_nodes:
 		if node.scene_file_path.is_empty():
-			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
-			continue
+			if node.has_method("save"):
+				save_file.store_line(JSON.stringify(node.save()))
+			else:
+				print("persistent node '%s' is not an instanced scene, skipped" % node.name)
+				continue
 		if !node.has_method("save"):
 			print("persistent node '%s' is missing a save() function, skipped" % node.name)
 			continue
@@ -108,6 +113,7 @@ func save_game():
 	"lingot_topaxium": lingot_topaxium
 	}
 	save_file.store_line(JSON.stringify(global_save))
+	print("\nsaved\n")
 
 
 func load_game():
@@ -117,7 +123,8 @@ func load_game():
 	#reset state of game
 	var save_nodes = get_tree().get_nodes_in_group("persist")
 	for i in save_nodes:
-		i.queue_free()
+		if not i.scene_file_path.is_empty():
+			i.queue_free()
 
 
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
@@ -132,8 +139,7 @@ func load_game():
 			continue
 
 		var node_data = json.data
-
-		if node_data["filename"] != "global_save":
+		if node_data["filename"] != "global_save" and node_data["filename"] != "vague":
 			var new_object = load(node_data["filename"]).instantiate()
 			get_node(node_data["parent"]).add_child(new_object)
 			new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
@@ -145,7 +151,13 @@ func load_game():
 			new_object.modulate = Color(1, 1, 1, 1)
 			if !new_object is kayou:
 				new_object.place_self()
-		else:
+			new_object.collision_polygon_2d.disabled = false
+		elif node_data["filename"] == "global_save":
 			for i in node_data.keys():
 				if i != "filename":
 					set(i, node_data[i])
+		elif node_data["filename"] == "vague":
+			$"../world/Vague".vague_number = node_data["vague_number"]
+			$"../world/Vague".vague_timer.wait_time = node_data["time_left"]
+			$"../world/Vague".vague_timer.stop()
+			$"../world/Vague".vague_timer.start()

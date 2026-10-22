@@ -6,7 +6,7 @@ var pv: int = GLOBAL.base_pv
 var is_blueprint := true
 var bodycount := 0
 var mouse_overed := false
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var collision_polygon_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 #defreeze pour les signaux
@@ -23,7 +23,6 @@ func save():
 		"is_blueprint": is_blueprint,
 		"rotation": rotation,
 		"pv": pv,
-		"collision_shape_2d.disabled": collision_shape_2d.disabled
 	}
 	return save_dict
 
@@ -70,7 +69,7 @@ func place_self():
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		is_blueprint = false
 		$"../tinker".play()
-		collision_shape_2d.disabled = false
+		collision_polygon_2d.disabled = false
 		get_parent().unselect()
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:

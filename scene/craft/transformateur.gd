@@ -7,7 +7,7 @@ var bodycount := 0
 var mouse_overed := false
 var is_powered := false
 var pv_max := 0
-@onready var collision_shape_2d: CollisionPolygon2D = $CollisionPolygon2D
+@onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var production_timer: Timer = $ProductionTimer
 
@@ -50,7 +50,6 @@ func save():
 		"is_blueprint": is_blueprint,
 		"rotation": rotation,
 		"pv": pv,
-		"collision_shape_2d.disabled": collision_shape_2d.disabled
 	}
 	return save_dict
 
@@ -142,7 +141,7 @@ func place_self():
 		production_timer.start()
 		$"../tinker".play()
 		is_blueprint = false
-		collision_shape_2d.disabled = false
+		collision_polygon_2d.disabled = false
 
 
 func electrical_strenght():

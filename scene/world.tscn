@@ -285,7 +285,7 @@ autostart = true
 wait_time = 180.0
 autostart = true
 
-[node name="Vague" type="Node2D" parent="." unique_id=1873581090]
+[node name="Vague" type="Node2D" parent="." unique_id=1873581090 groups=["persist"]]
 script = ExtResource("6_1402k")
 
 [node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]

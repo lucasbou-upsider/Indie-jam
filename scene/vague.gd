@@ -39,9 +39,8 @@ func _on_vague_timer_timeout() -> void:
 
 func save():
 	var save_dict = {
-		"filename": get_scene_file_path(),
-		"parent": get_parent().get_path(),
-		"vague_timer.time_left": vague_timer.time_left,
+		"filename": "vague",
+		"time_left": vague_timer.time_left,
 		"vague_number": vague_number
 	}
 	return save_dict
