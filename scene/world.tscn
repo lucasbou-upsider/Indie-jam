@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cicrbxdj73ek4"]
 
 [ext_resource type="Script" uid="uid://dy7qnufb0wjm5" path="res://scene/world.gd" id="1_txmk2"]
+[ext_resource type="Script" uid="uid://bmecwcdi43tb2" path="res://scene/tuto.gd" id="2_mr18f"]
 [ext_resource type="Script" uid="uid://xf8stc6u11am" path="res://scene/ennemie/kayou_spawn.gd" id="2_w4qq1"]
 [ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="3_hcb8y"]
 [ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/panel_inventaire.gd" id="4_emkrx"]
@@ -120,6 +121,35 @@ size = Vector2(2559.841, 383.92947)
 [node name="world" type="Node2D" unique_id=1481596678]
 script = ExtResource("1_txmk2")
 
+[node name="Tuto" type="Control" parent="." unique_id=1505618951]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_mr18f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Tuto" unique_id=618716233]
+
+[node name="fond" type="Panel" parent="Tuto/CanvasLayer" unique_id=1528507372]
+offset_left = -64.34155
+offset_top = -23.568237
+offset_right = 1231.8018
+offset_bottom = 668.083
+
+[node name="Panel" type="Panel" parent="Tuto/CanvasLayer" unique_id=2055190334]
+offset_left = 389.147
+offset_top = 248.66808
+offset_right = 777.711
+offset_bottom = 427.56308
+
+[node name="RichTextTutoLabel" type="RichTextLabel" parent="Tuto/CanvasLayer/Panel" unique_id=1928091959]
+layout_mode = 0
+offset_right = 388.69998
+offset_bottom = 177.49998
+text = "Qiusjdoiqjsoidj"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="background" type="Node2D" parent="." unique_id=1059103624]
 
 [node name="NewPiskel8" type="Sprite2D" parent="background" unique_id=648332481]
@@ -178,7 +208,7 @@ autostart = true
 script = ExtResource("6_1402k")
 
 [node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
-wait_time = 300.0
+wait_time = 105.0
 one_shot = true
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]
@@ -2638,21 +2668,22 @@ offset_bottom = 48.867493
 
 [node name="Label" type="Label" parent="Interface/Panel_vague" unique_id=1601783898]
 layout_mode = 0
-offset_left = 1.7113571
-offset_top = -0.6091528
-offset_right = 39.711357
-offset_bottom = 13.390847
+offset_left = -7.635235
+offset_top = -34.802124
+offset_right = 78.36476
+offset_bottom = -17.802124
 theme_override_font_sizes/font_size = 12
-text = "Next in:"
+text = "Next vague in :"
 
-[node name="time_left" type="Label" parent="Interface/Panel_vague" unique_id=300910107]
+[node name="time_left" type="RichTextLabel" parent="Interface/Panel_vague" unique_id=1517474362]
 layout_mode = 0
-offset_left = -0.03490448
-offset_top = 10.805332
-offset_right = 105.3326
-offset_bottom = 34.805332
-theme_override_font_sizes/font_size = 17
-text = "  300"
+offset_left = 1.6825905
+offset_top = 3.1627407
+offset_right = 106.558716
+offset_bottom = 41.65856
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "300"
 horizontal_alignment = 1
 
 [node name="ToolTip" type="Panel" parent="Interface" unique_id=1269617451]

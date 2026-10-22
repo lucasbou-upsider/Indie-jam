@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="1_0ctqs"]
 [ext_resource type="Texture2D" uid="uid://cy17dfxv5f6wn" path="res://sprite/New_Piskel_5_4.png" id="1_j6oad"]
+[ext_resource type="Script" uid="uid://be7coegltx84u" path="res://scene/title_screen.gd" id="1_k01l3"]
 [ext_resource type="Texture2D" uid="uid://h06bgpm8ppos" path="res://sprite/New_Piskel_9.png" id="2_rbyiy"]
 [ext_resource type="Texture2D" uid="uid://i5qxi8a07d4s" path="res://sprite/New_Piskel_14.png" id="2_ulgj7"]
 [ext_resource type="Texture2D" uid="uid://cw3c07xmosxg5" path="res://sprite/New_Piskel_15.png" id="3_gh7ws"]
@@ -306,6 +307,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k01l3")
 
 [node name="background" type="Node2D" parent="." unique_id=101055755]
 position = Vector2(583, 625)
@@ -569,3 +571,5 @@ scale = Vector2(9.357142, 6.8076925)
 texture = ExtResource("15_kgdf7")
 region_enabled = true
 region_rect = Rect2(15.811607, 114.26218, 14.630672, 13.673515)
+
+[connection signal="pressed" from="panel/Button" to="." method="_on_button_pressed"]

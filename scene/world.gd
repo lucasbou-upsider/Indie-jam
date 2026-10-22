@@ -46,7 +46,7 @@ var tween: Tween
 func _ready() -> void:
 	tool_tip.get_parent().visible = false
 	tool_tip.get_parent().offset_transform_position = Vector2(0, -100)
-	add_child(BASE.instantiate())
+	
 
 
 func _process(_delta: float) -> void:
