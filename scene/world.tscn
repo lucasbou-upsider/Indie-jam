@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bdxkcfwhdems" path="res://sprite/New_Piskel_4.png" id="6_tmyho"]
 [ext_resource type="Script" uid="uid://cghki5sqkqt7b" path="res://scene/button_objet.gd" id="7_7ghph"]
 [ext_resource type="Texture2D" uid="uid://cy17dfxv5f6wn" path="res://sprite/New_Piskel_5_4.png" id="7_1402k"]
+[ext_resource type="AudioStream" uid="uid://d3rf2nt7qg540" path="res://sounds/warn.mp3" id="8_kof1m"]
 [ext_resource type="Texture2D" uid="uid://i5qxi8a07d4s" path="res://sprite/New_Piskel_14.png" id="9_ol7uo"]
 [ext_resource type="Texture2D" uid="uid://cw3c07xmosxg5" path="res://sprite/New_Piskel_15.png" id="10_a7xoa"]
 [ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="10_f345f"]
@@ -214,6 +215,7 @@ wait_time = 104.73
 one_shot = true
 
 [node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
+stream = ExtResource("8_kof1m")
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]
 

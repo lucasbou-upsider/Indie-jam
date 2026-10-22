@@ -33,8 +33,8 @@ func _ready() -> void:
 	rich_text_tuto_label.text = phrases[0]
 
 
-func _process(delta: float) -> void:
-	if numero_phrase < 11:
+func _process(_delta: float) -> void:
+	if numero_phrase < phrases.size():
 		rich_text_tuto_label.text = phrases[numero_phrase]
 
 func _input(event: InputEvent) -> void:
@@ -51,7 +51,3 @@ func _input(event: InputEvent) -> void:
 		if numero_phrase == 11:
 			queue_free()
 			get_parent().add_child(BASE.instantiate())
-		
-		
-		
-		
