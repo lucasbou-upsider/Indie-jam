@@ -43,15 +43,15 @@ func _input(event: InputEvent) -> void:
 		numero_phrase += 1
 		if numero_phrase == 2:
 			progress_bar.visible = true
-		if numero_phrase == 3:
+		elif numero_phrase == 3:
 			panel_vague.visible = true
-		if numero_phrase == 4:
+		elif numero_phrase == 4:
 			panel_inventaire.visible = true
-		if numero_phrase == 5:
+		elif numero_phrase == 5:
 			panel_construction.visible = true
 		if numero_phrase == 8:
 			coordoné.visible = true
-		if numero_phrase == 11:
+		elif numero_phrase == 11:
 			vague_timer.start()
 			get_parent().add_child(BASE.instantiate())
 			queue_free()

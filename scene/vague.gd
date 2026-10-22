@@ -8,7 +8,7 @@ extends Node2D
 @warning_ignore("shadowed_global_identifier") @onready var kayou_spawn: Node2D = $"../kayou_spawn"
 
 var vague_number = 0
-var nbr_meteorite = [100, 200, 250, 250, 300]
+const nbr_meteorite = [100, 200, 250, 250, 300]
 
 func _ready() -> void:
 	pass
@@ -36,3 +36,12 @@ func _on_vague_timer_timeout() -> void:
 	vague_number += 1
 	await get_tree().create_timer(6).timeout
 	vague_timer.start()
+
+func save():
+	var save_dict = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"vague_timer.time_left": vague_timer.time_left,
+		"vague_number": vague_number
+	}
+	return save_dict

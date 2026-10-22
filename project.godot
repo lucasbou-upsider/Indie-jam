@@ -15,6 +15,10 @@ run/main_scene="uid://cicrbxdj73ek4"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dt2e5m67mxscy"
+
 [autoload]
 
 GLOBAL="*uid://5slukwbv82rq"
@@ -24,6 +28,10 @@ SIGNAL="*uid://dcl102sv4g6pw"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+persist="nodes to be saved"
 
 [input]
 

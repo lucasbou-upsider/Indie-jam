@@ -223,6 +223,7 @@ one_shot = true
 
 [node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
 stream = ExtResource("8_kof1m")
+bus = &"SFX"
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]
 
@@ -2727,15 +2728,19 @@ horizontal_alignment = 1
 stream = ExtResource("35_qsqtq")
 volume_db = -10.0
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="banger" type="AudioStreamPlayer" parent="." unique_id=440276755]
 stream = ExtResource("39_mr18f")
+bus = &"SFX"
 
 [node name="plopper" type="AudioStreamPlayer" parent="." unique_id=789098846]
 stream = ExtResource("40_yadev")
+bus = &"SFX"
 
 [node name="tinker" type="AudioStreamPlayer" parent="." unique_id=153690077]
 stream = ExtResource("41_1gmmm")
+bus = &"SFX"
 
 [connection signal="timeout" from="kayou_spawn/quake_timer" to="." method="_on_quake_timer_timeout"]
 [connection signal="timeout" from="kayou_spawn/quaker" to="." method="_on_quaker_timeout"]

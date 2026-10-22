@@ -15,6 +15,7 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
+	add_to_group("persist")
 	get_parent().select(self)
 	SIGNAL.connect("defreeze", defreeze)
 	collision_shape_2d.disabled = true

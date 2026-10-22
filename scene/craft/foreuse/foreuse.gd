@@ -36,6 +36,7 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
+	add_to_group("persist")
 	pv_max = pv
 	electrical_strenght()
 	SIGNAL.connect("defreeze", defreeze)

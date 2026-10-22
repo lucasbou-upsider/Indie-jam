@@ -25,6 +25,7 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
+	add_to_group("persist")
 	pv_max = pv
 	SIGNAL.connect("defreeze", defreeze)
 	#cout du batiments

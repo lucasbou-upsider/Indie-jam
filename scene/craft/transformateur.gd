@@ -41,6 +41,7 @@ func defreeze():
 	sleeping = false
 
 func _ready() -> void:
+	add_to_group("persist")
 	pv_max = pv
 	global_position = get_global_mouse_position()
 	SIGNAL.connect("defreeze", defreeze)

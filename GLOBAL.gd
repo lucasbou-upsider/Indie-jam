@@ -62,3 +62,21 @@ func calcul_electrical_strength(bat_pos_x) -> int:
 		return 1
 	else:
 		return 2
+
+
+func save_game():
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("persist")
+	for node in save_nodes:
+		if node.scene_file_path.is_empty():
+			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
+			continue
+		# Check the node has a save function.
+		if !node.has_method("save"):
+			print("persistent node '%s' is missing a save() function, skipped" % node.name)
+			continue
+		# Call the node's save function.
+		var node_data = node.call("save")
+		var json_string = JSON.stringify(node_data)
+		# Store the save dictionary as a new line in the save file.
+		save_file.store_line(json_string)
