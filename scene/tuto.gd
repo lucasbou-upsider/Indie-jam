@@ -6,6 +6,7 @@ extends Control
 @onready var panel_inventaire: Panel = $"../Interface/Panel_inventaire"
 @onready var panel_vague: Panel = $"../Interface/Panel_vague"
 @onready var rich_text_tuto_label: RichTextLabel = $CanvasLayer/Panel/RichTextTutoLabel
+const BASE = preload("uid://byxo1qtpjx30p")
 
 
 var phrases = [
@@ -31,10 +32,26 @@ func _ready() -> void:
 	panel_vague.visible = false
 	rich_text_tuto_label.text = phrases[0]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
-	rich_text_tuto_label.text = phrases[numero_phrase]
+	if numero_phrase < 11:
+		rich_text_tuto_label.text = phrases[numero_phrase]
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click droit") or event.is_action_pressed("click gauche"):
 		numero_phrase += 1
+		if numero_phrase == 2:
+			progress_bar.visible = true
+		if numero_phrase == 3:
+			panel_vague.visible = true
+		if numero_phrase == 4:
+			panel_inventaire.visible = true
+		if numero_phrase == 5:
+			panel_construction.visible = true
+		if numero_phrase == 11:
+			queue_free()
+			get_parent().add_child(BASE.instantiate())
+		
+		
+		
+		
