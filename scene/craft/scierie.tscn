@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwmo1yckrvxbn"]
 
 [ext_resource type="Script" uid="uid://bqcai53xhkauq" path="res://scene/craft/transformateur.gd" id="1_8t735"]
-[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://break.gdshader" id="1_rpsom"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://water.gdshader" id="1_rpsom"]
 [ext_resource type="Texture2D" uid="uid://bby3csl3w3ev3" path="res://sprite/New_Piskel_5_1.png" id="2_8t735"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1t3p8"]

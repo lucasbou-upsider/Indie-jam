@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://h06bgpm8ppos" path="res://sprite/New_Piskel_9.png" id="2_rbyiy"]
 [ext_resource type="Texture2D" uid="uid://i5qxi8a07d4s" path="res://sprite/New_Piskel_14.png" id="2_ulgj7"]
 [ext_resource type="Texture2D" uid="uid://cw3c07xmosxg5" path="res://sprite/New_Piskel_15.png" id="3_gh7ws"]
-[ext_resource type="Shader" uid="uid://nype5xorkfev" path="res://blur.gdshader" id="3_nohhj"]
 [ext_resource type="Texture2D" uid="uid://cqi5v42mlxc1s" path="res://sprite/New_Piskel_5_2.png" id="4_rbyiy"]
 [ext_resource type="Texture2D" uid="uid://c7dq4g3jicrcp" path="res://sprite/New_Piskel_16.png" id="4_t18hh"]
 [ext_resource type="Texture2D" uid="uid://b4b5cjgwqdmxa" path="res://sprite/New_Piskel_17.png" id="5_0ctqs"]
@@ -15,12 +14,19 @@
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="12_t65bv"]
 [ext_resource type="Texture2D" uid="uid://be6wtm88uepqa" path="res://sprite/New_Piskel_6.png" id="13_miuoy"]
 [ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="14_kgdf7"]
+[ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://water.gdshader" id="16_o67lm"]
+[ext_resource type="Script" uid="uid://4t3o75tx6cfx" path="res://water_script.gd" id="17_1tx3d"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t65bv"]
-shader = ExtResource("3_nohhj")
-shader_parameter/blur_amount = 0.29500010901249984
-shader_parameter/mix_amount = 0.0
-shader_parameter/color_over = Color(0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_o67lm"]
+offsets = PackedFloat32Array(0, 0.5254237, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_3y45t"]
+offsets = PackedFloat32Array(0.09016393, 0.4918033, 0.90163934)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_trhgc"]
+gradient = SubResource("Gradient_3y45t")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbyiy"]
 texture = ExtResource("1_j6oad")
@@ -299,6 +305,28 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wpyj1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gy3op"]
+noise = SubResource("FastNoiseLite_wpyj1")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_focru"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_128ln"]
+noise = SubResource("FastNoiseLite_focru")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aege2"]
+shader = ExtResource("16_o67lm")
+shader_parameter/hauteur_eau_global = 0.0
+shader_parameter/couleur_eau = Color(0.08435946, 0.3616025, 0.6405679, 1)
+shader_parameter/force_reflet = 0.6
+shader_parameter/vitesse = 0.05
+shader_parameter/force_vague = 0.02
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_gy3op")
+shader_parameter/noise_texture2 = SubResource("NoiseTexture2D_128ln")
+
 [node name="title_screen" type="Control" unique_id=60463555]
 layout_mode = 3
 anchors_preset = 15
@@ -347,11 +375,10 @@ region_enabled = true
 region_rect = Rect2(0, 0, 128, 127.79976)
 
 [node name="ColorRect2" type="ColorRect" parent="background" unique_id=1627819549]
-material = SubResource("ShaderMaterial_t65bv")
-offset_left = -2246.0
-offset_top = -1479.0
-offset_right = 2233.0
-offset_bottom = 437.0
+offset_left = 3726.004
+offset_top = 75.0531
+offset_right = 8205.004
+offset_bottom = 1991.0531
 mouse_filter = 2
 
 [node name="foret" type="Node2D" parent="background" unique_id=1496807285]
@@ -405,6 +432,127 @@ position = Vector2(565.3629, -66.35438)
 texture = ExtResource("4_rbyiy")
 region_enabled = true
 region_rect = Rect2(4.5402794, 0.026657104, 114.500275, 127.92029)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="background" unique_id=511598286]
+color = Color(0.90359825, 0.90359825, 0.9035982, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1607404706]
+position = Vector2(708.1815, 335.22003)
+amount = 300
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 700)
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.9118496, 1, 0.5578826, 1)
+color_ramp = SubResource("Gradient_o67lm")
+
+[node name="ligne" type="Node2D" parent="." unique_id=873486920]
+position = Vector2(597.3429, 707.2307)
+
+[node name="PointLight2D" type="PointLight2D" parent="ligne" unique_id=1895550752]
+position = Vector2(-1245.763, -653.67053)
+rotation = 2.6250675
+scale = Vector2(1, 4941.7075)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+
+[node name="PointLight2D2" type="PointLight2D" parent="ligne" unique_id=821049923]
+position = Vector2(-1065.592, -1171.3453)
+rotation = 2.6250675
+scale = Vector2(1, 5415.3394)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+
+[node name="PointLight2D3" type="PointLight2D" parent="ligne" unique_id=683515561]
+position = Vector2(-1482.7585, -1514.8364)
+rotation = 2.6250675
+scale = Vector2(1, 9254.443)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+texture_scale = 0.5
+
+[node name="PointLight2D4" type="PointLight2D" parent="ligne" unique_id=855743997]
+position = Vector2(-791.62256, -961.39667)
+rotation = 2.6250675
+scale = Vector2(1, 6659.594)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+texture_scale = 0.8
+
+[node name="PointLight2D5" type="PointLight2D" parent="ligne" unique_id=938552471]
+position = Vector2(-590.81915, -897.63257)
+rotation = 2.6250675
+scale = Vector2(1, 5862.1733)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+
+[node name="PointLight2D6" type="PointLight2D" parent="ligne" unique_id=832156270]
+position = Vector2(-239.15271, -1113.3558)
+rotation = 2.6250675
+scale = Vector2(1, 5641.2964)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+
+[node name="PointLight2D7" type="PointLight2D" parent="ligne" unique_id=896802305]
+position = Vector2(-684.5982, -1506.6373)
+rotation = 2.6250675
+scale = Vector2(1, 9935.401)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+texture_scale = 0.5
+
+[node name="PointLight2D8" type="PointLight2D" parent="ligne" unique_id=1170006589]
+position = Vector2(37.356934, -898.9345)
+rotation = 2.6250675
+scale = Vector2(1, 6929.1816)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+texture_scale = 0.8
+
+[node name="PointLight2D9" type="PointLight2D" parent="ligne" unique_id=363829158]
+position = Vector2(135.1655, -920.9581)
+rotation = 2.6250675
+scale = Vector2(1, 5545.918)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+
+[node name="PointLight2D10" type="PointLight2D" parent="ligne" unique_id=856651055]
+position = Vector2(441.9478, -1215.7086)
+rotation = 2.6250675
+scale = Vector2(1, 5506.8086)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+
+[node name="PointLight2D11" type="PointLight2D" parent="ligne" unique_id=378895957]
+position = Vector2(285.89673, -1099.4543)
+rotation = 2.6250675
+scale = Vector2(1, 7322.494)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+texture_scale = 0.5
+
+[node name="PointLight2D12" type="PointLight2D" parent="ligne" unique_id=338875543]
+position = Vector2(813.01306, -834.8036)
+rotation = 2.6250675
+scale = Vector2(1, 6282.4175)
+color = Color(1, 1, 0.5921569, 1)
+energy = 0.3
+texture = SubResource("GradientTexture1D_trhgc")
+texture_scale = 0.8
 
 [node name="sol" type="StaticBody2D" parent="." unique_id=1077034427]
 position = Vector2(595, 535)
@@ -542,6 +690,18 @@ position = Vector2(700, 545)
 rotation = 2.3841197
 sprite_frames = SubResource("SpriteFrames_k01l3")
 autoplay = "default"
+
+[node name="water" type="ColorRect" parent="." unique_id=1157719553]
+material = SubResource("ShaderMaterial_aege2")
+layout_mode = 0
+offset_left = -1465.6428
+offset_top = 572.74194
+offset_right = 3165.283
+offset_bottom = 1013.0562
+script = ExtResource("17_1tx3d")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2139028133]
+position = Vector2(575.5797, 323.83066)
 
 [node name="panel" type="Control" parent="." unique_id=1177942614]
 anchors_preset = 0

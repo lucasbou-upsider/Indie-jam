@@ -85,7 +85,6 @@ shape = SubResource("CircleShape2D_x0iyh")
 shape = SubResource("CircleShape2D_o4a50")
 
 [node name="Despawn" type="Timer" parent="." unique_id=1822630666]
-wait_time = 2.0
 one_shot = true
 
 [node name="PhysicsShapeGros" type="CollisionShape2D" parent="." unique_id=1959186263]

@@ -1,0 +1,3221 @@
+[gd_scene format=3 uid="uid://b6ed7j3i15wp4"]
+
+[ext_resource type="Script" uid="uid://cghki5sqkqt7b" path="res://scene/button_objet.gd" id="1_qvbae"]
+[ext_resource type="Texture2D" uid="uid://dogd8ac5sp5uc" path="res://sprite/New_Piskel_11.png" id="2_j62fv"]
+[ext_resource type="Texture2D" uid="uid://cx4h8aowcjt6a" path="res://sprite/New_Piskel_10.png" id="3_oh4v4"]
+[ext_resource type="Texture2D" uid="uid://dye251udf5c12" path="res://sprite/New_Piskel_10_1.png" id="4_t51hf"]
+[ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="5_7kbex"]
+[ext_resource type="Texture2D" uid="uid://c451n4g5n1d1o" path="res://sprite/New_Piskel_10_2.png" id="6_58jbb"]
+[ext_resource type="Texture2D" uid="uid://2doww6atbmoy" path="res://sprite/New_Piskel_10_3.png" id="7_mhnhw"]
+[ext_resource type="Texture2D" uid="uid://daukomdkjvjdq" path="res://sprite/New_Piskel_10_4.png" id="8_lifya"]
+[ext_resource type="Texture2D" uid="uid://cyrj4oisdwewv" path="res://sprite/New_Piskel_10_5.png" id="9_ii5mp"]
+[ext_resource type="Texture2D" uid="uid://b5o7fbneheiel" path="res://sprite/New_Piskel_10_6.png" id="10_i65oo"]
+[ext_resource type="Texture2D" uid="uid://bby3csl3w3ev3" path="res://sprite/New_Piskel_5_1.png" id="11_wk8uq"]
+[ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="12_e5d5n"]
+[ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="13_4la5j"]
+[ext_resource type="Texture2D" uid="uid://bsy8l2sbrjks4" path="res://sprite/New_Piskel_3_3.png" id="14_qi1l3"]
+[ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="15_wb23i"]
+[ext_resource type="Texture2D" uid="uid://br7haanodffnm" path="res://sprite/New_Piskel_3_2.png" id="16_omrvb"]
+[ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="17_mp08x"]
+[ext_resource type="Texture2D" uid="uid://j6emkjcu8am8" path="res://sprite/image.png" id="18_280hv"]
+[ext_resource type="Texture2D" uid="uid://owiv5v02mmx6" path="res://sprite/New_Piskel_10_7.png" id="19_46o14"]
+[ext_resource type="Texture2D" uid="uid://clivgu60pp5xw" path="res://sprite/New_Piskel_10_8.png" id="20_8i5ua"]
+[ext_resource type="Texture2D" uid="uid://cyodn5hra5qdm" path="res://sprite/New_Piskel_18.png" id="21_13wy7"]
+[ext_resource type="Texture2D" uid="uid://bdt1f73f5eo1d" path="res://sprite/New_Piskel_10_12.png" id="22_0q8vd"]
+[ext_resource type="Texture2D" uid="uid://bsjlxjrfaj1ra" path="res://sprite/New_Piskel_10_13.png" id="23_u31x0"]
+[ext_resource type="Texture2D" uid="uid://blxikl2rl3qwx" path="res://sprite/New_Piskel_3_3_1.png" id="24_hk278"]
+[ext_resource type="Texture2D" uid="uid://wesj0r1lpc1a" path="res://sprite/New_Piskel_3_3_2.png" id="25_00h1q"]
+[ext_resource type="Texture2D" uid="uid://csmf6nqnjtftw" path="res://sprite/New_Piskel_3_4.png" id="26_g6pft"]
+[ext_resource type="Texture2D" uid="uid://bgd2n2mdvmr1h" path="res://sprite/image_4.png" id="27_x7geu"]
+[ext_resource type="Texture2D" uid="uid://b51hkp42icmma" path="res://sprite/image_3.png" id="28_gbpk0"]
+[ext_resource type="Texture2D" uid="uid://c4nemtw05pwsw" path="res://sprite/image_5.png" id="29_bwtir"]
+[ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/panel_inventaire.gd" id="30_3ifhv"]
+[ext_resource type="AudioStream" uid="uid://wxic2gxt1d3f" path="res://sounds/whoosh.mp3" id="31_y85v7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_74j6j"]
+load_path = "res://.godot/imported/New_Piskel_11_1.png-70e7e4a9636b83be0cc3b2cb8dc6f46a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q68qv"]
+load_path = "res://.godot/imported/New_Piskel_11_1.png-70e7e4a9636b83be0cc3b2cb8dc6f46a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbvox"]
+load_path = "res://.godot/imported/New_Piskel_11_1.png-70e7e4a9636b83be0cc3b2cb8dc6f46a.ctex"
+
+[node name="Interface" type="CanvasLayer" unique_id=1990240387]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=320601234]
+offset_left = 128.0
+offset_top = 16.0
+offset_right = 1045.0
+offset_bottom = 43.0
+
+[node name="Coordoné" type="Label" parent="." unique_id=813437532]
+offset_left = 1055.0
+offset_top = 20.0
+offset_right = 1143.0
+offset_bottom = 43.0
+text = "0,0"
+horizontal_alignment = 1
+
+[node name="pause" type="Control" parent="." unique_id=910154165]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="pause" unique_id=580139275]
+layout_mode = 0
+offset_left = -50.666626
+offset_top = -29.230774
+offset_right = 1193.6407
+offset_bottom = 694.769
+color = Color(0.21960784, 0.21960784, 0.21960784, 0.5529412)
+
+[node name="Button" type="Button" parent="pause" unique_id=450213280]
+layout_mode = 0
+offset_left = 414.21484
+offset_top = 205.59067
+offset_right = 749.21484
+offset_bottom = 360.59067
+theme_override_font_sizes/font_size = 72
+text = "continu"
+
+[node name="Button2" type="Button" parent="pause" unique_id=692226902]
+layout_mode = 0
+offset_left = 289.6667
+offset_top = 390.68988
+offset_right = 874.6667
+offset_bottom = 490.68988
+theme_override_font_sizes/font_size = 57
+text = "return to main menu"
+
+[node name="Panel_mur" type="Panel" parent="." unique_id=808065283]
+offset_left = 970.98444
+offset_top = 436.10028
+offset_right = 1049.3033
+offset_bottom = 639.67175
+
+[node name="GridBloc" type="GridContainer" parent="Panel_mur" unique_id=1252980197]
+layout_mode = 0
+offset_left = 4.756897
+offset_top = 4.402313
+offset_right = 72.7569
+offset_bottom = 196.40231
+columns = 2
+
+[node name="Button_bloc_cuivre" type="Button" parent="Panel_mur/GridBloc" unique_id=1151128880]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_cuivre" unique_id=2070551621]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_cuivre/panel_info3" unique_id=1630499514]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_cuivre/panel_info3" unique_id=816930884]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_cuivre" unique_id=418481777]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("3_oh4v4")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_cuivre2" type="Button" parent="Panel_mur/GridBloc" unique_id=1006647964]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_cuivre2" unique_id=1744229052]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_cuivre2/panel_info3" unique_id=1643409840]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_cuivre2/panel_info3" unique_id=920687989]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_cuivre2" unique_id=1505377056]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("3_oh4v4")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_renforce" type="Button" parent="Panel_mur/GridBloc" unique_id=458714309]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_renforce" unique_id=425202016]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_renforce/panel_info3" unique_id=1133304985]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.903397, 21.57505, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_renforce/panel_info3" unique_id=628271507]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_renforce" unique_id=1827277576]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("4_t51hf")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_renforce" type="Button" parent="Panel_mur/GridBloc" unique_id=1888213561]
+custom_minimum_size = Vector2(28.325, 0)
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_renforce" unique_id=24142849]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_renforce/panel_info3" unique_id=418323179]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.903397, 21.57505, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_renforce/panel_info3" unique_id=228924785]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_renforce" unique_id=1003553217]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("4_t51hf")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_bronze" type="Button" parent="Panel_mur/GridBloc" unique_id=889570589]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_bronze" unique_id=1985636629]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_bronze/panel_info3" unique_id=554945632]
+texture_filter = 1
+position = Vector2(12.167053, 11.695497)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.07582092, 50.172592, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_bronze/panel_info3" unique_id=1621417077]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_bronze" unique_id=1060293555]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("6_58jbb")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_bronze" type="Button" parent="Panel_mur/GridBloc" unique_id=1761733624]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_bronze" unique_id=564508918]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_bronze/panel_info3" unique_id=972926937]
+texture_filter = 1
+position = Vector2(12.638184, 11.740846)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.6693573, 50.064682, 15.019302, 9.286369)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_bronze/panel_info3" unique_id=242499078]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_bronze" unique_id=644847018]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("6_58jbb")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_acier" type="Button" parent="Panel_mur/GridBloc" unique_id=536892875]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_acier" unique_id=380940488]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_acier/panel_info3" unique_id=1751060157]
+texture_filter = 1
+position = Vector2(12.074768, 13.449128)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.185879, 62.70288, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_acier/panel_info3" unique_id=1343229833]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_acier" unique_id=265607444]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("7_mhnhw")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_acier" type="Button" parent="Panel_mur/GridBloc" unique_id=1829853897]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_acier" unique_id=93831755]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_acier/panel_info3" unique_id=2122028382]
+texture_filter = 1
+position = Vector2(12.638184, 11.740846)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.410877, 62.226433, 15.019302, 9.286369)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_acier/panel_info3" unique_id=204456284]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_acier" unique_id=1143878788]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("7_mhnhw")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_gluantite" type="Button" parent="Panel_mur/GridBloc" unique_id=1547983900]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_gluantite" unique_id=851579865]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_gluantite/panel_info3" unique_id=1028402545]
+texture_filter = 1
+position = Vector2(12.074768, 12.909547)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.3215065, 115.40382, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_gluantite/panel_info3" unique_id=907043853]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_gluantite" unique_id=368037003]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("8_lifya")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_gluantite" type="Button" parent="Panel_mur/GridBloc" unique_id=1026218876]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_gluantite" unique_id=1420295526]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_gluantite/panel_info3" unique_id=858638207]
+texture_filter = 1
+position = Vector2(12.638184, 11.740846)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.45622253, 114.20908, 14.691181, 11.662239)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_gluantite/panel_info3" unique_id=731629404]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_gluantite" unique_id=521931870]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("8_lifya")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_topaxium" type="Button" parent="Panel_mur/GridBloc" unique_id=1316355225]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_topaxium" unique_id=2124867364]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_topaxium/panel_info3" unique_id=1436250064]
+texture_filter = 1
+position = Vector2(10.60321, 12.419007)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-1.2584801, 89.07067, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_topaxium/panel_info3" unique_id=32420557]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_topaxium" unique_id=893600152]
+position = Vector2(18.14864, 8.165826)
+scale = Vector2(0.27792767, 0.28973112)
+texture = ExtResource("9_ii5mp")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 115.60303, 65.36447)
+
+[node name="Button_piti_bloc_topaxium" type="Button" parent="Panel_mur/GridBloc" unique_id=2029099095]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_topaxium" unique_id=1361515520]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_topaxium/panel_info3" unique_id=2057218627]
+texture_filter = 1
+position = Vector2(12.232178, 12.248475)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.3613205, 88.2113, 14.691181, 11.662239)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_topaxium/panel_info3" unique_id=1276258437]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_topaxium" unique_id=275699738]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("9_ii5mp")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Button_bloc_voidium" type="Button" parent="Panel_mur/GridBloc" unique_id=892943189]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_bloc_voidium" unique_id=291503193]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_voidium/panel_info3" unique_id=1376421271]
+texture_filter = 1
+position = Vector2(12.186462, 11.34607)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.21998215, 101.69787, 15.019302, 9.856674)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_bloc_voidium/panel_info3" unique_id=441255203]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_bloc_voidium" unique_id=87633700]
+position = Vector2(16.847412, 11.786537)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("10_i65oo")
+region_enabled = true
+region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
+
+[node name="Button_piti_bloc_voidium" type="Button" parent="Panel_mur/GridBloc" unique_id=2008067009]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_mur/GridBloc/Button_piti_bloc_voidium" unique_id=1779077521]
+layout_mode = 0
+offset_left = -66.02161
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_voidium/panel_info3" unique_id=1346700458]
+texture_filter = 1
+position = Vector2(12.638184, 11.740846)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.21052933, 101.31026, 14.691181, 11.662239)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_mur/GridBloc/Button_piti_bloc_voidium/panel_info3" unique_id=1371967849]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_mur/GridBloc/Button_piti_bloc_voidium" unique_id=282067639]
+position = Vector2(14.821655, 13.103218)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("10_i65oo")
+region_enabled = true
+region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
+
+[node name="Panel_construction" type="Panel" parent="." unique_id=1737456306]
+offset_left = 1059.0826
+offset_top = 55.0
+offset_right = 1136.0
+offset_bottom = 639.0
+
+[node name="Label2" type="RichTextLabel" parent="Panel_construction" unique_id=1175321620]
+layout_mode = 0
+offset_left = -1.0463867
+offset_top = 0.6271324
+offset_right = 77.95361
+offset_bottom = 23.627132
+bbcode_enabled = true
+text = "[wave amp=5 freq = 2] build"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel_construction" unique_id=2141152290]
+layout_mode = 0
+offset_left = 4.2770996
+offset_top = 20.155762
+offset_right = 72.2771
+offset_bottom = 616.15576
+
+[node name="HSeparator" type="HSeparator" parent="Panel_construction/VBoxContainer" unique_id=1696013169]
+layout_mode = 2
+
+[node name="Button_scierie" type="Button" parent="Panel_construction/VBoxContainer" unique_id=551868976]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_construction/VBoxContainer/Button_scierie" unique_id=668783260]
+layout_mode = 0
+offset_left = -139.81769
+offset_top = -0.1542511
+offset_right = -11.103455
+offset_bottom = 22.845749
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=1294028137]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=572092508]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=805669139]
+texture_filter = 1
+position = Vector2(53.07605, 14.800355)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(-0.4986248, 22.294056, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=1106747428]
+layout_mode = 0
+offset_left = 64.4364
+offset_top = -0.07902527
+offset_right = 104.4364
+offset_bottom = 39.920975
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=206193246]
+layout_mode = 0
+offset_left = 88.76398
+offset_top = -2.2836838
+offset_right = 128.76398
+offset_bottom = 37.716316
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_scierie/panel_info3" unique_id=1096481595]
+texture_filter = 1
+position = Vector2(115.25312, 11.59803)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.42654896, 10.417669, 14.978158, 12.162695)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_scierie" unique_id=1679253302]
+position = Vector2(31.998047, 12.338158)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("11_wk8uq")
+region_enabled = true
+region_rect = Rect2(13.52153, 1.593708, 52.592102, 56.348694)
+
+[node name="Button_foreuse" type="Button" parent="Panel_construction/VBoxContainer" unique_id=721890318]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse" unique_id=1797094060]
+layout_mode = 0
+offset_left = -93.40491
+offset_top = -0.005783081
+offset_right = -12.666504
+offset_bottom = 22.994217
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=2008092423]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=277644738]
+layout_mode = 0
+offset_left = 25.33783
+offset_top = -0.46764374
+offset_right = 65.33783
+offset_bottom = 39.532356
+bbcode_enabled = true
+text = "50 "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=141674086]
+layout_mode = 0
+offset_left = 41.795044
+offset_top = -2.457512
+offset_right = 81.795044
+offset_bottom = 37.54249
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse/panel_info" unique_id=304200984]
+texture_filter = 1
+position = Vector2(67.50538, 11.663872)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.2668848, 22.899496, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse" unique_id=635994162]
+position = Vector2(33.5614, 12.839867)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("12_e5d5n")
+region_enabled = true
+region_rect = Rect2(131.75711, 165.18965, 52.592102, 56.348694)
+
+[node name="Button_macon" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1331030727]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info2" type="Panel" parent="Panel_construction/VBoxContainer/Button_macon" unique_id=1544376274]
+layout_mode = 0
+offset_left = -182.27045
+offset_top = -0.1277008
+offset_right = -12.846436
+offset_bottom = 22.8723
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=716093262]
+texture_filter = 1
+position = Vector2(13.327393, 11.131227)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0.3593483, 10.342881, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1600177205]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "20"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1070591955]
+texture_filter = 1
+position = Vector2(56.69348, 14.368684)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0.40892792, 22.310093, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=2140098153]
+layout_mode = 0
+offset_left = 67.460205
+offset_top = -0.27687073
+offset_right = 107.460205
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1541399132]
+layout_mode = 0
+offset_left = 93.82605
+offset_top = -1.9118271
+offset_right = 133.82605
+offset_bottom = 38.088173
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=28210476]
+texture_filter = 1
+position = Vector2(117.61732, 11.953529)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.5506582, 22.408972, 14.978158, 8.63389)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1117930651]
+texture_filter = 1
+position = Vector2(157.30524, 12.548103)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.939391, 12.925486, 14.978158, 8.63389)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_macon/panel_info2" unique_id=1876523366]
+layout_mode = 0
+offset_left = 124.42694
+offset_top = -0.3786316
+offset_right = 164.42694
+offset_bottom = 39.62137
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " =>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_macon" unique_id=382831186]
+position = Vector2(34.23706, 12.434471)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("13_4la5j")
+region_enabled = true
+region_rect = Rect2(440.5479, 154.67122, 40.84735, 67.14342)
+
+[node name="Button_foreuse_fer" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1800295872]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse_fer" unique_id=1035850557]
+layout_mode = 0
+offset_left = -149.92133
+offset_top = -0.005783081
+offset_right = -12.666504
+offset_bottom = 22.994217
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=874581697]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=997748466]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "200"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=1322829774]
+texture_filter = 1
+position = Vector2(64.398926, 11.131242)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(-0.108623505, 10.543151, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=176809993]
+layout_mode = 0
+offset_left = 75.16565
+offset_top = -0.27685547
+offset_right = 115.16565
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "200"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=1736752715]
+layout_mode = 0
+offset_left = 98.678955
+offset_top = -2.6315231
+offset_right = 138.67896
+offset_bottom = 37.368477
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_fer/panel_info" unique_id=1660601440]
+texture_filter = 1
+position = Vector2(124.9618, 11.316017)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(1.3575277, 0.46229744, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_fer" unique_id=1331276613]
+position = Vector2(34.15478, 12.34527)
+scale = Vector2(0.33710784, 0.32361713)
+texture = ExtResource("14_qi1l3")
+region_enabled = true
+region_rect = Rect2(165.16922, 144.52786, 76.4606, 71.32901)
+
+[node name="Button_four" type="Button" parent="Panel_construction/VBoxContainer" unique_id=620499398]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_construction/VBoxContainer/Button_four" unique_id=1837682686]
+layout_mode = 0
+offset_left = -137.15479
+offset_top = -0.94563293
+offset_right = -12.884033
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=175807801]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1663706548]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "200"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1330405570]
+layout_mode = 0
+offset_left = 49.007263
+offset_top = -3.4460526
+offset_right = 89.00726
+offset_bottom = 36.553947
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1183667409]
+texture_filter = 1
+position = Vector2(73.180916, 9.246376)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(2.9135742, -0.8367624, 12.426636, 9.810501)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=328679840]
+texture_filter = 1
+position = Vector2(114.466125, 10.258995)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.838691, 21.918444, 14.978158, 8.63389)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four/panel_info3" unique_id=1578265872]
+layout_mode = 0
+offset_left = 79.789246
+offset_top = -1.196167
+offset_right = 119.789246
+offset_bottom = 38.803833
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " =>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four" unique_id=310724736]
+position = Vector2(31.187256, 11.257103)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("15_wb23i")
+region_enabled = true
+region_rect = Rect2(131.75711, 165.18965, 63.890076, 56.348694)
+
+[node name="Button_presse" type="Button" parent="Panel_construction/VBoxContainer" unique_id=648932823]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info3" type="Panel" parent="Panel_construction/VBoxContainer/Button_presse" unique_id=1740341169]
+layout_mode = 0
+offset_left = -250.0138
+offset_top = -0.94563293
+offset_right = -11.83252
+offset_bottom = 22.054367
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=655117017]
+texture_filter = 1
+position = Vector2(13.507202, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(-0.041534424, 9.98648, 15.019302, 12.675626)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=315047582]
+layout_mode = 0
+offset_left = 24.273926
+offset_top = -0.27687073
+offset_right = 64.273926
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "200"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=411678543]
+texture_filter = 1
+position = Vector2(66.65521, 13.929048)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0.13091278, 22.352604, 15.019302, 11.741752)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=386348599]
+layout_mode = 0
+offset_left = 77.19855
+offset_top = -0.27687073
+offset_right = 117.19855
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=497201187]
+texture_filter = 1
+position = Vector2(122.16034, 12.030519)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1908380101]
+layout_mode = 0
+offset_left = 132.92706
+offset_top = -0.27687073
+offset_right = 172.92706
+offset_bottom = 39.72313
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1341250019]
+layout_mode = 0
+offset_left = 160.81482
+offset_top = -3.4460526
+offset_right = 200.81482
+offset_bottom = 36.553947
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1661875202]
+texture_filter = 1
+position = Vector2(225.86548, 11.476021)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(17.219448, -0.098394394, 12.426636, 12.434019)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=1850219341]
+texture_filter = 1
+position = Vector2(185.24799, 9.51577)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.838691, 21.918444, 14.978158, 8.63389)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_presse/panel_info3" unique_id=380636090]
+layout_mode = 0
+offset_left = 191.5968
+offset_top = -1.196167
+offset_right = 231.5968
+offset_bottom = 38.803833
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " =>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_presse" unique_id=515408532]
+position = Vector2(31.924244, 11.564221)
+scale = Vector2(0.23990713, 0.21054061)
+texture = ExtResource("16_omrvb")
+region_enabled = true
+region_rect = Rect2(166.53311, 148.64984, 52.592102, 93.27106)
+
+[node name="HSeparator2" type="HSeparator" parent="Panel_construction/VBoxContainer" unique_id=758045404]
+visible = false
+layout_mode = 2
+
+[node name="Button_foreuse_cuivre" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1151271235]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre" unique_id=1031935658]
+layout_mode = 0
+offset_left = -146.03223
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=817110950]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.588196, 11.173545, 15.019302, 11.741752)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=1619697488]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "20"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=689320484]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=1943772219]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=2098224221]
+layout_mode = 0
+offset_left = 95.85571
+offset_top = -2.3425674
+offset_right = 135.85571
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre/panel_info" unique_id=1159761995]
+texture_filter = 1
+position = Vector2(120.08485, 11.663872)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.408294, 32.358654, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_cuivre" unique_id=1287663657]
+position = Vector2(32.41687, 11.858818)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("17_mp08x")
+region_enabled = true
+region_rect = Rect2(123.75711, 155.18965, 100.24289, 56.348694)
+
+[node name="Button_foreuse_etain" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1165974400]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse_etain" unique_id=1087201484]
+layout_mode = 0
+offset_left = -146.03223
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=320541983]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(-0.10861206, 10.480111, 15.019302, 12.081988)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=1665691438]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "30"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=797167626]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=1132954510]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "100"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=742358150]
+layout_mode = 0
+offset_left = 95.85571
+offset_top = -2.3425674
+offset_right = 135.85571
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_etain/panel_info" unique_id=969397286]
+texture_filter = 1
+position = Vector2(120.08485, 11.663872)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.7779, 41.688488, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_etain" unique_id=223585759]
+position = Vector2(32.350994, 12.411596)
+rotation = 3.1415927
+scale = Vector2(0.34120688, 0.33629277)
+texture = ExtResource("18_280hv")
+region_enabled = true
+region_rect = Rect2(123.75711, 135.87827, 100.24289, 75.66008)
+
+[node name="Button_fusionneur_bronze" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1664787487]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze" unique_id=1872501304]
+layout_mode = 0
+offset_left = -259.68524
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=578711576]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.256901, 31.67506, 15.019302, 10.199917)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1374080898]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1692910468]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.217541, 40.942028, 15.019302, 9.952255)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1627032158]
+layout_mode = 0
+offset_left = 110.515686
+offset_top = 0.041748047
+offset_right = 150.51569
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=481315017]
+texture_filter = 1
+position = Vector2(99.341125, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1938582734]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "50"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1257666996]
+layout_mode = 0
+offset_left = 126.55621
+offset_top = -2.3425674
+offset_right = 166.55621
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1568925499]
+layout_mode = 0
+offset_left = 204.02625
+offset_top = -0.9515457
+offset_right = 244.02625
+offset_bottom = 39.048454
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1588445833]
+texture_filter = 1
+position = Vector2(151.86633, 10.04232)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.577977, 41.37655, 14.978158, 8.63389)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=837266539]
+layout_mode = 0
+offset_left = 166.46924
+offset_top = -0.8459549
+offset_right = 206.46924
+offset_bottom = 39.154045
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "+"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=1269554543]
+texture_filter = 1
+position = Vector2(189.51233, 11.138512)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.742124, 32.58329, 14.978158, 8.63389)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze/panel_info" unique_id=554565829]
+texture_filter = 1
+position = Vector2(235.36823, 11.902489)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.43183613, 50.569164, 14.978158, 8.63389)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_bronze" unique_id=1159195810]
+position = Vector2(33.8002, 11.725117)
+scale = Vector2(0.26315537, 0.25616258)
+texture = ExtResource("19_46o14")
+region_enabled = true
+region_rect = Rect2(278.10413, 265.75143, 86.21057, 99.552704)
+
+[node name="Button_transformateur" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1521766266]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_transformateur" unique_id=1463160403]
+layout_mode = 0
+offset_left = -243.39746
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1697224747]
+texture_filter = 1
+position = Vector2(63.454712, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.256901, 31.67506, 15.019302, 10.199917)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1061151121]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=894706052]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.217541, 40.942028, 15.019302, 9.952255)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1345278033]
+layout_mode = 0
+offset_left = 124.77362
+offset_top = -0.0072631836
+offset_right = 164.77362
+offset_bottom = 39.992737
+bbcode_enabled = true
+text = "150"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1764584708]
+texture_filter = 1
+position = Vector2(109.96173, 12.090547)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-2.3771858, 50.68919, 17.431858, 8.648365)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=847401270]
+layout_mode = 0
+offset_left = 73.5105
+offset_top = -0.09698486
+offset_right = 113.5105
+offset_bottom = 39.903015
+bbcode_enabled = true
+text = "150"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1311850150]
+layout_mode = 0
+offset_left = 148.64398
+offset_top = -2.3425674
+offset_right = 188.64398
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1720175750]
+layout_mode = 0
+offset_left = 188.34369
+offset_top = -1.1313858
+offset_right = 228.34369
+offset_bottom = 38.868614
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1331670935]
+texture_filter = 1
+position = Vector2(173.82977, 10.958672)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.2614851, 50.856777, 14.966533, 8.856777)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur/panel_info" unique_id=1111475110]
+texture_filter = 1
+position = Vector2(219.68567, 11.722649)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.382268, 50.187775, 14.978158, 12.763428)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur" unique_id=227180559]
+position = Vector2(34.41043, 12.182789)
+scale = Vector2(0.26315537, 0.25616258)
+texture = ExtResource("20_8i5ua")
+region_enabled = true
+region_rect = Rect2(241.22131, 269.84952, 86.21057, 99.552704)
+
+[node name="HSeparator4" type="HSeparator" parent="Panel_construction/VBoxContainer" unique_id=679743136]
+visible = false
+layout_mode = 2
+
+[node name="Button_crameur" type="Button" parent="Panel_construction/VBoxContainer" unique_id=385714863]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_crameur" unique_id=1414576669]
+layout_mode = 0
+offset_left = -186.82776
+offset_top = 0.95010376
+offset_right = -11.210144
+offset_bottom = 23.950104
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=2108763378]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "500"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=73060364]
+texture_filter = 1
+position = Vector2(13.965881, 11.346192)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.28925705, 22.499065, 15.019302, 9.330185)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=1941271683]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=1736862759]
+texture_filter = 1
+position = Vector2(66.629456, 10.618043)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.457617, 50.09436, 14.683456, 12.837536)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=1188006787]
+layout_mode = 0
+offset_left = 92.63922
+offset_top = -2.3425674
+offset_right = 132.63922
+offset_bottom = 37.657433
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=626239895]
+layout_mode = 0
+offset_left = 132.33893
+offset_top = -1.1313858
+offset_right = 172.33893
+offset_bottom = 38.868614
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=507741793]
+texture_filter = 1
+position = Vector2(117.82501, 10.958672)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.79184437, 10.303738, 14.966533, 11.973923)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_crameur/panel_info" unique_id=614705282]
+texture_filter = 1
+position = Vector2(163.68091, 11.722649)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_crameur" unique_id=1536251723]
+position = Vector2(35.079258, 13.074635)
+scale = Vector2(0.29915473, 0.29564613)
+texture = ExtResource("21_13wy7")
+region_rect = Rect2(241.22131, 269.84952, 86.21057, 99.552704)
+
+[node name="Button_fusionneur_d\'acier" type="Button" parent="Panel_construction/VBoxContainer" unique_id=268739731]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier" unique_id=1557596084]
+layout_mode = 0
+offset_left = -236.3097
+offset_top = 0.95010376
+offset_right = -11.210144
+offset_bottom = 23.950104
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=325408601]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=928050711]
+texture_filter = 1
+position = Vector2(13.965881, 11.346192)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.721134, 0.1426239, 15.019302, 12.300033)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1624955992]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1347175346]
+texture_filter = 1
+position = Vector2(66.629456, 10.618043)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.457617, 50.09436, 14.683456, 12.837536)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1469128754]
+layout_mode = 0
+offset_left = 102.80127
+offset_top = -1.9828568
+offset_right = 142.80127
+offset_bottom = 38.017143
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1781906885]
+layout_mode = 0
+offset_left = 142.50098
+offset_top = -0.7716751
+offset_right = 182.50098
+offset_bottom = 39.228325
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "+"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1052416183]
+texture_filter = 1
+position = Vector2(127.98706, 11.318382)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.431415, 20.789503, 14.966533, 11.973923)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1084775529]
+texture_filter = 1
+position = Vector2(212.16919, 12.695457)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.233569, 62.493256, 14.966533, 10.828316)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1737867318]
+texture_filter = 1
+position = Vector2(167.07501, 12.000145)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier/panel_info" unique_id=1656243873]
+layout_mode = 0
+offset_left = 180.3725
+offset_top = -0.45462036
+offset_right = 220.3725
+offset_bottom = 39.54538
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier" unique_id=416570038]
+position = Vector2(35.079258, 13.074635)
+scale = Vector2(0.29915473, 0.29564613)
+texture = ExtResource("22_0q8vd")
+region_enabled = true
+region_rect = Rect2(274.27917, 254.97348, 111.82825, 99.552704)
+
+[node name="Button_transformateur_puissant" type="Button" parent="Panel_construction/VBoxContainer" unique_id=2980178]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant" unique_id=976292812]
+layout_mode = 0
+offset_left = -236.3097
+offset_top = 0.95010376
+offset_right = -11.210144
+offset_bottom = 23.950104
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=308803317]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=359252781]
+texture_filter = 1
+position = Vector2(14.255554, 14.242829)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.4025, 63.094936, 15.019302, 10.206188)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=1141353471]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "300"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=1987770456]
+texture_filter = 1
+position = Vector2(66.629456, 10.618043)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.2400341, 9.962446, 14.683456, 12.837536)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=780989352]
+layout_mode = 0
+offset_left = 102.80127
+offset_top = -1.9828568
+offset_right = 142.80127
+offset_bottom = 38.017143
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=1431692133]
+layout_mode = 0
+offset_left = 142.50098
+offset_top = -0.7716751
+offset_right = 182.50098
+offset_bottom = 39.228325
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "+"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=1799894280]
+texture_filter = 1
+position = Vector2(127.98706, 11.318382)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.723263, 62.50957, 15.186188, 8.737263)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=1991867915]
+texture_filter = 1
+position = Vector2(209.46655, 12.204063)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-1.9635782, 72.82542, 14.966533, 10.828316)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=789215646]
+texture_filter = 1
+position = Vector2(167.07501, 12.000145)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant/panel_info" unique_id=514903475]
+layout_mode = 0
+offset_left = 180.3725
+offset_top = -0.45462036
+offset_right = 220.3725
+offset_bottom = 39.54538
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_transformateur_puissant" unique_id=2001578247]
+position = Vector2(36.906773, 12.871571)
+scale = Vector2(0.29915473, 0.29564613)
+texture = ExtResource("23_u31x0")
+region_enabled = true
+region_rect = Rect2(274.27917, 254.97348, 111.82825, 99.552704)
+
+[node name="HSeparator3" type="HSeparator" parent="Panel_construction/VBoxContainer" unique_id=1400354719]
+visible = false
+layout_mode = 2
+
+[node name="Button_foreuse_voidium" type="Button" parent="Panel_construction/VBoxContainer" unique_id=190869446]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium" unique_id=1569994215]
+layout_mode = 0
+offset_left = -176.11774
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=1553684558]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_74j6j")
+region_enabled = true
+region_rect = Rect2(15.513832, 49.989594, 15.019302, 12.081988)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=380251000]
+layout_mode = 0
+offset_left = 123.16162
+offset_top = -2.3425598
+offset_right = 163.16162
+offset_bottom = 37.65744
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=958004033]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=1653420012]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_q68qv")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=1955682300]
+layout_mode = 0
+offset_left = 109.28131
+offset_top = -0.448761
+offset_right = 149.28131
+offset_bottom = 39.55124
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=458511944]
+texture_filter = 1
+position = Vector2(96.141235, 11.205049)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_kbvox")
+region_enabled = true
+region_rect = Rect2(-0.78035736, 71.896614, 13.466881, 11.741753)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=314815735]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium/panel_info" unique_id=917103959]
+texture_filter = 1
+position = Vector2(148.20148, 10.986077)
+scale = Vector2(1.3501357, 1.4382589)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.395134, 85.121284, 17.259354, 15.731087)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_voidium" unique_id=438013647]
+position = Vector2(32.922153, 13.0641365)
+scale = Vector2(0.29915473, 0.29564613)
+texture = ExtResource("24_hk278")
+region_enabled = true
+region_rect = Rect2(36.147644, 4.4013557, 88.058014, 98.783035)
+
+[node name="Button_foreuse_topaxium" type="Button" parent="Panel_construction/VBoxContainer" unique_id=1253703263]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium" unique_id=1483171618]
+layout_mode = 0
+offset_left = -176.11774
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=676806840]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_74j6j")
+region_enabled = true
+region_rect = Rect2(15.513832, 49.989594, 15.019302, 12.081988)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=913987581]
+layout_mode = 0
+offset_left = 123.16162
+offset_top = -2.3425598
+offset_right = 163.16162
+offset_bottom = 37.65744
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=1710321483]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=1800666085]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_q68qv")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=193317587]
+layout_mode = 0
+offset_left = 109.28131
+offset_top = -0.448761
+offset_right = 149.28131
+offset_bottom = 39.55124
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=1848562850]
+texture_filter = 1
+position = Vector2(96.141235, 11.205049)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_kbvox")
+region_enabled = true
+region_rect = Rect2(-0.78035736, 71.896614, 13.466881, 11.741753)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=839345374]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium/panel_info" unique_id=1095043773]
+texture_filter = 1
+position = Vector2(148.20148, 10.986077)
+scale = Vector2(1.3501357, 1.4382589)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.12487, 70.662315, 17.259354, 14.874229)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_topaxium" unique_id=1955326678]
+position = Vector2(32.922153, 13.0641365)
+scale = Vector2(0.29915473, 0.29564613)
+texture = ExtResource("25_00h1q")
+region_enabled = true
+region_rect = Rect2(36.147644, 4.4013557, 88.058014, 98.783035)
+
+[node name="Button_foreuse_gluantite" type="Button" parent="Panel_construction/VBoxContainer" unique_id=2119986619]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite" unique_id=170021221]
+layout_mode = 0
+offset_left = -176.11774
+offset_top = 0.95010376
+offset_right = -11.710632
+offset_bottom = 23.950104
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=1249625520]
+texture_filter = 1
+position = Vector2(57.159668, 11.393266)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_74j6j")
+region_enabled = true
+region_rect = Rect2(15.513832, 49.989594, 15.019302, 12.081988)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=1380449571]
+layout_mode = 0
+offset_left = 123.16162
+offset_top = -2.3425598
+offset_right = 163.16162
+offset_bottom = 37.65744
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=305628772]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = 0.041748047
+offset_right = 64.911194
+offset_bottom = 40.041748
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=1797649919]
+texture_filter = 1
+position = Vector2(13.736633, 11.449861)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_q68qv")
+region_enabled = true
+region_rect = Rect2(15.973038, 0.38043404, 15.019302, 11.741752)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=663578491]
+layout_mode = 0
+offset_left = 109.28131
+offset_top = -0.448761
+offset_right = 149.28131
+offset_bottom = 39.55124
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=1377599529]
+texture_filter = 1
+position = Vector2(96.141235, 11.205049)
+scale = Vector2(1.6839845, 1.835205)
+texture = SubResource("CompressedTexture2D_kbvox")
+region_enabled = true
+region_rect = Rect2(-0.78035736, 71.896614, 13.466881, 11.741753)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=2130312805]
+layout_mode = 0
+offset_left = 68.47443
+offset_top = -0.27685547
+offset_right = 108.47443
+offset_bottom = 39.723145
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite/panel_info" unique_id=1648762954]
+texture_filter = 1
+position = Vector2(148.20148, 10.986077)
+scale = Vector2(1.3501357, 1.4382589)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.310471, 101.00452, 15.714035, 13.506653)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_foreuse_gluantite" unique_id=1404247060]
+position = Vector2(36.63827, 12.320951)
+scale = Vector2(0.38616532, 0.36909273)
+texture = ExtResource("26_g6pft")
+region_enabled = true
+region_rect = Rect2(128.39896, 143.13333, 82.36615, 85.5206)
+
+[node name="Button_four_voidium" type="Button" parent="Panel_construction/VBoxContainer" unique_id=857941648]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_four_voidium" unique_id=384753933]
+layout_mode = 0
+offset_left = -225.73987
+offset_top = 0.94348145
+offset_right = -11.413086
+offset_bottom = 23.943481
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=1910330736]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=853250661]
+texture_filter = 1
+position = Vector2(14.619875, 11.754963)
+scale = Vector2(1.3933078, 1.4754858)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.380667, 85.56373, 18.039402, 15.441498)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=146098804]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=1968948974]
+texture_filter = 1
+position = Vector2(66.629456, 11.706178)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.728224, 62.942043, 14.683456, 8.623455)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=1787633657]
+layout_mode = 0
+offset_left = 91.38422
+offset_top = -1.9828568
+offset_right = 131.38422
+offset_bottom = 38.017143
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=198306884]
+layout_mode = 0
+offset_left = 131.08392
+offset_top = -0.7716751
+offset_right = 171.08392
+offset_bottom = 39.228325
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "+"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=250880828]
+texture_filter = 1
+position = Vector2(116.232185, 10.912924)
+scale = Vector2(1.346162, 1.3332955)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.041252, 86.08928, 14.990452, 14.92366)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=806467606]
+texture_filter = 1
+position = Vector2(199.49323, 11.240257)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.04386425, 101.36988, 14.966533, 10.801315)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=1671927743]
+texture_filter = 1
+position = Vector2(155.65796, 12.000145)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_voidium/panel_info" unique_id=2030377414]
+layout_mode = 0
+offset_left = 168.95544
+offset_top = -0.45462036
+offset_right = 208.95544
+offset_bottom = 39.54538
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_voidium" unique_id=1103342978]
+position = Vector2(28.618704, 15.313299)
+scale = Vector2(0.34821126, 0.33811325)
+texture = ExtResource("27_x7geu")
+region_enabled = true
+region_rect = Rect2(128.39896, 143.13333, 82.36615, 85.5206)
+
+[node name="Button_four_gluantite" type="Button" parent="Panel_construction/VBoxContainer" unique_id=2020859539]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_four_gluantite" unique_id=1696061681]
+layout_mode = 0
+offset_left = -225.73987
+offset_top = 0.94348145
+offset_right = -11.413086
+offset_bottom = 23.943481
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=1769678642]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=1571628156]
+texture_filter = 1
+position = Vector2(12.487856, 11.044331)
+scale = Vector2(1.3933078, 1.4754858)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.98353, 100.48184, 12.607908, 14.057816)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=680732302]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=778407110]
+texture_filter = 1
+position = Vector2(66.629456, 11.706178)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.728224, 62.942043, 14.683456, 8.623455)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=1593328205]
+layout_mode = 0
+offset_left = 91.38422
+offset_top = -1.9828568
+offset_right = 131.38422
+offset_bottom = 38.017143
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=2098818067]
+layout_mode = 0
+offset_left = 131.08392
+offset_top = -0.7716751
+offset_right = 171.08392
+offset_bottom = 39.228325
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "+"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=1076589028]
+texture_filter = 1
+position = Vector2(116.3957, 11.076437)
+scale = Vector2(1.346162, 1.3332955)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.954983, 100.48326, 11.519726, 13.735168)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=1549321188]
+texture_filter = 1
+position = Vector2(199.49323, 13.4515)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.07404137, 115.73991, 14.012238, 9.649147)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=796222697]
+texture_filter = 1
+position = Vector2(155.65796, 12.000145)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_gluantite/panel_info" unique_id=1668911055]
+layout_mode = 0
+offset_left = 168.95544
+offset_top = -0.45462036
+offset_right = 208.95544
+offset_bottom = 39.54538
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_gluantite" unique_id=1131901006]
+position = Vector2(28.618704, 15.313299)
+scale = Vector2(0.34821126, 0.33811325)
+texture = ExtResource("28_gbpk0")
+region_enabled = true
+region_rect = Rect2(128.39896, 143.13333, 82.36615, 85.5206)
+
+[node name="Button_four_topaxium" type="Button" parent="Panel_construction/VBoxContainer" unique_id=237207950]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " "
+script = ExtResource("1_qvbae")
+
+[node name="panel_info" type="Panel" parent="Panel_construction/VBoxContainer/Button_four_topaxium" unique_id=1407095054]
+layout_mode = 0
+offset_left = -225.73987
+offset_top = 0.94348145
+offset_right = -11.413086
+offset_bottom = 23.943481
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=1489046155]
+layout_mode = 0
+offset_left = 24.911194
+offset_top = -0.7496338
+offset_right = 64.911194
+offset_bottom = 39.250366
+bbcode_enabled = true
+text = "100"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=1783331208]
+texture_filter = 1
+position = Vector2(12.487856, 11.044331)
+scale = Vector2(1.3933078, 1.4754858)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.410465, 73.229614, 16.336426, 12.090805)
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=626445044]
+layout_mode = 0
+offset_left = 78.85895
+offset_top = -0.798645
+offset_right = 118.85895
+offset_bottom = 39.201355
+bbcode_enabled = true
+text = "50"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=1155137727]
+texture_filter = 1
+position = Vector2(66.629456, 11.706178)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.728224, 62.942043, 14.683456, 8.623455)
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=542687606]
+layout_mode = 0
+offset_left = 91.38422
+offset_top = -1.9828568
+offset_right = 131.38422
+offset_bottom = 38.017143
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = " |"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=1549862360]
+layout_mode = 0
+offset_left = 131.08392
+offset_top = -0.7716751
+offset_right = 171.08392
+offset_bottom = 39.228325
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "+"
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=941326582]
+texture_filter = 1
+position = Vector2(116.3957, 11.076437)
+scale = Vector2(1.346162, 1.3332955)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.895027, 72.836624, 15.847164, 12.407471)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=1755914299]
+texture_filter = 1
+position = Vector2(198.60138, 11.519188)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.5647774, 90.03638, 13.178047, 7.9291687)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=540187394]
+texture_filter = 1
+position = Vector2(155.65796, 12.000145)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.7105627, 58.909847, 14.978158, 12.763428)
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel_construction/VBoxContainer/Button_four_topaxium/panel_info" unique_id=1320497110]
+layout_mode = 0
+offset_left = 168.95544
+offset_top = -0.45462036
+offset_right = 208.95544
+offset_bottom = 39.54538
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "=>"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_construction/VBoxContainer/Button_four_topaxium" unique_id=451672529]
+position = Vector2(33.851006, 12.043158)
+scale = Vector2(0.34821126, 0.33811325)
+texture = ExtResource("29_bwtir")
+region_enabled = true
+region_rect = Rect2(138.66214, 144.01978, 119.28635, 67.69989)
+
+[node name="Panel_inventaire" type="Panel" parent="." unique_id=1716803002]
+offset_left = 8.420013
+offset_top = 59.716248
+offset_right = 160.68149
+offset_bottom = 641.71625
+offset_transform_enabled = true
+mouse_filter = 2
+script = ExtResource("30_3ifhv")
+
+[node name="panel_inv_secours" type="Panel" parent="Panel_inventaire" unique_id=1408631794]
+visible = false
+layout_mode = 0
+offset_right = 95.90198
+offset_bottom = 581.98303
+
+[node name="nom" type="RichTextLabel" parent="Panel_inventaire" unique_id=899574703]
+layout_mode = 0
+offset_left = 6.0581284
+offset_top = 4.6445923
+offset_right = 93.05813
+offset_bottom = 27.644592
+mouse_filter = 2
+bbcode_enabled = true
+text = "[wave amp=5 freq = 2]Inventory"
+
+[node name="change_button" type="Button" parent="Panel_inventaire" unique_id=633071718]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3.3464355
+offset_top = 3.2130241
+offset_right = 148.79736
+offset_bottom = 579.0236
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel_inventaire" unique_id=2035664142]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 29.0
+offset_right = 144.96994
+offset_bottom = 578.0
+mouse_filter = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Panel_inventaire/VBoxContainer" unique_id=138432409]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="charbon" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1268558406]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      1000"
+fit_content = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/charbon" unique_id=834144187]
+texture_filter = 1
+position = Vector2(11.539581, 12.46006)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.03952837, 59.80865, 13.072027, 11.272251)
+
+[node name="bois" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=567735061]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/bois" unique_id=1257822682]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0, 10.050829, 15.019302, 12.4642105)
+
+[node name="pierre" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=550333099]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/pierre" unique_id=1341694202]
+texture_filter = 1
+position = Vector2(11, 13.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0, 21.98808, 15.019302, 12.253166)
+
+[node name="brique" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=666998856]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/brique" unique_id=174156433]
+texture_filter = 1
+position = Vector2(12, 13.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.746616, 11.055933, 15.019302, 12.4642105)
+
+[node name="HSeparator" type="HSeparator" parent="Panel_inventaire/VBoxContainer" unique_id=1397985523]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="minerai_fer" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1318525982]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/minerai_fer" unique_id=712633349]
+texture_filter = 1
+position = Vector2(10, 10.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0.39569092, -1.4343424, 15.019302, 11.741752)
+
+[node name="lingot_fer" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=125852089]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/lingot_fer" unique_id=220068815]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.602249, 21.076416, 15.019302, 12.4642105)
+
+[node name="plaque_fer" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=446970205]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/plaque_fer" unique_id=1087439544]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.858126, 0.23389435, 15.019302, 12.4642105)
+
+[node name="HSeparator3" type="HSeparator" parent="Panel_inventaire/VBoxContainer" unique_id=1845470003]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="cuivre" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1157394125]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/cuivre" unique_id=34696580]
+texture_filter = 1
+position = Vector2(11.561188, 12.054291)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(16.61251, 32.788708, 13.424866, 8.619373)
+
+[node name="etain" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1544239050]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/etain" unique_id=1668443272]
+texture_filter = 1
+position = Vector2(12.264938, 10.780914)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.806674, 40.835796, 14.978158, 9.292004)
+
+[node name="bronze" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=55616855]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/bronze" unique_id=1249627417]
+texture_filter = 1
+position = Vector2(12.264938, 10.780914)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(1.531559, 50.391975, 13.736412, 8.93425)
+
+[node name="engrenage_bronze" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1952762437]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/engrenage_bronze" unique_id=166495217]
+texture_filter = 1
+position = Vector2(12.804512, 13.29895)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.694999, 50.328438, 14.978158, 12.8342705)
+
+[node name="HSeparator4" type="HSeparator" parent="Panel_inventaire/VBoxContainer" unique_id=1812602581]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lingot_acier" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=993044662]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/lingot_acier" unique_id=14201666]
+texture_filter = 1
+position = Vector2(11.128769, 11.14444)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.397712, 62.05137, 14.978158, 9.375725)
+
+[node name="barre_acier" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=685538421]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/barre_acier" unique_id=275142299]
+texture_filter = 1
+position = Vector2(10.171196, 10.928955)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.3233118, 71.47816, 13.271712, 12.834267)
+
+[node name="HSeparator5" type="HSeparator" parent="Panel_inventaire/VBoxContainer" unique_id=789244919]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="minerai_gluantite" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=754165949]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/minerai_gluantite" unique_id=1038750858]
+texture_filter = 1
+position = Vector2(14.060734, 12.089661)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.975562, 101.06252, 14.978158, 13.672874)
+
+[node name="lingot_gluantite" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1650969908]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/lingot_gluantite" unique_id=2116907089]
+texture_filter = 1
+position = Vector2(11.912651, 11.366577)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.23603725, 114.096634, 14.978158, 11.134094)
+
+[node name="minerai_topaxium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=884350700]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/minerai_topaxium" unique_id=496171779]
+texture_filter = 1
+position = Vector2(14.011368, 9.260986)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(12.92517, 71.10216, 18.493858, 14.064133)
+
+[node name="lingot_topaxium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=579474962]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/lingot_topaxium" unique_id=1098327598]
+texture_filter = 1
+position = Vector2(10.171196, 12.820129)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.019824028, 87.4894, 13.540421, 12.834267)
+
+[node name="minerai_voidium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=565311587]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/minerai_voidium" unique_id=504344708]
+texture_filter = 1
+position = Vector2(11.88954, 11.401306)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.656817, 85.733, 16.327507, 15.2727585)
+
+[node name="lingot_voidium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer" unique_id=1778007108]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer/lingot_voidium" unique_id=1843067671]
+texture_filter = 1
+position = Vector2(10.277573, 9.731506)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.19196415, 98.85984, 14.978158, 12.8342705)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel_inventaire" unique_id=17690128]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 29.0
+offset_right = 86.4382
+offset_bottom = 578.0
+mouse_filter = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Panel_inventaire/VBoxContainer2" unique_id=1563212081]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="charbon" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1574721650]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/charbon" unique_id=2129980950]
+texture_filter = 1
+position = Vector2(11.539581, 12.46006)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.03952837, 59.80865, 13.072027, 11.272251)
+
+[node name="bois" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1408272069]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/bois" unique_id=871187284]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0, 10.050829, 15.019302, 12.4642105)
+
+[node name="pierre" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1052962254]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/pierre" unique_id=225930118]
+texture_filter = 1
+position = Vector2(11, 13.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0, 21.98808, 15.019302, 12.253166)
+
+[node name="brique" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=271956442]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/brique" unique_id=479200491]
+texture_filter = 1
+position = Vector2(12, 13.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.746616, 11.055933, 15.019302, 12.4642105)
+
+[node name="HSeparator" type="HSeparator" parent="Panel_inventaire/VBoxContainer2" unique_id=440453045]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="minerai_fer" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1051086490]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/minerai_fer" unique_id=664740451]
+texture_filter = 1
+position = Vector2(10, 10.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(0.39569092, -1.4343424, 15.019302, 11.741752)
+
+[node name="lingot_fer" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1607445997]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/lingot_fer" unique_id=586865039]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.602249, 21.076416, 15.019302, 12.4642105)
+
+[node name="plaque_fer" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=922663334]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/plaque_fer" unique_id=796092546]
+texture_filter = 1
+position = Vector2(11, 11.000001)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("2_j62fv")
+region_enabled = true
+region_rect = Rect2(15.858126, 0.23389435, 15.019302, 12.4642105)
+
+[node name="HSeparator3" type="HSeparator" parent="Panel_inventaire/VBoxContainer2" unique_id=85059902]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="cuivre" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=684676553]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/cuivre" unique_id=1471137663]
+texture_filter = 1
+position = Vector2(11.561188, 12.054291)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(16.61251, 32.788708, 13.424866, 8.619373)
+
+[node name="etain" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=2131373893]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/etain" unique_id=615379648]
+texture_filter = 1
+position = Vector2(12.264938, 10.780914)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.806674, 40.835796, 14.978158, 9.292004)
+
+[node name="bronze" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1146988989]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/bronze" unique_id=829708578]
+texture_filter = 1
+position = Vector2(12.264938, 10.780914)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(1.531559, 50.391975, 13.736412, 8.93425)
+
+[node name="engrenage_bronze" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1276389678]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/engrenage_bronze" unique_id=633512141]
+texture_filter = 1
+position = Vector2(12.804512, 13.29895)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.694999, 50.328438, 14.978158, 12.8342705)
+
+[node name="HSeparator4" type="HSeparator" parent="Panel_inventaire/VBoxContainer2" unique_id=255793764]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lingot_acier" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1665461754]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/lingot_acier" unique_id=1723594016]
+texture_filter = 1
+position = Vector2(11.128769, 11.14444)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(15.397712, 62.05137, 14.978158, 9.375725)
+
+[node name="barre_acier" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=981756302]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/barre_acier" unique_id=1390492526]
+texture_filter = 1
+position = Vector2(10.171196, 10.928955)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.3233118, 71.47816, 13.271712, 12.834267)
+
+[node name="HSeparator5" type="HSeparator" parent="Panel_inventaire/VBoxContainer2" unique_id=809592794]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="minerai_gluantite" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=1571438542]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/minerai_gluantite" unique_id=1521333041]
+texture_filter = 1
+position = Vector2(14.060734, 12.089661)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(14.975562, 101.06252, 14.978158, 13.672874)
+
+[node name="lingot_gluantite" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=823676830]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/lingot_gluantite" unique_id=472133073]
+texture_filter = 1
+position = Vector2(11.912651, 11.366577)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.23603725, 114.096634, 14.978158, 11.134094)
+
+[node name="minerai_topaxium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=94932795]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/minerai_topaxium" unique_id=1475211732]
+texture_filter = 1
+position = Vector2(14.011368, 9.260986)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(12.92517, 71.10216, 18.493858, 14.064133)
+
+[node name="lingot_topaxium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=915168563]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/lingot_topaxium" unique_id=1209930892]
+texture_filter = 1
+position = Vector2(10.171196, 12.820129)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(0.019824028, 87.4894, 13.540421, 12.834267)
+
+[node name="minerai_voidium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=209124879]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/minerai_voidium" unique_id=1542972566]
+texture_filter = 1
+position = Vector2(11.88954, 11.401306)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(13.656817, 85.733, 16.327507, 15.2727585)
+
+[node name="lingot_voidium" type="RichTextLabel" parent="Panel_inventaire/VBoxContainer2" unique_id=579426176]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "      0"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel_inventaire/VBoxContainer2/lingot_voidium" unique_id=1881319360]
+texture_filter = 1
+position = Vector2(10.277573, 9.731506)
+scale = Vector2(1.6839845, 1.835205)
+texture = ExtResource("5_7kbex")
+region_enabled = true
+region_rect = Rect2(-0.19196415, 98.85984, 14.978158, 12.8342705)
+
+[node name="Panel_vague" type="Panel" parent="." unique_id=943383830]
+offset_left = 10.409683
+offset_top = 8.867493
+offset_right = 116.723114
+offset_bottom = 48.867493
+
+[node name="Label" type="Label" parent="Panel_vague" unique_id=1083975212]
+layout_mode = 0
+offset_left = -7.635235
+offset_top = -34.802124
+offset_right = 78.36476
+offset_bottom = -17.802124
+theme_override_font_sizes/font_size = 12
+text = "Next vague in :"
+
+[node name="time_left" type="RichTextLabel" parent="Panel_vague" unique_id=442829862]
+layout_mode = 0
+offset_left = 1.6825905
+offset_top = 3.1627407
+offset_right = 106.558716
+offset_bottom = 41.65856
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "300"
+horizontal_alignment = 1
+
+[node name="ToolTip" type="Panel" parent="." unique_id=773710845]
+offset_left = 427.0
+offset_top = 54.0
+offset_right = 741.0
+offset_bottom = 130.0
+offset_transform_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ToolTip" unique_id=1762495292]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 313.0
+offset_bottom = 41.0
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Whoosher" type="AudioStreamPlayer" parent="ToolTip" unique_id=199960393]
+stream = ExtResource("31_y85v7")
+volume_db = -10.0
+max_polyphony = 2
+
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_cuivre" to="Panel_mur/GridBloc/Button_bloc_cuivre" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_cuivre" to="Panel_mur/GridBloc/Button_bloc_cuivre" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_cuivre2" to="Panel_mur/GridBloc/Button_piti_bloc_cuivre2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_cuivre2" to="Panel_mur/GridBloc/Button_piti_bloc_cuivre2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_renforce" to="Panel_mur/GridBloc/Button_bloc_renforce" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_renforce" to="Panel_mur/GridBloc/Button_bloc_renforce" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_renforce" to="Panel_mur/GridBloc/Button_piti_bloc_renforce" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_renforce" to="Panel_mur/GridBloc/Button_piti_bloc_renforce" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_bronze" to="Panel_mur/GridBloc/Button_bloc_bronze" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_bronze" to="Panel_mur/GridBloc/Button_bloc_bronze" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_bronze" to="Panel_mur/GridBloc/Button_piti_bloc_bronze" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_bronze" to="Panel_mur/GridBloc/Button_piti_bloc_bronze" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_acier" to="Panel_mur/GridBloc/Button_bloc_acier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_acier" to="Panel_mur/GridBloc/Button_bloc_acier" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_acier" to="Panel_mur/GridBloc/Button_piti_bloc_acier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_acier" to="Panel_mur/GridBloc/Button_piti_bloc_acier" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_gluantite" to="Panel_mur/GridBloc/Button_bloc_gluantite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_gluantite" to="Panel_mur/GridBloc/Button_bloc_gluantite" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_gluantite" to="Panel_mur/GridBloc/Button_piti_bloc_gluantite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_gluantite" to="Panel_mur/GridBloc/Button_piti_bloc_gluantite" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_topaxium" to="Panel_mur/GridBloc/Button_bloc_topaxium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_topaxium" to="Panel_mur/GridBloc/Button_bloc_topaxium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_topaxium" to="Panel_mur/GridBloc/Button_piti_bloc_topaxium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_topaxium" to="Panel_mur/GridBloc/Button_piti_bloc_topaxium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_bloc_voidium" to="Panel_mur/GridBloc/Button_bloc_voidium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_bloc_voidium" to="Panel_mur/GridBloc/Button_bloc_voidium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_mur/GridBloc/Button_piti_bloc_voidium" to="Panel_mur/GridBloc/Button_piti_bloc_voidium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_mur/GridBloc/Button_piti_bloc_voidium" to="Panel_mur/GridBloc/Button_piti_bloc_voidium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_scierie" to="Panel_construction/VBoxContainer/Button_scierie" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_scierie" to="Panel_construction/VBoxContainer/Button_scierie" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse" to="Panel_construction/VBoxContainer/Button_foreuse" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse" to="Panel_construction/VBoxContainer/Button_foreuse" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_macon" to="Panel_construction/VBoxContainer/Button_macon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_macon" to="Panel_construction/VBoxContainer/Button_macon" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse_fer" to="Panel_construction/VBoxContainer/Button_foreuse_fer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse_fer" to="Panel_construction/VBoxContainer/Button_foreuse_fer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_four" to="Panel_construction/VBoxContainer/Button_four" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_four" to="Panel_construction/VBoxContainer/Button_four" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_presse" to="Panel_construction/VBoxContainer/Button_presse" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_presse" to="Panel_construction/VBoxContainer/Button_presse" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse_cuivre" to="Panel_construction/VBoxContainer/Button_foreuse_cuivre" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse_etain" to="Panel_construction/VBoxContainer/Button_foreuse_etain" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse_etain" to="Panel_construction/VBoxContainer/Button_foreuse_etain" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_fusionneur_bronze" to="Panel_construction/VBoxContainer/Button_fusionneur_bronze" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_fusionneur_bronze" to="Panel_construction/VBoxContainer/Button_fusionneur_bronze" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_transformateur" to="Panel_construction/VBoxContainer/Button_transformateur" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_transformateur" to="Panel_construction/VBoxContainer/Button_transformateur" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_crameur" to="Panel_construction/VBoxContainer/Button_crameur" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_crameur" to="Panel_construction/VBoxContainer/Button_crameur" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier" to="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier" to="Panel_construction/VBoxContainer/Button_fusionneur_d\'acier" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_transformateur_puissant" to="Panel_construction/VBoxContainer/Button_transformateur_puissant" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_transformateur_puissant" to="Panel_construction/VBoxContainer/Button_transformateur_puissant" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse_voidium" to="Panel_construction/VBoxContainer/Button_foreuse_voidium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse_voidium" to="Panel_construction/VBoxContainer/Button_foreuse_voidium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse_topaxium" to="Panel_construction/VBoxContainer/Button_foreuse_topaxium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse_topaxium" to="Panel_construction/VBoxContainer/Button_foreuse_topaxium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_foreuse_gluantite" to="Panel_construction/VBoxContainer/Button_foreuse_gluantite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_foreuse_gluantite" to="Panel_construction/VBoxContainer/Button_foreuse_gluantite" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_four_voidium" to="Panel_construction/VBoxContainer/Button_four_voidium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_four_voidium" to="Panel_construction/VBoxContainer/Button_four_voidium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_four_gluantite" to="Panel_construction/VBoxContainer/Button_four_gluantite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_four_gluantite" to="Panel_construction/VBoxContainer/Button_four_gluantite" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_construction/VBoxContainer/Button_four_topaxium" to="Panel_construction/VBoxContainer/Button_four_topaxium" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_construction/VBoxContainer/Button_four_topaxium" to="Panel_construction/VBoxContainer/Button_four_topaxium" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel_inventaire/change_button" to="Panel_inventaire" method="_on_change_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel_inventaire/change_button" to="Panel_inventaire" method="_on_change_button_mouse_exited"]
+[connection signal="pressed" from="Panel_inventaire/change_button" to="Panel_inventaire" method="_on_change_button_pressed"]
