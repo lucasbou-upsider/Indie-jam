@@ -43,7 +43,7 @@ extends Node2D
 
 
 
-const nbr_meteorite = [100, 200, 250, 250, 300]
+const nbr_meteorite = [100, 150, 200, 200, 250]
 
 func _ready() -> void:
 	pass

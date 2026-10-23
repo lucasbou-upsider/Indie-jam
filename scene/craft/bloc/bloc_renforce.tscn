@@ -7,7 +7,7 @@
 mass = 10.0
 script = ExtResource("1_tqy7p")
 pv = 40
-cost = 400
+cost = 300
 minerai = "lingot_fer"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]

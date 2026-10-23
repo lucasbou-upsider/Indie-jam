@@ -6,7 +6,7 @@
 [node name="bloc_gluantite" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_y367o")
 pv = 70
-cost = 400
+cost = 300
 minerai = "lingot_gluantite"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]

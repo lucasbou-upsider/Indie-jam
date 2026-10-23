@@ -6,7 +6,7 @@
 [node name="bloc_acier" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_hywgy")
 pv = 60
-cost = 400
+cost = 300
 minerai = "lingot_acier"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]

@@ -400,7 +400,7 @@ autostart = true
 script = ExtResource("6_1402k")
 
 [node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
-wait_time = 55.0
+wait_time = 300.0
 one_shot = true
 
 [node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
@@ -587,7 +587,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "500"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_cuivre" unique_id=1392980220]
 position = Vector2(16.847412, 11.786537)
@@ -663,7 +663,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "400"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_renforce" unique_id=2097331066]
 position = Vector2(16.847412, 11.786537)
@@ -741,7 +741,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "400"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_bronze" unique_id=1834423457]
 position = Vector2(16.847412, 11.786537)
@@ -819,7 +819,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "400"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_acier" unique_id=1912675002]
 position = Vector2(16.847412, 11.786537)
@@ -897,7 +897,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "400"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_gluantite" unique_id=1668907616]
 position = Vector2(16.847412, 11.786537)
@@ -975,7 +975,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "400"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_topaxium" unique_id=1894033908]
 position = Vector2(18.14864, 8.165826)
@@ -1053,7 +1053,7 @@ offset_top = -0.27687073
 offset_right = 64.273926
 offset_bottom = 39.72313
 bbcode_enabled = true
-text = "400"
+text = "300"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_mur/GridBloc/Button_bloc_voidium" unique_id=1841216487]
 position = Vector2(16.847412, 11.786537)

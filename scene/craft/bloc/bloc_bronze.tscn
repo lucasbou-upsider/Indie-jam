@@ -6,7 +6,7 @@
 [node name="bloc_bronze" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_gqe5s")
 pv = 50
-cost = 400
+cost = 300
 minerai = "bronze"
 cost2 = 50
 cost3 = 50

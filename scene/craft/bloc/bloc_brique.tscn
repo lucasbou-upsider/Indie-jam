@@ -6,7 +6,7 @@
 [node name="bloc_brique" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_8nuo2")
 pv = 30
-cost = 500
+cost = 300
 minerai = "brique"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177233756]

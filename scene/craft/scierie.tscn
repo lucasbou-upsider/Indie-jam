@@ -157,6 +157,8 @@ animations = [{
 [node name="scierie" type="RigidBody2D" unique_id=1216213044]
 material = SubResource("ShaderMaterial_1t3p8")
 script = ExtResource("1_8t735")
+pv = 20
+elec_efficacity = [2, 2, 2]
 cost = 50
 minerai = "brique"
 cost2 = 100

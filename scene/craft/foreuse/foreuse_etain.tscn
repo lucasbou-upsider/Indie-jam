@@ -62,6 +62,8 @@ cost2 = 100
 minerai2 = "bois"
 production = 1
 minerai_produit = "etain"
+production2 = 1
+minerai_produit2 = "pierre"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
