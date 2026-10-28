@@ -371,7 +371,7 @@ animations = [{
 
 [node name="fusionneur d\'acier" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_6bpjx")
-pv = 20
+pv = 30
 elec_efficacity = [3, 5, 10]
 cost = 100
 minerai = "plaque_fer"

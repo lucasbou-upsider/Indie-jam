@@ -35,7 +35,9 @@ var is_blueprint := true
 var pv_max := 0
 var bodycount = 0
 var mouse_overed := false
-
+var tween : Tween
+var init_scale : Vector2
+var mobile_ignore_first_realeas = false
 
 func defreeze():
 	sleeping = false
@@ -56,6 +58,7 @@ func save():
 
 
 func _ready() -> void:
+	init_scale = sprite_2d.scale
 	add_to_group("persist")
 	pv_max = pv
 	electrical_strenght()
@@ -75,12 +78,18 @@ func _ready() -> void:
 				GLOBAL.set(mat[0], GLOBAL.get(mat[0]) - mat[1] )
 		get_parent().select(self)
 	else:
+		GLOBAL.is_building = false
 		queue_free()
 
 
 func _process(_delta: float) -> void:
 
-
+	if Input.is_action_just_released("click gauche"):
+		if mobile_ignore_first_realeas == false:
+			mobile_ignore_first_realeas = true
+		elif is_blueprint and OS.has_feature("mobile"):
+			if GLOBAL.is_paused == false:
+				place_self()
 
 
 	if Input.is_action_just_pressed("click gauche"):
@@ -99,17 +108,7 @@ func _process(_delta: float) -> void:
 	#destruction
 	if Input.is_action_pressed("click droit") and GLOBAL.is_paused == false:
 		if mouse_overed:
-			var refund_mult = 0.5
-			if is_blueprint:
-				refund_mult = 1
-			for mat in [[minerai, cost], [minerai2, cost2], [minerai3, cost3], [minerai4, cost4]]:
-				if mat[0] != "":
-					GLOBAL.set(mat[0], GLOBAL.get(mat[0]) + mat[1]*refund_mult)
-			SIGNAL.emit_signal("defreeze")
-			if GLOBAL.selected == self:
-				get_parent().unselect()
-			$"../banger".play()
-			queue_free()
+			destroy()
 	if pv <= 0:
 		SIGNAL.emit_signal("defreeze")
 		if GLOBAL.selected == self:
@@ -119,7 +118,10 @@ func _process(_delta: float) -> void:
 	#regarde si l'objet est en blueprint ou pas
 	if is_blueprint and GLOBAL.is_paused != true:
 		collision_polygon_2d.disabled = true
-		global_position = get_global_mouse_position()
+		if OS.has_feature("pc"):
+			global_position = get_global_mouse_position()
+		if OS.has_feature("mobile"):
+			global_position = Vector2(-50,-50) + get_global_mouse_position()
 		linear_velocity = Vector2(0,0)
 	elif is_blueprint == false:
 		collision_polygon_2d.disabled = false
@@ -139,18 +141,38 @@ func _process(_delta: float) -> void:
 
 func place_self():
 	if bodycount == 0 :
+		GLOBAL.is_building = false
+		if tween : tween.kill()
+		tween = create_tween()
+		tween.tween_property(sprite_2d , "scale", init_scale - Vector2(0.1, 0.1), 0.1)
+		tween.tween_property(sprite_2d , "scale", init_scale, 0.1)
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		get_parent().unselect()
 		electrical_strenght()
 		production_timer.start()
 		$"../tinker".play()
 		is_blueprint = false
-	if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
-		pass
-	else :
-		elec_efficacity = [999999999,999999999,99999999]
-		sprite_2d.speed_scale = 0.2
+	#if (position.x > position_x_gauche and position.x < position_x_droite) and (position.y > position_y_haut and position.y < position_y_bas):
+		#pass
+	#else :
+		#elec_efficacity = [999999999,999999999,99999999]
+		#sprite_2d.speed_scale = 0.2
 
+func destroy():
+	var refund_mult = 0.5
+	if is_blueprint:
+		refund_mult = 1
+	for mat in [[minerai, cost], [minerai2, cost2], [minerai3, cost3], [minerai4, cost4]]:
+		if mat[0] != "":
+			GLOBAL.set(mat[0], GLOBAL.get(mat[0]) + mat[1]*refund_mult)
+	SIGNAL.emit_signal("defreeze")
+	if GLOBAL.selected == self:
+			get_parent().unselect()
+	$"../banger".play()
+	queue_free()
+
+
+#ca	lcul la production de ressources par rapport a la distance de centre 
 func electrical_strenght():
 	production_timer.wait_time = elec_efficacity.get(GLOBAL.calcul_electrical_strength(position.x))
 

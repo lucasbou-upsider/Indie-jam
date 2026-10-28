@@ -6,7 +6,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1t3p8"]
 shader = ExtResource("1_rpsom")
-shader_parameter/dissolve_value = 0.0
+shader_parameter/hauteur_eau_global = 0.0
+shader_parameter/couleur_eau = Color(0.05, 0.1, 0.2, 1)
+shader_parameter/force_reflet = 0.6
+shader_parameter/vitesse = 0.05
+shader_parameter/force_vague = 0.02
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t735"]
 atlas = ExtResource("2_8t735")

@@ -162,7 +162,7 @@ animations = [{
 
 [node name="crameur" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_dv4jo")
-pv = 20
+pv = 30
 elec_efficacity = [5, 7, 10]
 cost = 500
 minerai = "pierre"

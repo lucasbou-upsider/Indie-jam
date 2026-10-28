@@ -35,6 +35,8 @@ const FOUR_VOIDIUM = preload("uid://bjcivtwxk31nc")
 const FOUR_GLUANTITE = preload("uid://civ2cvbou7bx3")
 const FOUR_TOPAXIUM = preload("uid://cfhpjvli34q5j")
 
+#verification pour le mobile
+var bat_select
 var speed
 var quake_queue = []
 var tween: Tween
@@ -49,11 +51,15 @@ var tuto_over := false
 
 @onready var tool_tip: RichTextLabel = $Interface/ToolTip/RichTextLabel
 @onready var tool_tip_player: AudioStreamPlayer = $Interface/ToolTip/Whoosher
+@onready var mobile_control: Panel = $"Interface/mobile control"
+
 
 
 func _ready() -> void:
 	tool_tip.get_parent().visible = false
 	tool_tip.get_parent().offset_transform_position = Vector2(0, -100)
+	if OS.has_feature("pc"):
+		mobile_control.visible = false
 
 
 
@@ -89,11 +95,15 @@ func _process(_delta: float) -> void:
 	else:
 		coordoné.self_modulate = Color(1.0, 0.245, 0.188)
 
+
 func try_spawn(batiment):
 	if GLOBAL.selected == null and tuto_over:
-		var newbat = batiment.instantiate()
-		newbat.global_position = get_global_mouse_position()
-		add_child(newbat)
+		if OS.has_feature("pc"):
+			var newbat = batiment.instantiate()
+			newbat.global_position = get_global_mouse_position()
+			add_child(newbat)
+		if OS.has_feature("mobile"):
+			bat_select = batiment
 
 func calculate_production(ressource):
 	var res: float = 0.0
@@ -125,15 +135,18 @@ func unselect() -> void:
 		GLOBAL.selected = null
 
 func select(node) -> void:
-	GLOBAL.selected = node
-	tool_tip.get_parent().visible = true
-	if tween: tween.kill()
-	tween = create_tween()
-	tool_tip_player.play()
-	tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,10), 0.05)
-	tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,0), 0.1)
-	tool_tip.text = GLOBAL.selected.tooltipify()
-	GLOBAL.selected.modulate =Color(0.8, 1, 0.8, 1.0)
+	if GLOBAL.in_destroy_mod == true:
+		node.destroy()
+	else:
+		GLOBAL.selected = node
+		tool_tip.get_parent().visible = true
+		if tween: tween.kill()
+		tween = create_tween()
+		tool_tip_player.play()
+		tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,10), 0.05)
+		tween.tween_property(tool_tip.get_parent(), "offset_transform_position", Vector2(0,0), 0.1)
+		tool_tip.text = GLOBAL.selected.tooltipify()
+		GLOBAL.selected.modulate =Color(0.8, 1, 0.8, 1.0)
 
 
 func quake(intensity):
@@ -151,12 +164,27 @@ func _on_quake_timer_timeout() -> void:
 		quake(quake_queue.pop_front())
 
 func _on_quaker_timeout() -> void:
-	if randi_range(0, 4) == 0:
+	if randi_range(0, 10) == 0:
 		earth_quake(randi_range(200, 700))
 
+func _on_mobile_build_button_up() -> void:
+	if bat_select and GLOBAL.selected == null and tuto_over:
+		GLOBAL.is_building = true
+		var newbat = bat_select.instantiate()
+		newbat.global_position = get_global_mouse_position()
+		add_child(newbat)
+func _on_mobile_destroy_pressed() -> void:
+	if GLOBAL.in_destroy_mod == false:
+		$"Interface/mobile control/PointLight2D2".visible = true
+		GLOBAL.in_destroy_mod = true
+	else:
+		$"Interface/mobile control/PointLight2D2".visible = false
+		GLOBAL.in_destroy_mod = false
 
-
-
+func _on_kill_zone_area_entered(area: Area2D) -> void:
+	if area.get_parent() == GLOBAL.selected:
+		GLOBAL.unselect()
+	area.get_parent().queue_free()
 
 func _on_button_foreuse_pressed() -> void:
 	try_spawn(FOREUSE)
@@ -224,8 +252,3 @@ func _on_button_four_voidium_2_pressed() -> void:
 	try_spawn(FOUR_GLUANTITE)
 func _on_button_four_topaxium_pressed() -> void:
 	try_spawn(FOUR_TOPAXIUM)
-
-func _on_kill_zone_area_entered(area: Area2D) -> void:
-	if area.get_parent() == GLOBAL.selected:
-		GLOBAL.unselect()
-	area.get_parent().queue_free()

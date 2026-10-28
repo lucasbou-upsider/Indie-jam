@@ -1,12 +1,13 @@
-extends Node2D
+extends Node
 @warning_ignore_start("integer_division")
+@warning_ignore("shadowed_global_identifier") @onready var kayou_spawn: Node2D = $"../kayou_spawn"
 
 
 @onready var vague_timer: Timer = $vague_Timer
 @onready var label_time_left: RichTextLabel = $"../Interface/Panel_vague/time_left"
 @onready var warner: AudioStreamPlayer = $warner
-@warning_ignore("shadowed_global_identifier") @onready var kayou_spawn: Node2D = $"../kayou_spawn"
 @export var vague_number = 0
+
 
 #tout les batiments oui je vais faire tout sa on a pas le temsp aazhdgquisgdyqgsduig
 @onready var button_bloc_renforce: Button = $"../Interface/Panel_mur/GridBloc/Button_bloc_renforce"
@@ -111,3 +112,17 @@ func save():
 		"vague_number": vague_number
 	}
 	return save_dict
+
+var possible_to_skip = true
+func skip():
+	if possible_to_skip == true:
+		possible_to_skip = false
+		vague_timer.stop()
+		_on_vague_timer_timeout()
+		await get_tree().create_timer(10).timeout
+		vague_timer.start()
+		possible_to_skip = true
+
+
+func _on_vague_skip_pressed() -> void:
+	skip()

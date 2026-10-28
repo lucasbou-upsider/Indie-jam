@@ -8,7 +8,8 @@ var DEBUG := false
 var mouse_busy := false
 var selected = null
 var is_paused = false
-
+var is_building = false
+var in_destroy_mod = false
 
 #inventaire
 var time_left: float

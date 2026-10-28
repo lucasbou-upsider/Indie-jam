@@ -53,6 +53,7 @@ animations = [{
 
 [node name="foreuse_fer" type="RigidBody2D" unique_id=1505809120]
 script = ExtResource("1_3ukbr")
+pv = 25
 cost = 200
 minerai = "brique"
 cost2 = 200

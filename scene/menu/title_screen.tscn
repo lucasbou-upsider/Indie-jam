@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="1_0ctqs"]
 [ext_resource type="Texture2D" uid="uid://cy17dfxv5f6wn" path="res://sprite/New_Piskel_5_4.png" id="1_j6oad"]
-[ext_resource type="Script" uid="uid://be7coegltx84u" path="res://scene/title_screen.gd" id="1_k01l3"]
+[ext_resource type="Script" uid="uid://be7coegltx84u" path="res://scene/menu/title_screen.gd" id="1_k01l3"]
 [ext_resource type="Texture2D" uid="uid://h06bgpm8ppos" path="res://sprite/New_Piskel_9.png" id="2_rbyiy"]
 [ext_resource type="Texture2D" uid="uid://i5qxi8a07d4s" path="res://sprite/New_Piskel_14.png" id="2_ulgj7"]
 [ext_resource type="Texture2D" uid="uid://cw3c07xmosxg5" path="res://sprite/New_Piskel_15.png" id="3_gh7ws"]
@@ -725,5 +725,14 @@ offset_right = 1266.606
 offset_bottom = 170.66899
 theme_override_font_sizes/font_size = 116
 text = "FALLCTORY"
+
+[node name="titre2" type="Label" parent="panel" unique_id=1063452625]
+layout_mode = 0
+offset_left = 495.2163
+offset_top = 130.1733
+offset_right = 1273.2163
+offset_bottom = 288.1733
+theme_override_font_sizes/font_size = 50
+text = "beta"
 
 [connection signal="pressed" from="panel/Button" to="." method="_on_button_pressed"]

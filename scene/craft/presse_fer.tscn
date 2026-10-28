@@ -244,6 +244,7 @@ animations = [{
 
 [node name="presse_fer" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_ynqwk")
+pv = 25
 cost = 200
 minerai = "bois"
 cost2 = 100

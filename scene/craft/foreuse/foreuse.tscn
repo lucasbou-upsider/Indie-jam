@@ -61,10 +61,11 @@ minerai_produit = "pierre"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1452217040]
 texture_filter = 1
-position = Vector2(33, -1)
+position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_x0iyh")
 animation = &"arret"
 autoplay = "new_animation"
+offset = Vector2(33.975, 0)
 
 [node name="PhysicsShape" type="CollisionPolygon2D" parent="." unique_id=134821111]
 polygon = PackedVector2Array(-19, 13, 17, 13, 17, -16, -19, -16)

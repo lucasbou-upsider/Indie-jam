@@ -66,6 +66,7 @@ func _process(_delta: float) -> void:
 
 func place_self():
 	if bodycount == 0:
+		global_position = get_global_mouse_position()
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		is_blueprint = false
 		$"../tinker".play()
@@ -98,6 +99,9 @@ func tooltipify():
 	res = res + "hp: "+str(pv)+"/"+str(pv_max)
 	return res
 
+#POUR NE PAS FAIRE CRASH LORS DU MOBILE
+func destroy():
+	pass
 
 func _on_auto_pose_timeout() -> void:
 	place_self()

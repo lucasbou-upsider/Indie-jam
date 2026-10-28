@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dy7qnufb0wjm5" path="res://scene/world.gd" id="1_txmk2"]
 [ext_resource type="Texture2D" uid="uid://d387x52ti2v0h" path="res://sprite/light/2d_lights_and_shadows_neutral_point_light.webp" id="2_c7a2m"]
 [ext_resource type="Script" uid="uid://1wchtvyn7uic" path="res://scene/light/light.gd" id="2_fyx0p"]
-[ext_resource type="Script" uid="uid://bmecwcdi43tb2" path="res://scene/tuto.gd" id="2_mr18f"]
+[ext_resource type="Script" uid="uid://bmecwcdi43tb2" path="res://scene/menu/tuto.gd" id="2_mr18f"]
 [ext_resource type="Script" uid="uid://xf8stc6u11am" path="res://scene/ennemie/kayou_spawn.gd" id="2_w4qq1"]
 [ext_resource type="Texture2D" uid="uid://5geglk7v6sa8" path="res://sprite/light/13592-v8.jpg" id="3_3y45t"]
 [ext_resource type="Texture2D" uid="uid://ch4doomrpk4ig" path="res://sprite/New_Piskel_8.png" id="3_hcb8y"]
 [ext_resource type="Script" uid="uid://rahdg20wcdy3" path="res://scene/victory_and_death.gd" id="3_kbvox"]
-[ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/panel_inventaire.gd" id="4_emkrx"]
+[ext_resource type="Script" uid="uid://diaijbum1epva" path="res://scene/menu/panel_inventaire.gd" id="4_emkrx"]
 [ext_resource type="Texture2D" uid="uid://h06bgpm8ppos" path="res://sprite/New_Piskel_9.png" id="4_y3jn2"]
 [ext_resource type="Shader" uid="uid://nype5xorkfev" path="res://blur.gdshader" id="5_yur6x"]
 [ext_resource type="Texture2D" uid="uid://dogd8ac5sp5uc" path="res://sprite/New_Piskel_11.png" id="6_0tg4p"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cghki5sqkqt7b" path="res://scene/button_objet.gd" id="7_7ghph"]
 [ext_resource type="AudioStream" uid="uid://d3rf2nt7qg540" path="res://sounds/warn.mp3" id="8_kof1m"]
 [ext_resource type="Texture2D" uid="uid://polkeaxavfg8" path="res://sprite/New_Piskel_3.png" id="10_f345f"]
+[ext_resource type="Script" uid="uid://dvpk2x73h7lu6" path="res://scene/menu/mouse_particle.gd" id="10_sqpnl"]
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="11_bqa5m"]
 [ext_resource type="Texture2D" uid="uid://dp7n2b3l0hnl0" path="res://sprite/image_9.png" id="12_6wtm3"]
 [ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="12_a0bac"]
@@ -31,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bjg8fuu61nqw0" path="res://sprite/New_Piskel_3_1.png" id="21_a81yy"]
 [ext_resource type="Texture2D" uid="uid://bsy8l2sbrjks4" path="res://sprite/New_Piskel_3_3.png" id="21_puhxk"]
 [ext_resource type="Texture2D" uid="uid://br7haanodffnm" path="res://sprite/New_Piskel_3_2.png" id="22_qfj6m"]
+[ext_resource type="Script" uid="uid://bc77iqfubpt6l" path="res://scene/menu/panel_mur.gd" id="23_gy3op"]
 [ext_resource type="Texture2D" uid="uid://j6emkjcu8am8" path="res://sprite/image.png" id="24_n02kn"]
 [ext_resource type="Texture2D" uid="uid://dv2j13650mta6" path="res://sprite/New_Piskel_11_1.png" id="24_qfj6m"]
 [ext_resource type="Texture2D" uid="uid://owiv5v02mmx6" path="res://sprite/New_Piskel_10_7.png" id="26_lvrhu"]
@@ -73,6 +75,10 @@ shader_parameter/color_over = Color(0, 0, 0, 1)
 [sub_resource type="Gradient" id="Gradient_fyx0p"]
 offsets = PackedFloat32Array(0, 0.5254237, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_sqpnl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_r7iuf"]
 offsets = PackedFloat32Array(0.09016393, 0.4918033, 0.90163934)
@@ -263,17 +269,25 @@ script = ExtResource("2_mr18f")
 [node name="CanvasLayer" type="CanvasLayer" parent="Tuto" unique_id=618716233]
 
 [node name="ColorRect" type="ColorRect" parent="Tuto/CanvasLayer" unique_id=716730175]
-offset_left = -25.289001
-offset_top = -14.641006
-offset_right = 1156.709
-offset_bottom = 673.55597
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.14117648)
 
 [node name="Panel" type="Panel" parent="Tuto/CanvasLayer" unique_id=2055190334]
-offset_left = 389.147
-offset_top = 248.66808
-offset_right = 777.711
-offset_bottom = 427.56308
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.28198
+offset_top = -89.44751
+offset_right = 194.28198
+offset_bottom = 89.44751
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RichTextTutoLabel" type="RichTextLabel" parent="Tuto/CanvasLayer/Panel" unique_id=1928091959]
 layout_mode = 0
@@ -381,6 +395,16 @@ offset_bottom = 616.1806
 theme_override_font_sizes/font_size = 70
 text = "quit"
 
+[node name="Vague" type="Node" parent="." unique_id=523373417 groups=["persist"]]
+script = ExtResource("6_1402k")
+
+[node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
+wait_time = 300.0
+one_shot = true
+
+[node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
+stream = ExtResource("8_kof1m")
+
 [node name="background" type="Node2D" parent="." unique_id=1059103624]
 
 [node name="NewPiskel8" type="Sprite2D" parent="background" unique_id=648332481]
@@ -440,6 +464,26 @@ scale_amount_max = 2.0
 color = Color(0.9118496, 1, 0.5578826, 1)
 color_ramp = SubResource("Gradient_fyx0p")
 
+[node name="mouse_particle" type="Node2D" parent="." unique_id=1271329275]
+script = ExtResource("10_sqpnl")
+
+[node name="mouseCPUParticles2D" type="CPUParticles2D" parent="mouse_particle" unique_id=778286249]
+z_index = 1
+position = Vector2(2.6374207, -268.03952)
+emitting = false
+amount = 2
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.33
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 214.95
+initial_velocity_max = 214.95
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_sqpnl")
+
 [node name="light" type="Node2D" parent="." unique_id=1098394565]
 script = ExtResource("2_fyx0p")
 
@@ -462,6 +506,7 @@ color = Color(1, 1, 0.7294118, 1)
 texture = ExtResource("3_3y45t")
 
 [node name="ligne" type="Node2D" parent="light" unique_id=581093132]
+position = Vector2(-121.52002, 0)
 
 [node name="PointLight2D" type="PointLight2D" parent="light/ligne" unique_id=2129090802]
 position = Vector2(-1384.761, -914.98694)
@@ -470,6 +515,7 @@ scale = Vector2(1, 4941.7075)
 color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="light/ligne" unique_id=2009937657]
 position = Vector2(-1065.592, -1171.3453)
@@ -478,6 +524,7 @@ scale = Vector2(1, 5415.3394)
 color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D3" type="PointLight2D" parent="light/ligne" unique_id=754674878]
 position = Vector2(-1482.7585, -1514.8364)
@@ -487,6 +534,7 @@ color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
 texture_scale = 0.5
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D4" type="PointLight2D" parent="light/ligne" unique_id=1225958768]
 position = Vector2(-791.62256, -961.39667)
@@ -496,6 +544,7 @@ color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
 texture_scale = 0.8
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D5" type="PointLight2D" parent="light/ligne" unique_id=1043668432]
 position = Vector2(-590.81915, -897.63257)
@@ -504,6 +553,7 @@ scale = Vector2(1, 5862.1733)
 color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D6" type="PointLight2D" parent="light/ligne" unique_id=368687583]
 position = Vector2(-239.15271, -1113.3558)
@@ -512,6 +562,7 @@ scale = Vector2(1, 5641.2964)
 color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D7" type="PointLight2D" parent="light/ligne" unique_id=1589035516]
 position = Vector2(-684.5982, -1506.6373)
@@ -521,6 +572,7 @@ color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
 texture_scale = 0.5
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D8" type="PointLight2D" parent="light/ligne" unique_id=1715626797]
 position = Vector2(37.356934, -898.9345)
@@ -530,6 +582,7 @@ color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
 texture_scale = 0.8
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D9" type="PointLight2D" parent="light/ligne" unique_id=35353533]
 position = Vector2(135.1655, -920.9581)
@@ -538,6 +591,7 @@ scale = Vector2(1, 5545.918)
 color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D10" type="PointLight2D" parent="light/ligne" unique_id=397828496]
 position = Vector2(441.9478, -1215.7086)
@@ -546,6 +600,7 @@ scale = Vector2(1, 5506.8086)
 color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D11" type="PointLight2D" parent="light/ligne" unique_id=2143592269]
 position = Vector2(285.89673, -1099.4543)
@@ -555,6 +610,7 @@ color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
 texture_scale = 0.5
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D12" type="PointLight2D" parent="light/ligne" unique_id=1801185511]
 position = Vector2(813.01306, -834.8036)
@@ -564,27 +620,7 @@ color = Color(1, 1, 0.5921569, 1)
 energy = 0.3
 texture = SubResource("GradientTexture1D_x0iyh")
 texture_scale = 0.8
-
-[node name="kayou_spawn" type="Node2D" parent="." unique_id=1171627499]
-position = Vector2(2, -2614.3901)
-script = ExtResource("2_w4qq1")
-
-[node name="quake_timer" type="Timer" parent="kayou_spawn" unique_id=853342485]
-autostart = true
-
-[node name="quaker" type="Timer" parent="kayou_spawn" unique_id=1968657509]
-wait_time = 180.0
-autostart = true
-
-[node name="Vague" type="Node2D" parent="." unique_id=1873581090 groups=["persist"]]
-script = ExtResource("6_1402k")
-
-[node name="vague_Timer" type="Timer" parent="Vague" unique_id=1662032850]
-wait_time = 300.0
-one_shot = true
-
-[node name="warner" type="AudioStreamPlayer" parent="Vague" unique_id=118121520]
-stream = ExtResource("8_kof1m")
+metadata/_edit_lock_ = true
 
 [node name="foret" type="Node2D" parent="." unique_id=985605416]
 
@@ -600,32 +636,12 @@ texture = ExtResource("18_e4vd1")
 region_enabled = true
 region_rect = Rect2(0, 256.0797, 114.500275, 127.92029)
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="foret/NewPiskel52" unique_id=289550225]
-position = Vector2(6.9974365, -18.258934)
-amount = 5
-emission_shape = 3
-emission_rect_extents = Vector2(35.045, 1)
-gravity = Vector2(0, 300)
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-color = Color(0.019607844, 0.58431375, 0, 1)
-
 [node name="NewPiskel59" type="Sprite2D" parent="foret" unique_id=1266792493]
 position = Vector2(527.2716, -62.045563)
 texture = ExtResource("18_e4vd1")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(0, 256.0797, 114.500275, 127.92029)
-
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="foret/NewPiskel59" unique_id=1796902849]
-position = Vector2(3.829956, -19.54467)
-amount = 5
-emission_shape = 3
-emission_rect_extents = Vector2(35.045, 1)
-gravity = Vector2(0, 300)
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-color = Color(0.019607844, 0.58431375, 0, 1)
 
 [node name="NewPiskel53" type="Sprite2D" parent="foret" unique_id=1351598312]
 position = Vector2(498.65277, -66.604065)
@@ -658,7 +674,7 @@ region_enabled = true
 region_rect = Rect2(4.5402794, 0.026657104, 114.500275, 127.92029)
 
 [node name="sol" type="StaticBody2D" parent="." unique_id=880192580]
-position = Vector2(0, -3)
+position = Vector2(-5.7061768, -3)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="sol" unique_id=586020175]
 tile_map_data = PackedByteArray("AAD2/wAABQAAAAAAAAD3/wAABQAAAAAAAAD4/wAABAAAAAAAAAD5/wAABAAAAAAAAAD6/wAABAAAAAAAAAD7/wAABAAAAAAAAAD8/wAABAAAAAAAAAD9/wAABAAAAAAAAAD+/wAABAAAAAAAAAD//wAABAAAAAAAAAAAAAAABAAAAAAAAAABAAAABAAAAAAAAAACAAAABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAAGAAAABAAAAAAAAAAHAAAABAAAAAAAAAAIAAAABgAAAAAAAAAJAAAABgAAAAEAAAD2/wEABQAAAAAAAAD3/wEABQAAAAAAAAD4/wEABAABAAAAAAD5/wEABAABAAAAAAD6/wEABAABAAAAAAD7/wEABAABAAAAAAD8/wEABAABAAAAAAD9/wEABAABAAAAAAD+/wEABAABAAAAAAD//wEABAABAAAAAAAAAAEABAABAAAAAAABAAEABAABAAAAAAACAAEABAABAAAAAAADAAEABAABAAAAAAAEAAEABAABAAAAAAAFAAEABAABAAAAAAAGAAEABAABAAAAAAAHAAEABAABAAAAAAAIAAEABgABAAAAAAAJAAEABgABAAEAAAD2/wIABQAAAAAAAAD3/wIABQAAAAAAAAD4/wIABAACAAAAAAD5/wIABAACAAAAAAD6/wIABAACAAAAAAD7/wIABAACAAAAAAD8/wIABAACAAAAAAD9/wIABAACAAAAAAD+/wIABAACAAAAAAD//wIABAACAAAAAAAAAAIABAACAAAAAAABAAIABAACAAAAAAACAAIABAACAAAAAAADAAIABAACAAAAAAAEAAIABAACAAAAAAAFAAIABAACAAAAAAAGAAIABAACAAAAAAAHAAIABAACAAAAAAAIAAIABAACAAAAAAAJAAIABAACAAEAAAA=")
@@ -687,6 +703,17 @@ shape = SubResource("RectangleShape2D_np4qc")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="sol" unique_id=746159134]
 occluder = SubResource("OccluderPolygon2D_c7a2m")
 
+[node name="kayou_spawn" type="Node2D" parent="." unique_id=1171627499]
+position = Vector2(2, -2614.3901)
+script = ExtResource("2_w4qq1")
+
+[node name="quake_timer" type="Timer" parent="kayou_spawn" unique_id=853342485]
+autostart = true
+
+[node name="quaker" type="Timer" parent="kayou_spawn" unique_id=1968657509]
+wait_time = 180.0
+autostart = true
+
 [node name="water" type="ColorRect" parent="." unique_id=1314136296]
 material = SubResource("ShaderMaterial_r7iuf")
 offset_left = -2054.523
@@ -709,16 +736,26 @@ script = ExtResource("14_mr18f")
 [node name="Interface" type="CanvasLayer" parent="." unique_id=476184838]
 
 [node name="ProgressBar" type="ProgressBar" parent="Interface" unique_id=910387552]
-offset_left = 128.0
-offset_top = 16.0
-offset_right = 1045.0
-offset_bottom = 43.0
+anchors_preset = -1
+anchor_left = 0.11100001
+anchor_top = 0.025
+anchor_right = 0.90700006
+anchor_bottom = 0.066
+offset_left = 0.12799072
+offset_top = -0.20000076
+offset_right = 0.13598633
+offset_bottom = 0.23199844
 
 [node name="Coordoné" type="Label" parent="Interface" unique_id=1890412977]
-offset_left = 1055.0
-offset_top = 20.0
-offset_right = 1143.0
-offset_bottom = 43.0
+anchors_preset = -1
+anchor_left = 0.91600007
+anchor_top = 0.031000001
+anchor_right = 0.99200004
+anchor_bottom = 0.066
+offset_left = -0.23205566
+offset_top = -0.08800125
+offset_right = 0.21594238
+offset_bottom = 0.23199844
 text = "0,0"
 horizontal_alignment = 1
 
@@ -755,23 +792,120 @@ offset_bottom = 490.68988
 theme_override_font_sizes/font_size = 57
 text = "return to main menu"
 
+[node name="mobile control" type="Panel" parent="Interface" unique_id=1402381733]
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.887
+anchor_right = 0.60200006
+anchor_bottom = 1.0
+offset_left = -0.16693115
+offset_top = -0.24377441
+offset_right = 0.16680908
+offset_bottom = 29.256104
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="mobile_build" type="Button" parent="Interface/mobile control" unique_id=911905609]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.16700001
+anchor_right = 0.41400003
+anchor_bottom = 0.61700004
+offset_left = 0.014019012
+offset_top = -0.023204803
+offset_right = -0.032035828
+offset_bottom = -0.005180359
+text = "build"
+
+[node name="mobile_destroy" type="Button" parent="Interface/mobile control" unique_id=1042117168]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.569
+anchor_top = 0.16000001
+anchor_right = 0.91300005
+anchor_bottom = 0.61
+offset_left = 0.053527832
+offset_top = -0.047302246
+offset_right = 0.0074768066
+offset_bottom = -0.029273987
+text = "destroy"
+
+[node name="PointLight2D2" type="PointLight2D" parent="Interface/mobile control" unique_id=581263741]
+visible = false
+position = Vector2(97.846985, 407.66522)
+rotation = -0.007266283
+scale = Vector2(5.2413197, 4.9124665)
+color = Color(1, 0.16470589, 0.22352941, 1)
+texture = ExtResource("3_3y45t")
+texture_scale = 1.7
+
+[node name="VSeparator" type="VSeparator" parent="Interface/mobile control" unique_id=1063982063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47400004
+anchor_top = 0.19100001
+anchor_right = 0.49100003
+anchor_bottom = 0.58000004
+offset_left = -0.056777954
+offset_top = -0.027000427
+offset_right = -0.05758667
+offset_bottom = 0.013408661
+
 [node name="Panel_mur" type="Panel" parent="Interface" unique_id=60104435]
-offset_left = 970.98444
-offset_top = 436.10028
-offset_right = 1049.3033
-offset_bottom = 639.67175
+anchors_preset = -1
+anchor_left = 0.84800005
+anchor_top = 0.9480001
+anchor_right = 0.91600007
+anchor_bottom = 1.3410001
+offset_left = 0.52264404
+offset_top = 0.2723999
+offset_right = 0.5053711
+offset_bottom = 0.26208496
+script = ExtResource("23_gy3op")
+
+[node name="Button" type="Button" parent="Interface/Panel_mur" unique_id=148263164]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18300001
+anchor_top = -0.135
+anchor_right = 0.808
+anchor_bottom = -0.014
+offset_left = -0.031668663
+offset_top = -0.10661316
+offset_right = 0.019126892
+offset_bottom = 0.08028841
+text = "show"
+
+[node name="HSeparator" type="HSeparator" parent="Interface/Panel_mur" unique_id=537817643]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.09900001
+anchor_right = 0.966
+anchor_bottom = 0.11400001
+offset_left = 0.009683132
+offset_top = -0.12398529
+offset_right = -0.0028152466
+offset_bottom = 0.056209564
+mouse_filter = 2
 
 [node name="GridBloc" type="GridContainer" parent="Interface/Panel_mur" unique_id=699291426]
-layout_mode = 0
-offset_left = 4.756897
-offset_top = 4.402313
-offset_right = 72.7569
-offset_bottom = 196.40231
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.147
+anchor_right = 0.93200004
+anchor_bottom = 0.901
+offset_left = 5.010315
+offset_top = 0.026081085
+offset_right = 0.01725769
+offset_bottom = 0.017196655
 columns = 2
 
 [node name="Button_bloc_cuivre" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1305983379]
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -810,6 +944,7 @@ region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 [node name="Button_piti_bloc_cuivre2" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=987157448]
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -848,6 +983,7 @@ region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 [node name="Button_bloc_renforce" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1510904695]
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -887,6 +1023,7 @@ region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 custom_minimum_size = Vector2(28.325, 0)
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -923,9 +1060,9 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_bronze" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1322718944]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -962,9 +1099,9 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_bronze" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1640370131]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1001,9 +1138,9 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_acier" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1147704497]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1040,9 +1177,9 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_acier" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=965578561]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1079,9 +1216,9 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_gluantite" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=79440544]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1118,9 +1255,9 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_gluantite" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=595409375]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1157,9 +1294,9 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_topaxium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=62283589]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1196,9 +1333,9 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 115.60303, 65.36447)
 
 [node name="Button_piti_bloc_topaxium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=240467073]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1235,9 +1372,9 @@ region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
 [node name="Button_bloc_voidium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=845191306]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1274,9 +1411,9 @@ region_enabled = true
 region_rect = Rect2(7.789978, 132.88307, 70.10956, 65.36447)
 
 [node name="Button_piti_bloc_voidium" type="Button" parent="Interface/Panel_mur/GridBloc" unique_id=1460234126]
-visible = false
 layout_mode = 2
 offset_transform_enabled = true
+mouse_filter = 1
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -1312,27 +1449,53 @@ texture = ExtResource("32_tl5qk")
 region_enabled = true
 region_rect = Rect2(-3.4797668, -4.607727, 70.10956, 65.36447)
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Panel_mur" unique_id=1932466007]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.82100004
+anchor_bottom = 0.162
+offset_left = 0.19500732
+offset_top = 1.1998291
+offset_right = 0.01374054
+offset_bottom = -0.05406952
+mouse_filter = 2
+bbcode_enabled = true
+text = "[wave amp=5 freq = 2] wall"
+
 [node name="Panel_construction" type="Panel" parent="Interface" unique_id=854815581]
-offset_left = 1059.0826
-offset_top = 55.0
-offset_right = 1136.0
-offset_bottom = 639.0
+anchors_preset = -1
+anchor_left = 0.919
+anchor_top = 0.085
+anchor_right = 0.98600006
+anchor_bottom = 0.98600006
+offset_left = 0.39465332
+offset_top = -0.08000183
+offset_right = 0.12792969
+offset_bottom = 0.07196045
 
 [node name="Label2" type="RichTextLabel" parent="Interface/Panel_construction" unique_id=471331085]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.040000003
 offset_left = -1.0463867
 offset_top = 0.6271324
-offset_right = 77.95361
-offset_bottom = 23.627132
+offset_right = 1.0362549
+offset_bottom = 0.2671299
 bbcode_enabled = true
 text = "[wave amp=5 freq = 2] build"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/Panel_construction" unique_id=1813219988]
-layout_mode = 0
-offset_left = 4.2770996
-offset_top = 20.155762
-offset_right = 72.2771
-offset_bottom = 616.15576
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.035
+anchor_right = 0.94000006
+anchor_bottom = 1.0550001
+offset_left = -0.030272484
+offset_top = -0.28423882
+offset_right = -0.025222778
+offset_bottom = 0.035705566
 
 [node name="HSeparator" type="HSeparator" parent="Interface/Panel_construction/VBoxContainer" unique_id=2141390701]
 layout_mode = 2
@@ -1404,7 +1567,7 @@ region_enabled = true
 region_rect = Rect2(0.42654896, 10.417669, 14.978158, 12.162695)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interface/Panel_construction/VBoxContainer/Button_scierie" unique_id=1034741649]
-position = Vector2(31.998047, 12.338158)
+position = Vector2(33.58081, 12.338158)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("12_hnm4a")
 region_enabled = true
@@ -1412,6 +1575,7 @@ region_rect = Rect2(13.52153, 1.593708, 52.592102, 56.348694)
 
 [node name="Button_foreuse" type="Button" parent="Interface/Panel_construction/VBoxContainer" unique_id=1474403478]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 11
 text = " "
 script = ExtResource("7_7ghph")
@@ -3106,10 +3270,15 @@ region_enabled = true
 region_rect = Rect2(138.66214, 144.01978, 119.28635, 67.69989)
 
 [node name="Panel_inventaire" type="Panel" parent="Interface" unique_id=255062353]
-offset_left = 8.420013
-offset_top = 59.716248
-offset_right = 160.68149
-offset_bottom = 641.71625
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.09200001
+anchor_right = 0.13900001
+anchor_bottom = 0.99000007
+offset_left = 0.3560133
+offset_top = 0.100242615
+offset_right = 0.5534668
+offset_bottom = 0.19622803
 offset_transform_enabled = true
 mouse_filter = 2
 script = ExtResource("4_emkrx")
@@ -3768,10 +3937,15 @@ region_enabled = true
 region_rect = Rect2(-0.19196415, 98.85984, 14.978158, 12.8342705)
 
 [node name="Panel_vague" type="Panel" parent="Interface" unique_id=233649210]
-offset_left = 10.409683
-offset_top = 8.867493
-offset_right = 116.723114
-offset_bottom = 48.867493
+anchors_preset = -1
+anchor_left = 0.009000001
+anchor_top = 0.014
+anchor_right = 0.101
+anchor_bottom = 0.075
+offset_left = 0.041682243
+offset_top = -0.20450783
+offset_right = 0.371109
+offset_bottom = 0.2674904
 
 [node name="Label" type="Label" parent="Interface/Panel_vague" unique_id=1601783898]
 layout_mode = 0
@@ -3784,28 +3958,44 @@ text = "Next vague in :"
 
 [node name="time_left" type="RichTextLabel" parent="Interface/Panel_vague" unique_id=1517474362]
 layout_mode = 0
-offset_left = 1.6825905
-offset_top = 3.1627407
-offset_right = 106.558716
-offset_bottom = 41.65856
+offset_left = -22.474234
+offset_top = 1.856966
+offset_right = 82.40189
+offset_bottom = 40.352783
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "300"
 horizontal_alignment = 1
 
+[node name="vague_skip" type="Button" parent="Interface/Panel_vague" unique_id=1674975818]
+layout_mode = 0
+offset_left = 58.95945
+offset_top = 4.4225845
+offset_right = 98.95945
+offset_bottom = 35.422585
+text = "skip"
+
 [node name="ToolTip" type="Panel" parent="Interface" unique_id=1269617451]
-offset_left = 427.0
-offset_top = 54.0
-offset_right = 741.0
-offset_bottom = 130.0
+anchors_preset = -1
+anchor_left = 0.37100002
+anchor_top = 0.083000004
+anchor_right = 0.643
+anchor_bottom = 0.201
+offset_left = -0.3920288
+offset_top = 0.21599579
+offset_right = 0.26397705
+offset_bottom = -0.2480011
 offset_transform_enabled = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Interface/ToolTip" unique_id=1372653129]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99700004
+anchor_bottom = 0.53900003
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 313.0
-offset_bottom = 41.0
+offset_right = -0.058013916
+offset_bottom = 0.035995483
 bbcode_enabled = true
 fit_content = true
 horizontal_alignment = 1
@@ -3838,9 +4028,14 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Victory and death/death/replay" to="Victory and death" method="_on_replay_pressed"]
 [connection signal="pressed" from="Victory and death/death/menu" to="Victory and death" method="_on_menu_pressed"]
 [connection signal="pressed" from="Victory and death/death/quit" to="Victory and death" method="_on_quit_pressed"]
+[connection signal="timeout" from="Vague/vague_Timer" to="Vague" method="_on_vague_timer_timeout"]
 [connection signal="timeout" from="kayou_spawn/quake_timer" to="." method="_on_quake_timer_timeout"]
 [connection signal="timeout" from="kayou_spawn/quaker" to="." method="_on_quaker_timeout"]
-[connection signal="timeout" from="Vague/vague_Timer" to="Vague" method="_on_vague_timer_timeout"]
+[connection signal="button_up" from="Interface/mobile control/mobile_build" to="." method="_on_mobile_build_button_up"]
+[connection signal="pressed" from="Interface/mobile control/mobile_destroy" to="." method="_on_mobile_destroy_pressed"]
+[connection signal="mouse_entered" from="Interface/Panel_mur" to="Interface/Panel_mur" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interface/Panel_mur" to="Interface/Panel_mur" method="_on_mouse_exited"]
+[connection signal="pressed" from="Interface/Panel_mur/Button" to="Interface/Panel_mur" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Interface/Panel_mur/GridBloc/Button_bloc_cuivre" to="Interface/Panel_mur/GridBloc/Button_bloc_cuivre" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_mur/GridBloc/Button_bloc_cuivre" to="Interface/Panel_mur/GridBloc/Button_bloc_cuivre" method="_on_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_mur/GridBloc/Button_bloc_cuivre" to="." method="_on_button_bloc_cuivre_pressed"]
@@ -3943,4 +4138,5 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="Interface/Panel_inventaire/change_button" to="Interface/Panel_inventaire" method="_on_change_button_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/Panel_inventaire/change_button" to="Interface/Panel_inventaire" method="_on_change_button_mouse_exited"]
 [connection signal="pressed" from="Interface/Panel_inventaire/change_button" to="Interface/Panel_inventaire" method="_on_change_button_pressed"]
+[connection signal="pressed" from="Interface/Panel_vague/vague_skip" to="Vague" method="_on_vague_skip_pressed"]
 [connection signal="area_entered" from="KillZone" to="." method="_on_kill_zone_area_entered"]

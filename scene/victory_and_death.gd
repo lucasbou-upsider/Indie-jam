@@ -2,7 +2,7 @@ extends Control
 @onready var death: CanvasLayer = $death
 @onready var victory: CanvasLayer = $victory
 @onready var interface: CanvasLayer = $"../Interface"
-@onready var vague: Node2D = $"../Vague"
+@onready var vague: Node = $"../Vague"
 
 func _process(_delta: float) -> void:
 	if GLOBAL.base_pv <= 0 and victory.visible == false:

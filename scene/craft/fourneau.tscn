@@ -57,6 +57,7 @@ animations = [{
 
 [node name="fourneau" type="RigidBody2D" unique_id=1767498378]
 script = ExtResource("1_sqikg")
+pv = 25
 cost = 200
 minerai = "brique"
 demande = "minerai_fer"

@@ -434,7 +434,7 @@ animations = [{
 
 [node name="transformateur_puissant" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_q8vig")
-pv = 15
+pv = 30
 cost = 150
 minerai = "lingot_acier"
 cost2 = 300

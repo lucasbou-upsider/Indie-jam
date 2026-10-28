@@ -57,6 +57,7 @@ animations = [{
 
 [node name="four_topaxium" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_jb3cx")
+pv = 30
 cost = 100
 minerai = "minerai_topaxium"
 cost2 = 50

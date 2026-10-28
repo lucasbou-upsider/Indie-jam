@@ -196,7 +196,7 @@ animations = [{
 
 [node name="fusionneur_de_bronze" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_bkap6")
-pv = 15
+pv = 25
 cost = 50
 minerai = "etain"
 cost2 = 50

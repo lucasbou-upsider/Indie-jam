@@ -1,15 +1,17 @@
 extends Button
 
 var panel_info
+var sprite
 var tween:Tween
+@onready var panel_construction: Panel = $"../../../Panel_construction"
 
 
 func _ready() -> void:
+	sprite = get_child(1)
 	panel_info = get_child(0)
 	panel_info.offset_transform_enabled = true
 	offset_transform_enabled = true
 	panel_info.visible = false
-	panel_info.offset_transform_position = Vector2(100, 0)
 
 func _on_mouse_entered() -> void:
 	if tween:tween.kill()

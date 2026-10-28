@@ -54,6 +54,7 @@ animations = [{
 
 [node name="four_voidium" type="RigidBody2D" unique_id=1216213044]
 script = ExtResource("1_g66sn")
+pv = 30
 elec_efficacity = [2, 5, 5]
 cost = 100
 minerai = "minerai_voidium"
