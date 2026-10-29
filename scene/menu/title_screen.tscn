@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bd17odswb1m3x" path="res://sprite/New_Piskel_7.png" id="12_t65bv"]
 [ext_resource type="Texture2D" uid="uid://be6wtm88uepqa" path="res://sprite/New_Piskel_6.png" id="13_miuoy"]
 [ext_resource type="Texture2D" uid="uid://blxlosgehlidk" path="res://sprite/New_Piskel_5.png" id="14_kgdf7"]
+[ext_resource type="Texture2D" uid="uid://bby3csl3w3ev3" path="res://sprite/New_Piskel_5_1.png" id="15_t2dix"]
 [ext_resource type="Shader" uid="uid://b42tq71saaxbx" path="res://water.gdshader" id="16_o67lm"]
 [ext_resource type="Script" uid="uid://4t3o75tx6cfx" path="res://water_script.gd" id="17_1tx3d"]
 
@@ -303,6 +304,152 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t735"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl5kv"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpsom"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ig2m"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t3p8"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71xqs"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej05t"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrhpy"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp5li"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iga5s"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijhyn"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqiy7"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_705cv"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqlss"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgcsi"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohx4q"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lebql"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq557"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4aue"]
+atlas = ExtResource("15_t2dix")
+region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_684hj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t735")
+}],
+"loop": 1,
+"name": &"arret",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl5kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpsom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ig2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t3p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71xqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej05t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrhpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp5li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iga5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijhyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqiy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_705cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqlss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgcsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohx4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lebql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq557")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4aue")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
 }]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wpyj1"]
@@ -691,6 +838,39 @@ rotation = 2.3841197
 sprite_frames = SubResource("SpriteFrames_k01l3")
 autoplay = "default"
 
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="construction" unique_id=219831388]
+texture_filter = 1
+position = Vector2(1129, 550)
+sprite_frames = SubResource("SpriteFrames_684hj")
+autoplay = "default"
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="construction" unique_id=1289859157]
+texture_filter = 1
+position = Vector2(1260, 550)
+sprite_frames = SubResource("SpriteFrames_684hj")
+autoplay = "default"
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="construction" unique_id=467298858]
+texture_filter = 1
+position = Vector2(1313, 550)
+sprite_frames = SubResource("SpriteFrames_684hj")
+autoplay = "default"
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="construction" unique_id=987718434]
+texture_filter = 1
+position = Vector2(953, 480)
+rotation = 3.1402204
+sprite_frames = SubResource("SpriteFrames_684hj")
+animation = &"arret"
+autoplay = "arret"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="construction" unique_id=653864998]
+texture_filter = 1
+position = Vector2(1161.0001, 549.00006)
+rotation = 0.38569617
+sprite_frames = SubResource("SpriteFrames_684hj")
+autoplay = "default"
+
 [node name="water" type="ColorRect" parent="." unique_id=1157719553]
 material = SubResource("ShaderMaterial_aege2")
 layout_mode = 0
@@ -703,36 +883,81 @@ script = ExtResource("17_1tx3d")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2139028133]
 position = Vector2(575.5797, 323.83066)
 
-[node name="panel" type="Control" parent="." unique_id=1177942614]
+[node name="menu_base" type="Control" parent="." unique_id=1177942614]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="panel" unique_id=877457943]
-layout_mode = 0
-offset_left = 761.0
-offset_top = 196.0
-offset_right = 1111.0
-offset_bottom = 295.0
+[node name="play" type="Button" parent="menu_base" unique_id=877457943]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.025002
+anchor_top = 4.9
+anchor_right = 27.775002
+anchor_bottom = 7.3750005
+offset_left = -6.1035156e-05
+offset_bottom = -3.0517578e-05
 theme_override_font_sizes/font_size = 51
 text = "play"
 
-[node name="titre" type="Label" parent="panel" unique_id=239538204]
-layout_mode = 0
-offset_left = 488.60602
-offset_top = 12.668991
-offset_right = 1266.606
-offset_bottom = 170.66899
+[node name="options" type="Button" parent="menu_base" unique_id=1751526485]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 22.6
+anchor_top = 7.8250003
+anchor_right = 27.775002
+anchor_bottom = 9.775001
+offset_bottom = -3.0517578e-05
+theme_override_font_sizes/font_size = 51
+text = "options"
+
+[node name="titre" type="Label" parent="menu_base" unique_id=239538204]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.215
+anchor_top = 0.317
+anchor_right = 31.665
+anchor_bottom = 4.267
+offset_left = 0.006011963
+offset_top = -0.011009216
+offset_right = 0.005859375
+offset_bottom = -0.011016846
 theme_override_font_sizes/font_size = 116
 text = "FALLCTORY"
 
-[node name="titre2" type="Label" parent="panel" unique_id=1063452625]
-layout_mode = 0
-offset_left = 495.2163
-offset_top = 130.1733
-offset_right = 1273.2163
-offset_bottom = 288.1733
+[node name="titre2" type="Label" parent="menu_base" unique_id=1063452625]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.38
+anchor_top = 3.2540002
+anchor_right = 31.830002
+anchor_bottom = 7.2040005
+offset_left = 0.016296387
+offset_top = 0.013290405
+offset_right = 0.016235352
+offset_bottom = 0.0132751465
 theme_override_font_sizes/font_size = 50
 text = "beta"
 
-[connection signal="pressed" from="panel/Button" to="." method="_on_button_pressed"]
+[node name="options_menu" type="Control" parent="." unique_id=1708252834]
+visible = false
+layout_mode = 1
+anchor_right = 0.035
+anchor_bottom = 0.062000003
+offset_right = -0.3199997
+offset_bottom = -0.1760025
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Button" parent="options_menu" unique_id=1375402851]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 1.7750001
+anchor_bottom = 1.25
+text = "back"
+
+[connection signal="pressed" from="menu_base/play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="menu_base/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="options_menu/back" to="." method="_on_back_pressed"]

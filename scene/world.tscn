@@ -720,6 +720,7 @@ offset_left = -2054.523
 offset_top = 31.680481
 offset_right = 2576.4028
 offset_bottom = 471.99475
+mouse_filter = 2
 script = ExtResource("20_r7iuf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1977665249]
@@ -794,14 +795,14 @@ text = "return to main menu"
 
 [node name="mobile control" type="Panel" parent="Interface" unique_id=1402381733]
 anchors_preset = -1
-anchor_left = 0.39800003
+anchor_left = 0.147
 anchor_top = 0.887
-anchor_right = 0.60200006
-anchor_bottom = 1.0
-offset_left = -0.16693115
-offset_top = -0.24377441
-offset_right = 0.16680908
-offset_bottom = 29.256104
+anchor_right = 0.35200003
+anchor_bottom = 1.041
+offset_left = 0.55529785
+offset_top = -2.7232056
+offset_right = -0.26293945
+offset_bottom = 0.2086792
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -3308,11 +3309,16 @@ offset_right = 148.79736
 offset_bottom = 579.0236
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/Panel_inventaire" unique_id=1890208398]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 29.0
-offset_right = 144.96994
-offset_bottom = 578.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.05
+anchor_right = 0.952
+anchor_bottom = 0.99300003
+offset_left = 0.061802387
+offset_top = -0.10000038
+offset_right = 0.01701355
+offset_bottom = 0.07397461
 mouse_filter = 2
 
 [node name="HSeparator2" type="HSeparator" parent="Interface/Panel_inventaire/VBoxContainer" unique_id=745164971]

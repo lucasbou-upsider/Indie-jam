@@ -66,6 +66,7 @@ func _process(_delta: float) -> void:
 
 func place_self():
 	if bodycount == 0:
+		$auto_pose.stop()
 		global_position = get_global_mouse_position()
 		sprite_2d.self_modulate = Color(1, 1, 1, 1)
 		is_blueprint = false

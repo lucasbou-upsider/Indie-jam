@@ -15,21 +15,30 @@ func _ready() -> void:
 
 
 func _on_mouse_entered() -> void:
-	is_view = true
-	if tween : tween.kill()
-	tween = create_tween()
-	tween.tween_property(self, "global_position", final_pos + Vector2(0,-5), 0.1)
-	tween.tween_property(self, "global_position", final_pos, 0.1)
+	if OS.has_feature("pc"):
+		is_view = true
+		if tween : tween.kill()
+		tween = create_tween()
+		tween.tween_property(self, "global_position", final_pos + Vector2(0,-5), 0.1)
+		tween.tween_property(self, "global_position", final_pos, 0.1)
 
 func _on_mouse_exited() -> void:
-	is_view = false
-	if tween : tween.kill()
-	tween = create_tween()
-	tween.tween_property(self, "global_position", init_pos, 0.1)
+	if OS.has_feature("pc"):
+		is_view = false
+		if tween : tween.kill()
+		tween = create_tween()
+		tween.tween_property(self, "global_position", init_pos, 0.1)
 
 
 func _on_button_pressed() -> void:
 	if is_view == false:
-		_on_mouse_entered()
+		is_view = true
+		if tween : tween.kill()
+		tween = create_tween()
+		tween.tween_property(self, "global_position", final_pos + Vector2(0,-5), 0.1)
+		tween.tween_property(self, "global_position", final_pos, 0.1)
 	else:
-		_on_mouse_exited()
+		is_view = false
+		if tween : tween.kill()
+		tween = create_tween()
+		tween.tween_property(self, "global_position", init_pos, 0.1)
